@@ -21,6 +21,7 @@
 //高德地图appkey
 #define AMapKey @"60cdaf0e3e58dbd9c1f74a24a14899bd"
 
-
+//百度地图appkey
+#define BaiDuMapKey @"SHGZjSp2DEK7S7GmtPsSvdvw7uxnTopq"
 
 #endif /* TSConfig_h */

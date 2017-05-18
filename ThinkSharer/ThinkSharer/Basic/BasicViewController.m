@@ -58,6 +58,8 @@
 
 }
 
+
+
 #pragma mark - private method
 -(void)contentSizeDidChangeNotification:(NSNotification*)notification{
     [self contentSizeDidChange:notification.userInfo[UIContentSizeCategoryNewValueKey]];

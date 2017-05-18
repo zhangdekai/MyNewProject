@@ -34,6 +34,7 @@
 
 @implementation SelectClassViewController
 
+#pragma mark life style
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setNavigationBarTitle:@"选择课程"];
@@ -46,7 +47,18 @@
     
     self.navigationController.navigationBarHidden = NO;
     self.automaticallyAdjustsScrollViewInsets = NO;
-//    self.navigationItem.hidesBackButton = YES;
+    self.navigationItem.hidesBackButton = YES;
+    
+}
+
+#pragma mark UI
+- (void)setNavigationBarLeftItem {
+
+    UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStylePlain target:self action:@selector(leftItemAction)];
+    
+    self.navigationItem.rightBarButtonItem = rightBarItem;
+    
+    [self.navigationItem.rightBarButtonItem setImage:[[UIImage imageNamed:@"login_x"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     
 }
 
@@ -64,14 +76,11 @@
     [self.datasource setObject:self.array1 forKey:@"求职"];
     [self.datasource setObject:self.array2 forKey:@"金融理财"];
 
-    
-//    [self.datasource addObject:self.array];
-//    [self.datasource addObject:self.array1];
-//    [self.datasource addObject:self.array2];
-
 }
 
 - (void)initilizeUI {
+    
+    [self setNavigationBarLeftItem];
     
     NSMutableArray *items = [NSMutableArray arrayWithObjects:@"胎教",@"幼教",@"小学",@"中学",@"高中",@"大学",@"职教", @"胎教",@"幼教",@"小学",@"中学",@"高中",@"大学",@"职教",nil];
     SelectScrollView *selcetView = [[SelectScrollView alloc]initWithFrame:CGRectMake(0, 64, ScreenWidth, 50) selectItems:items];
@@ -96,8 +105,12 @@
 
 
 }
-
-
+#pragma mark Action
+- (void)leftItemAction {
+    MainViewController *vc = [[MainViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+    
+}
 
 
 #pragma mark UICollectionViewDelegate,UICollectionViewDataSource
@@ -171,6 +184,7 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
 
+    NSLog(@"%@",self.array[indexPath.row]);
     MainViewController *vc = [[MainViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 

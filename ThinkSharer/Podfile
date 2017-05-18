@@ -9,8 +9,8 @@ target 'ThinkSharer' do
     pod 'MJRefresh'
     pod 'Realm'
     pod 'MBProgressHUD'
-    pod 'AMapSearch-NO-IDFA'
-    pod 'AMap2DMap-NO-IDFA'
+    pod 'AMap3DMap-NO-IDFA'
+    pod 'AMapLocation-NO-IDFA'
     pod 'Masonry'
     
 end

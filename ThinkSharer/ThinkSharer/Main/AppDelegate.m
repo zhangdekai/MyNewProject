@@ -10,7 +10,9 @@
 #import "LoginViewController.h"
 #import "TSAppInfo.h"
 #import <MAMapKit/MAMapKit.h>
-#import <AMapFoundationKit/AMapFoundationKit.h>
+
+
+//#import <BaiduMapAPI_Map/BMKMapComponent.h>//引入地图功能所有的头文件
 
 @interface AppDelegate ()
 
@@ -30,8 +32,20 @@
     
     UINavigationController *nv = [[UINavigationController alloc]initWithRootViewController:loginVc];
     
+    
+//    //百度地图
+//    BMKMapManager *manager = [[BMKMapManager alloc]init];
+//    
+//    BOOL ret =  [manager start:BaiDuMapKey generalDelegate:nil];
+//    
+//    if (!ret) {
+//        NSLog(@"百度 manager start failed!");
+//
+//    }
+    
+    
     //高德地图
-    [AMapServices sharedServices].apiKey = AMapKey;
+   // [AMapServices sharedServices].apiKey = AMapKey;
     
     
     //初次安装
