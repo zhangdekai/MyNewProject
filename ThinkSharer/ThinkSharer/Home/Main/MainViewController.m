@@ -48,13 +48,6 @@
     [self.view addSubview:self.mapView];
     
 
-    
-//    dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0/*延迟执行时间*/ * NSEC_PER_SEC));
-//    
-//    dispatch_after(delayTime, dispatch_get_main_queue(), ^{
-//    });
-    
-
     self.mapView.delegate = self;
     self.mapView.showsCompass = NO;
     self.mapView.showsScale = NO;
@@ -112,6 +105,13 @@
     self.mapView.showsUserLocation = YES;
     [self.mapView setUserTrackingMode:(MAUserTrackingModeFollow) animated:YES];
 
+    dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5/*延迟执行时间*/ * NSEC_PER_SEC));
+    
+    dispatch_after(delayTime, dispatch_get_main_queue(), ^{
+        
+        self.mapView.userTrackingMode = MAUserTrackingModeFollow;
+
+    });
 
     
 }
