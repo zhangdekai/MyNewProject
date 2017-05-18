@@ -1,0 +1,17 @@
+platform :ios, '9.0'
+inhibit_all_warnings!
+
+
+target 'ThinkSharer' do
+    
+    pod 'AFNetworking', '~> 3.1.0'
+    pod 'SDWebImage', '~> 4.0.0'
+    pod 'MJRefresh'
+    pod 'Realm'
+    pod 'MBProgressHUD'
+    pod 'AMapSearch-NO-IDFA'
+    pod 'AMap2DMap-NO-IDFA'
+    pod 'Masonry'
+    
+end
+

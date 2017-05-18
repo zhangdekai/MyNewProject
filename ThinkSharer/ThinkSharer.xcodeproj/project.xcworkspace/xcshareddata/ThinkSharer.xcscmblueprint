@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "261A2AB40984429AD943AA3DC9D98395D3973624",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "261A2AB40984429AD943AA3DC9D98395D3973624" : 9223372036854775807,
+    "9C8E15FE26064FFC05E378E6509FF056B9F20E5F" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "76050A50-A173-4D53-839E-F8648B552A35",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "261A2AB40984429AD943AA3DC9D98395D3973624" : "learngit\/",
+    "9C8E15FE26064FFC05E378E6509FF056B9F20E5F" : "..\/..\/Documents\/MyDocument\/MyProject\/Client"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "ThinkSharer",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ThinkSharer\/ThinkSharer.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:zhangdekai\/learngit.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "261A2AB40984429AD943AA3DC9D98395D3973624"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "192.168.1.111:iOS\/Client.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9C8E15FE26064FFC05E378E6509FF056B9F20E5F"
+    }
+  ]
+}
