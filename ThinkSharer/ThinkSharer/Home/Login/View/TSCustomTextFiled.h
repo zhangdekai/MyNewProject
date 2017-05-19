@@ -10,4 +10,6 @@
 
 @interface TSCustomTextFiled : UITextField
 
+@property (nonatomic,assign) NSInteger MaxNum;
+
 @end

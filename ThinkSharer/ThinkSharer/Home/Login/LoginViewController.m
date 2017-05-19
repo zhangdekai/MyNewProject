@@ -48,8 +48,8 @@
 - (void)initilizeUI {
     
     self.selectUserGuide = NO;
-    CGFloat rheight = [TSPublicTool getRealPX:225];
-    CGFloat textHeight = [TSPublicTool getRealPX:60];
+    CGFloat rheight = [TSPublicTool getRealPX:255];
+    CGFloat textHeight = [TSPublicTool getRealPX:50];
     CGFloat textWidth = ScreenWidth - 30;
     CGFloat identityW = [TSPublicTool getRealPX:195];
     CGFloat getIdentityW = [TSPublicTool getRealPX:120];
@@ -66,11 +66,12 @@
     
     
     _phoneTextFiled = [[TSCustomTextFiled alloc]initWithFrame:CGRectMake(25, 0, _phoneBackView.width - 25, textHeight)];
+    _phoneTextFiled.textColor = [UIColor generalTitleFontGrayColor];
     _phoneTextFiled.keyboardType = UIKeyboardTypeNumberPad;
     _phoneTextFiled.clearButtonMode = UITextFieldViewModeWhileEditing;
     _phoneTextFiled.placeholder = @"请输入手机号";
-    _phoneTextFiled.font = [UIFont systemFontOfSize:35];
-    [_phoneTextFiled setValue:[UIFont systemFontOfSize:18] forKeyPath:@"_placeholderLabel.font"];
+    _phoneTextFiled.font = [UIFont systemFontOfSize:17];
+//    [_phoneTextFiled setValue:[UIFont systemFontOfSize:17] forKeyPath:@"_placeholderLabel.font"];
     
     [_phoneBackView addSubview:_phoneTextFiled];
     
@@ -90,19 +91,27 @@
     
     
     _identityTextFiled = [[TSCustomTextFiled alloc]initWithFrame:CGRectMake(25, 0, _identityBackView.width - 25, textHeight)];
+    _identityTextFiled.textColor = [UIColor generalSubTitleFontGrayColor];
+
+    _identityTextFiled.MaxNum = 6;
     _identityTextFiled.keyboardType = UIKeyboardTypeNumberPad;
     _identityTextFiled.clearButtonMode = UITextFieldViewModeWhileEditing;
     _identityTextFiled.placeholder = @"请输入验证码";
-    _identityTextFiled.font = [UIFont systemFontOfSize:35];
-    [_identityTextFiled setValue:[UIFont systemFontOfSize:18] forKeyPath:@"_placeholderLabel.font"];
+    _identityTextFiled.font = [UIFont systemFontOfSize:14];
+//    [_identityTextFiled setValue:[UIFont systemFontOfSize:14] forKeyPath:@"_placeholderLabel.font"];
     
     [_identityBackView addSubview:_identityTextFiled];
 
 
     _getIdentityButton.frame = CGRectMake(_identityBackView.right + 30, _identityBackView.top, getIdentityW, textHeight);
     
-    [[_getIdentityButton layer]setShadowOffset:(CGSizeMake(0, 4))];
-    [[_getIdentityButton layer]setShadowRadius:4];
+    _getIdentityButton.layer.cornerRadius = 5;
+    _getIdentityButton.layer.borderWidth = 0.1;
+    _getIdentityButton.layer.borderColor = [UIColor generalSubTitleFontGrayColor].CGColor;
+
+    
+    [[_getIdentityButton layer]setShadowOffset:(CGSizeMake(0, 2))];
+    [[_getIdentityButton layer]setShadowRadius:2];
     [[_getIdentityButton layer]setShadowOpacity:0.3];
     [[_getIdentityButton layer]setShadowColor:[UIColor viewShaowColor].CGColor];
 
@@ -148,6 +157,8 @@
     
     return YES;
 }
+
+
 
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

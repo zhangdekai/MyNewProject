@@ -18,6 +18,26 @@
 }
 */
 
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        
+        [self addTarget:self action:@selector(textFieldDidChange:) forControlEvents:(UIControlEventEditingChanged)];
+        
+    }
+    return self;
+}
+
+
+- (void)textFieldDidChange:(UITextField *)textFiled {
+    NSInteger num = self.MaxNum > 0 ? self.MaxNum:11; // dk: 默认 30
+    
+    if (textFiled.text.length > num) {
+        NSString *str = textFiled.text;
+        NSString *str1 = [str substringToIndex:num];
+        textFiled.text = str1;
+    }
+}
 
 ////控制清除按钮的位置
 //-(CGRect)clearButtonRectForBounds:(CGRect)bounds
@@ -25,14 +45,14 @@
 //    return CGRectMake(bounds.origin.x + bounds.size.width - 50, bounds.origin.y + bounds.size.height -20, 16, 16);
 //}
 
-//控制placeHolder的位置，左右缩20
--(CGRect)placeholderRectForBounds:(CGRect)bounds
-{
-    
-    //return CGRectInset(bounds, 20, 0);
-    CGRect inset = CGRectMake(bounds.origin.x, bounds.origin.y + (bounds.size.height / 5), bounds.size.width -10, bounds.size.height);//更好理解些
-    return inset;
-}
+////控制placeHolder的位置，左右缩20
+//-(CGRect)placeholderRectForBounds:(CGRect)bounds
+//{
+//    
+//    //return CGRectInset(bounds, 20, 0);
+//    CGRect inset = CGRectMake(bounds.origin.x, bounds.origin.y + (bounds.size.height / 5), bounds.size.width -10, bounds.size.height);//更好理解些
+//    return inset;
+//}
 ////控制显示文本的位置
 //-(CGRect)textRectForBounds:(CGRect)bounds
 //{
