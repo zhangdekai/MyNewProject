@@ -13,7 +13,7 @@
 -(instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        UIView *line = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 10)];
+        UIView *line = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 15)];
         [self addSubview:line];
         line.backgroundColor = [UIColor backgroundGrayColorA];
     }

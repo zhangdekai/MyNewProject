@@ -24,4 +24,8 @@
 //百度地图appkey
 #define BaiDuMapKey @"SHGZjSp2DEK7S7GmtPsSvdvw7uxnTopq"
 
+#define  TSWeakSelf __weak typeof(self)weakSelf = self;
+
+
+
 #endif /* TSConfig_h */

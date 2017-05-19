@@ -10,11 +10,20 @@
 
 @implementation UIColor (YMHCustoms)
 
-+ (UIColor *)mainColor {
++ (UIColor *)mainColorGreen {//惨绿
     return [UIColor ymh_colorWithHex:0xa6b886];
 
 }
 
++ (UIColor *)mainColorBlue {//海蓝
+    return [UIColor ymh_colorWithHex:0x57bdd4];
+    
+}
+
++ (UIColor *)viewShaowColor { //阴影颜色 0x221815
+    return [UIColor ymh_colorWithHex:0x221815];
+
+}
 #pragma mark - font color
 + (UIColor *)generalFontWhiteColor
 {

@@ -14,6 +14,7 @@
 @property (nonatomic, strong) MBProgressHUD *hud;
 @property (nonatomic, copy) void (^emptyRetryBlock)();
 @property (nonatomic, copy) void (^netWrokErrorRetryBlock)();
+@property (nonatomic,copy) NavigationBarButtonItemBlock navigationItemBlock;
 
 @end
 
@@ -58,7 +59,31 @@
 
 }
 
+- (void)setNavigationBarRightItemWithImageName:(NSString *)imageName itemBlock:(NavigationBarButtonItemBlock)rightBlock {
+    self.navigationItemBlock = rightBlock;
+    
+    UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStylePlain target:self action:@selector(itemAction)];
+    
+    self.navigationItem.rightBarButtonItem = rightBarItem;
+    
+    [self.navigationItem.rightBarButtonItem setImage:[[UIImage imageNamed:imageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    
+}
 
+- (void)setNavigationBarLeftItemWithImageName:(NSString *)imageName itemBlock:(NavigationBarButtonItemBlock)leftBlock {
+    self.navigationItemBlock = leftBlock;
+    
+    UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStylePlain target:self action:@selector(itemAction)];
+    
+    self.navigationItem.leftBarButtonItem = rightBarItem;
+    
+    [self.navigationItem.leftBarButtonItem setImage:[[UIImage imageNamed:imageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    
+}
+
+- (void)itemAction {
+    self.navigationItemBlock();
+}
 
 #pragma mark - private method
 -(void)contentSizeDidChangeNotification:(NSNotification*)notification{

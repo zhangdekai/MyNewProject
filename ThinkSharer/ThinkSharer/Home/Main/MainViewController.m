@@ -10,6 +10,9 @@
 #import <MAMapKit/MAMapKit.h>
 #import <AMapFoundationKit/AMapFoundationKit.h>
 #import <AMapLocationKit/AMapLocationKit.h>
+#import "ClassListViewController.h"
+#import "SharerCenterViewController.h"
+
 
 @interface MainViewController ()<MAMapViewDelegate,AMapLocationManagerDelegate>
 
@@ -30,7 +33,7 @@
     
     //    定位授权
     
-    
+    [self judgeLocationWhetherOpen];
 //    _locationManager = [[CLLocationManager alloc]init];
 //    [_locationManager requestWhenInUseAuthorization];
     
@@ -47,12 +50,17 @@
     self.mapView = [[MAMapView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:self.mapView];
     
-
+ 
     self.mapView.delegate = self;
+    
+    
     self.mapView.showsCompass = NO;
     self.mapView.showsScale = NO;
     self.mapView.rotateEnabled = NO;
-    
+    [self.mapView setZoomLevel:15 animated:YES];
+    self.mapView.showsUserLocation = YES;
+    self.mapView.userTrackingMode = MAUserTrackingModeFollow;
+
     
     [self addStartImage];
 
@@ -100,26 +108,11 @@
     
     NSArray *annotationArray = [NSArray arrayWithObjects:pointAnnotation,pointAnnotation1,pointAnnotation2,pointAnnotation3, nil];
     [self.mapView addAnnotations:annotationArray];
-    
-    
-    self.mapView.showsUserLocation = YES;
-    [self.mapView setUserTrackingMode:(MAUserTrackingModeFollow) animated:YES];
-
-    dispatch_time_t delayTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5/*延迟执行时间*/ * NSEC_PER_SEC));
-    
-    dispatch_after(delayTime, dispatch_get_main_queue(), ^{
-        
-        self.mapView.userTrackingMode = MAUserTrackingModeFollow;
-
-    });
-
-    
+   
 }
-
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-//    [self stopSerialLocation];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    //    self.navigationController.navigationBarHidden = YES;
 }
 
 //发起单次定位
@@ -193,16 +186,12 @@
 }
 
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    self.navigationController.navigationBarHidden = YES;
-}
 
 - (void)addStartImage {
     //添加开始
     UIImageView *startImage = [[UIImageView alloc]init];
     [self.view addSubview:startImage];
-    startImage.frame = CGRectMake((ScreenWidth /2) - 30, ScreenHeight - 85, 60, 60);
+    startImage.frame = CGRectMake((ScreenWidth /2) - 30, ScreenHeight - 105, 80, 80);
     
     startImage.image = [UIImage imageNamed:@"map_thinks"];
     startImage.userInteractionEnabled = YES;
@@ -233,7 +222,14 @@
 }
 
 - (void)goRight {
+//    ClassListViewController *vc = [[ClassListViewController alloc]init];
+//    vc.title = @"思享者中心";
+//    [self.navigationController pushViewController:vc animated:YES];
     
+    SharerCenterViewController *vc = [[SharerCenterViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+
+
 }
 
 - (void)singleTap:(UIGestureRecognizer*)gestureRecognizer {
@@ -246,87 +242,24 @@
     [self locateAgain];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+//判断位置是否打开
+- (void)judgeLocationWhetherOpen {
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-
-- (void)configLocationManager
-{
-    self.locationManager = [[AMapLocationManager alloc] init];
-    
-    [self.locationManager setDelegate:self];
-    
-    [self.locationManager setPausesLocationUpdatesAutomatically:NO];
-    
-    //    [self.locationManager setAllowsBackgroundLocationUpdates:YES];
-}
-
-- (void)startSerialLocation
-{
-    //开始定位
-    //    [self.locationManager startUpdatingLocation];
-    
-    [self.locationManager setLocatingWithReGeocode:YES];
-    [self.locationManager startUpdatingLocation];
-}
-
-- (void)stopSerialLocation
-{
-    //停止定位
-    [self.locationManager stopUpdatingLocation];
-}
-
-- (void)amapLocationManager:(AMapLocationManager *)manager didFailWithError:(NSError *)error
-{
-    //定位错误
-    NSLog(@"定位错误  %s, amapLocationManager = %@, error = %@", __func__, [manager class], error);
-}
-
-- (void)amapLocationManager:(AMapLocationManager *)manager didUpdateLocation:(CLLocation *)location
-{
-    //定位结果
-    NSLog(@"定位结果 location:{lat:%f; lon:%f; accuracy:%f}", location.coordinate.latitude, location.coordinate.longitude, location.horizontalAccuracy);
-}
-
-
-
-
-- (void)getCurrentLocationData {
-    //定位
-    _mapView = [[MAMapView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 0.5)];
-    _mapView.delegate = self;
     // 判断是否打开GPS
     if ([CLLocationManager locationServicesEnabled] &&
         ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusAuthorizedAlways
          || [CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined)) {
             //定位功能可用，开始定位
-            _mapView.showsUserLocation = YES;
-        }
-    else if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied)
-    {
+//            _mapView.showsUserLocation = YES;
+        } else if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied){
         //NSLog(@"定位服务当前可能尚未打开，请设置打开！");
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"GPS未开启，无法添加位置" message:@"请在系统设置中开启定位服务(设置>隐私>定位服务>开启怡美假日APP)" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"GPS未开启，无法添加位置" message:@"请在系统设置中开启定位服务(设置>隐私>定位服务>开启思享者APP)" preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *leftAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"确定", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
             [self.navigationController popViewControllerAnimated:YES];
         }];
         [alertController addAction:leftAction];
         [self presentViewController:alertController animated:YES completion:nil];
     }
-    _mapView.showsUserLocation = YES;
-    _mapView.userTrackingMode = 0;
-    [self.view addSubview:_mapView];
 }
 
 

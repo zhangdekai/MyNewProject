@@ -20,6 +20,11 @@
 		4996B84C1ECAAB6300272439 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4996B84B1ECAAB6300272439 /* AppDelegate.m */; };
 		4996B8511ECAAC2900272439 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4996B8501ECAAC2900272439 /* Assets.xcassets */; };
 		4996B8621ECAADA900272439 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4996B8611ECAADA900272439 /* LaunchScreen.storyboard */; };
+		49AF54AE1ECE89BD00406DFC /* ClassListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AF54AD1ECE89BD00406DFC /* ClassListViewController.m */; };
+		49AF54B11ECE8D4900406DFC /* SharerCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AF54B01ECE8D4900406DFC /* SharerCenterViewController.m */; };
+		49AF54B61ECE978300406DFC /* SharerFirstCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AF54B41ECE978300406DFC /* SharerFirstCollectionViewCell.m */; };
+		49AF54B71ECE978300406DFC /* SharerFirstCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49AF54B51ECE978300406DFC /* SharerFirstCollectionViewCell.xib */; };
+		49AF54BA1ECED69000406DFC /* TSCustomTextFiled.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AF54B91ECED69000406DFC /* TSCustomTextFiled.m */; };
 		49B0D9EB1ECC4D4B00CA3299 /* SelectClassFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B0D9EA1ECC4D4B00CA3299 /* SelectClassFooterView.m */; };
 		49F38FA11ECAC53600D83E95 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F38F9F1ECAC53600D83E95 /* LoginViewController.m */; };
 		49F38FA21ECAC53600D83E95 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49F38FA01ECAC53600D83E95 /* LoginViewController.xib */; };
@@ -83,6 +88,15 @@
 		4996B84D1ECAAB7000272439 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4996B8501ECAAC2900272439 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4996B8611ECAADA900272439 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		49AF54AC1ECE89BD00406DFC /* ClassListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassListViewController.h; sourceTree = "<group>"; };
+		49AF54AD1ECE89BD00406DFC /* ClassListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassListViewController.m; sourceTree = "<group>"; };
+		49AF54AF1ECE8D4900406DFC /* SharerCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharerCenterViewController.h; sourceTree = "<group>"; };
+		49AF54B01ECE8D4900406DFC /* SharerCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharerCenterViewController.m; sourceTree = "<group>"; };
+		49AF54B31ECE978300406DFC /* SharerFirstCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharerFirstCollectionViewCell.h; sourceTree = "<group>"; };
+		49AF54B41ECE978300406DFC /* SharerFirstCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharerFirstCollectionViewCell.m; sourceTree = "<group>"; };
+		49AF54B51ECE978300406DFC /* SharerFirstCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SharerFirstCollectionViewCell.xib; sourceTree = "<group>"; };
+		49AF54B81ECED69000406DFC /* TSCustomTextFiled.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCustomTextFiled.h; sourceTree = "<group>"; };
+		49AF54B91ECED69000406DFC /* TSCustomTextFiled.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCustomTextFiled.m; sourceTree = "<group>"; };
 		49B0D9E91ECC4D4B00CA3299 /* SelectClassFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectClassFooterView.h; sourceTree = "<group>"; };
 		49B0D9EA1ECC4D4B00CA3299 /* SelectClassFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectClassFooterView.m; sourceTree = "<group>"; };
 		49F38F9E1ECAC53600D83E95 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -152,6 +166,8 @@
 				491C461E1ECC23A1009F43A4 /* SelectClassheaderView.m */,
 				49B0D9E91ECC4D4B00CA3299 /* SelectClassFooterView.h */,
 				49B0D9EA1ECC4D4B00CA3299 /* SelectClassFooterView.m */,
+				49AF54B81ECED69000406DFC /* TSCustomTextFiled.h */,
+				49AF54B91ECED69000406DFC /* TSCustomTextFiled.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -286,6 +302,16 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		49AF54B21ECE975400406DFC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				49AF54B31ECE978300406DFC /* SharerFirstCollectionViewCell.h */,
+				49AF54B41ECE978300406DFC /* SharerFirstCollectionViewCell.m */,
+				49AF54B51ECE978300406DFC /* SharerFirstCollectionViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		49F38F9D1ECAB1BE00D83E95 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -341,8 +367,13 @@
 		49F38FD91ECAF25A00D83E95 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				49AF54B21ECE975400406DFC /* View */,
 				49F38FDA1ECAF27300D83E95 /* MainViewController.h */,
 				49F38FDB1ECAF27300D83E95 /* MainViewController.m */,
+				49AF54AC1ECE89BD00406DFC /* ClassListViewController.h */,
+				49AF54AD1ECE89BD00406DFC /* ClassListViewController.m */,
+				49AF54AF1ECE8D4900406DFC /* SharerCenterViewController.h */,
+				49AF54B01ECE8D4900406DFC /* SharerCenterViewController.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -490,6 +521,7 @@
 				491C46191ECC1D91009F43A4 /* SelectClassCollectionViewCell.xib in Resources */,
 				4996B8621ECAADA900272439 /* LaunchScreen.storyboard in Resources */,
 				4996B8511ECAAC2900272439 /* Assets.xcassets in Resources */,
+				49AF54B71ECE978300406DFC /* SharerFirstCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,6 +596,7 @@
 			files = (
 				49F38FD51ECAEAF900D83E95 /* UIViewController+YMHLoginCheck.m in Sources */,
 				491C460D1ECBE53C009F43A4 /* SelectClassViewController.m in Sources */,
+				49AF54AE1ECE89BD00406DFC /* ClassListViewController.m in Sources */,
 				49F38FB71ECAE2BC00D83E95 /* UIColor+YMHCustoms.m in Sources */,
 				491C46101ECBEF24009F43A4 /* TSPublicTool.m in Sources */,
 				4996B84C1ECAAB6300272439 /* AppDelegate.m in Sources */,
@@ -575,8 +608,11 @@
 				491C46281ECC2CD4009F43A4 /* SelectClassTableViewCell.m in Sources */,
 				491C461F1ECC23A1009F43A4 /* SelectClassheaderView.m in Sources */,
 				49F38FA81ECADDE300D83E95 /* YMHRegularExpression.m in Sources */,
+				49AF54B61ECE978300406DFC /* SharerFirstCollectionViewCell.m in Sources */,
 				49F38FE01ECAFBFF00D83E95 /* TSAppInfo.m in Sources */,
 				49B0D9EB1ECC4D4B00CA3299 /* SelectClassFooterView.m in Sources */,
+				49AF54BA1ECED69000406DFC /* TSCustomTextFiled.m in Sources */,
+				49AF54B11ECE8D4900406DFC /* SharerCenterViewController.m in Sources */,
 				491C46181ECC1D91009F43A4 /* SelectClassCollectionViewCell.m in Sources */,
 				49F38FDC1ECAF27300D83E95 /* MainViewController.m in Sources */,
 				49F38FA11ECAC53600D83E95 /* LoginViewController.m in Sources */,

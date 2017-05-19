@@ -16,7 +16,6 @@
 
 @interface SelectClassViewController ()<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
-@property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) UICollectionView *collectionView;
 
 @property (nonatomic,strong) NSMutableArray *sectionArray;
@@ -52,7 +51,7 @@
 }
 
 #pragma mark UI
-- (void)setNavigationBarLeftItem {
+- (void)setNavigationBarRightItem {
 
     UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStylePlain target:self action:@selector(leftItemAction)];
     
@@ -80,7 +79,7 @@
 
 - (void)initilizeUI {
     
-    [self setNavigationBarLeftItem];
+    [self setNavigationBarRightItem];
     
     NSMutableArray *items = [NSMutableArray arrayWithObjects:@"胎教",@"幼教",@"小学",@"中学",@"高中",@"大学",@"职教", @"胎教",@"幼教",@"小学",@"中学",@"高中",@"大学",@"职教",nil];
     SelectScrollView *selcetView = [[SelectScrollView alloc]initWithFrame:CGRectMake(0, 64, ScreenWidth, 50) selectItems:items];
@@ -160,7 +159,7 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section {
     
-    return CGSizeMake(ScreenWidth, 10);
+    return CGSizeMake(ScreenWidth, 15);
 
 }
 
@@ -187,6 +186,10 @@
     NSLog(@"%@",self.array[indexPath.row]);
     MainViewController *vc = [[MainViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
+    
+//    TestViewController *vc = [[TestViewController alloc]init];
+//    [self.navigationController pushViewController:vc animated:YES];
+
 
 }
 @end

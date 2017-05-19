@@ -9,13 +9,16 @@
 #import "LoginViewController.h"
 #import "YMHIdenCodeTool.h"
 #import "SelectClassViewController.h"
+#import "TSCustomTextFiled.h"
+
 
 @interface LoginViewController ()<UITextFieldDelegate>
 
 
-@property (weak, nonatomic) IBOutlet UIImageView *headerImageView;
-@property (weak, nonatomic) IBOutlet UITextField *phoneTextFiled;
-@property (weak, nonatomic) IBOutlet UITextField *identityTextFiled;
+//@property (weak, nonatomic) IBOutlet UIImageView *headerImageView;
+@property (strong, nonatomic)  TSCustomTextFiled *phoneTextFiled;
+@property (strong, nonatomic)  TSCustomTextFiled *identityTextFiled;
+
 @property (weak, nonatomic) IBOutlet UIButton *getIdentityButton;
 
 @property (weak, nonatomic) IBOutlet UIButton *rightOrWrongButton;
@@ -43,40 +46,78 @@
 }
 
 - (void)initilizeUI {
+    
     self.selectUserGuide = NO;
-    CGFloat rheight = [TSPublicTool getRealPX:270];
-    CGFloat textHeight = [TSPublicTool getRealPX:40];
+    CGFloat rheight = [TSPublicTool getRealPX:225];
+    CGFloat textHeight = [TSPublicTool getRealPX:60];
     CGFloat textWidth = ScreenWidth - 30;
     CGFloat identityW = [TSPublicTool getRealPX:195];
     CGFloat getIdentityW = [TSPublicTool getRealPX:120];
-
-    
-    _headerImageView.frame = CGRectMake(0, 0, ScreenWidth, rheight);
-    
     
     _phoneBackView.frame = CGRectMake(15, rheight, textWidth, textHeight);
     _phoneBackView.layer.cornerRadius = 5;
     _phoneBackView.layer.borderWidth = 0.1;
     _phoneBackView.layer.borderColor = [UIColor generalSubTitleFontGrayColor].CGColor;
     
-    _phoneTextFiled.frame = CGRectMake(25, 5, _phoneBackView.width - 25, 30);
-
+    [[_phoneBackView layer]setShadowOffset:(CGSizeMake(0, 2))];
+    [[_phoneBackView layer]setShadowRadius:2];
+    [[_phoneBackView layer]setShadowOpacity:0.3];
+    [[_phoneBackView layer]setShadowColor:[UIColor viewShaowColor].CGColor];
+    
+    
+    _phoneTextFiled = [[TSCustomTextFiled alloc]initWithFrame:CGRectMake(25, 0, _phoneBackView.width - 25, textHeight)];
+    _phoneTextFiled.keyboardType = UIKeyboardTypeNumberPad;
+    _phoneTextFiled.clearButtonMode = UITextFieldViewModeWhileEditing;
+    _phoneTextFiled.placeholder = @"请输入手机号";
+    _phoneTextFiled.font = [UIFont systemFontOfSize:35];
+    [_phoneTextFiled setValue:[UIFont systemFontOfSize:18] forKeyPath:@"_placeholderLabel.font"];
+    
+    [_phoneBackView addSubview:_phoneTextFiled];
+    
     
     _identityBackView.frame = CGRectMake(15, _phoneBackView.bottom + 30, identityW, textHeight);
     _identityBackView.layer.cornerRadius = 5;
     _identityBackView.layer.borderWidth = 0.1;
     _identityBackView.layer.borderColor = [UIColor generalSubTitleFontGrayColor].CGColor;
 
-    _identityTextFiled.frame = CGRectMake(25, 5, _identityBackView.width - 25, 30);
+    
+    [[_identityBackView layer]setShadowOffset:(CGSizeMake(0, 2))];
+    [[_identityBackView layer]setShadowRadius:2];
+    [[_identityBackView layer]setShadowOpacity:0.3];
+    [[_identityBackView layer]setShadowColor:[UIColor viewShaowColor].CGColor];
+
+    
+    
+    
+    _identityTextFiled = [[TSCustomTextFiled alloc]initWithFrame:CGRectMake(25, 0, _identityBackView.width - 25, textHeight)];
+    _identityTextFiled.keyboardType = UIKeyboardTypeNumberPad;
+    _identityTextFiled.clearButtonMode = UITextFieldViewModeWhileEditing;
+    _identityTextFiled.placeholder = @"请输入验证码";
+    _identityTextFiled.font = [UIFont systemFontOfSize:35];
+    [_identityTextFiled setValue:[UIFont systemFontOfSize:18] forKeyPath:@"_placeholderLabel.font"];
+    
+    [_identityBackView addSubview:_identityTextFiled];
 
 
     _getIdentityButton.frame = CGRectMake(_identityBackView.right + 30, _identityBackView.top, getIdentityW, textHeight);
+    
+    [[_getIdentityButton layer]setShadowOffset:(CGSizeMake(0, 4))];
+    [[_getIdentityButton layer]setShadowRadius:4];
+    [[_getIdentityButton layer]setShadowOpacity:0.3];
+    [[_getIdentityButton layer]setShadowColor:[UIColor viewShaowColor].CGColor];
+
 
     _rightOrWrongButton.frame = CGRectMake(20, _identityBackView.bottom + 30, 15, 15);
 
-    _userGuideButton.frame = CGRectMake(_rightOrWrongButton.right + 5, _rightOrWrongButton.top - 5 , ScreenWidth - 60, 25);
+    _userGuideButton.frame = CGRectMake(_rightOrWrongButton.right + 5, _rightOrWrongButton.top - 5 , ScreenWidth - 120, 25);
 
     _loginButton.frame = CGRectMake(15, _userGuideButton.bottom + 30, ScreenWidth - 30, textHeight);
+    
+    [[_loginButton layer]setShadowOffset:(CGSizeMake(0, 2))];
+    [[_loginButton layer]setShadowRadius:2];
+    [[_loginButton layer]setShadowOpacity:0.3];
+    [[_loginButton layer]setShadowColor:[UIColor viewShaowColor].CGColor];
+
 
     [_getIdentityButton addTarget:self action:@selector(getIdentity:) forControlEvents:(UIControlEventTouchUpInside)];
 
@@ -85,6 +126,13 @@
     [_rightOrWrongButton addTarget:self action:@selector(selectUserGuide:) forControlEvents:(UIControlEventTouchUpInside)];
 
 
+    UIImageView *backgroundImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"login_background"]];
+    backgroundImage.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
+    [self.view addSubview:backgroundImage];
+    
+    [self.view sendSubviewToBack:backgroundImage];
+    
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -100,6 +148,7 @@
     
     return YES;
 }
+
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [_phoneTextFiled resignFirstResponder];

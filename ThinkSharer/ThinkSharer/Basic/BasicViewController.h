@@ -12,6 +12,8 @@
 #define KERRORVIEWTAG -10001
 #define KNONETWORKTAG -10002
 
+typedef void(^NavigationBarButtonItemBlock)();
+
 
 @interface BasicViewController : UIViewController
 
@@ -19,7 +21,11 @@
 //设置导航栏title
 - (void)setNavigationBarTitle:(NSString *)title;
 
+//设置导航栏右侧image
+- (void)setNavigationBarRightItemWithImageName:(NSString *)imageName itemBlock:(NavigationBarButtonItemBlock)rightBlock ;
 
+//设置导航栏左侧image
+- (void)setNavigationBarLeftItemWithImageName:(NSString *)imageName itemBlock:(NavigationBarButtonItemBlock)leftBlock ;
 
 /**
  *  是否展示相关错误页面  需求：展示本地数据时不展示错误页

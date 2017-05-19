@@ -13,8 +13,11 @@
 /**
  *  main colors
  */
-+ (UIColor *)mainColor;//主调白色 #ffffff
++ (UIColor *)mainColorGreen;//惨绿    0xa6b886
 
++ (UIColor *)mainColorBlue; //海蓝    0x57bdd4
+
++ (UIColor *)viewShaowColor; //阴影颜色 0x221815
 
 /**
  *  font colors

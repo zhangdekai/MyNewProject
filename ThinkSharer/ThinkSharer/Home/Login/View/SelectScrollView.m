@@ -17,7 +17,7 @@
     
     if (self) {
         self.items = items;
-        self.backgroundColor = [UIColor mainColor];
+        self.backgroundColor = [UIColor mainColorBlue];
         self.contentSize = CGSizeMake(ScreenWidth, 0);
         self.showsHorizontalScrollIndicator = false;
         self.showsVerticalScrollIndicator = false;
@@ -39,7 +39,7 @@
             
             [button setTitle:items[i] forState:(UIControlStateNormal)];
             [button setTitleColor:[UIColor whiteColor] forState:(UIControlStateNormal)];
-            button.titleLabel.font = [UIFont systemFontOfSize:16];
+            button.titleLabel.font = [UIFont systemFontOfSize:18];
             [button setContentHorizontalAlignment:(UIControlContentHorizontalAlignmentCenter)];
             button.tag = 100 + i;
             
