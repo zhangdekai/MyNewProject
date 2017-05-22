@@ -18,14 +18,8 @@
 		4996B8491ECAAABA00272439 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4996B8471ECAAABA00272439 /* main.m */; };
 		4996B8511ECAAC2900272439 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4996B8501ECAAC2900272439 /* Assets.xcassets */; };
 		4996B8621ECAADA900272439 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4996B8611ECAADA900272439 /* LaunchScreen.storyboard */; };
-		49AF54B61ECE978300406DFC /* SharerFirstCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AF54B41ECE978300406DFC /* SharerFirstCollectionViewCell.m */; };
-		49AF54B71ECE978300406DFC /* SharerFirstCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49AF54B51ECE978300406DFC /* SharerFirstCollectionViewCell.xib */; };
 		49AF54BA1ECED69000406DFC /* TSCustomTextFiled.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AF54B91ECED69000406DFC /* TSCustomTextFiled.m */; };
 		49B0D9EB1ECC4D4B00CA3299 /* SelectClassFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B0D9EA1ECC4D4B00CA3299 /* SelectClassFooterView.m */; };
-		49B743C11ED291BA00FFDBDB /* SharerScendCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B743BF1ED291BA00FFDBDB /* SharerScendCollectionViewCell.m */; };
-		49B743C21ED291BA00FFDBDB /* SharerScendCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B743C01ED291BA00FFDBDB /* SharerScendCollectionViewCell.xib */; };
-		49B743C61ED2A0D300FFDBDB /* SharerThirdCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B743C41ED2A0D300FFDBDB /* SharerThirdCollectionViewCell.m */; };
-		49B743C71ED2A0D300FFDBDB /* SharerThirdCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B743C51ED2A0D300FFDBDB /* SharerThirdCollectionViewCell.xib */; };
 		49B743CE1ED2DC9D00FFDBDB /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B743CA1ED2DC9D00FFDBDB /* LoginViewController.m */; };
 		49B743CF1ED2DC9D00FFDBDB /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B743CB1ED2DC9D00FFDBDB /* LoginViewController.xib */; };
 		49B743D01ED2DC9D00FFDBDB /* SelectClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B743CD1ED2DC9D00FFDBDB /* SelectClassViewController.m */; };
@@ -33,7 +27,15 @@
 		49B743D71ED2E47D00FFDBDB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B743D61ED2E47D00FFDBDB /* AppDelegate.m */; };
 		49B743DF1ED2E4B700FFDBDB /* ClassListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B743DA1ED2E4B700FFDBDB /* ClassListViewController.m */; };
 		49B743E01ED2E4B700FFDBDB /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B743DC1ED2E4B700FFDBDB /* MainViewController.m */; };
-		49B743E11ED2E4B700FFDBDB /* SharerCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B743DE1ED2E4B700FFDBDB /* SharerCenterViewController.m */; };
+		49B743EA1ED2EA1500FFDBDB /* SharerCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B743E91ED2EA1500FFDBDB /* SharerCenterViewController.m */; };
+		49B743F41ED2EA6900FFDBDB /* SharerFirstCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B743EC1ED2EA6900FFDBDB /* SharerFirstCollectionViewCell.m */; };
+		49B743F51ED2EA6900FFDBDB /* SharerFirstCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B743ED1ED2EA6900FFDBDB /* SharerFirstCollectionViewCell.xib */; };
+		49B743F61ED2EA6900FFDBDB /* SharerScendCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B743EF1ED2EA6900FFDBDB /* SharerScendCollectionViewCell.m */; };
+		49B743F71ED2EA6900FFDBDB /* SharerScendCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B743F01ED2EA6900FFDBDB /* SharerScendCollectionViewCell.xib */; };
+		49B743F81ED2EA6900FFDBDB /* SharerThirdCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B743F21ED2EA6900FFDBDB /* SharerThirdCollectionViewCell.m */; };
+		49B743F91ED2EA6900FFDBDB /* SharerThirdCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B743F31ED2EA6900FFDBDB /* SharerThirdCollectionViewCell.xib */; };
+		49B743FE1ED2F02400FFDBDB /* SearchClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B743FD1ED2F02400FFDBDB /* SearchClassViewController.m */; };
+		49B744021ED2F57200FFDBDB /* TSActionAlterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B744011ED2F57200FFDBDB /* TSActionAlterView.m */; };
 		49F38FA51ECADDBE00D83E95 /* YMHIdenCodeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F38FA41ECADDBE00D83E95 /* YMHIdenCodeTool.m */; };
 		49F38FA81ECADDE300D83E95 /* YMHRegularExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F38FA71ECADDE300D83E95 /* YMHRegularExpression.m */; };
 		49F38FAB1ECAE06B00D83E95 /* BasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F38FAA1ECAE06B00D83E95 /* BasicViewController.m */; };
@@ -89,19 +91,10 @@
 		4996B84D1ECAAB7000272439 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4996B8501ECAAC2900272439 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4996B8611ECAADA900272439 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		49AF54B31ECE978300406DFC /* SharerFirstCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharerFirstCollectionViewCell.h; sourceTree = "<group>"; };
-		49AF54B41ECE978300406DFC /* SharerFirstCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharerFirstCollectionViewCell.m; sourceTree = "<group>"; };
-		49AF54B51ECE978300406DFC /* SharerFirstCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SharerFirstCollectionViewCell.xib; sourceTree = "<group>"; };
 		49AF54B81ECED69000406DFC /* TSCustomTextFiled.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCustomTextFiled.h; sourceTree = "<group>"; };
 		49AF54B91ECED69000406DFC /* TSCustomTextFiled.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCustomTextFiled.m; sourceTree = "<group>"; };
 		49B0D9E91ECC4D4B00CA3299 /* SelectClassFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectClassFooterView.h; sourceTree = "<group>"; };
 		49B0D9EA1ECC4D4B00CA3299 /* SelectClassFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectClassFooterView.m; sourceTree = "<group>"; };
-		49B743BE1ED291BA00FFDBDB /* SharerScendCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharerScendCollectionViewCell.h; sourceTree = "<group>"; };
-		49B743BF1ED291BA00FFDBDB /* SharerScendCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharerScendCollectionViewCell.m; sourceTree = "<group>"; };
-		49B743C01ED291BA00FFDBDB /* SharerScendCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SharerScendCollectionViewCell.xib; sourceTree = "<group>"; };
-		49B743C31ED2A0D300FFDBDB /* SharerThirdCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharerThirdCollectionViewCell.h; sourceTree = "<group>"; };
-		49B743C41ED2A0D300FFDBDB /* SharerThirdCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharerThirdCollectionViewCell.m; sourceTree = "<group>"; };
-		49B743C51ED2A0D300FFDBDB /* SharerThirdCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SharerThirdCollectionViewCell.xib; sourceTree = "<group>"; };
 		49B743C91ED2DC9D00FFDBDB /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		49B743CA1ED2DC9D00FFDBDB /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		49B743CB1ED2DC9D00FFDBDB /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
@@ -115,8 +108,21 @@
 		49B743DA1ED2E4B700FFDBDB /* ClassListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassListViewController.m; sourceTree = "<group>"; };
 		49B743DB1ED2E4B700FFDBDB /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		49B743DC1ED2E4B700FFDBDB /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		49B743DD1ED2E4B700FFDBDB /* SharerCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharerCenterViewController.h; sourceTree = "<group>"; };
-		49B743DE1ED2E4B700FFDBDB /* SharerCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharerCenterViewController.m; sourceTree = "<group>"; };
+		49B743E81ED2EA1500FFDBDB /* SharerCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharerCenterViewController.h; sourceTree = "<group>"; };
+		49B743E91ED2EA1500FFDBDB /* SharerCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharerCenterViewController.m; sourceTree = "<group>"; };
+		49B743EB1ED2EA6900FFDBDB /* SharerFirstCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharerFirstCollectionViewCell.h; sourceTree = "<group>"; };
+		49B743EC1ED2EA6900FFDBDB /* SharerFirstCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharerFirstCollectionViewCell.m; sourceTree = "<group>"; };
+		49B743ED1ED2EA6900FFDBDB /* SharerFirstCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SharerFirstCollectionViewCell.xib; sourceTree = "<group>"; };
+		49B743EE1ED2EA6900FFDBDB /* SharerScendCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharerScendCollectionViewCell.h; sourceTree = "<group>"; };
+		49B743EF1ED2EA6900FFDBDB /* SharerScendCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharerScendCollectionViewCell.m; sourceTree = "<group>"; };
+		49B743F01ED2EA6900FFDBDB /* SharerScendCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SharerScendCollectionViewCell.xib; sourceTree = "<group>"; };
+		49B743F11ED2EA6900FFDBDB /* SharerThirdCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharerThirdCollectionViewCell.h; sourceTree = "<group>"; };
+		49B743F21ED2EA6900FFDBDB /* SharerThirdCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharerThirdCollectionViewCell.m; sourceTree = "<group>"; };
+		49B743F31ED2EA6900FFDBDB /* SharerThirdCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SharerThirdCollectionViewCell.xib; sourceTree = "<group>"; };
+		49B743FC1ED2F02400FFDBDB /* SearchClassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchClassViewController.h; sourceTree = "<group>"; };
+		49B743FD1ED2F02400FFDBDB /* SearchClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchClassViewController.m; sourceTree = "<group>"; };
+		49B744001ED2F57200FFDBDB /* TSActionAlterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSActionAlterView.h; sourceTree = "<group>"; };
+		49B744011ED2F57200FFDBDB /* TSActionAlterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSActionAlterView.m; sourceTree = "<group>"; };
 		49F38FA31ECADDBE00D83E95 /* YMHIdenCodeTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMHIdenCodeTool.h; sourceTree = "<group>"; };
 		49F38FA41ECADDBE00D83E95 /* YMHIdenCodeTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMHIdenCodeTool.m; sourceTree = "<group>"; };
 		49F38FA61ECADDE300D83E95 /* YMHRegularExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMHRegularExpression.h; sourceTree = "<group>"; };
@@ -245,6 +251,7 @@
 			children = (
 				49F38FA91ECAE06B00D83E95 /* BasicViewController.h */,
 				49F38FAA1ECAE06B00D83E95 /* BasicViewController.m */,
+				49B743FF1ED2F54800FFDBDB /* Public */,
 				49F38FDD1ECAFBD700D83E95 /* Config */,
 				49F38FB01ECAE29E00D83E95 /* Categories */,
 			);
@@ -268,7 +275,9 @@
 			isa = PBXGroup;
 			children = (
 				49F38FD91ECAF25A00D83E95 /* Main */,
+				49B743FA1ED2EFF000FFDBDB /* SearchMakeClass */,
 				49F38F9D1ECAB1BE00D83E95 /* Login */,
+				49B743E21ED2E9AD00FFDBDB /* UserCenter */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -309,15 +318,6 @@
 		49AF54B21ECE975400406DFC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				49AF54B31ECE978300406DFC /* SharerFirstCollectionViewCell.h */,
-				49AF54B41ECE978300406DFC /* SharerFirstCollectionViewCell.m */,
-				49AF54B51ECE978300406DFC /* SharerFirstCollectionViewCell.xib */,
-				49B743BE1ED291BA00FFDBDB /* SharerScendCollectionViewCell.h */,
-				49B743BF1ED291BA00FFDBDB /* SharerScendCollectionViewCell.m */,
-				49B743C01ED291BA00FFDBDB /* SharerScendCollectionViewCell.xib */,
-				49B743C31ED2A0D300FFDBDB /* SharerThirdCollectionViewCell.h */,
-				49B743C41ED2A0D300FFDBDB /* SharerThirdCollectionViewCell.m */,
-				49B743C51ED2A0D300FFDBDB /* SharerThirdCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -348,14 +348,72 @@
 		49B743D81ED2E4B700FFDBDB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				49B743D91ED2E4B700FFDBDB /* ClassListViewController.h */,
-				49B743DA1ED2E4B700FFDBDB /* ClassListViewController.m */,
 				49B743DB1ED2E4B700FFDBDB /* MainViewController.h */,
 				49B743DC1ED2E4B700FFDBDB /* MainViewController.m */,
-				49B743DD1ED2E4B700FFDBDB /* SharerCenterViewController.h */,
-				49B743DE1ED2E4B700FFDBDB /* SharerCenterViewController.m */,
+				49B743D91ED2E4B700FFDBDB /* ClassListViewController.h */,
+				49B743DA1ED2E4B700FFDBDB /* ClassListViewController.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		49B743E21ED2E9AD00FFDBDB /* UserCenter */ = {
+			isa = PBXGroup;
+			children = (
+				49B743E71ED2E9FA00FFDBDB /* View */,
+				49B743E61ED2E9F500FFDBDB /* Controller */,
+			);
+			path = UserCenter;
+			sourceTree = "<group>";
+		};
+		49B743E61ED2E9F500FFDBDB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				49B743E81ED2EA1500FFDBDB /* SharerCenterViewController.h */,
+				49B743E91ED2EA1500FFDBDB /* SharerCenterViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		49B743E71ED2E9FA00FFDBDB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				49B743EB1ED2EA6900FFDBDB /* SharerFirstCollectionViewCell.h */,
+				49B743EC1ED2EA6900FFDBDB /* SharerFirstCollectionViewCell.m */,
+				49B743ED1ED2EA6900FFDBDB /* SharerFirstCollectionViewCell.xib */,
+				49B743EE1ED2EA6900FFDBDB /* SharerScendCollectionViewCell.h */,
+				49B743EF1ED2EA6900FFDBDB /* SharerScendCollectionViewCell.m */,
+				49B743F01ED2EA6900FFDBDB /* SharerScendCollectionViewCell.xib */,
+				49B743F11ED2EA6900FFDBDB /* SharerThirdCollectionViewCell.h */,
+				49B743F21ED2EA6900FFDBDB /* SharerThirdCollectionViewCell.m */,
+				49B743F31ED2EA6900FFDBDB /* SharerThirdCollectionViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		49B743FA1ED2EFF000FFDBDB /* SearchMakeClass */ = {
+			isa = PBXGroup;
+			children = (
+				49B743FB1ED2F00300FFDBDB /* Controller */,
+			);
+			path = SearchMakeClass;
+			sourceTree = "<group>";
+		};
+		49B743FB1ED2F00300FFDBDB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				49B743FC1ED2F02400FFDBDB /* SearchClassViewController.h */,
+				49B743FD1ED2F02400FFDBDB /* SearchClassViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		49B743FF1ED2F54800FFDBDB /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				49B744001ED2F57200FFDBDB /* TSActionAlterView.h */,
+				49B744011ED2F57200FFDBDB /* TSActionAlterView.m */,
+			);
+			path = Public;
 			sourceTree = "<group>";
 		};
 		49F38F9D1ECAB1BE00D83E95 /* Login */ = {
@@ -554,13 +612,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49B743F71ED2EA6900FFDBDB /* SharerScendCollectionViewCell.xib in Resources */,
+				49B743F91ED2EA6900FFDBDB /* SharerThirdCollectionViewCell.xib in Resources */,
 				49B743CF1ED2DC9D00FFDBDB /* LoginViewController.xib in Resources */,
 				491C46191ECC1D91009F43A4 /* SelectClassCollectionViewCell.xib in Resources */,
+				49B743F51ED2EA6900FFDBDB /* SharerFirstCollectionViewCell.xib in Resources */,
 				4996B8621ECAADA900272439 /* LaunchScreen.storyboard in Resources */,
-				49B743C71ED2A0D300FFDBDB /* SharerThirdCollectionViewCell.xib in Resources */,
-				49B743C21ED291BA00FFDBDB /* SharerScendCollectionViewCell.xib in Resources */,
 				4996B8511ECAAC2900272439 /* Assets.xcassets in Resources */,
-				49AF54B71ECE978300406DFC /* SharerFirstCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -633,32 +691,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49B743E11ED2E4B700FFDBDB /* SharerCenterViewController.m in Sources */,
 				49F38FD51ECAEAF900D83E95 /* UIViewController+YMHLoginCheck.m in Sources */,
 				49F38FB71ECAE2BC00D83E95 /* UIColor+YMHCustoms.m in Sources */,
 				491C46101ECBEF24009F43A4 /* TSPublicTool.m in Sources */,
+				49B743F61ED2EA6900FFDBDB /* SharerScendCollectionViewCell.m in Sources */,
 				49B743CE1ED2DC9D00FFDBDB /* LoginViewController.m in Sources */,
 				49F38FC01ECAE3A400D83E95 /* UIView+YMHAdditions.m in Sources */,
 				4996B8491ECAAABA00272439 /* main.m in Sources */,
-				49B743C11ED291BA00FFDBDB /* SharerScendCollectionViewCell.m in Sources */,
+				49B743F81ED2EA6900FFDBDB /* SharerThirdCollectionViewCell.m in Sources */,
 				491C46141ECBF3C8009F43A4 /* SelectScrollView.m in Sources */,
+				49B744021ED2F57200FFDBDB /* TSActionAlterView.m in Sources */,
 				49B743DF1ED2E4B700FFDBDB /* ClassListViewController.m in Sources */,
 				49F38FB61ECAE2BC00D83E95 /* UIColor+YMHAddition.m in Sources */,
 				49F38FE31ECAFDAB00D83E95 /* TSAccountManager.m in Sources */,
+				49B743EA1ED2EA1500FFDBDB /* SharerCenterViewController.m in Sources */,
 				491C46281ECC2CD4009F43A4 /* SelectClassTableViewCell.m in Sources */,
 				491C461F1ECC23A1009F43A4 /* SelectClassheaderView.m in Sources */,
 				49B743E01ED2E4B700FFDBDB /* MainViewController.m in Sources */,
 				49B743D01ED2DC9D00FFDBDB /* SelectClassViewController.m in Sources */,
 				49F38FA81ECADDE300D83E95 /* YMHRegularExpression.m in Sources */,
-				49AF54B61ECE978300406DFC /* SharerFirstCollectionViewCell.m in Sources */,
 				49F38FE01ECAFBFF00D83E95 /* TSAppInfo.m in Sources */,
 				49B0D9EB1ECC4D4B00CA3299 /* SelectClassFooterView.m in Sources */,
 				49AF54BA1ECED69000406DFC /* TSCustomTextFiled.m in Sources */,
+				49B743FE1ED2F02400FFDBDB /* SearchClassViewController.m in Sources */,
 				49B743D71ED2E47D00FFDBDB /* AppDelegate.m in Sources */,
-				49B743C61ED2A0D300FFDBDB /* SharerThirdCollectionViewCell.m in Sources */,
 				49B743D31ED2DCC800FFDBDB /* UserGuideViewController.m in Sources */,
 				491C46181ECC1D91009F43A4 /* SelectClassCollectionViewCell.m in Sources */,
 				49F38FA51ECADDBE00D83E95 /* YMHIdenCodeTool.m in Sources */,
+				49B743F41ED2EA6900FFDBDB /* SharerFirstCollectionViewCell.m in Sources */,
 				49F38FAB1ECAE06B00D83E95 /* BasicViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

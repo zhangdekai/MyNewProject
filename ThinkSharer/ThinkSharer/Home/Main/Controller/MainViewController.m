@@ -12,7 +12,8 @@
 #import <AMapLocationKit/AMapLocationKit.h>
 #import "ClassListViewController.h"
 #import "SharerCenterViewController.h"
-
+#import "SearchClassViewController.h"
+#import "TSActionAlterView.h"
 
 @interface MainViewController ()<MAMapViewDelegate,AMapLocationManagerDelegate>
 
@@ -115,6 +116,97 @@
     //    self.navigationController.navigationBarHidden = YES;
 }
 
+
+#pragma mark MAMapViewDelegate
+/**
+ * @brief 当mapView新添加annotation views时，调用此接口
+ * @param mapView 地图View
+ * @param views 新添加的annotation views
+ */
+- (void)mapView:(MAMapView *)mapView didAddAnnotationViews:(NSArray *)views {
+    
+    NSLog(@"didAddAnnotationViews   %lu",(unsigned long)views.count);
+    for (MAAnnotationView *customView in views) {
+        NSLog(@"customView   %@",customView.reuseIdentifier);
+        if ([customView.reuseIdentifier isEqualToString:@"MAUserLocationView"]) {
+            
+            NSLog(@"customView   %f",customView.annotation.coordinate.latitude);
+            
+            return;
+        }
+
+        customView.size = CGSizeMake(36, 36);
+        
+        UIImageView *header = [[UIImageView alloc]initWithFrame:(CGRectMake(2.5, 1.5, 36, 36))];
+        header.image = [UIImage imageNamed:@"testHeader"];
+        header.layer.cornerRadius = 18;
+        header.layer.masksToBounds = YES;
+
+        [customView addSubview:header];
+        
+        
+
+        customView.image = [UIImage imageNamed:@"map_boy"];
+
+    }
+    
+}
+
+
+
+- (void)mapView:(MAMapView *)mapView didSelectAnnotationView:(MAAnnotationView *)view {
+    
+    NSLog(@"didSelectAnnotationView");
+}
+
+#pragma mark UI
+
+- (void)addStartImage {
+    //添加开始
+    UIImageView *startImage = [[UIImageView alloc]init];
+    [self.view addSubview:startImage];
+    startImage.frame = CGRectMake((ScreenWidth /2) - 30, ScreenHeight - 105, 80, 80);
+    startImage.layer.cornerRadius = 40;
+    startImage.layer.masksToBounds = YES;
+//    startImage.layer.borderWidth = 0.1;
+    
+    [[startImage layer]setShadowOffset:(CGSizeMake(0, 1))];
+    [[startImage layer]setShadowRadius:1];
+    [[startImage layer]setShadowOpacity:0.3];
+    [[startImage layer]setShadowColor:[UIColor viewShaowColor].CGColor];
+
+    
+    startImage.image = [UIImage imageNamed:@"map_thinks"];
+    startImage.userInteractionEnabled = YES;
+    
+    UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(singleTap:)];
+    [singleTapGestureRecognizer setNumberOfTapsRequired:1];
+    [startImage addGestureRecognizer:singleTapGestureRecognizer];
+    
+    UITapGestureRecognizer *doubleTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(doubleTap:)];
+    [doubleTapGestureRecognizer setNumberOfTapsRequired:2];
+    [startImage addGestureRecognizer:doubleTapGestureRecognizer];
+    
+    //这行很关键，意思是只有当没有检测到doubleTapGestureRecognizer 或者 检测doubleTapGestureRecognizer失败，singleTapGestureRecognizer才有效
+    [singleTapGestureRecognizer requireGestureRecognizerToFail:doubleTapGestureRecognizer];
+    
+    
+    //添加向右滑动尖头
+    
+    UIImageView *rightImage = [[UIImageView alloc]init];
+    [self.view addSubview:rightImage];
+    rightImage.frame = CGRectMake(ScreenWidth - 25 , 100, 25, 50);
+    
+    rightImage.image = [UIImage imageNamed:@"map_go"];
+    rightImage.userInteractionEnabled = YES;
+    
+    
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(goRight)];
+    [rightImage addGestureRecognizer:tap];
+}
+
+#pragma mark private method
 //发起单次定位
 - (void)locateAgain {
     // 带逆地理信息的一次定位（返回坐标和地址信息）
@@ -149,78 +241,6 @@
 }
 
 
-/**
- * @brief 当mapView新添加annotation views时，调用此接口
- * @param mapView 地图View
- * @param views 新添加的annotation views
- */
-- (void)mapView:(MAMapView *)mapView didAddAnnotationViews:(NSArray *)views {
-    
-    NSLog(@"didAddAnnotationViews   %lu",(unsigned long)views.count);
-    for (MAAnnotationView *customView in views) {
-        NSLog(@"customView   %@",customView.reuseIdentifier);
-        if ([customView.reuseIdentifier isEqualToString:@"MAUserLocationView"]) {
-            
-            NSLog(@"customView   %f",customView.annotation.coordinate.latitude);
-            
-            return;
-        }
-
-        customView.size = CGSizeMake(37, 37);
-        UILabel *lanbel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 35, 35)];
-        lanbel.text = @"思";
-        lanbel.textAlignment = NSTextAlignmentCenter;
-        [customView addSubview:lanbel];
-
-        customView.image = [UIImage imageNamed:@"map_boy"];
-
-    }
-    
-}
-
-
-
-- (void)mapView:(MAMapView *)mapView didSelectAnnotationView:(MAAnnotationView *)view {
-    
-    NSLog(@"didSelectAnnotationView");
-}
-
-
-
-- (void)addStartImage {
-    //添加开始
-    UIImageView *startImage = [[UIImageView alloc]init];
-    [self.view addSubview:startImage];
-    startImage.frame = CGRectMake((ScreenWidth /2) - 30, ScreenHeight - 105, 80, 80);
-    
-    startImage.image = [UIImage imageNamed:@"map_thinks"];
-    startImage.userInteractionEnabled = YES;
-    
-    UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(singleTap:)];
-    [singleTapGestureRecognizer setNumberOfTapsRequired:1];
-    [startImage addGestureRecognizer:singleTapGestureRecognizer];
-    
-    UITapGestureRecognizer *doubleTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(doubleTap:)];
-    [doubleTapGestureRecognizer setNumberOfTapsRequired:2];
-    [startImage addGestureRecognizer:doubleTapGestureRecognizer];
-    
-    //这行很关键，意思是只有当没有检测到doubleTapGestureRecognizer 或者 检测doubleTapGestureRecognizer失败，singleTapGestureRecognizer才有效
-    [singleTapGestureRecognizer requireGestureRecognizerToFail:doubleTapGestureRecognizer];
-    
-    
-    //添加向右滑动尖头
-    
-    UIImageView *rightImage = [[UIImageView alloc]init];
-    [self.view addSubview:rightImage];
-    rightImage.frame = CGRectMake(ScreenWidth - 30 , 100, 40, 40);
-    
-    rightImage.image = [UIImage imageNamed:@"map_go"];
-    rightImage.userInteractionEnabled = YES;
-    
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(goRight)];
-    [rightImage addGestureRecognizer:tap];
-}
-
 - (void)goRight {
 //    ClassListViewController *vc = [[ClassListViewController alloc]init];
 //    vc.title = @"思享者中心";
@@ -234,6 +254,8 @@
 
 - (void)singleTap:(UIGestureRecognizer*)gestureRecognizer {
     NSLog(@"-----singleTap-----");
+    SearchClassViewController *vc= [[SearchClassViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
     
 }
 
@@ -262,6 +284,11 @@
     }
 }
 
+- (void)showAlterView {
+    TSActionAlterView *alterView = [[TSActionAlterView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
+    
+//    alterView creatActionAlterView:<#(NSString *)#> rect:<#(CGRect)#> action:<#^(void)block#>
+}
 
 
 @end

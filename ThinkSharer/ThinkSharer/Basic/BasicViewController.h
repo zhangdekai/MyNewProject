@@ -21,6 +21,9 @@ typedef void(^NavigationBarButtonItemBlock)();
 //设置导航栏title
 - (void)setNavigationBarTitle:(NSString *)title;
 
+//设置导航栏默认返回箭头
+- (void)setNavigationBarBackItemWithBlock:(NavigationBarButtonItemBlock)leftBlock ;
+
 //设置导航栏右侧image
 - (void)setNavigationBarRightItemWithImageName:(NSString *)imageName itemBlock:(NavigationBarButtonItemBlock)rightBlock ;
 

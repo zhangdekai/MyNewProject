@@ -62,6 +62,17 @@
 
 }
 
+- (void)setNavigationBarBackItemWithBlock:(NavigationBarButtonItemBlock)leftBlock {
+    self.navigationItemBlock = leftBlock;
+    
+    UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStylePlain target:self action:@selector(itemAction)];
+    
+    self.navigationItem.leftBarButtonItem = rightBarItem;
+    
+    [self.navigationItem.leftBarButtonItem setImage:[[UIImage imageNamed:@"navigation_back"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+}
+
+
 - (void)setNavigationBarRightItemWithImageName:(NSString *)imageName itemBlock:(NavigationBarButtonItemBlock)rightBlock {
     self.navigationItemBlock = rightBlock;
     

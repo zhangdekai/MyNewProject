@@ -1,39 +1,29 @@
 //
-//  UserGuideViewController.m
+//  SearchClassViewController.m
 //  ThinkSharer
 //
 //  Created by 张德凯 on 2017/5/22.
 //  Copyright © 2017年 张德凯. All rights reserved.
 //
 
-#import "UserGuideViewController.h"
+#import "SearchClassViewController.h"
 
-@interface UserGuideViewController ()
+@interface SearchClassViewController ()
 
 @end
 
-@implementation UserGuideViewController
+@implementation SearchClassViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self setNavigationBar];
 }
-
 - (void)setNavigationBar {
-    [self setNavigationBarTitle:@"用户手册"];
     TSWeakSelf
-    [self setNavigationBarLeftItemWithImageName:@"navigation_back" itemBlock:^{
+    [self setNavigationBarBackItemWithBlock:^{
         [weakSelf.navigationController popViewControllerAnimated:YES];
+        
     }];
-
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    self.navigationController.navigationBarHidden = NO;
-    self.automaticallyAdjustsScrollViewInsets = NO;
-
 }
 
 - (void)didReceiveMemoryWarning {
