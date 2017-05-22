@@ -53,6 +53,9 @@
     self.showErrorView = YES;
 }
 
+
+
+
 - (void)setNavigationBarTitle:(NSString *)title {
     self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
     self.navigationItem.titleView = [TSPublicTool initWithTitle:title];
@@ -151,6 +154,8 @@
     self.hud.delegate = self;
     self.hud.mode = MBProgressHUDModeText;
     self.hud.label.text = text;
+    self.hud.label.textColor = [UIColor redColor];
+
 
     [self.hud hideAnimated:YES afterDelay:1.5];
 //    [self.hud hide:YES afterDelay:1.5];

@@ -10,6 +10,7 @@
 #import "YMHIdenCodeTool.h"
 #import "SelectClassViewController.h"
 #import "TSCustomTextFiled.h"
+#import "UserGuideViewController.h"
 
 
 @interface LoginViewController ()<UITextFieldDelegate>
@@ -28,7 +29,7 @@
 @property (weak, nonatomic) IBOutlet UIView *phoneBackView;
 @property (weak, nonatomic) IBOutlet UIView *identityBackView;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
-@property (nonatomic,assign) BOOL selectUserGuide;
+//@property (nonatomic,assign) BOOL selectUserGuide;
 
 @end
 
@@ -47,7 +48,8 @@
 
 - (void)initilizeUI {
     
-    self.selectUserGuide = NO;
+//    self.selectUserGuide = NO;
+    
     CGFloat rheight = [TSPublicTool getRealPX:255];
     CGFloat textHeight = [TSPublicTool getRealPX:50];
     CGFloat textWidth = ScreenWidth - 30;
@@ -129,6 +131,9 @@
 
 
     [_getIdentityButton addTarget:self action:@selector(getIdentity:) forControlEvents:(UIControlEventTouchUpInside)];
+    
+    [_userGuideButton addTarget:self action:@selector(userGuide:) forControlEvents:(UIControlEventTouchUpInside)];
+
 
     [_loginButton addTarget:self action:@selector(login:) forControlEvents:(UIControlEventTouchUpInside)];
     
@@ -159,8 +164,6 @@
 }
 
 
-
-
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [_phoneTextFiled resignFirstResponder];
     [_identityTextFiled resignFirstResponder];
@@ -174,26 +177,36 @@
     
 }
 
+- (void)userGuide:(UIButton *)button  {
+    UserGuideViewController *vc = [[UserGuideViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 - (void)selectUserGuide:(UIButton *)button {
-    if (self.selectUserGuide) {
-        [button setBackgroundImage:[UIImage imageNamed:@"login-selected"] forState:(UIControlStateNormal)];
-
-    } else {
-        [button setBackgroundImage:[UIImage imageNamed:@"login-pre"] forState:(UIControlStateNormal)];
-
-    }
-
-    self.selectUserGuide = !self.selectUserGuide;
+//    if (self.selectUserGuide) {
+//        [button setBackgroundImage:[UIImage imageNamed:@"login-selected"] forState:(UIControlStateNormal)];
+//
+//    } else {
+//        [button setBackgroundImage:[UIImage imageNamed:@"login-pre"] forState:(UIControlStateNormal)];
+//
+//    }
+//
+//    self.selectUserGuide = !self.selectUserGuide;
 
 }
 
 //登录
 - (void)login:(UIButton *)sender {
     
+    
+    
     SelectClassViewController *vc = [[SelectClassViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
     
 }
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

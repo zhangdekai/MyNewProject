@@ -60,7 +60,7 @@ static YMHIdenCodeTool *instance = nil;
                     dispatch_async(dispatch_get_main_queue(), ^{
                         //设置界面的按钮显示 根据自己需求设置
                         [sender setTitle:@"获取验证码" forState:UIControlStateNormal];
-                        sender.backgroundColor = [UIColor greenColor];
+                        sender.backgroundColor = [UIColor mainColorBlue];
                         sender.userInteractionEnabled = YES;
                     });
                 }else{

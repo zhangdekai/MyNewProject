@@ -8,7 +8,7 @@
 
 #import "SharerCenterViewController.h"
 #import "SharerFirstCollectionViewCell.h"
-
+#import "SharerScendCollectionViewCell.h"
 
 
 @interface SharerCenterViewController ()<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
@@ -34,7 +34,7 @@
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     
     self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight) collectionViewLayout:layout];
-    self.collectionView.backgroundColor = [UIColor backgroundGrayColorA];
+    self.collectionView.backgroundColor = [UIColor backgroundGrayColorB];
 
     [self.view addSubview:self.collectionView];
     self.collectionView.showsVerticalScrollIndicator = NO;
@@ -43,6 +43,9 @@
     self.collectionView.dataSource = self;
     
     [self.collectionView registerNib:[UINib nibWithNibName:@"SharerFirstCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"SharerFirstCollectionViewCell"];
+    [self.collectionView registerNib:[UINib nibWithNibName:@"SharerScendCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"SharerScendCollectionViewCell"];
+
+    
 //    [self.collectionView registerClass:[SelectClassheaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"SelectClassheaderView"];
 //    [self.collectionView registerClass:[SelectClassFooterView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"SelectClassFooterView"];
 }
@@ -63,22 +66,44 @@
 
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return 1;
+    return 2;
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    switch (section) {
+        case 0:
+            return 1;
+            break;
+        case 1:
+            return 3;
+            break;
+            
+        default:
+            return 0;
+
+            break;
+    }
     
-    
-    return 1;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    SharerFirstCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"SharerFirstCollectionViewCell" forIndexPath:indexPath];
-    
-    
-    return cell;
+    if (indexPath.section == 0) {
+        SharerFirstCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"SharerFirstCollectionViewCell" forIndexPath:indexPath];
+        
+        
+        return cell;
+    } else {
+        SharerScendCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"SharerScendCollectionViewCell" forIndexPath:indexPath];
+        
+        
+        return cell;
+    }
+//    SharerFirstCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"SharerFirstCollectionViewCell" forIndexPath:indexPath];
+//    
+//    
+//    return cell;
 }
 
 //- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
@@ -108,13 +133,41 @@
 //}
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-    
-    return CGSizeMake(ScreenWidth, 120);
+    switch (indexPath.section) {
+        case 0:
+            return CGSizeMake(ScreenWidth, 120);
+
+            break;
+        case 1:
+            return CGSizeMake((ScreenWidth - 60) / 3, 60);
+            
+            break;
+            
+        default:
+            return CGSizeMake(ScreenWidth, 0.0001);
+
+            break;
+    }
     
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
-    return UIEdgeInsetsMake(0, 0, 0, 0);
+    switch (section) {
+        case 0:
+            return UIEdgeInsetsMake(0, 0, 0, 0);
+            
+            break;
+        case 1:
+            return UIEdgeInsetsMake(0, 15, 0, 15);
+            
+            break;
+            
+        default:
+            return UIEdgeInsetsMake(0, 0, 0, 0);
+            
+            break;
+    }
+
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{

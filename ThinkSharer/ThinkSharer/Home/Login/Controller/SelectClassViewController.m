@@ -81,7 +81,7 @@
     
     [self setNavigationBarRightItem];
     
-    NSMutableArray *items = [NSMutableArray arrayWithObjects:@"胎教",@"幼教",@"小学",@"中学",@"高中",@"大学",@"职教", @"胎教",@"幼教",@"小学",@"中学",@"高中",@"大学",@"职教",nil];
+    NSMutableArray *items = [NSMutableArray arrayWithObjects:@"胎教",@"幼教",@"小学",@"初中",@"高中",@"大学",@"职教", @"胎教",@"幼教",@"小学",@"初中",@"高中",@"大学",@"职教",nil];
     SelectScrollView *selcetView = [[SelectScrollView alloc]initWithFrame:CGRectMake(0, 64, ScreenWidth, 50) selectItems:items];
     [self.view addSubview:selcetView];
     selcetView.selectItem = ^(NSString *title) {
