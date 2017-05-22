@@ -108,16 +108,34 @@
                 
             };
             
-            weakSelf.collectionView.hidden = YES;
             
+            
+            weakSelf.collectionView.hidden = YES;
+            [weakSelf.view sendSubviewToBack:weakSelf.collectionView];
         }
         
     };
     
+    [self initCollectionView];
+}
+- (void)initTableView {
+    if (!_tableView) {
+        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 64 + 120, ScreenWidth, ScreenHeight - 184)style:(UITableViewStylePlain)];
+        
+    }
+    [self.view addSubview:_tableView];
+    
+    _tableView.dataSource = self;
+    _tableView.delegate = self;
+    
+}
+- (void)initCollectionView {
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
-    
-    self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 64 + 53, ScreenWidth, ScreenHeight - 64 - 51) collectionViewLayout:layout];
+    if (!self.collectionView) {
+        self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 64 + 53, ScreenWidth, ScreenHeight - 64 - 51) collectionViewLayout:layout];
+
+    }
     [self.view addSubview:self.collectionView];
     self.collectionView.showsVerticalScrollIndicator = NO;
     self.collectionView.backgroundColor = [UIColor whiteColor];
@@ -127,7 +145,7 @@
     [self.collectionView registerNib:[UINib nibWithNibName:@"SelectClassCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"SelectClassCollectionViewCell"];
     [self.collectionView registerClass:[SelectClassheaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"SelectClassheaderView"];
     [self.collectionView registerClass:[SelectClassFooterView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"SelectClassFooterView"];
-
+    
 
 }
 #pragma mark Action
