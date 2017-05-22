@@ -13,10 +13,14 @@
 #import "SelectClassFooterView.h"
 #import "SelectClassCollectionViewCell.h"
 #import "MainViewController.h"
+#import "SelectScrollViewForM.h"
 
 @interface SelectClassViewController ()<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic,strong) UICollectionView *collectionView;
+
+@property (nonatomic,strong) UITableView *tableView;
+
 
 @property (nonatomic,strong) NSMutableArray *sectionArray;
 @property (nonatomic,strong) NSMutableDictionary *datasource;
@@ -82,16 +86,38 @@
     [self setNavigationBarRightItem];
     
     NSMutableArray *items = [NSMutableArray arrayWithObjects:@"胎教",@"幼教",@"小学",@"初中",@"高中",@"大学",@"职教", @"胎教",@"幼教",@"小学",@"初中",@"高中",@"大学",@"职教",nil];
-    SelectScrollView *selcetView = [[SelectScrollView alloc]initWithFrame:CGRectMake(0, 64, ScreenWidth, 50) selectItems:items];
-    [self.view addSubview:selcetView];
+    UIView *backView = [[UIView alloc]initWithFrame:CGRectMake(0, 64, ScreenWidth, 50)];
+    [self.view addSubview:backView];
+    
+    SelectScrollView *selcetView = [[SelectScrollView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 50) selectItems:items];
+    [backView addSubview:selcetView];
+    [backView addShadowWithoutCorner];
+    TSWeakSelf
     selcetView.selectItem = ^(NSString *title) {
         NSLog(@"%@",title);
+        
+        if ([title isEqualToString:@"胎教"]) {
+            NSMutableArray *items = [NSMutableArray arrayWithObjects:@"一个月",@"二个月",@"三个月",@"四个月",@"五个月",@"六个月",@"七个月教", @"八个月",@"九个月",@"十个月",nil];
+            SelectScrollViewForM *selcetView = [[SelectScrollViewForM alloc]initWithFrame:CGRectMake(0, 64 + 60, ScreenWidth, 50) selectItems:items];
+            [weakSelf.view addSubview:selcetView];
+            [selcetView addShadowWithoutCorner];
+            selcetView.selectItem = ^(NSString *title) {
+                NSLog(@"%@",title);
+                
+                
+                
+            };
+            
+            weakSelf.collectionView.hidden = YES;
+            
+        }
+        
     };
     
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     
-    self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 64 + 50, ScreenWidth, ScreenHeight - 64 - 50) collectionViewLayout:layout];
+    self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 64 + 53, ScreenWidth, ScreenHeight - 64 - 51) collectionViewLayout:layout];
     [self.view addSubview:self.collectionView];
     self.collectionView.showsVerticalScrollIndicator = NO;
     self.collectionView.backgroundColor = [UIColor whiteColor];

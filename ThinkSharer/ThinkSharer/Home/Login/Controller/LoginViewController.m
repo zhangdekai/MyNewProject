@@ -57,15 +57,15 @@
     CGFloat getIdentityW = [TSPublicTool getRealPX:120];
     
     _phoneBackView.frame = CGRectMake(15, rheight, textWidth, textHeight);
-    _phoneBackView.layer.cornerRadius = 5;
-    _phoneBackView.layer.borderWidth = 0.1;
-    _phoneBackView.layer.borderColor = [UIColor generalSubTitleFontGrayColor].CGColor;
-    
-    [[_phoneBackView layer]setShadowOffset:(CGSizeMake(0, 2))];
-    [[_phoneBackView layer]setShadowRadius:2];
-    [[_phoneBackView layer]setShadowOpacity:0.3];
-    [[_phoneBackView layer]setShadowColor:[UIColor viewShaowColor].CGColor];
-    
+//    _phoneBackView.layer.cornerRadius = 5;
+//    _phoneBackView.layer.borderWidth = 0.1;
+//    _phoneBackView.layer.borderColor = [UIColor generalSubTitleFontGrayColor].CGColor;
+//    
+//    [[_phoneBackView layer]setShadowOffset:(CGSizeMake(0, 2))];
+//    [[_phoneBackView layer]setShadowRadius:2];
+//    [[_phoneBackView layer]setShadowOpacity:0.3];
+//    [[_phoneBackView layer]setShadowColor:[UIColor viewShaowColor].CGColor];
+    [_phoneBackView addShadow];
     
     _phoneTextFiled = [[TSCustomTextFiled alloc]initWithFrame:CGRectMake(25, 0, _phoneBackView.width - 25, textHeight)];
     _phoneTextFiled.textColor = [UIColor generalTitleFontGrayColor];
@@ -79,15 +79,17 @@
     
     
     _identityBackView.frame = CGRectMake(15, _phoneBackView.bottom + 30, identityW, textHeight);
-    _identityBackView.layer.cornerRadius = 5;
-    _identityBackView.layer.borderWidth = 0.1;
-    _identityBackView.layer.borderColor = [UIColor generalSubTitleFontGrayColor].CGColor;
-
+    [_identityBackView addShadow];
     
-    [[_identityBackView layer]setShadowOffset:(CGSizeMake(0, 2))];
-    [[_identityBackView layer]setShadowRadius:2];
-    [[_identityBackView layer]setShadowOpacity:0.3];
-    [[_identityBackView layer]setShadowColor:[UIColor viewShaowColor].CGColor];
+//    _identityBackView.layer.cornerRadius = 5;
+//    _identityBackView.layer.borderWidth = 0.1;
+//    _identityBackView.layer.borderColor = [UIColor generalSubTitleFontGrayColor].CGColor;
+//
+//    
+//    [[_identityBackView layer]setShadowOffset:(CGSizeMake(0, 2))];
+//    [[_identityBackView layer]setShadowRadius:2];
+//    [[_identityBackView layer]setShadowOpacity:0.3];
+//    [[_identityBackView layer]setShadowColor:[UIColor viewShaowColor].CGColor];
 
     
     
@@ -107,15 +109,18 @@
 
     _getIdentityButton.frame = CGRectMake(_identityBackView.right + 30, _identityBackView.top, getIdentityW, textHeight);
     
-    _getIdentityButton.layer.cornerRadius = 5;
-    _getIdentityButton.layer.borderWidth = 0.1;
-    _getIdentityButton.layer.borderColor = [UIColor generalSubTitleFontGrayColor].CGColor;
+    [_getIdentityButton addShadow];
 
     
-    [[_getIdentityButton layer]setShadowOffset:(CGSizeMake(0, 2))];
-    [[_getIdentityButton layer]setShadowRadius:2];
-    [[_getIdentityButton layer]setShadowOpacity:0.3];
-    [[_getIdentityButton layer]setShadowColor:[UIColor viewShaowColor].CGColor];
+//    _getIdentityButton.layer.cornerRadius = 5;
+//    _getIdentityButton.layer.borderWidth = 0.1;
+//    _getIdentityButton.layer.borderColor = [UIColor generalSubTitleFontGrayColor].CGColor;
+//
+//    
+//    [[_getIdentityButton layer]setShadowOffset:(CGSizeMake(0, 2))];
+//    [[_getIdentityButton layer]setShadowRadius:2];
+//    [[_getIdentityButton layer]setShadowOpacity:0.3];
+//    [[_getIdentityButton layer]setShadowColor:[UIColor viewShaowColor].CGColor];
 
 
     _rightOrWrongButton.frame = CGRectMake(20, _identityBackView.bottom + 30, 15, 15);
@@ -123,11 +128,11 @@
     _userGuideButton.frame = CGRectMake(_rightOrWrongButton.right + 5, _rightOrWrongButton.top - 5 , ScreenWidth - 120, 25);
 
     _loginButton.frame = CGRectMake(15, _userGuideButton.bottom + 30, ScreenWidth - 30, textHeight);
-    
-    [[_loginButton layer]setShadowOffset:(CGSizeMake(0, 2))];
-    [[_loginButton layer]setShadowRadius:2];
-    [[_loginButton layer]setShadowOpacity:0.3];
-    [[_loginButton layer]setShadowColor:[UIColor viewShaowColor].CGColor];
+    [_loginButton addShadow];
+//    [[_loginButton layer]setShadowOffset:(CGSizeMake(0, 2))];
+//    [[_loginButton layer]setShadowRadius:2];
+//    [[_loginButton layer]setShadowOpacity:0.3];
+//    [[_loginButton layer]setShadowColor:[UIColor viewShaowColor].CGColor];
 
 
     [_getIdentityButton addTarget:self action:@selector(getIdentity:) forControlEvents:(UIControlEventTouchUpInside)];
