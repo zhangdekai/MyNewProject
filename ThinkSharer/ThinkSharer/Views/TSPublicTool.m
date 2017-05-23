@@ -81,25 +81,40 @@
         }
     }
     
-    NSInteger num = 0;
     NSMutableArray *twoArray = [NSMutableArray array];
-    for (int i = 0 ; i < count; i++) {
-        NSMutableArray *array1 = [NSMutableArray array];
-        NSInteger num1 = i - (i - 1);
-        
-        for (int j = 0; j < 3; i++) {
-            NSInteger num2 = j - (j - num1);
-            if (num < array.count) {
-                [array1 addObject:array[num]];
-                
-            } else {
-                [array1 addObject:@""];
-            }
-            num += num2;
-        }
-        [twoArray addObject:array1];
-    }
+    NSMutableArray *origenArray  = [NSMutableArray arrayWithArray:array];
+    NSInteger origenNum = array.count;
     
+
+    for (int i = 0 ; i < count; i++) {
+        if (origenNum == 0) {
+            break;
+        }
+        
+        NSLog(@"twoArray  %@",twoArray);
+        NSMutableArray *array1 = [NSMutableArray array];
+
+        for (int j = 0; j < 3; j++) {
+            if (j >= origenNum) {
+                [array1 addObject:@""];
+            } else {
+                [array1 addObject:origenArray[j]];
+            }
+            
+        }
+        
+        [twoArray addObject:array1];
+        
+        for (int k = 0; k < 3; k++) {
+            if (k < origenNum) {
+                [origenArray removeObjectAtIndex:0];
+            }
+        }
+        origenNum = origenArray.count;
+                
+    }
+    NSLog(@"twoArray  %@",twoArray);
+
     return twoArray;
 
 }

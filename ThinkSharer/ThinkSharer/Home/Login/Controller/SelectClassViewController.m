@@ -15,7 +15,7 @@
 #import "MainViewController.h"
 #import "SelectScrollViewForM.h"
 
-@interface SelectClassViewController ()<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@interface SelectClassViewController ()<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong) UICollectionView *collectionView;
 
@@ -26,12 +26,13 @@
 @property (nonatomic,strong) NSMutableDictionary *datasource;
 @property (nonatomic,assign) CGFloat  tableCellHeight;
 @property (nonatomic,strong) NSMutableArray *rowCellCount;
+@property (nonatomic,strong) SelectScrollViewForM *selectView;
 
 @property (nonatomic,strong) NSMutableArray *array;
 @property (nonatomic,strong) NSMutableArray *array1;
 @property (nonatomic,strong) NSMutableArray *array2;
 
-
+@property (nonatomic,strong) NSMutableArray *tableViewDataSource;
 
 @end
 
@@ -50,7 +51,7 @@
     
     self.navigationController.navigationBarHidden = NO;
     self.automaticallyAdjustsScrollViewInsets = NO;
-    self.navigationItem.hidesBackButton = YES;
+//    self.navigationItem.hidesBackButton = YES;
     
 }
 
@@ -78,14 +79,34 @@
     [self.datasource setObject:self.array forKey:@"数据库"];
     [self.datasource setObject:self.array1 forKey:@"求职"];
     [self.datasource setObject:self.array2 forKey:@"金融理财"];
+    
+    
+    NSLog(@"_tableViewDataSource      %@",_tableViewDataSource);
 
 }
 
 - (void)initilizeUI {
     
     [self setNavigationBarRightItem];
-    
+    self.view.backgroundColor = [UIColor backgroundGrayColorA];
     NSMutableArray *items = [NSMutableArray arrayWithObjects:@"胎教",@"幼教",@"小学",@"初中",@"高中",@"大学",@"职教", @"胎教",@"幼教",@"小学",@"初中",@"高中",@"大学",@"职教",nil];
+    
+    NSMutableArray *items1 = [NSMutableArray arrayWithObjects:@"一个月",@"二个月",@"三个月",@"四个月",@"五个月",@"六个月",@"七个月", @"八个月",@"九个月",@"十个月",nil];
+
+    NSMutableArray *items2 = [NSMutableArray arrayWithObjects:@"一岁",@"二岁",@"三岁",@"四岁",@"五岁",@"六岁",@"七岁", nil];
+    NSMutableArray *items3 = [NSMutableArray arrayWithObjects:@"一年级",@"二年级",@"三年级",@"四年级",@"五年级",@"六年级", nil];
+    NSMutableArray *items4 = [NSMutableArray arrayWithObjects:@"初一",@"初二",@"初三", nil];
+    NSMutableArray *items5 = [NSMutableArray arrayWithObjects:@"高一",@"高二",@"高三", nil];
+    NSMutableArray *items6 = [NSMutableArray arrayWithObjects:@"大一",@"大二",@"大三",@"大四", nil];
+
+
+    
+     NSMutableArray *primary = [NSMutableArray arrayWithObjects:@"语文",@"数学",@"英语",@"物理",@"化学",@"政治",@"科学",@"生活",@"品德", nil];
+    NSMutableArray *array3 = [NSMutableArray arrayWithObjects:@"心音胎教",@"情绪胎教",@"音乐胎教",@"胎教故事",@"语言",@"抚摸",@"运动",@"饮食",@"微笑",@"语言",@"抚摸",@"运动",@"饮食",@"微笑",@"语言",@"抚摸",@"运动",@"饮食",@"微笑", nil];
+    
+    _tableViewDataSource = [NSMutableArray array];
+    _tableViewDataSource =  [TSPublicTool convertArray:array3];
+
     UIView *backView = [[UIView alloc]initWithFrame:CGRectMake(0, 64, ScreenWidth, 50)];
     [self.view addSubview:backView];
     
@@ -96,37 +117,91 @@
     selcetView.selectItem = ^(NSString *title) {
         NSLog(@"%@",title);
         
-        if ([title isEqualToString:@"胎教"]) {
-            NSMutableArray *items = [NSMutableArray arrayWithObjects:@"一个月",@"二个月",@"三个月",@"四个月",@"五个月",@"六个月",@"七个月教", @"八个月",@"九个月",@"十个月",nil];
-            SelectScrollViewForM *selcetView = [[SelectScrollViewForM alloc]initWithFrame:CGRectMake(0, 64 + 60, ScreenWidth, 50) selectItems:items];
-            [weakSelf.view addSubview:selcetView];
-            [selcetView addShadowWithoutCorner];
-            selcetView.selectItem = ^(NSString *title) {
-                NSLog(@"%@",title);
+        if ([title isEqualToString:@"职教"]) {
+            weakSelf.tableView.hidden = YES;
+            [weakSelf.view sendSubviewToBack:weakSelf.tableView];
+            if (weakSelf.collectionView) {
+                weakSelf.collectionView.hidden = NO;
+
+                [weakSelf.view bringSubviewToFront:weakSelf.collectionView];
+            } else {
+                [weakSelf initCollectionView];
+            }
+        } else {
+            if (weakSelf.collectionView) {
+                weakSelf.collectionView.hidden = YES;
+                [weakSelf.view sendSubviewToBack:weakSelf.collectionView];
+                weakSelf.tableView.hidden = NO;
+                [weakSelf.view bringSubviewToFront:weakSelf.tableView];
                 
+            }
+            
+            if ( [title isEqualToString:@"胎教"]) {
+                [weakSelf.selectView setNewItems:items1];
+                weakSelf.tableViewDataSource = [TSPublicTool convertArray:array3];
+                [weakSelf.tableView reloadData];
                 
+            } else if ( [title isEqualToString:@"幼教"]) {
+                [weakSelf.selectView setNewItems:items2];
+                weakSelf.tableViewDataSource = [TSPublicTool convertArray:array3];
+                [weakSelf.tableView reloadData];
                 
-            };
+            } else if ( [title isEqualToString:@"小学"]) {
+                [weakSelf.selectView setNewItems:items3];
+                weakSelf.tableViewDataSource = [TSPublicTool convertArray:primary];
+                [weakSelf.tableView reloadData];
+                
+            }else if ( [title isEqualToString:@"初中"]) {
+                [weakSelf.selectView setNewItems:items4];
+                weakSelf.tableViewDataSource = [TSPublicTool convertArray:primary];
+                [weakSelf.tableView reloadData];
+                
+            } else if ( [title isEqualToString:@"高中"]) {
+                [weakSelf.selectView setNewItems:items5];
+                weakSelf.tableViewDataSource = [TSPublicTool convertArray:primary];
+                [weakSelf.tableView reloadData];
+                
+            }else if ( [title isEqualToString:@"大学"]) {
+                [weakSelf.selectView setNewItems:items6];
+                weakSelf.tableViewDataSource = [TSPublicTool convertArray:primary];
+                [weakSelf.tableView reloadData];
+                
+            }
             
-            
-            
-            weakSelf.collectionView.hidden = YES;
-            [weakSelf.view sendSubviewToBack:weakSelf.collectionView];
         }
-        
     };
     
-    [self initCollectionView];
+    UIView *backView1 = [[UIView alloc]initWithFrame:CGRectMake(0, 64 + 65, ScreenWidth, 50)];
+    [self.view addSubview:backView1];
+    [backView1 addShadowWithoutCorner];
+    if (!_selectView) {
+        _selectView = [[SelectScrollViewForM alloc]initWithFrame:CGRectMake(0, 0 , ScreenWidth, 50) selectItems:items1];
+        
+    }
+    [_selectView setNewItems:items1];
+    [backView1 addSubview:_selectView];
+    _selectView.selectItem = ^(NSString *title) {
+        NSLog(@"%@",title);
+        
+        
+    };
+
+    [self initTableView];
+
+    
 }
 - (void)initTableView {
     if (!_tableView) {
-        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 64 + 120, ScreenWidth, ScreenHeight - 184)style:(UITableViewStylePlain)];
+        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 64 + 130, ScreenWidth, ScreenHeight - 194)style:(UITableViewStylePlain)];
         
     }
     [self.view addSubview:_tableView];
-    
+    _tableView.backgroundColor = [UIColor backgroundGrayColorA];
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.dataSource = self;
     _tableView.delegate = self;
+    [_tableView registerClass:[SelectClassTableViewCell class] forCellReuseIdentifier:@"SelectClassTableViewCell"];
+    
     
 }
 - (void)initCollectionView {
@@ -154,6 +229,31 @@
     [self.navigationController pushViewController:vc animated:YES];
     
 }
+
+#pragma mark UITableViewDelegate UITableViewDatasource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return _tableViewDataSource.count;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 50;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    SelectClassTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SelectClassTableViewCell"];
+    
+    
+    if (_tableViewDataSource.count != 0) {
+        [cell setLabelModel:_tableViewDataSource[indexPath.row]];
+    }
+    cell.selectBlock = ^(NSString *title) {
+        NSLog(@"%@",title);
+    };
+    return cell;
+}
+
 
 
 #pragma mark UICollectionViewDelegate,UICollectionViewDataSource

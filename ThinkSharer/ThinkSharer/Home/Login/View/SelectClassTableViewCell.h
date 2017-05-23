@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^SelectClassBlock)(NSString *title);
+
 @interface SelectClassTableViewCell : UITableViewCell
+
+@property (nonatomic,copy) SelectClassBlock selectBlock;
 
 - (void)setLabelModel:(NSMutableArray *)titles;
 

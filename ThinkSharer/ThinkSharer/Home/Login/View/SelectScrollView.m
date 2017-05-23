@@ -37,7 +37,11 @@
             [self addSubview:button];
             
             [button setTitle:items[i] forState:(UIControlStateNormal)];
-            [button setTitleColor:[UIColor whiteColor] forState:(UIControlStateNormal)];
+            if (0 == i) {
+                [button setTitleColor:[UIColor blackColor] forState:(UIControlStateNormal)];
+            } else {
+                [button setTitleColor:[UIColor whiteColor] forState:(UIControlStateNormal)];
+            }
             button.titleLabel.font = [UIFont systemFontOfSize:18];
             [button setContentHorizontalAlignment:(UIControlContentHorizontalAlignmentCenter)];
             button.tag = 100 + i;

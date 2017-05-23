@@ -15,10 +15,12 @@ typedef void(^AlterBlock)();
 @interface TSActionAlterView : UIView
 
 @property (nonatomic,strong) UIView *backHUD;
+@property (nonatomic,strong) UIImageView *startImageView;
+
 
 @property (nonatomic,copy) AlterBlock actionBlock;
 
-- (void)creatActionAlterView:(NSString *)imageName rect:(CGRect)rect action:(AlterBlock)block;
+- (void)creatActionAlterView:(NSString *)imageName size:(CGSize)size action:(AlterBlock)block;
 
 - (void)showInView;
 

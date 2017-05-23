@@ -29,13 +29,17 @@
         }
         
         
-        for (int i = 0; i < count; i++) {
+        for (int i = 0; i < 20; i++) {
             
             UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(i * backWidth, 0, backWidth, 50)];
             [self addSubview:button];
             
-            [button setTitle:items[i] forState:(UIControlStateNormal)];
-            [button setTitleColor:[UIColor mainColorBlue] forState:(UIControlStateNormal)];
+//            [button setTitle:items[i] forState:(UIControlStateNormal)];
+            if (0 == i) {
+                [button setTitleColor:[UIColor generalTitleFontBlackColor] forState:(UIControlStateNormal)];
+            } else {
+                [button setTitleColor:[UIColor mainColorBlue] forState:(UIControlStateNormal)];
+            }
             button.titleLabel.font = [UIFont systemFontOfSize:18];
             [button setContentHorizontalAlignment:(UIControlContentHorizontalAlignmentCenter)];
             button.tag = 100 + i;
@@ -47,6 +51,37 @@
     
     return self;
 }
+
+- (void)setNewItems:(NSMutableArray *)items {
+    self.items = items;
+
+    NSInteger count = items.count;
+    CGFloat backWidth = ScreenWidth / 5.5;
+    
+    if (count > 5.5) {
+        self.contentSize = CGSizeMake(backWidth * count, 0);
+        
+    }
+    
+    for (int i = 0; i < 20; i++) {
+        
+        UIButton *button = (UIButton *)[self viewWithTag:100 + i];
+        if (i < count) {
+            [button setTitle:items[i] forState:(UIControlStateNormal)];
+
+        } else {
+            [button setTitle:@"" forState:(UIControlStateNormal)];
+
+        }
+        if (0 == i) {
+            [button setTitleColor:[UIColor generalTitleFontBlackColor] forState:(UIControlStateNormal)];
+        } else {
+            [button setTitleColor:[UIColor mainColorBlue] forState:(UIControlStateNormal)];
+        }
+    }
+}
+
+
 
 - (void)buttonClick:(UIButton *)button {
     NSInteger tag = button.tag - 100;

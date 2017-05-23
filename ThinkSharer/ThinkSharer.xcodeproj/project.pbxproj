@@ -45,6 +45,7 @@
 		49F38FD51ECAEAF900D83E95 /* UIViewController+YMHLoginCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F38FD41ECAEAF900D83E95 /* UIViewController+YMHLoginCheck.m */; };
 		49F38FE01ECAFBFF00D83E95 /* TSAppInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F38FDF1ECAFBFF00D83E95 /* TSAppInfo.m */; };
 		49F38FE31ECAFDAB00D83E95 /* TSAccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F38FE21ECAFDAB00D83E95 /* TSAccountManager.m */; };
+		49FBF3161ED3D2B900CAC5F5 /* SelectScrollViewForM.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FBF3151ED3D2B900CAC5F5 /* SelectScrollViewForM.m */; };
 		F5B593E7BE7966FC96D18082 /* libPods-ThinkSharer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01E78EB35798A2C580CD280C /* libPods-ThinkSharer.a */; };
 /* End PBXBuildFile section */
 
@@ -141,6 +142,8 @@
 		49F38FDF1ECAFBFF00D83E95 /* TSAppInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSAppInfo.m; sourceTree = "<group>"; };
 		49F38FE11ECAFDAB00D83E95 /* TSAccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSAccountManager.h; sourceTree = "<group>"; };
 		49F38FE21ECAFDAB00D83E95 /* TSAccountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSAccountManager.m; sourceTree = "<group>"; };
+		49FBF3141ED3D2B900CAC5F5 /* SelectScrollViewForM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectScrollViewForM.h; sourceTree = "<group>"; };
+		49FBF3151ED3D2B900CAC5F5 /* SelectScrollViewForM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectScrollViewForM.m; sourceTree = "<group>"; };
 		92DAA5E534C4A9D1FA2B48E8 /* Pods-ThinkSharer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThinkSharer.release.xcconfig"; path = "Pods/Target Support Files/Pods-ThinkSharer/Pods-ThinkSharer.release.xcconfig"; sourceTree = "<group>"; };
 		C89FF79DF7076669A0BEC232 /* Pods-ThinkSharer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThinkSharer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ThinkSharer/Pods-ThinkSharer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -176,6 +179,8 @@
 			children = (
 				491C46121ECBF3C8009F43A4 /* SelectScrollView.h */,
 				491C46131ECBF3C8009F43A4 /* SelectScrollView.m */,
+				49FBF3141ED3D2B900CAC5F5 /* SelectScrollViewForM.h */,
+				49FBF3151ED3D2B900CAC5F5 /* SelectScrollViewForM.m */,
 				491C46261ECC2CD4009F43A4 /* SelectClassTableViewCell.h */,
 				491C46271ECC2CD4009F43A4 /* SelectClassTableViewCell.m */,
 				491C46151ECC1D91009F43A4 /* SelectClassCollectionViewCell.h */,
@@ -706,6 +711,7 @@
 				49F38FE31ECAFDAB00D83E95 /* TSAccountManager.m in Sources */,
 				49B743EA1ED2EA1500FFDBDB /* SharerCenterViewController.m in Sources */,
 				491C46281ECC2CD4009F43A4 /* SelectClassTableViewCell.m in Sources */,
+				49FBF3161ED3D2B900CAC5F5 /* SelectScrollViewForM.m in Sources */,
 				491C461F1ECC23A1009F43A4 /* SelectClassheaderView.m in Sources */,
 				49B743E01ED2E4B700FFDBDB /* MainViewController.m in Sources */,
 				49B743D01ED2DC9D00FFDBDB /* SelectClassViewController.m in Sources */,

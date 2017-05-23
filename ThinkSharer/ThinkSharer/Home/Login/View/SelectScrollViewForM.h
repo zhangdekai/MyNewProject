@@ -19,5 +19,6 @@
 - (instancetype)initWithFrame:(CGRect)frame selectItems:(NSMutableArray *)items ;
 
 
+- (void)setNewItems:(NSMutableArray *)items;
 
 @end

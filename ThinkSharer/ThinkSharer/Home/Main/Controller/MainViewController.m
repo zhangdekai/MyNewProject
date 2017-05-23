@@ -34,6 +34,8 @@
     
     //    定位授权
     
+    [self showAlterView];
+    
     [self judgeLocationWhetherOpen];
 //    _locationManager = [[CLLocationManager alloc]init];
 //    [_locationManager requestWhenInUseAuthorization];
@@ -113,7 +115,7 @@
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    //    self.navigationController.navigationBarHidden = YES;
+    self.navigationController.navigationBarHidden = YES;
 }
 
 
@@ -165,7 +167,13 @@
     //添加开始
     UIImageView *startImage = [[UIImageView alloc]init];
     [self.view addSubview:startImage];
-    startImage.frame = CGRectMake((ScreenWidth /2) - 30, ScreenHeight - 105, 80, 80);
+//    startImage.frame = CGRectMake((ScreenWidth /2) - 30, ScreenHeight - 105, 80, 80);
+    startImage.clipsToBounds = YES;
+    [startImage mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(0);
+        make.bottom.equalTo(self.view.mas_bottom).offset(-25);
+    }];
+    
     startImage.layer.cornerRadius = 40;
     startImage.layer.masksToBounds = YES;
 //    startImage.layer.borderWidth = 0.1;
@@ -287,7 +295,12 @@
 - (void)showAlterView {
     TSActionAlterView *alterView = [[TSActionAlterView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
     
-//    alterView creatActionAlterView:<#(NSString *)#> rect:<#(CGRect)#> action:<#^(void)block#>
+    [alterView creatActionAlterView:@"map_startAlter"size:CGSizeMake(ScreenWidth - 30, 100) action:^{
+        NSLog(@"知道了");
+    }];
+    
+    [alterView showInView];
+    
 }
 
 
