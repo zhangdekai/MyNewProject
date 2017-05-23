@@ -10,14 +10,6 @@
 
 @implementation TSActionAlterView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
-
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -94,9 +86,9 @@
 }
 
 - (void)tapAction:(UITapGestureRecognizer*)tap {
-//    [self hiddenAlter];
+    [self hiddenAlter];
     [_startImageView removeFromSuperview];
-    [self addSecondAlter];
+//    [self addSecondAlter];
 //    self.actionBlock();
 }
 

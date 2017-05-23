@@ -188,6 +188,20 @@
     self.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.bounds].CGPath;
 }
 
+- (void)addShadowWithCorner:(CGFloat)radius {
+    self.layer.cornerRadius = radius;
+    self.layer.borderWidth = 0.1;
+    self.layer.borderColor = [UIColor generalSubTitleFontGrayColor].CGColor;
+    
+    
+    [self.layer setShadowOffset:(CGSizeMake(0, 2))];
+    [self.layer setShadowRadius:radius];
+    [self.layer setShadowOpacity:0.3];
+    [self.layer setShadowColor:[UIColor viewShaowColor].CGColor];
+    self.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.bounds].CGPath;
+}
+
+
 - (void)addShadowWithoutCorner {
 
     self.layer.borderWidth = 0.1;

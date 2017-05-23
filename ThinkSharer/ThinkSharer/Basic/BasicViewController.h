@@ -30,6 +30,9 @@ typedef void(^NavigationBarButtonItemBlock)();
 //设置导航栏左侧image
 - (void)setNavigationBarLeftItemWithImageName:(NSString *)imageName itemBlock:(NavigationBarButtonItemBlock)leftBlock ;
 
+- (void)addShadow ;
+
+
 /**
  *  是否展示相关错误页面  需求：展示本地数据时不展示错误页
  */

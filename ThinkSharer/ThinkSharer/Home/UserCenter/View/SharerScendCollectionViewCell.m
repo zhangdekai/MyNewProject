@@ -14,6 +14,11 @@
     [super awakeFromNib];
     // Initialization code
     
+    [self layoutIfNeeded];
+    
+    self.contentView.backgroundColor = [UIColor backgroundGrayColorA];
+
+    
     _containerView.layer.cornerRadius = 5;
     _containerView.layer.borderWidth = 0.1;
     

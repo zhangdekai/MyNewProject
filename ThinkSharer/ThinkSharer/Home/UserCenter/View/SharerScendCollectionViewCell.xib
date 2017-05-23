@@ -11,14 +11,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SharerScendCollectionViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="105" height="74"/>
+            <rect key="frame" x="0.0" y="0.0" width="105" height="100"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="105" height="74"/>
+                <rect key="frame" x="0.0" y="0.0" width="105" height="100"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ldT-KQ-Eac">
-                        <rect key="frame" x="0.0" y="0.0" width="105" height="74"/>
+                        <rect key="frame" x="0.0" y="25" width="105" height="70"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥78" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZJ-11-R87">
                                 <rect key="frame" x="0.0" y="10" width="105" height="21"/>
@@ -48,12 +48,12 @@
                     </view>
                 </subviews>
             </view>
-            <color key="backgroundColor" red="0.3411764706" green="0.74117647060000003" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="ldT-KQ-Eac" secondAttribute="trailing" id="FP8-0h-qSf"/>
                 <constraint firstItem="ldT-KQ-Eac" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="mW3-Fo-7w5"/>
-                <constraint firstAttribute="bottom" secondItem="ldT-KQ-Eac" secondAttribute="bottom" id="wbZ-Kb-ifa"/>
-                <constraint firstItem="ldT-KQ-Eac" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="xr5-A4-l6p"/>
+                <constraint firstAttribute="bottom" secondItem="ldT-KQ-Eac" secondAttribute="bottom" constant="5" id="wbZ-Kb-ifa"/>
+                <constraint firstItem="ldT-KQ-Eac" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="25" id="xr5-A4-l6p"/>
             </constraints>
             <size key="customSize" width="105" height="74"/>
             <connections>

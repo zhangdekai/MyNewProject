@@ -9,7 +9,7 @@
 #import "SharerCenterViewController.h"
 #import "SharerFirstCollectionViewCell.h"
 #import "SharerScendCollectionViewCell.h"
-
+#import "SharerThirdCollectionViewCell.h"
 
 @interface SharerCenterViewController ()<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
@@ -28,7 +28,14 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = NO;
+}
+
 - (void)initilizeUI {
+    
+    [self addShadow];
     
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
@@ -38,13 +45,15 @@
 
     [self.view addSubview:self.collectionView];
     self.collectionView.showsVerticalScrollIndicator = NO;
-    self.collectionView.backgroundColor = [UIColor whiteColor];
+    self.collectionView.backgroundColor = [UIColor backgroundGrayColorA];
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     
     [self.collectionView registerNib:[UINib nibWithNibName:@"SharerFirstCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"SharerFirstCollectionViewCell"];
     [self.collectionView registerNib:[UINib nibWithNibName:@"SharerScendCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"SharerScendCollectionViewCell"];
+    [self.collectionView registerNib:[UINib nibWithNibName:@"SharerThirdCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"SharerThirdCollectionViewCell"];
 
+    
     
 //    [self.collectionView registerClass:[SelectClassheaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"SelectClassheaderView"];
 //    [self.collectionView registerClass:[SelectClassFooterView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"SelectClassFooterView"];
@@ -57,7 +66,7 @@
         NSLog(@"你好");
     }];
     
-    [self setNavigationBarLeftItemWithImageName:@"login_x" itemBlock:^{
+    [self setNavigationBarLeftItemWithImageName:@"navigation_back" itemBlock:^{
         
         [weakSelf.navigationController popViewControllerAnimated:YES];
     }];
@@ -66,7 +75,7 @@
 
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return 2;
+    return 3;
 }
 
 
@@ -77,6 +86,9 @@
             break;
         case 1:
             return 3;
+            break;
+        case 2:
+            return 6;
             break;
             
         default:
@@ -94,8 +106,13 @@
         
         
         return cell;
-    } else {
+    } else if (indexPath.section == 1) {
         SharerScendCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"SharerScendCollectionViewCell" forIndexPath:indexPath];
+        
+        
+        return cell;
+    } else  {
+        SharerThirdCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"SharerThirdCollectionViewCell" forIndexPath:indexPath];
         
         
         return cell;
@@ -135,11 +152,15 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     switch (indexPath.section) {
         case 0:
-            return CGSizeMake(ScreenWidth, 120);
+            return CGSizeMake(ScreenWidth, 147);
 
             break;
         case 1:
-            return CGSizeMake((ScreenWidth - 60) / 3, 60);
+            return CGSizeMake((ScreenWidth - 60) / 3, 100);
+            
+            break;
+        case 2:
+            return CGSizeMake((ScreenWidth - 60) / 3, 80);
             
             break;
             
@@ -158,6 +179,10 @@
             
             break;
         case 1:
+            return UIEdgeInsetsMake(0, 15, 0, 15);
+            
+            break;
+        case 2:
             return UIEdgeInsetsMake(0, 15, 0, 15);
             
             break;

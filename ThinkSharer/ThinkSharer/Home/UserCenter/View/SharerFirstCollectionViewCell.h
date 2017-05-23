@@ -18,5 +18,6 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *companyScrollView;
 @property (weak, nonatomic) IBOutlet UILabel *companyLabel;
 
+@property (weak, nonatomic) IBOutlet UIView *backView;
 
 @end

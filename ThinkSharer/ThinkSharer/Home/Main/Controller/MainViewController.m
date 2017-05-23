@@ -115,7 +115,7 @@
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.navigationController.navigationBarHidden = YES;
+//    self.navigationController.navigationBarHidden = YES;
 }
 
 
@@ -293,13 +293,15 @@
 }
 
 - (void)showAlterView {
-    TSActionAlterView *alterView = [[TSActionAlterView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
     
-    [alterView creatActionAlterView:@"map_startAlter"size:CGSizeMake(ScreenWidth - 30, 100) action:^{
+    [[TSPublicTool shareInstance] creatActionAlterView:@"map_startAlter" size:CGSizeMake(ScreenWidth - 30, 100) action:^{
         NSLog(@"知道了");
+
     }];
     
-    [alterView showInView];
+    [[TSPublicTool shareInstance]showInView];
+    
+    
     
 }
 

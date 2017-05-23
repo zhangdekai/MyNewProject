@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface SharerThirdCollectionViewCell : UICollectionViewCell
+@property (weak, nonatomic) IBOutlet UIView *containerView;
+@property (weak, nonatomic) IBOutlet UILabel *uplabel;
+@property (weak, nonatomic) IBOutlet UIImageView *downIcon;
 
 @end

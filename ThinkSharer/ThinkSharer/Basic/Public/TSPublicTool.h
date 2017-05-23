@@ -8,10 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "TSActionAlterView.h"
 
 //可自行添加公共tool
 
+typedef void(^AlterBlock)();
+
+
 @interface TSPublicTool : NSObject
+
 
 //用于导航栏titleView
 + (UILabel *)initWithTitle:(NSString *)title;
@@ -26,5 +31,8 @@
 
 //一位数组转化为二维数组
 + (NSMutableArray *)convertArray:(NSMutableArray *)array;
+
+//首页操作提示
++ (TSActionAlterView *)shareInstance;
 
 @end

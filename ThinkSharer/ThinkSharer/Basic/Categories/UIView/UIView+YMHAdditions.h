@@ -34,6 +34,7 @@
 
 //添加阴影 带弧度
 - (void)addShadow;
+- (void)addShadowWithCorner:(CGFloat)radius ;
 //添加阴影 带弧度
 - (void)addShadowWithoutCorner;
 

@@ -15,6 +15,9 @@
     
     self.companyScrollView.contentSize = CGSizeMake(ScreenHeight * 2, 0);
     // Initialization code
+    
+    [_backView addShadowWithoutCorner];
+    [self.contentView sendSubviewToBack:_backView];
 }
 
 @end

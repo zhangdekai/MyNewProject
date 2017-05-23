@@ -250,6 +250,9 @@
     }
     cell.selectBlock = ^(NSString *title) {
         NSLog(@"%@",title);
+        MainViewController *vc = [[MainViewController alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+
     };
     return cell;
 }
