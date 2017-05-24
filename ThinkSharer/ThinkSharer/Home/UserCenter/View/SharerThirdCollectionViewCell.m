@@ -29,5 +29,8 @@
     [[_containerView layer]setShadowColor:[UIColor viewShaowColor].CGColor];
 
 }
+- (void)setModel:(NSString *)title {
+    _downIcon.image = [UIImage imageNamed:title];
+}
 
 @end

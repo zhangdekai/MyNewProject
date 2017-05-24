@@ -24,7 +24,7 @@
                             <constraint firstAttribute="height" constant="125" id="5My-LT-clZ"/>
                         </constraints>
                     </view>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="testHeader" translatesAutoresizingMaskIntoConstraints="NO" id="C4Y-Np-U5w">
+                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="testHeader" translatesAutoresizingMaskIntoConstraints="NO" id="C4Y-Np-U5w">
                         <rect key="frame" x="15" y="25" width="105" height="105"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="105" id="eZN-Sj-zhm"/>
@@ -48,10 +48,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Zg-m9-kNm">
-                        <rect key="frame" x="130" y="95" width="254" height="35"/>
+                        <rect key="frame" x="130" y="99" width="254" height="35"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="好的咖啡就能深刻的边框斯巴达克斯你的空间是你的" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="re5-JN-MZP">
-                                <rect key="frame" x="0.0" y="0.0" width="254" height="35"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="思享者文化传媒公司巴达克斯你的空间是你的" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="re5-JN-MZP">
+                                <rect key="frame" x="0.0" y="0.0" width="346.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -88,7 +88,7 @@
                 <constraint firstAttribute="trailing" secondItem="f0p-Cn-P8U" secondAttribute="trailing" constant="6" id="D4Y-ZI-0x4"/>
                 <constraint firstItem="C7y-3t-N08" firstAttribute="leading" secondItem="C4Y-Np-U5w" secondAttribute="trailing" constant="9" id="YUC-hh-oZ3"/>
                 <constraint firstItem="f0p-Cn-P8U" firstAttribute="top" secondItem="rfz-NW-ieV" secondAttribute="bottom" constant="9" id="Zof-12-L5g"/>
-                <constraint firstAttribute="bottom" secondItem="2Zg-m9-kNm" secondAttribute="bottom" constant="17" id="b1h-9W-Ixz"/>
+                <constraint firstAttribute="bottom" secondItem="2Zg-m9-kNm" secondAttribute="bottom" constant="13" id="b1h-9W-Ixz"/>
                 <constraint firstItem="rfz-NW-ieV" firstAttribute="leading" secondItem="C7y-3t-N08" secondAttribute="trailing" constant="8" id="hIx-cC-bHG"/>
                 <constraint firstItem="ihO-4W-27X" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="iS6-7Q-xff"/>
                 <constraint firstAttribute="trailing" secondItem="rfz-NW-ieV" secondAttribute="trailing" constant="6" id="jm7-rM-9KS"/>
@@ -98,7 +98,7 @@
                 <constraint firstItem="C7y-3t-N08" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="38" id="mq2-Hj-8QD"/>
                 <constraint firstItem="C4Y-Np-U5w" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="25" id="ojf-sJ-ldL"/>
                 <constraint firstItem="2Zg-m9-kNm" firstAttribute="leading" secondItem="C4Y-Np-U5w" secondAttribute="trailing" constant="10" id="uxN-IJ-Fg3"/>
-                <constraint firstItem="2Zg-m9-kNm" firstAttribute="top" secondItem="G5c-Zf-U8B" secondAttribute="bottom" constant="13" id="xqz-tG-OCA"/>
+                <constraint firstItem="2Zg-m9-kNm" firstAttribute="top" secondItem="G5c-Zf-U8B" secondAttribute="bottom" constant="17" id="xqz-tG-OCA"/>
                 <constraint firstItem="G5c-Zf-U8B" firstAttribute="leading" secondItem="C4Y-Np-U5w" secondAttribute="trailing" constant="11" id="y82-fp-ZbL"/>
             </constraints>
             <size key="customSize" width="316" height="116"/>

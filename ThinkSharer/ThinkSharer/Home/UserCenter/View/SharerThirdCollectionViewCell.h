@@ -13,4 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *uplabel;
 @property (weak, nonatomic) IBOutlet UIImageView *downIcon;
 
+
+- (void)setModel:(NSString *)title;
+
 @end

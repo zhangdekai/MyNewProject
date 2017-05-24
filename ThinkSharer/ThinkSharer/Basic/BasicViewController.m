@@ -15,6 +15,7 @@
 @property (nonatomic, copy) void (^emptyRetryBlock)();
 @property (nonatomic, copy) void (^netWrokErrorRetryBlock)();
 @property (nonatomic,copy) NavigationBarButtonItemBlock navigationItemBlock;
+@property (nonatomic,copy) NavigationBarButtonItemBlockForRight rightItemBlock;
 
 @end
 
@@ -83,10 +84,9 @@
 
 }
 
-- (void)setNavigationBarBackItemWithBlock:(NavigationBarButtonItemBlock)leftBlock {
-    self.navigationItemBlock = leftBlock;
-    
-    UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStylePlain target:self action:@selector(itemAction)];
+- (void)setNavigationBarBack {
+
+    UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStylePlain target:self action:@selector(itemAction2)];
     
     self.navigationItem.leftBarButtonItem = rightBarItem;
     
@@ -94,10 +94,10 @@
 }
 
 
-- (void)setNavigationBarRightItemWithImageName:(NSString *)imageName itemBlock:(NavigationBarButtonItemBlock)rightBlock {
-    self.navigationItemBlock = rightBlock;
+- (void)setNavigationBarRightItemWithImageName:(NSString *)imageName itemBlock:(NavigationBarButtonItemBlockForRight)rightBlock {
+    self.rightItemBlock = rightBlock;
     
-    UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStylePlain target:self action:@selector(itemAction)];
+    UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStylePlain target:self action:@selector(itemAction1)];
     
     self.navigationItem.rightBarButtonItem = rightBarItem;
     
@@ -118,6 +118,14 @@
 
 - (void)itemAction {
     self.navigationItemBlock();
+}
+
+- (void)itemAction1 {
+    self.rightItemBlock();
+}
+
+- (void)itemAction2 {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - private method

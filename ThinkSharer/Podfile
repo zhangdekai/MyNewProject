@@ -12,6 +12,12 @@ target 'ThinkSharer' do
     pod 'AMap3DMap-NO-IDFA'
     pod 'AMapLocation-NO-IDFA'
     pod 'Masonry'
-    
+#    pod 'CTAssetsPickerController',  '~> 3.3.1'
+    pod 'PYPhotoBrowser'
+    pod 'PureLayout', '~> 3.0.2'
+
+
+
+
 end
 

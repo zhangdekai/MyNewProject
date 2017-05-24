@@ -9,5 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface ShareFourceCollectionViewCell : UICollectionViewCell
+@property (weak, nonatomic) IBOutlet UIView *containerView;
+@property (weak, nonatomic) IBOutlet UILabel *rightLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *leftIcon;
+
+
+- (void)setModel:(NSString *)title iocn:(NSString *)iconName;
+
 
 @end

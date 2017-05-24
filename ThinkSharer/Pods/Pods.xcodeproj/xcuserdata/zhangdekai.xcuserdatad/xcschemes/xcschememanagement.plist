@@ -9,6 +9,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>DACircularProgress.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FLAnimatedImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -24,7 +34,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>PYPhotoBrowser.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-ThinkSharer.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>PureLayout.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -47,12 +67,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>53F8571E2D572C4069860E38654A566A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>586F2DFA9BDCC6675C2546793A69E5CC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5D400D9BA471487D9D3F6295009E309A</key>
+		<key>61E655BDF67343DE56E62BD043752152</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>71D60BFD9F862E728A140C450451C10C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>743C39A5B10969A6929B811AC87F9F70</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7885F353FDC7ADCEE2F1E5C7A56BE401</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,12 +107,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E566DC0F644D2277A72EB9041D61F33D</key>
+		<key>C791F0A928C1A8FE97074DFC9ACF4E75</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>ED4AE64FCA2F6E7282480BC5F07B51F3</key>
+		<key>EEF0BF162292E150297783424CEE14B3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -19,11 +19,7 @@
     // Do any additional setup after loading the view.
 }
 - (void)setNavigationBar {
-    TSWeakSelf
-    [self setNavigationBarBackItemWithBlock:^{
-        [weakSelf.navigationController popViewControllerAnimated:YES];
-        
-    }];
+    [self setNavigationBarBack];
 }
 
 - (void)didReceiveMemoryWarning {

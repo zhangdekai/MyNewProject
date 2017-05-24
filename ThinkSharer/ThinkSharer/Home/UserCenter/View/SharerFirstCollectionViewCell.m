@@ -18,6 +18,16 @@
     
     [_backView addShadowWithoutCorner];
     [self.contentView sendSubviewToBack:_backView];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapMethod:)];
+    [_headerImageView addGestureRecognizer:tap];
 }
+
+
+- (void)tapMethod:(UITapGestureRecognizer *)tap {
+    
+    self.headerImageBlock();
+}
+
 
 @end

@@ -20,4 +20,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *backView;
 
+
+@property (nonatomic,copy) void(^headerImageBlock)();
+
 @end

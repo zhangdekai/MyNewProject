@@ -20,7 +20,7 @@
 
     
     _containerView.layer.cornerRadius = 5;
-    _containerView.layer.borderWidth = 0.1;
+//    _containerView.layer.borderWidth = 0.1;
     
     [[_containerView layer]setShadowOffset:(CGSizeMake(0, 2))];
     [[_containerView layer]setShadowRadius:2];
@@ -29,5 +29,10 @@
     
     
 }
+
+- (void)setModel:(NSString *)title {
+    _downLabel.text = title;
+}
+
 
 @end

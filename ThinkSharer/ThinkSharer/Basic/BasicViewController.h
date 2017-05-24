@@ -13,6 +13,7 @@
 #define KNONETWORKTAG -10002
 
 typedef void(^NavigationBarButtonItemBlock)();
+typedef void(^NavigationBarButtonItemBlockForRight)();
 
 
 @interface BasicViewController : UIViewController
@@ -22,10 +23,10 @@ typedef void(^NavigationBarButtonItemBlock)();
 - (void)setNavigationBarTitle:(NSString *)title;
 
 //设置导航栏默认返回箭头
-- (void)setNavigationBarBackItemWithBlock:(NavigationBarButtonItemBlock)leftBlock ;
+- (void)setNavigationBarBack;
 
 //设置导航栏右侧image
-- (void)setNavigationBarRightItemWithImageName:(NSString *)imageName itemBlock:(NavigationBarButtonItemBlock)rightBlock ;
+- (void)setNavigationBarRightItemWithImageName:(NSString *)imageName itemBlock:(NavigationBarButtonItemBlockForRight)rightBlock ;
 
 //设置导航栏左侧image
 - (void)setNavigationBarLeftItemWithImageName:(NSString *)imageName itemBlock:(NavigationBarButtonItemBlock)leftBlock ;
