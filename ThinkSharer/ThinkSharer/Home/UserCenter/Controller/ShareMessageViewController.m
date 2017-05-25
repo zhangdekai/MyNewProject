@@ -9,8 +9,10 @@
 #import "ShareMessageViewController.h"
 #import "CTAssetsPickerController.h"
 #import "ShareMessageTableHeaderView.h"
+#import <Photos/Photos.h>
+#import <MobileCoreServices/MobileCoreServices.h>
 
-@interface ShareMessageViewController ()<UITableViewDelegate,UITableViewDataSource,CTAssetsPickerControllerDelegate,UITextFieldDelegate>
+@interface ShareMessageViewController ()<UITableViewDelegate,UITableViewDataSource,CTAssetsPickerControllerDelegate,UITextFieldDelegate,UIImagePickerControllerDelegate>
 
 @property (nonatomic,strong) UITableView *tableView;
 
@@ -82,13 +84,91 @@
     TSWeakSelf
     
     _tableHeaderView.SelectPhotoBlock = ^{
-        [weakSelf openPhoto];
+        [weakSelf selectPhoto];
     };
     
     _tableHeaderView.SelectBirthdatBlock = ^{
         [weakSelf selectBirthday];
     };
 }
+
+
+- (void)selectPhoto {
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:(UIAlertControllerStyleActionSheet)];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    
+    
+    UIAlertAction *deleteAction = [UIAlertAction actionWithTitle:@"相机" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self openCamer];
+    }];
+
+    UIAlertAction *archiveAction = [UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self openPhoto];
+
+    }];
+
+    [alertController addAction:cancelAction];
+    [alertController addAction:deleteAction];
+    [alertController addAction:archiveAction];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+
+}
+
+- (void)openCamer {
+    
+    AVAuthorizationStatus status = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+    if (status == AVAuthorizationStatusDenied)
+    {
+        
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"无法访问相机" message:@"请在iPhone的\"设置-隐私-相机\"选项中,允许思享者访问你的手机相机" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *leftAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"确定", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            [self.navigationController popViewControllerAnimated:YES];
+        }];
+        [alertController addAction:leftAction];
+        [self presentViewController:alertController animated:YES completion:nil];
+        return;
+    }
+    
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+    {
+        UIImagePickerController *photoPicker = [[UIImagePickerController alloc] init];
+        photoPicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        photoPicker.modalPresentationStyle = UIModalPresentationFullScreen;
+        photoPicker.delegate = (id)self;
+        photoPicker.allowsEditing = NO;
+        
+        photoPicker.mediaTypes = @[(NSString *)kUTTypeImage];
+        [self presentViewController:photoPicker animated:YES completion:NULL];
+    }
+
+}
+
+#pragma mark - UIImagePickerController delegate -
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    
+    NSString *type = info[UIImagePickerControllerMediaType];
+    NSString *tmpStr = (NSString *)kUTTypeImage;
+    
+    if ([type isEqualToString:tmpStr]) {
+        UIImage *image = info[UIImagePickerControllerOriginalImage];
+        
+        _tableHeaderView.headerImageView.image = image;
+        __block NSString *createdAssetID =nil;//唯一标识，可以用于图片资源获取
+        NSError *error =nil;
+        [[PHPhotoLibrary sharedPhotoLibrary]performChangesAndWait:^{
+            createdAssetID = [PHAssetChangeRequest creationRequestForAssetFromImage:image].placeholderForCreatedAsset.localIdentifier;
+        } error:&error];
+        
+    }
+    
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 - (void)configBirthdayPickerView {
     _birthdayPickerView = [[UIDatePicker alloc] init];
@@ -155,17 +235,11 @@
     self.birthday = [[NSString stringWithFormat:@"%@",destinationDateNow] substringToIndex:10];
     NSDateFormatter *dateformatter = [[NSDateFormatter alloc] init];
     [dateformatter setDateFormat:@"yyyy-MM-dd"];
-    NSDate *reallyDate = [dateformatter dateFromString:self.birthday];
+//    NSDate *reallyDate = [dateformatter dateFromString:self.birthday];
     
     NSLog(@"%@",self.birthday);
     
     [_tableHeaderView setBirthdayString:self.birthday];
-    
-//    YMHProfileCell *cell = [self.tableView cellForRowAtIndexPath:self.selectedIndexPath];
-//    cell.subtitleLabel.text = self.birthday;
-//    
-//    double birthday = [reallyDate timeIntervalSince1970];
-//    _userInfo.birthday = (long long)(birthday * 1000);
     
 }
 

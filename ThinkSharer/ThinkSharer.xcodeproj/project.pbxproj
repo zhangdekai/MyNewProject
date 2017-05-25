@@ -15,6 +15,10 @@
 		492331B11ED446F400E45338 /* TSPublicTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 492331B01ED446F400E45338 /* TSPublicTool.m */; };
 		492331B51ED457C300E45338 /* ShareFourceCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 492331B31ED457C300E45338 /* ShareFourceCollectionViewCell.m */; };
 		492331B61ED457C300E45338 /* ShareFourceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 492331B41ED457C300E45338 /* ShareFourceCollectionViewCell.xib */; };
+		493533141ED6D703001CCCF2 /* UIImageView+YMHPlaceholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 493533131ED6D703001CCCF2 /* UIImageView+YMHPlaceholder.m */; };
+		4935331A1ED6D725001CCCF2 /* UIImage+TSAlpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 493533171ED6D725001CCCF2 /* UIImage+TSAlpha.m */; };
+		4935331B1ED6D725001CCCF2 /* UIImage+TSShape.m in Sources */ = {isa = PBXBuildFile; fileRef = 493533191ED6D725001CCCF2 /* UIImage+TSShape.m */; };
+		4935331D1ED6E839001CCCF2 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4935331C1ED6E839001CCCF2 /* MobileCoreServices.framework */; };
 		494533191ED6C04B00F9340F /* NetWorkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 494533181ED6C04B00F9340F /* NetWorkManager.m */; };
 		498BE0021ED52BDB00D7D004 /* UserShareCenterCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 498BE0011ED52BDB00D7D004 /* UserShareCenterCollectionReusableView.m */; };
 		498BE0051ED52C2D00D7D004 /* UserShareCenterFotterCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 498BE0041ED52C2D00D7D004 /* UserShareCenterFotterCollectionReusableView.m */; };
@@ -124,6 +128,13 @@
 		492331B21ED457C300E45338 /* ShareFourceCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareFourceCollectionViewCell.h; sourceTree = "<group>"; };
 		492331B31ED457C300E45338 /* ShareFourceCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareFourceCollectionViewCell.m; sourceTree = "<group>"; };
 		492331B41ED457C300E45338 /* ShareFourceCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShareFourceCollectionViewCell.xib; sourceTree = "<group>"; };
+		493533121ED6D703001CCCF2 /* UIImageView+YMHPlaceholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+YMHPlaceholder.h"; sourceTree = "<group>"; };
+		493533131ED6D703001CCCF2 /* UIImageView+YMHPlaceholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+YMHPlaceholder.m"; sourceTree = "<group>"; };
+		493533161ED6D725001CCCF2 /* UIImage+TSAlpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+TSAlpha.h"; sourceTree = "<group>"; };
+		493533171ED6D725001CCCF2 /* UIImage+TSAlpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+TSAlpha.m"; sourceTree = "<group>"; };
+		493533181ED6D725001CCCF2 /* UIImage+TSShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+TSShape.h"; sourceTree = "<group>"; };
+		493533191ED6D725001CCCF2 /* UIImage+TSShape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+TSShape.m"; sourceTree = "<group>"; };
+		4935331C1ED6E839001CCCF2 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		494533171ED6C04B00F9340F /* NetWorkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkManager.h; sourceTree = "<group>"; };
 		494533181ED6C04B00F9340F /* NetWorkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkManager.m; sourceTree = "<group>"; };
 		498BE0001ED52BDB00D7D004 /* UserShareCenterCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserShareCenterCollectionReusableView.h; sourceTree = "<group>"; };
@@ -301,6 +312,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4935331D1ED6E839001CCCF2 /* MobileCoreServices.framework in Frameworks */,
 				F5B593E7BE7966FC96D18082 /* libPods-ThinkSharer.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,6 +354,26 @@
 				49AF54B91ECED69000406DFC /* TSCustomTextFiled.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		493533111ED6D703001CCCF2 /* UIImageView */ = {
+			isa = PBXGroup;
+			children = (
+				493533121ED6D703001CCCF2 /* UIImageView+YMHPlaceholder.h */,
+				493533131ED6D703001CCCF2 /* UIImageView+YMHPlaceholder.m */,
+			);
+			path = UIImageView;
+			sourceTree = "<group>";
+		};
+		493533151ED6D725001CCCF2 /* UIImage */ = {
+			isa = PBXGroup;
+			children = (
+				493533161ED6D725001CCCF2 /* UIImage+TSAlpha.h */,
+				493533171ED6D725001CCCF2 /* UIImage+TSAlpha.m */,
+				493533181ED6D725001CCCF2 /* UIImage+TSShape.h */,
+				493533191ED6D725001CCCF2 /* UIImage+TSShape.m */,
+			);
+			path = UIImage;
 			sourceTree = "<group>";
 		};
 		494533161ED6C01500F9340F /* Network */ = {
@@ -712,6 +744,8 @@
 		49F38FB01ECAE29E00D83E95 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				493533151ED6D725001CCCF2 /* UIImage */,
+				493533111ED6D703001CCCF2 /* UIImageView */,
 				499478B51ED68412003E7E4C /* UITableView */,
 				49F38FD21ECAEAF900D83E95 /* ViewController */,
 				49F38FB81ECAE3A400D83E95 /* UIView */,
@@ -782,6 +816,7 @@
 		B88E4ADAC7203664A600DE9A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4935331C1ED6E839001CCCF2 /* MobileCoreServices.framework */,
 				01E78EB35798A2C580CD280C /* libPods-ThinkSharer.a */,
 			);
 			name = Frameworks;
@@ -1001,6 +1036,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4935331B1ED6D725001CCCF2 /* UIImage+TSShape.m in Sources */,
 				498BE1151ED5950500D7D004 /* NSBundle+CTAssetsPickerController.m in Sources */,
 				49F38FD51ECAEAF900D83E95 /* UIViewController+YMHLoginCheck.m in Sources */,
 				498BE11B1ED5950500D7D004 /* UICollectionView+CTAssetsPickerController.m in Sources */,
@@ -1029,6 +1065,7 @@
 				498BE12E1ED5950500D7D004 /* CTAssetsPickerAccessDeniedView.m in Sources */,
 				49B743EA1ED2EA1500FFDBDB /* SharerCenterViewController.m in Sources */,
 				498BE1221ED5950500D7D004 /* CTAssetScrollView.m in Sources */,
+				4935331A1ED6D725001CCCF2 /* UIImage+TSAlpha.m in Sources */,
 				491C46281ECC2CD4009F43A4 /* SelectClassTableViewCell.m in Sources */,
 				498BE11A1ED5950500D7D004 /* PHAssetCollection+CTAssetsPickerController.m in Sources */,
 				49FBF3161ED3D2B900CAC5F5 /* SelectScrollViewForM.m in Sources */,
@@ -1054,6 +1091,7 @@
 				498BE11F1ED5950500D7D004 /* CTAssetCollectionViewController.m in Sources */,
 				49B743D31ED2DCC800FFDBDB /* UserGuideViewController.m in Sources */,
 				498BE1211ED5950500D7D004 /* CTAssetPlayButton.m in Sources */,
+				493533141ED6D703001CCCF2 /* UIImageView+YMHPlaceholder.m in Sources */,
 				498BE0051ED52C2D00D7D004 /* UserShareCenterFotterCollectionReusableView.m in Sources */,
 				498BE1311ED5950500D7D004 /* CTAssetsViewControllerTransition.m in Sources */,
 				491C46181ECC1D91009F43A4 /* SelectClassCollectionViewCell.m in Sources */,
