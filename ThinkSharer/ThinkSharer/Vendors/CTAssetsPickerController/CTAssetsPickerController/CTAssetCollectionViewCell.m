@@ -272,7 +272,7 @@
         [self.countLabel autoPinEdgesToSuperviewMarginsExcludingEdge:ALEdgeTop];
         [self.countLabel autoPinEdge:ALEdgeTop
                               toEdge:ALEdgeBottom
-                              ofView:self.titleLabel
+                               ofView:self.titleLabel
                           withOffset:self.countLabel.layoutMargins.top
                             relation:NSLayoutRelationGreaterThanOrEqual];
         

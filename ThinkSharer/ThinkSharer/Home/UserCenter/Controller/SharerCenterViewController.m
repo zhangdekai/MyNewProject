@@ -14,11 +14,10 @@
 #import "UserShareCenterCollectionReusableView.h"
 #import "UserShareCenterFotterCollectionReusableView.h"
 #import <PYPhotoBrowser/PYPhotoBrowser.h>
-//#import <CTAssetsPickerController/CTAssetsPickerController.h>
-#import "CTAssetsPickerController.h"
+#import "ShareMessageViewController.h"
 
 
-@interface SharerCenterViewController ()<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,CTAssetsPickerControllerDelegate>
+@interface SharerCenterViewController ()<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic,strong) UICollectionView *collectionView;
 
@@ -43,6 +42,12 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = NO;
+    [self addShadow];
+
+}
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self hiddenShadow];
 }
 
 -(void)initData {
@@ -57,7 +62,6 @@
 
 - (void)initilizeUI {
     
-    [self addShadow];
     
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
@@ -260,83 +264,12 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    
-    [self openPhoto];
+    if (indexPath.section == 0) {
+        ShareMessageViewController *vc = [[ShareMessageViewController alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
-/** 打开相册*/
-- (void)openPhoto {
-    /** 判断当前授权状态*/
-    PHAuthorizationStatus oldStatus = [PHPhotoLibrary authorizationStatus];
-    [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
-        switch (status) {
-            case PHAuthorizationStatusRestricted:    /** 系统级别的控制(如家长控制)*/
-                break;
-            case PHAuthorizationStatusDenied:    /** 用户选择了取消*/
-                if (oldStatus != PHAuthorizationStatusNotDetermined) {
-                    break;
-                }
-                break;
-            case PHAuthorizationStatusAuthorized:    /** 当前用户允许app访问相册*/
-                [self choosePhotos];
-            default:
-                break;
-        }
-    }];
-}
-
-/** 选择图片*/
-- (void)choosePhotos {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        CTAssetsPickerController *picker = [[CTAssetsPickerController alloc] init];
-        
-        picker.showsSelectionIndex = YES;
-        
-        picker.delegate = self;
-        
-        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-            picker.modalPresentationStyle = UIModalPresentationFormSheet;
-        }
-        
-        [self presentViewController:picker animated:YES completion:nil];
-        
-    });
-}
-
-#pragma mark CTAssetsPickerControllerDelegate
-- (void)assetsPickerController:(CTAssetsPickerController *)picker didFinishPickingAssets:(NSArray *)assets
-{
-    /** 关闭图片选择控制器*/
-    [picker dismissViewControllerAnimated:YES completion:^{
-        CGFloat scale = [UIScreen mainScreen].scale;
-        PHImageRequestOptions *options = [[PHImageRequestOptions alloc] init];
-        options.resizeMode = PHImageRequestOptionsResizeModeExact;
-        options.deliveryMode = PHImageRequestOptionsDeliveryModeHighQualityFormat;
-        
-        /** 遍历选择的所有图片*/
-        for (NSInteger i = 0; i < assets.count; i++) {
-            PHAsset *asset = assets[i];
-            CGSize size = CGSizeMake(asset.pixelWidth / scale, asset.pixelHeight / scale);
-            
-            /** 获取图片*/
-            [[PHImageManager defaultManager] requestImageForAsset:asset
-                                                       targetSize:size
-                                                      contentMode:PHImageContentModeDefault
-                                                          options:options
-                                                    resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
-                                                        
-//                                                        [self.imageArray removeLastObject];
-//                                                        [self.imageArray addObject:result];
-//                                                        /** 刷新*/
-//                                                        [self reload];
-                                                        
-                                                        
-                                                    }];
-        }
-    }];
-    NSLog(@"选择的照片");
-    
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

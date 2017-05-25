@@ -29,15 +29,13 @@ PODS:
     - DACircularProgress
     - MBProgressHUD
     - SDWebImage/GIF (~> 4.0.0)
-  - Realm (2.7.0):
-    - Realm/Headers (= 2.7.0)
-  - Realm/Headers (2.7.0)
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
   - SDWebImage/GIF (4.0.0):
     - FLAnimatedImage (~> 1.0)
     - SDWebImage/Core
+  - YYCache (1.0.4)
 
 DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
@@ -48,8 +46,8 @@ DEPENDENCIES:
   - MJRefresh
   - PureLayout (~> 3.0.2)
   - PYPhotoBrowser
-  - Realm
   - SDWebImage (~> 4.0.0)
+  - YYCache (~> 1.0.4)
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -63,9 +61,9 @@ SPEC CHECKSUMS:
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   PureLayout: 4d550abe49a94f24c2808b9b95db9131685fe4cd
   PYPhotoBrowser: eb140689619b10843beaad9e532581825ad7f542
-  Realm: 07e5d3a9e0e41d65fd5f9f05150ed6295d0f093b
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  YYCache: 8105b6638f5e849296c71f331ff83891a4942952
 
-PODFILE CHECKSUM: 24064d7e94dcca850b9555d631580d52e774ff2c
+PODFILE CHECKSUM: 23c837b5d40ed2f9b84171bd7dcbf0fbdf4460ca
 
 COCOAPODS: 1.2.1

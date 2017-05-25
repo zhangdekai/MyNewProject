@@ -15,6 +15,7 @@
 		492331B11ED446F400E45338 /* TSPublicTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 492331B01ED446F400E45338 /* TSPublicTool.m */; };
 		492331B51ED457C300E45338 /* ShareFourceCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 492331B31ED457C300E45338 /* ShareFourceCollectionViewCell.m */; };
 		492331B61ED457C300E45338 /* ShareFourceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 492331B41ED457C300E45338 /* ShareFourceCollectionViewCell.xib */; };
+		494533191ED6C04B00F9340F /* NetWorkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 494533181ED6C04B00F9340F /* NetWorkManager.m */; };
 		498BE0021ED52BDB00D7D004 /* UserShareCenterCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 498BE0011ED52BDB00D7D004 /* UserShareCenterCollectionReusableView.m */; };
 		498BE0051ED52C2D00D7D004 /* UserShareCenterFotterCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 498BE0041ED52C2D00D7D004 /* UserShareCenterFotterCollectionReusableView.m */; };
 		498BE0081ED5511300D7D004 /* ShareMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 498BE0071ED5511300D7D004 /* ShareMessageViewController.m */; };
@@ -53,6 +54,7 @@
 		498BE1341ED5950500D7D004 /* CTAssetThumbnailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 498BE0F81ED5950500D7D004 /* CTAssetThumbnailView.m */; };
 		498BE1541ED598E300D7D004 /* CTAssetsPicker.strings in Resources */ = {isa = PBXBuildFile; fileRef = 498BE13C1ED598E300D7D004 /* CTAssetsPicker.strings */; };
 		498BE1581ED59A6D00D7D004 /* CTAssetsPickerController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 498BE1571ED59A6D00D7D004 /* CTAssetsPickerController.bundle */; };
+		499478B81ED68412003E7E4C /* UITableView+YMHRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 499478B71ED68412003E7E4C /* UITableView+YMHRefresh.m */; };
 		4996B8211ECA981F00272439 /* ThinkSharerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4996B8201ECA981F00272439 /* ThinkSharerTests.m */; };
 		4996B82C1ECA981F00272439 /* ThinkSharerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4996B82B1ECA981F00272439 /* ThinkSharerUITests.m */; };
 		4996B8491ECAAABA00272439 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4996B8471ECAAABA00272439 /* main.m */; };
@@ -122,6 +124,8 @@
 		492331B21ED457C300E45338 /* ShareFourceCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareFourceCollectionViewCell.h; sourceTree = "<group>"; };
 		492331B31ED457C300E45338 /* ShareFourceCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareFourceCollectionViewCell.m; sourceTree = "<group>"; };
 		492331B41ED457C300E45338 /* ShareFourceCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShareFourceCollectionViewCell.xib; sourceTree = "<group>"; };
+		494533171ED6C04B00F9340F /* NetWorkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkManager.h; sourceTree = "<group>"; };
+		494533181ED6C04B00F9340F /* NetWorkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkManager.m; sourceTree = "<group>"; };
 		498BE0001ED52BDB00D7D004 /* UserShareCenterCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserShareCenterCollectionReusableView.h; sourceTree = "<group>"; };
 		498BE0011ED52BDB00D7D004 /* UserShareCenterCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserShareCenterCollectionReusableView.m; sourceTree = "<group>"; };
 		498BE0031ED52C2D00D7D004 /* UserShareCenterFotterCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserShareCenterFotterCollectionReusableView.h; sourceTree = "<group>"; };
@@ -221,6 +225,8 @@
 		498BE1521ED598E300D7D004 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/CTAssetsPicker.strings"; sourceTree = "<group>"; };
 		498BE1531ED598E300D7D004 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/CTAssetsPicker.strings"; sourceTree = "<group>"; };
 		498BE1571ED59A6D00D7D004 /* CTAssetsPickerController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CTAssetsPickerController.bundle; sourceTree = "<group>"; };
+		499478B61ED68412003E7E4C /* UITableView+YMHRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+YMHRefresh.h"; sourceTree = "<group>"; };
+		499478B71ED68412003E7E4C /* UITableView+YMHRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+YMHRefresh.m"; sourceTree = "<group>"; };
 		4996B8031ECA981D00272439 /* ThinkSharer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThinkSharer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4996B81C1ECA981E00272439 /* ThinkSharerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThinkSharerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4996B8201ECA981F00272439 /* ThinkSharerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThinkSharerTests.m; sourceTree = "<group>"; };
@@ -338,6 +344,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		494533161ED6C01500F9340F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				494533171ED6C04B00F9340F /* NetWorkManager.h */,
+				494533181ED6C04B00F9340F /* NetWorkManager.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		498BE0B31ED5950500D7D004 /* CTAssetsPickerController */ = {
 			isa = PBXGroup;
 			children = (
@@ -438,6 +453,15 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		499478B51ED68412003E7E4C /* UITableView */ = {
+			isa = PBXGroup;
+			children = (
+				499478B61ED68412003E7E4C /* UITableView+YMHRefresh.h */,
+				499478B71ED68412003E7E4C /* UITableView+YMHRefresh.m */,
+			);
+			path = UITableView;
+			sourceTree = "<group>";
+		};
 		4996B7FA1ECA981D00272439 = {
 			isa = PBXGroup;
 			children = (
@@ -498,6 +522,7 @@
 			children = (
 				49F38FA91ECAE06B00D83E95 /* BasicViewController.h */,
 				49F38FAA1ECAE06B00D83E95 /* BasicViewController.m */,
+				494533161ED6C01500F9340F /* Network */,
 				49B743FF1ED2F54800FFDBDB /* Public */,
 				49F38FDD1ECAFBD700D83E95 /* Config */,
 				49F38FB01ECAE29E00D83E95 /* Categories */,
@@ -687,6 +712,7 @@
 		49F38FB01ECAE29E00D83E95 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				499478B51ED68412003E7E4C /* UITableView */,
 				49F38FD21ECAEAF900D83E95 /* ViewController */,
 				49F38FB81ECAE3A400D83E95 /* UIView */,
 				49F38FB11ECAE2BC00D83E95 /* UIColor */,
@@ -1031,12 +1057,14 @@
 				498BE0051ED52C2D00D7D004 /* UserShareCenterFotterCollectionReusableView.m in Sources */,
 				498BE1311ED5950500D7D004 /* CTAssetsViewControllerTransition.m in Sources */,
 				491C46181ECC1D91009F43A4 /* SelectClassCollectionViewCell.m in Sources */,
+				499478B81ED68412003E7E4C /* UITableView+YMHRefresh.m in Sources */,
 				49F38FA51ECADDBE00D83E95 /* YMHIdenCodeTool.m in Sources */,
 				498BE0081ED5511300D7D004 /* ShareMessageViewController.m in Sources */,
 				498BE12C1ED5950500D7D004 /* CTAssetsPageView.m in Sources */,
 				498BE1331ED5950500D7D004 /* CTAssetThumbnailStacks.m in Sources */,
 				49B743F41ED2EA6900FFDBDB /* SharerFirstCollectionViewCell.m in Sources */,
 				498BE1161ED5950500D7D004 /* NSDateFormatter+CTAssetsPickerController.m in Sources */,
+				494533191ED6C04B00F9340F /* NetWorkManager.m in Sources */,
 				492331B51ED457C300E45338 /* ShareFourceCollectionViewCell.m in Sources */,
 				498BE1241ED5950500D7D004 /* CTAssetSelectionLabel.m in Sources */,
 				49F38FAB1ECAE06B00D83E95 /* BasicViewController.m in Sources */,
@@ -1114,6 +1142,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -1163,6 +1192,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";

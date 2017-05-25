@@ -62,6 +62,14 @@
     self.navigationController.navigationBar.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.navigationController.navigationBar.bounds].CGPath;
 }
 
+- (void)hiddenShadow {
+    //1.设置阴影颜色
+    
+    self.navigationController.navigationBar.layer.shadowColor = [UIColor whiteColor].CGColor;
+    
+}
+
+
 #pragma mark - public method
 - (void)initView
 {

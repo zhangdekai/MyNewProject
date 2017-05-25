@@ -12,8 +12,15 @@
 
 @property (nonatomic,strong) UIImageView *headerImageView;
 @property (nonatomic,strong) UIImageView *camerIcon;
+@property (nonatomic,strong) UITextField *nickTextFiled;
+@property (nonatomic,strong) UIView *nickLine;
+@property (nonatomic,strong) UIButton *birthdayButton;
 
-//@property (nonatomic,strong)  ;
 
+@property (nonatomic,copy) void (^SelectPhotoBlock)();
+@property (nonatomic,copy) void (^SelectBirthdatBlock)();
+
+
+- (void)setBirthdayString:(NSString *)birthday;
 
 @end
