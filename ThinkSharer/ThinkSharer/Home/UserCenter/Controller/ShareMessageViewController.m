@@ -158,7 +158,7 @@
         UIImage *image = info[UIImagePickerControllerOriginalImage];
         
         _tableHeaderView.headerImageView.image = image;
-        __block NSString *createdAssetID =nil;//唯一标识，可以用于图片资源获取
+        __block NSString *createdAssetID =nil;//唯一标识，可以用于图片资源获取  保存到系统相册
         NSError *error =nil;
         [[PHPhotoLibrary sharedPhotoLibrary]performChangesAndWait:^{
             createdAssetID = [PHAssetChangeRequest creationRequestForAssetFromImage:image].placeholderForCreatedAsset.localIdentifier;
@@ -173,7 +173,7 @@
 - (void)configBirthdayPickerView {
     _birthdayPickerView = [[UIDatePicker alloc] init];
     _birthdayPickerView.backgroundColor = [UIColor whiteColor];
-    _birthdayPickerView.datePickerMode = UIDatePickerModeDate;
+    _birthdayPickerView.datePickerMode = UIDatePickerModeDateAndTime;
     NSCalendar *calendar = [NSCalendar currentCalendar];
     [calendar setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
     [calendar setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"]];
@@ -182,6 +182,8 @@
     [comps setYear:0];
     [comps setMonth:0];
     [comps setDay:0];
+    [comps setHour:0];
+    [comps setMinute:0];
     NSDate *maxDate = [calendar dateByAddingComponents:comps toDate:currentDate options:0];
     [comps setYear:-120];
     NSDate *minDate = [calendar dateByAddingComponents:comps toDate:currentDate options:0];
