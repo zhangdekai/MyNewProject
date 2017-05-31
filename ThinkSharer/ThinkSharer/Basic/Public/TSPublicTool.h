@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "TSActionAlterView.h"
+#import "TSDatePickerView.h"
 
 //可自行添加公共tool
 
@@ -34,5 +35,6 @@ typedef void(^AlterBlock)();
 
 //首页操作提示
 + (TSActionAlterView *)shareInstance;
+
 
 @end

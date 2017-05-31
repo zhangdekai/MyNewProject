@@ -21,6 +21,9 @@
 
 @property (nonatomic,strong) UITableView *tableView;
 
+@property (nonatomic,strong) UITableView *leftTableView;
+@property (nonatomic,strong) UITableView *rightTableView;
+
 
 @property (nonatomic,strong) NSMutableArray *sectionArray;
 @property (nonatomic,strong) NSMutableDictionary *datasource;
@@ -107,12 +110,12 @@
     _tableViewDataSource = [NSMutableArray array];
     _tableViewDataSource =  [TSPublicTool convertArray:array3];
 
-    UIView *backView = [[UIView alloc]initWithFrame:CGRectMake(0, 64, ScreenWidth, 50)];
+    UIView *backView = [[UIView alloc]initWithFrame:CGRectMake(0, 64, ScreenWidth, 53)];
     [self.view addSubview:backView];
     
-    SelectScrollView *selcetView = [[SelectScrollView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 50) selectItems:items];
+    SelectScrollView *selcetView = [[SelectScrollView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 53) selectItems:items];
     [backView addSubview:selcetView];
-    [backView addShadowWithoutCorner];
+//    [backView addShadowWithoutCorner];
     TSWeakSelf
     selcetView.selectItem = ^(NSString *title) {
         NSLog(@"%@",title);
@@ -125,7 +128,7 @@
 
                 [weakSelf.view bringSubviewToFront:weakSelf.collectionView];
             } else {
-                [weakSelf initCollectionView];
+//                [weakSelf initCollectionView];
             }
         } else {
             if (weakSelf.collectionView) {
@@ -171,172 +174,187 @@
         }
     };
     
-    UIView *backView1 = [[UIView alloc]initWithFrame:CGRectMake(0, 64 + 65, ScreenWidth, 50)];
-    [self.view addSubview:backView1];
-    [backView1 addShadowWithoutCorner];
-    if (!_selectView) {
-        _selectView = [[SelectScrollViewForM alloc]initWithFrame:CGRectMake(0, 0 , ScreenWidth, 50) selectItems:items1];
-        
-    }
-    [_selectView setNewItems:items1];
-    [backView1 addSubview:_selectView];
-    _selectView.selectItem = ^(NSString *title) {
-        NSLog(@"%@",title);
-        
-        
-    };
+    
+    //第二行选择条
+//    UIView *backView1 = [[UIView alloc]initWithFrame:CGRectMake(0, 64 + 65 + 3, ScreenWidth, 50)];
+//    [self.view addSubview:backView1];
+////    [backView1 addShadowWithoutCorner];
+//    if (!_selectView) {
+//        _selectView = [[SelectScrollViewForM alloc]initWithFrame:CGRectMake(0, 0 , ScreenWidth, 50) selectItems:items1];
+//        
+//    }
+//    [_selectView setNewItems:items1];
+//    [backView1 addSubview:_selectView];
+//    _selectView.selectItem = ^(NSString *title) {
+//        NSLog(@"%@",title);
+//        
+//        
+//    };
 
-    [self initTableView];
+//    [self initTableView];
+}
 
-    
-}
-- (void)initTableView {
-    if (!_tableView) {
-        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 64 + 130, ScreenWidth, ScreenHeight - 194)style:(UITableViewStylePlain)];
-        
-    }
-    [self.view addSubview:_tableView];
-    _tableView.backgroundColor = [UIColor backgroundGrayColorA];
-    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    _tableView.dataSource = self;
-    _tableView.delegate = self;
-    [_tableView registerClass:[SelectClassTableViewCell class] forCellReuseIdentifier:@"SelectClassTableViewCell"];
-    
-    
-}
-- (void)initCollectionView {
-    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
-    layout.scrollDirection = UICollectionViewScrollDirectionVertical;
-    if (!self.collectionView) {
-        self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 64 + 53, ScreenWidth, ScreenHeight - 64 - 51) collectionViewLayout:layout];
+- (void)initLeftTableView {
+    if (_leftTableView == nil) {
+        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 64 + 53, 110, ScreenHeight - 117)style:(UITableViewStylePlain)];
 
     }
-    [self.view addSubview:self.collectionView];
-    self.collectionView.showsVerticalScrollIndicator = NO;
-    self.collectionView.backgroundColor = [UIColor whiteColor];
-    self.collectionView.delegate = self;
-    self.collectionView.dataSource = self;
-    
-    [self.collectionView registerNib:[UINib nibWithNibName:@"SelectClassCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"SelectClassCollectionViewCell"];
-    [self.collectionView registerClass:[SelectClassheaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"SelectClassheaderView"];
-    [self.collectionView registerClass:[SelectClassFooterView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"SelectClassFooterView"];
-    
-
-}
-#pragma mark Action
-- (void)leftItemAction {
-    MainViewController *vc = [[MainViewController alloc]init];
-    [self.navigationController pushViewController:vc animated:YES];
-    
-}
-
-#pragma mark UITableViewDelegate UITableViewDatasource
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _tableViewDataSource.count;
-}
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 50;
-}
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    SelectClassTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SelectClassTableViewCell"];
-    
-    
-    if (_tableViewDataSource.count != 0) {
-        [cell setLabelModel:_tableViewDataSource[indexPath.row]];
-    }
-    cell.selectBlock = ^(NSString *title) {
-        NSLog(@"%@",title);
-        MainViewController *vc = [[MainViewController alloc]init];
-        [self.navigationController pushViewController:vc animated:YES];
-
-    };
-    return cell;
-}
-
-
-
-#pragma mark UICollectionViewDelegate,UICollectionViewDataSource
-
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return self.sectionArray.count;
-}
-
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    
-    NSMutableArray *tmpArray = [self.datasource objectForKey:self.sectionArray[section]];
-    
-    return tmpArray.count;
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    
-    SelectClassCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"SelectClassCollectionViewCell" forIndexPath:indexPath];
-    
-    NSMutableArray *tmpArray = [self.datasource objectForKey:self.sectionArray[indexPath.section]];
-
-    cell.titleLabel.text = tmpArray[indexPath.row];
-    
-    return cell;
-}
-
-- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
-    
-    if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
-        SelectClassheaderView *header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"SelectClassheaderView" forIndexPath:indexPath];
-        [header setHeaderTitle:self.sectionArray[indexPath.section]];
-        
-        return header;
-    
-    } else {
-        SelectClassFooterView *footer = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"SelectClassFooterView" forIndexPath:indexPath];
-        
-        return footer;
-    }
-}
-
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
-    
-    return CGSizeMake(ScreenWidth, 44);
-}
-
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section {
-    
-    return CGSizeMake(ScreenWidth, 15);
+    [self.view addSubview:_leftTableView];
+    _leftTableView.backgroundColor = [UIColor backgroundGrayColorA];
+    _leftTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    _leftTableView.dataSource = self;
+    _leftTableView.delegate = self;
+    [_leftTableView registerClass:[SelectClassTableViewCell class] forCellReuseIdentifier:@"SelectClassTableViewCell"];
 
 }
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-    
-    return CGSizeMake(ScreenWidth / 3, 44);
-    
-}
-
-- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
-    return UIEdgeInsetsMake(0, 0, 0, 0);
-}
-
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
-    return 0;
-}
-
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section{
-    return 0;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-
-    NSLog(@"%@",self.array[indexPath.row]);
-    MainViewController *vc = [[MainViewController alloc]init];
-    [self.navigationController pushViewController:vc animated:YES];
-    
-//    TestViewController *vc = [[TestViewController alloc]init];
+//- (void)initTableView {
+//    if (!_tableView) {
+//        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 64 + 130, ScreenWidth, ScreenHeight - 194)style:(UITableViewStylePlain)];
+//        
+//    }
+//    [self.view addSubview:_tableView];
+//    _tableView.backgroundColor = [UIColor backgroundGrayColorA];
+//    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+//    _tableView.dataSource = self;
+//    _tableView.delegate = self;
+//    [_tableView registerClass:[SelectClassTableViewCell class] forCellReuseIdentifier:@"SelectClassTableViewCell"];
+//    
+//    
+//}
+//- (void)initCollectionView {
+//    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
+//    layout.scrollDirection = UICollectionViewScrollDirectionVertical;
+//    if (!self.collectionView) {
+//        self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 64 + 53, ScreenWidth, ScreenHeight - 64 - 51) collectionViewLayout:layout];
+//
+//    }
+//    [self.view addSubview:self.collectionView];
+//    self.collectionView.showsVerticalScrollIndicator = NO;
+//    self.collectionView.backgroundColor = [UIColor whiteColor];
+//    self.collectionView.delegate = self;
+//    self.collectionView.dataSource = self;
+//    
+//    [self.collectionView registerNib:[UINib nibWithNibName:@"SelectClassCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"SelectClassCollectionViewCell"];
+//    [self.collectionView registerClass:[SelectClassheaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"SelectClassheaderView"];
+//    [self.collectionView registerClass:[SelectClassFooterView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"SelectClassFooterView"];
+//    
+//
+//}
+//#pragma mark Action
+//- (void)leftItemAction {
+//    MainViewController *vc = [[MainViewController alloc]init];
 //    [self.navigationController pushViewController:vc animated:YES];
+//    
+//}
+//
+//#pragma mark UITableViewDelegate UITableViewDatasource
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+//    return 1;
+//}
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//    return _tableViewDataSource.count;
+//}
+//-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    return 50;
+//}
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    
+//    SelectClassTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SelectClassTableViewCell"];
+//    
+//    
+//    if (_tableViewDataSource.count != 0) {
+//        [cell setLabelModel:_tableViewDataSource[indexPath.row]];
+//    }
+//    cell.selectBlock = ^(NSString *title) {
+//        NSLog(@"%@",title);
+//        MainViewController *vc = [[MainViewController alloc]init];
+//        [self.navigationController pushViewController:vc animated:YES];
+//
+//    };
+//    return cell;
+//}
+//
+//
+//
+//#pragma mark UICollectionViewDelegate,UICollectionViewDataSource
+//
+//- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+//    return self.sectionArray.count;
+//}
+//
+//
+//- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+//    
+//    NSMutableArray *tmpArray = [self.datasource objectForKey:self.sectionArray[section]];
+//    
+//    return tmpArray.count;
+//}
+//
+//- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+//    
+//    SelectClassCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"SelectClassCollectionViewCell" forIndexPath:indexPath];
+//    
+//    NSMutableArray *tmpArray = [self.datasource objectForKey:self.sectionArray[indexPath.section]];
+//
+//    cell.titleLabel.text = tmpArray[indexPath.row];
+//    
+//    return cell;
+//}
+//
+//- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+//    
+//    if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
+//        SelectClassheaderView *header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"SelectClassheaderView" forIndexPath:indexPath];
+//        [header setHeaderTitle:self.sectionArray[indexPath.section]];
+//        
+//        return header;
+//    
+//    } else {
+//        SelectClassFooterView *footer = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"SelectClassFooterView" forIndexPath:indexPath];
+//        
+//        return footer;
+//    }
+//}
+//
+//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
+//    
+//    return CGSizeMake(ScreenWidth, 44);
+//}
+//
+//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section {
+//    
+//    return CGSizeMake(ScreenWidth, 15);
+//
+//}
+//
+//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+//    
+//    return CGSizeMake(ScreenWidth / 3, 44);
+//    
+//}
+//
+//- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
+//    return UIEdgeInsetsMake(0, 0, 0, 0);
+//}
+//
+//- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
+//    return 0;
+//}
+//
+//- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section{
+//    return 0;
+//}
+//
+//- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+//
+//    NSLog(@"%@",self.array[indexPath.row]);
+//    MainViewController *vc = [[MainViewController alloc]init];
+//    [self.navigationController pushViewController:vc animated:YES];
+//    
+////    TestViewController *vc = [[TestViewController alloc]init];
+////    [self.navigationController pushViewController:vc animated:YES];
+//
 
-
-}
+//}
 @end

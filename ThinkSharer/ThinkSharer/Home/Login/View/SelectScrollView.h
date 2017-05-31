@@ -14,6 +14,8 @@ typedef void (^SelectClassBlock)(NSString *title);
 
 @property (nonatomic, strong) NSMutableArray *items;
 
+@property (nonatomic, strong) UIView *blueLine;
+
 @property (nonatomic,copy) SelectClassBlock selectItem;
 
 

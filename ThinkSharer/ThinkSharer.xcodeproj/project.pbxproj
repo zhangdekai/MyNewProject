@@ -64,6 +64,10 @@
 		4996B8491ECAAABA00272439 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4996B8471ECAAABA00272439 /* main.m */; };
 		4996B8511ECAAC2900272439 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4996B8501ECAAC2900272439 /* Assets.xcassets */; };
 		4996B8621ECAADA900272439 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4996B8611ECAADA900272439 /* LaunchScreen.storyboard */; };
+		49A850381EDE594600EE521A /* TSDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A850371EDE594600EE521A /* TSDatePickerView.m */; };
+		49A8503B1EDE64A700EE521A /* testView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A8503A1EDE64A700EE521A /* testView.swift */; };
+		49A8503E1EDE94EB00EE521A /* LoactionIdentityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A8503D1EDE94EB00EE521A /* LoactionIdentityView.m */; };
+		49A850411EDED27200EE521A /* SelectClassLeftTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A850401EDED27200EE521A /* SelectClassLeftTableViewCell.m */; };
 		49AF54BA1ECED69000406DFC /* TSCustomTextFiled.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AF54B91ECED69000406DFC /* TSCustomTextFiled.m */; };
 		49B0D9EB1ECC4D4B00CA3299 /* SelectClassFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B0D9EA1ECC4D4B00CA3299 /* SelectClassFooterView.m */; };
 		49B743CE1ED2DC9D00FFDBDB /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B743CA1ED2DC9D00FFDBDB /* LoginViewController.m */; };
@@ -251,6 +255,14 @@
 		4996B84D1ECAAB7000272439 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4996B8501ECAAC2900272439 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4996B8611ECAADA900272439 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		49A850361EDE594600EE521A /* TSDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSDatePickerView.h; sourceTree = "<group>"; };
+		49A850371EDE594600EE521A /* TSDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSDatePickerView.m; sourceTree = "<group>"; };
+		49A850391EDE64A600EE521A /* ThinkSharer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ThinkSharer-Bridging-Header.h"; sourceTree = "<group>"; };
+		49A8503A1EDE64A700EE521A /* testView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testView.swift; sourceTree = "<group>"; };
+		49A8503C1EDE94EB00EE521A /* LoactionIdentityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoactionIdentityView.h; sourceTree = "<group>"; };
+		49A8503D1EDE94EB00EE521A /* LoactionIdentityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoactionIdentityView.m; sourceTree = "<group>"; };
+		49A8503F1EDED27200EE521A /* SelectClassLeftTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectClassLeftTableViewCell.h; sourceTree = "<group>"; };
+		49A850401EDED27200EE521A /* SelectClassLeftTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectClassLeftTableViewCell.m; sourceTree = "<group>"; };
 		49AF54B81ECED69000406DFC /* TSCustomTextFiled.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCustomTextFiled.h; sourceTree = "<group>"; };
 		49AF54B91ECED69000406DFC /* TSCustomTextFiled.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCustomTextFiled.m; sourceTree = "<group>"; };
 		49B0D9E91ECC4D4B00CA3299 /* SelectClassFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectClassFooterView.h; sourceTree = "<group>"; };
@@ -339,6 +351,8 @@
 			children = (
 				491C46121ECBF3C8009F43A4 /* SelectScrollView.h */,
 				491C46131ECBF3C8009F43A4 /* SelectScrollView.m */,
+				49A8503C1EDE94EB00EE521A /* LoactionIdentityView.h */,
+				49A8503D1EDE94EB00EE521A /* LoactionIdentityView.m */,
 				49FBF3141ED3D2B900CAC5F5 /* SelectScrollViewForM.h */,
 				49FBF3151ED3D2B900CAC5F5 /* SelectScrollViewForM.m */,
 				491C46261ECC2CD4009F43A4 /* SelectClassTableViewCell.h */,
@@ -352,6 +366,8 @@
 				49B0D9EA1ECC4D4B00CA3299 /* SelectClassFooterView.m */,
 				49AF54B81ECED69000406DFC /* TSCustomTextFiled.h */,
 				49AF54B91ECED69000406DFC /* TSCustomTextFiled.m */,
+				49A8503F1EDED27200EE521A /* SelectClassLeftTableViewCell.h */,
+				49A850401EDED27200EE521A /* SelectClassLeftTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -728,6 +744,10 @@
 				492331B01ED446F400E45338 /* TSPublicTool.m */,
 				49B744001ED2F57200FFDBDB /* TSActionAlterView.h */,
 				49B744011ED2F57200FFDBDB /* TSActionAlterView.m */,
+				49A850361EDE594600EE521A /* TSDatePickerView.h */,
+				49A850371EDE594600EE521A /* TSDatePickerView.m */,
+				49A8503A1EDE64A700EE521A /* testView.swift */,
+				49A850391EDE64A600EE521A /* ThinkSharer-Bridging-Header.h */,
 			);
 			path = Public;
 			sourceTree = "<group>";
@@ -893,6 +913,7 @@
 					4996B8021ECA981D00272439 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 9X97YKR3AP;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					4996B81B1ECA981E00272439 = {
@@ -1050,7 +1071,9 @@
 				498BE1181ED5950500D7D004 /* NSNumberFormatter+CTAssetsPickerController.m in Sources */,
 				49B743CE1ED2DC9D00FFDBDB /* LoginViewController.m in Sources */,
 				49F38FC01ECAE3A400D83E95 /* UIView+YMHAdditions.m in Sources */,
+				49A850381EDE594600EE521A /* TSDatePickerView.m in Sources */,
 				498BE12D1ED5950500D7D004 /* CTAssetsPageViewController.m in Sources */,
+				49A8503B1EDE64A700EE521A /* testView.swift in Sources */,
 				4996B8491ECAAABA00272439 /* main.m in Sources */,
 				49B743F81ED2EA6900FFDBDB /* SharerThirdCollectionViewCell.m in Sources */,
 				498BE12A1ED5950500D7D004 /* CTAssetsGridViewLayout.m in Sources */,
@@ -1070,6 +1093,7 @@
 				498BE11A1ED5950500D7D004 /* PHAssetCollection+CTAssetsPickerController.m in Sources */,
 				49FBF3161ED3D2B900CAC5F5 /* SelectScrollViewForM.m in Sources */,
 				498BE0021ED52BDB00D7D004 /* UserShareCenterCollectionReusableView.m in Sources */,
+				49A8503E1EDE94EB00EE521A /* LoactionIdentityView.m in Sources */,
 				491C461F1ECC23A1009F43A4 /* SelectClassheaderView.m in Sources */,
 				498BE12F1ED5950500D7D004 /* CTAssetsPickerController.m in Sources */,
 				498BE1291ED5950500D7D004 /* CTAssetsGridViewFooter.m in Sources */,
@@ -1078,6 +1102,7 @@
 				498BE11C1ED5950500D7D004 /* UIImage+CTAssetsPickerController.m in Sources */,
 				49B743D01ED2DC9D00FFDBDB /* SelectClassViewController.m in Sources */,
 				498BE1321ED5950500D7D004 /* CTAssetThumbnailOverlay.m in Sources */,
+				49A850411EDED27200EE521A /* SelectClassLeftTableViewCell.m in Sources */,
 				49F38FA81ECADDE300D83E95 /* YMHRegularExpression.m in Sources */,
 				49F38FE01ECAFBFF00D83E95 /* TSAppInfo.m in Sources */,
 				498BE11D1ED5950500D7D004 /* CTAssetCheckmark.m in Sources */,
@@ -1275,6 +1300,7 @@
 			baseConfigurationReference = C89FF79DF7076669A0BEC232 /* Pods-ThinkSharer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 9X97YKR3AP;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "/Users/zhangdekai/Desktop/ThinkSharer/ThinkSharer/ThinkSharer/Supporting Files/thinkSharer.pch";
@@ -1284,6 +1310,9 @@
 				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ts.thinkSharer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ThinkSharer/Basic/Public/ThinkSharer-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1292,6 +1321,7 @@
 			baseConfigurationReference = 92DAA5E534C4A9D1FA2B48E8 /* Pods-ThinkSharer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 9X97YKR3AP;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "/Users/zhangdekai/Desktop/ThinkSharer/ThinkSharer/ThinkSharer/Supporting Files/thinkSharer.pch";
@@ -1301,12 +1331,15 @@
 				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ts.thinkSharer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ThinkSharer/Basic/Public/ThinkSharer-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		4996B8341ECA981F00272439 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = ThinkSharerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1319,6 +1352,7 @@
 		4996B8351ECA981F00272439 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = ThinkSharerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1331,6 +1365,7 @@
 		4996B8371ECA981F00272439 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = ThinkSharerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ThinkSharer.ThinkSharerUITests;
@@ -1342,6 +1377,7 @@
 		4996B8381ECA981F00272439 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = ThinkSharerUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ThinkSharer.ThinkSharerUITests;

@@ -38,6 +38,7 @@
     _startImageView.clipsToBounds = YES;
     [_startImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(0);
+        make.size.mas_equalTo(size);
         make.bottom.equalTo(self.mas_bottom).offset(-125);
         
     }];

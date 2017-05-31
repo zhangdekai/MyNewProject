@@ -179,7 +179,6 @@
     [self.view addSubview:self.hud];
     
     self.hud.delegate = self;
-    //self.hud.labelText = text;
     self.hud.label.text = text;
 
     [self.hud showAnimated:YES];
@@ -199,6 +198,7 @@
     }
     
     self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
     self.hud.delegate = self;
     self.hud.mode = MBProgressHUDModeText;
     self.hud.label.text = text;

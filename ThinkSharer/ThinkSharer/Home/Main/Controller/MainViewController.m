@@ -14,6 +14,7 @@
 #import "SharerCenterViewController.h"
 #import "SearchClassViewController.h"
 #import "TSActionAlterView.h"
+#import "TSAppInfo.h"
 
 @interface MainViewController ()<MAMapViewDelegate,AMapLocationManagerDelegate>
 
@@ -294,12 +295,19 @@
 
 - (void)showAlterView {
     
-    [[TSPublicTool shareInstance] creatActionAlterView:@"map_startAlter" size:CGSizeMake(ScreenWidth - 30, 100) action:^{
-        NSLog(@"知道了");
-
-    }];
+    //初次安装
+//    if (![TSAppInfo checkAppVersion]) {
     
-    [[TSPublicTool shareInstance]showInView];
+        [[TSPublicTool shareInstance] creatActionAlterView:@"map_startAlter" size:CGSizeMake(ScreenWidth - 30, 100) action:^{
+            NSLog(@"知道了");
+            
+        }];
+        
+        [[TSPublicTool shareInstance]showInView];
+
+//    }
+
+    
     
     
     

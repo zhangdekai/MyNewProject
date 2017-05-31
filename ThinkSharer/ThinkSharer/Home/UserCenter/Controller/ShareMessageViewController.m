@@ -11,6 +11,7 @@
 #import "ShareMessageTableHeaderView.h"
 #import <Photos/Photos.h>
 #import <MobileCoreServices/MobileCoreServices.h>
+#import "TSDatePickerView.h"
 
 @interface ShareMessageViewController ()<UITableViewDelegate,UITableViewDataSource,CTAssetsPickerControllerDelegate,UITextFieldDelegate,UIImagePickerControllerDelegate>
 
@@ -43,10 +44,10 @@
     // Do any additional setup after loading the view.
     [self setNavigationBar];
     
-    _responderTextField = [[UITextField alloc] initWithFrame:CGRectZero];
-    [self.view addSubview:_responderTextField];
+//    _responderTextField = [[UITextField alloc] initWithFrame:CGRectZero];
+//    [self.view addSubview:_responderTextField];
+//    [self configBirthdayPickerView];
     
-    [self configBirthdayPickerView];
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(changeLineColor) name:UIKeyboardWillHideNotification object:nil];
 }
@@ -170,109 +171,26 @@
 }
 
 
-- (void)configBirthdayPickerView {
-    _birthdayPickerView = [[UIDatePicker alloc] init];
-    _birthdayPickerView.backgroundColor = [UIColor whiteColor];
-    _birthdayPickerView.datePickerMode = UIDatePickerModeDateAndTime;
-    NSCalendar *calendar = [NSCalendar currentCalendar];
-    [calendar setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
-    [calendar setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"]];
-    NSDate *currentDate = [NSDate date];
-    NSDateComponents *comps = [[NSDateComponents alloc] init];
-    [comps setYear:0];
-    [comps setMonth:0];
-    [comps setDay:0];
-    [comps setHour:0];
-    [comps setMinute:0];
-    NSDate *maxDate = [calendar dateByAddingComponents:comps toDate:currentDate options:0];
-    [comps setYear:-120];
-    NSDate *minDate = [calendar dateByAddingComponents:comps toDate:currentDate options:0];
-    _birthdayPickerView.maximumDate = maxDate;
-    _birthdayPickerView.minimumDate = minDate;
-    _birthdayPickerView.calendar = calendar;
-    
-    _birthdayToolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 44)];
-    _birthdayToolBar.barTintColor = [UIColor whiteColor];
-    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(toolBarCancleButtonClicked)];
-    leftItem.tintColor = [UIColor generalSubTitleFontGrayColor];
-    UIBarButtonItem *centerSpace=[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
-    UIBarButtonItem *rightItem=[[UIBarButtonItem alloc] initWithTitle:@"确定" style:UIBarButtonItemStylePlain target:self action:@selector(birthdayToolBarDoneButtonClicked)];
-    rightItem.tintColor = [UIColor mainColorBlue];
-    _birthdayToolBar.items=@[leftItem, centerSpace, rightItem];
-    
-
-}
 
 - (void)selectBirthday {
     
-    [self.view addSubview:self.maskView];
-    [_birthdayToolBar addSubview:self.separatorView];
-    _responderTextField.inputAccessoryView = _birthdayToolBar;
-    _responderTextField.inputView = _birthdayPickerView;
-    [_responderTextField becomeFirstResponder];
-}
-
-//取消
-- (void)toolBarCancleButtonClicked {
-    [_responderTextField resignFirstResponder];
-    [self.maskView removeFromSuperview];
-}
-//确定
-- (void)birthdayToolBarDoneButtonClicked {
-    [self toolBarCancleButtonClicked];
+    TSDatePickerView *date = [[TSDatePickerView alloc]init];
     
-    //设置源日期时区
-    NSTimeZone* sourceTimeZone = [NSTimeZone timeZoneWithAbbreviation:@"UTC"];//或GMT
-    //设置转换后的目标日期时区
-    NSTimeZone* destinationTimeZone = [NSTimeZone localTimeZone];
-    //得到源日期与世界标准时间的偏移量
-    NSInteger sourceGMTOffset = [sourceTimeZone secondsFromGMTForDate:_birthdayPickerView.date];
-    //目标日期与本地时区的偏移量
-    NSInteger destinationGMTOffset = [destinationTimeZone secondsFromGMTForDate:_birthdayPickerView.date];
-    //得到时间偏移量的差值
-    NSTimeInterval interval = destinationGMTOffset - sourceGMTOffset;
-    //转为现在时间
-    NSDate *destinationDateNow = [[NSDate alloc] initWithTimeInterval:interval sinceDate:_birthdayPickerView.date];
+    [date showInView];
     
-    self.birthday = [[NSString stringWithFormat:@"%@",destinationDateNow] substringToIndex:10];
-    NSDateFormatter *dateformatter = [[NSDateFormatter alloc] init];
-    [dateformatter setDateFormat:@"yyyy-MM-dd"];
-//    NSDate *reallyDate = [dateformatter dateFromString:self.birthday];
+    date.TSDatePickerBlock = ^(NSString *date) {
+        NSLog(@"%@",date);
+    };
     
-    NSLog(@"%@",self.birthday);
+//    [self.view addSubview:self.maskView];
+//    [_birthdayToolBar addSubview:self.separatorView];
+//    _responderTextField.inputAccessoryView = _birthdayToolBar;
+//    _responderTextField.inputView = _birthdayPickerView;
+//    [_responderTextField becomeFirstResponder];
     
-    [_tableHeaderView setBirthdayString:self.birthday];
     
 }
 
-#pragma mark - setter && getter
-//工具栏的分割线
-- (UIView *)separatorView {
-    if (_separatorView == nil) {
-        _separatorView = [[UIView alloc] init];
-        _separatorView.frame = CGRectMake(0, 44 - 1, ScreenWidth, 1);
-        _separatorView.backgroundColor = [UIColor mainColorBlue];
-    }
-    return _separatorView;
-}
-
-//遮罩视图
-- (UIView *)maskView {
-    if (_maskView == nil) {
-        _maskView = [[UIView alloc] initWithFrame:self.view.bounds];
-        _maskView.backgroundColor = [UIColor colorWithWhite:0.3 alpha:0.3];
-        [_maskView addGestureRecognizer:self.tapGestureRecognizer];
-    }
-    return _maskView;
-}
-
-//手势
-- (UITapGestureRecognizer *)tapGestureRecognizer {
-    if (_tapGestureRecognizer == nil) {
-        _tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toolBarCancleButtonClicked)];
-    }
-    return _tapGestureRecognizer;
-}
 
 #pragma mark UITextFiledDelegate
 
@@ -390,7 +308,112 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+
 /*
+ 
+ 
+ - (void)configBirthdayPickerView {
+ _birthdayPickerView = [[UIDatePicker alloc] init];
+ _birthdayPickerView.backgroundColor = [UIColor whiteColor];
+ _birthdayPickerView.datePickerMode = UIDatePickerModeDateAndTime;
+ NSCalendar *calendar = [NSCalendar currentCalendar];
+ [calendar setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
+ [calendar setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"]];
+ NSDate *currentDate = [NSDate date];
+ NSDateComponents *comps = [[NSDateComponents alloc] init];
+ [comps setYear:0];
+ [comps setMonth:0];
+ [comps setDay:0];
+ [comps setHour:0];
+ [comps setMinute:0];
+ NSDate *maxDate = [calendar dateByAddingComponents:comps toDate:currentDate options:0];
+ [comps setYear:-120];
+ NSDate *minDate = [calendar dateByAddingComponents:comps toDate:currentDate options:0];
+ _birthdayPickerView.maximumDate = maxDate;
+ _birthdayPickerView.minimumDate = minDate;
+ _birthdayPickerView.calendar = calendar;
+ 
+ _birthdayToolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 44)];
+ _birthdayToolBar.barTintColor = [UIColor whiteColor];
+ UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(toolBarCancleButtonClicked)];
+ leftItem.tintColor = [UIColor generalSubTitleFontGrayColor];
+ UIBarButtonItem *centerSpace=[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+ UIBarButtonItem *rightItem=[[UIBarButtonItem alloc] initWithTitle:@"确定" style:UIBarButtonItemStylePlain target:self action:@selector(birthdayToolBarDoneButtonClicked)];
+ rightItem.tintColor = [UIColor mainColorBlue];
+ _birthdayToolBar.items=@[leftItem, centerSpace, rightItem];
+ 
+ 
+ }
+ 
+ //取消
+ - (void)toolBarCancleButtonClicked {
+ [_responderTextField resignFirstResponder];
+ [self.maskView removeFromSuperview];
+ }
+ 
+ 
+ //确定
+ - (void)birthdayToolBarDoneButtonClicked {
+ [self toolBarCancleButtonClicked];
+ 
+ //设置源日期时区
+ NSTimeZone* sourceTimeZone = [NSTimeZone timeZoneWithAbbreviation:@"UTC"];//或GMT
+ //设置转换后的目标日期时区
+ NSTimeZone* destinationTimeZone = [NSTimeZone localTimeZone];
+ //得到源日期与世界标准时间的偏移量
+ NSInteger sourceGMTOffset = [sourceTimeZone secondsFromGMTForDate:_birthdayPickerView.date];
+ //目标日期与本地时区的偏移量
+ NSInteger destinationGMTOffset = [destinationTimeZone secondsFromGMTForDate:_birthdayPickerView.date];
+ //得到时间偏移量的差值
+ NSTimeInterval interval = destinationGMTOffset - sourceGMTOffset;
+ //转为现在时间
+ NSDate *destinationDateNow = [[NSDate alloc] initWithTimeInterval:interval sinceDate:_birthdayPickerView.date];
+ 
+ self.birthday = [[NSString stringWithFormat:@"%@",destinationDateNow] substringToIndex:10];
+ NSDateFormatter *dateformatter = [[NSDateFormatter alloc] init];
+ [dateformatter setDateFormat:@"yyyy-MM-dd"];
+ //    NSDate *reallyDate = [dateformatter dateFromString:self.birthday];
+ 
+ NSLog(@"%@",self.birthday);
+ 
+ [_tableHeaderView setBirthdayString:self.birthday];
+ 
+ }
+ 
+ #pragma mark - setter && getter
+ //工具栏的分割线
+ - (UIView *)separatorView {
+ if (_separatorView == nil) {
+ _separatorView = [[UIView alloc] init];
+ _separatorView.frame = CGRectMake(0, 44 - 1, ScreenWidth, 1);
+ _separatorView.backgroundColor = [UIColor mainColorBlue];
+ }
+ return _separatorView;
+ }
+ 
+ //遮罩视图
+ - (UIView *)maskView {
+ if (_maskView == nil) {
+ _maskView = [[UIView alloc] initWithFrame:self.view.bounds];
+ _maskView.backgroundColor = [UIColor colorWithWhite:0.3 alpha:0.3];
+ [_maskView addGestureRecognizer:self.tapGestureRecognizer];
+ }
+ return _maskView;
+ }
+ 
+ //手势
+ - (UITapGestureRecognizer *)tapGestureRecognizer {
+ if (_tapGestureRecognizer == nil) {
+ _tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toolBarCancleButtonClicked)];
+ }
+ return _tapGestureRecognizer;
+ }
+
+ 
+ 
+ 
+ 
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
