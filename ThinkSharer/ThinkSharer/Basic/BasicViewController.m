@@ -92,6 +92,14 @@
 
 }
 
+- (void)setNavigationBarTitle:(NSString *)title titleColor:(UIColor *)color {
+    self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
+    self.navigationItem.titleView = [TSPublicTool initWithTitle:title color:color];
+    
+}
+
+
+
 - (void)setNavigationBarBack {
 
     UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStylePlain target:self action:@selector(itemAction2)];

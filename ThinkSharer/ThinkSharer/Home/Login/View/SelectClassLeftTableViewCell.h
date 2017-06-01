@@ -12,4 +12,6 @@
 
 @property (nonatomic,strong) UILabel *leftLabel;
 
+- (void)setLeftModel:(NSString *)text;
+
 @end

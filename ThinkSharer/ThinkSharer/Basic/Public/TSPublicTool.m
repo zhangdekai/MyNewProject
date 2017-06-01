@@ -34,7 +34,9 @@
     label.text = title;
     label.textAlignment = NSTextAlignmentCenter;
     
-    label.font = [UIFont systemFontOfSize:15];
+    label.font = [UIFont systemFontOfSize:18];
+//    label.font = [UIFont boldSystemFontOfSize:18];
+
     
     label.textColor = color;
     

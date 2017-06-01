@@ -298,7 +298,9 @@
     //初次安装
 //    if (![TSAppInfo checkAppVersion]) {
     
-        [[TSPublicTool shareInstance] creatActionAlterView:@"map_startAlter" size:CGSizeMake(ScreenWidth - 30, 100) action:^{
+    CGFloat viewW = [TSPublicTool getRealPX:250];
+    CGFloat viewH = [TSPublicTool getRealPX:170];
+        [[TSPublicTool shareInstance] creatActionAlterView:@"map_startAlter" size:CGSizeMake(viewW, viewH) action:^{
             NSLog(@"知道了");
             
         }];

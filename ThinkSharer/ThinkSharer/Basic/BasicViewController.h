@@ -22,6 +22,14 @@ typedef void(^NavigationBarButtonItemBlockForRight)();
 //设置导航栏title
 - (void)setNavigationBarTitle:(NSString *)title;
 
+/**
+ 设置导航栏title color 以及默认背景色蓝色
+
+ @param title 标题
+ @param color 颜色
+ */
+- (void)setNavigationBarTitle:(NSString *)title titleColor:(UIColor *)color;
+
 //设置导航栏默认返回箭头
 - (void)setNavigationBarBack;
 

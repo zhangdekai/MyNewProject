@@ -15,6 +15,13 @@
  */
 + (UIColor *)mainColorGreen;//惨绿    0xa6b886
 
+
+
+/**
+ 海蓝  0x57bdd4
+
+ @return UIColor
+ */
 + (UIColor *)mainColorBlue; //海蓝    0x57bdd4
 
 + (UIColor *)viewShaowColor; //阴影颜色 0x221815

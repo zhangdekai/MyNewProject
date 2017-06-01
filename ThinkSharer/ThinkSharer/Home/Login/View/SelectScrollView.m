@@ -23,17 +23,18 @@
         self.showsVerticalScrollIndicator = false;
                 
         NSInteger count = items.count;
-        CGFloat backWidth = ScreenWidth / 7;
+        CGFloat backWidth = (ScreenWidth - 15) / 7;
         
         if (count > 7) {
             self.contentSize = CGSizeMake(backWidth * count, 0);
 
         }
         
+       
 
         for (int i = 0; i < count; i++) {
             
-            UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(i * backWidth, 0, backWidth, 50)];
+            UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake( 15 + i * backWidth, 0, backWidth, 47)];
             [self addSubview:button];
             
             [button setTitle:items[i] forState:(UIControlStateNormal)];
@@ -42,17 +43,20 @@
             } else {
                 [button setTitleColor:[UIColor generalTitleFontBlackColor] forState:(UIControlStateNormal)];
             }
-            button.titleLabel.font = [UIFont systemFontOfSize:18];
-            [button setContentHorizontalAlignment:(UIControlContentHorizontalAlignmentCenter)];
+            button.titleLabel.font = [UIFont systemFontOfSize:17];
+            [button setContentHorizontalAlignment:(UIControlContentHorizontalAlignmentLeft)];
             button.tag = 100 + i;
             
             [button addTarget:self action:@selector(buttonClick:) forControlEvents:(UIControlEventTouchUpInside)];
         }
         
-        _blueLine = [[UIView alloc]initWithFrame:CGRectMake(0, 50, backWidth, 3)];
-        _blueLine.backgroundColor = [UIColor mainColorBlue];
+        _blueLine = [[UIView alloc]initWithFrame:CGRectMake(15, 47, backWidth, 3)];
+        _blueLine.backgroundColor = [UIColor whiteColor];
         [self addSubview:_blueLine];
         
+        UILabel *blueLine = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, backWidth - 17, 3)];
+        [_blueLine addSubview:blueLine];
+        blueLine.backgroundColor = [UIColor mainColorBlue];
         
     }
     
@@ -63,10 +67,10 @@
     NSInteger tag = button.tag - 100;
     [button setTitleColor:[UIColor mainColorBlue] forState:(UIControlStateNormal)];
 
-    CGFloat backWidth = ScreenWidth / 7;
+    CGFloat backWidth = (ScreenWidth - 15) / 7;
 
     [UIView animateWithDuration:0.3 animations:^{
-        _blueLine.frame = CGRectMake(tag * backWidth, 50, backWidth, 3);
+        _blueLine.frame = CGRectMake(15 + tag * backWidth, 47, backWidth, 3);
     }];
     
     for (int i = 0; i < self.items.count; i++) {
