@@ -15,10 +15,16 @@
 @property (nonatomic,strong) UITextField *nickTextFiled;
 @property (nonatomic,strong) UIView *nickLine;
 @property (nonatomic,strong) UIButton *birthdayButton;
+@property (nonatomic,strong) UIButton *introButton;
 
 
 @property (nonatomic,copy) void (^SelectPhotoBlock)();
 @property (nonatomic,copy) void (^SelectBirthdatBlock)();
+
+
+@property (nonatomic,strong) UITextView *textView;
+@property (nonatomic,strong) UILabel *numLabel;
+
 
 
 - (void)setBirthdayString:(NSString *)birthday;

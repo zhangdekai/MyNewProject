@@ -54,7 +54,7 @@
         _blueLine.backgroundColor = [UIColor whiteColor];
         [self addSubview:_blueLine];
         
-        UILabel *blueLine = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, backWidth - 17, 3)];
+        UILabel *blueLine = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, backWidth - 20, 3)];
         [_blueLine addSubview:blueLine];
         blueLine.backgroundColor = [UIColor mainColorBlue];
         

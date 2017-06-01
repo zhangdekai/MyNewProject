@@ -12,8 +12,11 @@
 #import <Photos/Photos.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "TSDatePickerView.h"
+#import "ThinkSharer-Swift.h"
+#import "ShareMessageFirstCell.h"
 
-@interface ShareMessageViewController ()<UITableViewDelegate,UITableViewDataSource,CTAssetsPickerControllerDelegate,UITextFieldDelegate,UIImagePickerControllerDelegate>
+
+@interface ShareMessageViewController ()<UITableViewDelegate,UITableViewDataSource,CTAssetsPickerControllerDelegate,UITextFieldDelegate,UIImagePickerControllerDelegate,UITextViewDelegate>
 
 @property (nonatomic,strong) UITableView *tableView;
 
@@ -34,6 +37,10 @@
 
 @property (nonatomic, strong) NSString *birthday;
 
+@property (nonatomic,assign) NSInteger number;
+
+@property (nonatomic,strong) UITextView *tmpTextView;
+
 
 @end
 
@@ -43,11 +50,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self setNavigationBar];
-    
-//    _responderTextField = [[UITextField alloc] initWithFrame:CGRectZero];
-//    [self.view addSubview:_responderTextField];
-//    [self configBirthdayPickerView];
-    
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(changeLineColor) name:UIKeyboardWillHideNotification object:nil];
 }
@@ -70,7 +72,10 @@
     _tableView.delegate = self;
     _tableView.dataSource = self;
     
+    [_tableView registerClass:[ShareMessageFirstCell class] forCellReuseIdentifier:@"ShareMessageFirstCell"];
+    
     [self initTableHeaderView];
+    [self initTableFooterView];
     
     
 }
@@ -93,6 +98,33 @@
     };
 }
 
+- (void)initTableFooterView {
+    ShareMessageTableFooterView *footer = [[ShareMessageTableFooterView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 150)];
+    _tableView.tableFooterView = footer;
+    
+}
+
+#pragma mark UITextViewDelegate
+
+//-(void)textViewDidChange:(UITextView *)textView{
+//    //获取文本中字体的size
+//    CGSize size = [TSPublicTool sizeWithString:textView.text font:[UIFont systemFontOfSize:15] width:textView.width];
+//    NSLog(@"height = %f",size.height);
+//    //获取一行的高度
+//    CGSize size1 = [TSPublicTool sizeWithString:@"Hello" font:[UIFont systemFontOfSize:15] width:textView.width];
+//    NSInteger i = size.height/size1.height;
+//    if (i==1) {
+//        //设置全局的变量存储数字如果换行就改变这个全局变量
+//        self.number = i;
+//    }
+//    if (self.number!=i) {
+//        self.number = i;
+//        NSLog(@"selfnum = %ld",self.number);
+//        _tmpTextView.height = size.height;
+//        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+//        [_tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:(UITableViewRowAnimationAutomatic)];
+//    }
+//}
 
 - (void)selectPhoto {
     
@@ -182,13 +214,6 @@
         NSLog(@"%@",date);
     };
     
-//    [self.view addSubview:self.maskView];
-//    [_birthdayToolBar addSubview:self.separatorView];
-//    _responderTextField.inputAccessoryView = _birthdayToolBar;
-//    _responderTextField.inputView = _birthdayPickerView;
-//    [_responderTextField becomeFirstResponder];
-    
-    
 }
 
 
@@ -206,7 +231,7 @@
 
 #pragma mark UITableViewDelegate UITableViewDatasource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 0;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 0;
@@ -216,9 +241,53 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [[UITableViewCell alloc]init];
+    ShareMessageFirstCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ShareMessageFirstCell"];
+    _tmpTextView = cell.textView;
+    _tmpTextView.delegate = self;
+    TSWeakSelf
+    cell.reloadHeight = ^{
+        [weakSelf.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    };
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyBoardShow) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyBoardHidden) name:UIKeyboardWillHideNotification object:nil];
+
     
     return cell;
+}
+
+- (void)keyBoardShow {
+    CGRect frame1 = _tableView.frame;
+    frame1.origin.y -= 100;
+    _tableView.frame = frame1;
+}
+
+- (void)keyBoardHidden {
+    CGRect frame1 = _tableView.frame;
+    frame1.origin.y += 100;
+    _tableView.frame = frame1;
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 40;
+}
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    ShareMessageSectionView *header = [[ShareMessageSectionView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 40)];
+    
+    return header;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 15;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    
+    UIView *footer = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 15)];
+    footer.backgroundColor = [UIColor backgroundGrayColorA];
+    return footer;
 }
 
 #pragma mark private Methoeds

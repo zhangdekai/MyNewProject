@@ -17,7 +17,7 @@
     
     if (self) {
         
-        self.frame = CGRectMake(0, 0, ScreenWidth, 500);
+        self.frame = CGRectMake(0, 0, ScreenWidth, 400);
         self.backgroundColor = [UIColor whiteColor];
         
         //头像
@@ -133,6 +133,35 @@
 
         
         [_birthdayButton addTarget:self action:@selector(birthdayButtonClick) forControlEvents:(UIControlEventTouchUpInside)];
+        
+        
+        //思享者简介
+        
+        
+        UILabel *introLabel = [[UILabel alloc]initWithFrame:CGRectMake(15, birthdayLine.bottom + 10, 90, 20)];
+        [self addSubview:introLabel];
+        introLabel.textColor = [UIColor generalTitleFontBlackColor];
+        introLabel.font = [UIFont systemFontOfSize:17];
+        introLabel.text = @"思享者简介";
+        
+        _introButton = [[UIButton alloc]initWithFrame:CGRectMake(ScreenWidth - 40, introLabel.top, 15, 15)];
+        [self addSubview:_introButton];
+        [_introButton setImage:[UIImage imageNamed:@"login_x"] forState:(UIControlStateNormal)];
+ 
+        
+        //textView
+        _textView = [[UITextView alloc]initWithFrame:CGRectMake(15, _introButton.bottom + 10, ScreenWidth - 30, 30)];
+        [self addSubview:_textView];
+        _textView.font = [UIFont systemFontOfSize:15];
+        _textView.layer.borderWidth = 1;
+        _textView.layer.borderColor = [UIColor blackColor].CGColor;
+        
+        
+        _numLabel = [[UILabel alloc]initWithFrame:CGRectMake(ScreenWidth - 60, 15, 25, 15)];
+        [_textView addSubview:_numLabel];
+        _numLabel.text = @"100";
+
+        
         
         
 

@@ -24,6 +24,7 @@
     
     label.center = CGPointMake(ScreenWidth * 0.5, 22);
     
+    
     return label;
 }
 
@@ -132,5 +133,14 @@
     return shareView;
 }
 
+
+/**
+ *  自适应字体
+ */
++ (CGSize)sizeWithString:(NSString*)string font:(UIFont*)font width:(CGFloat)width {
+    
+    CGRect rect = [string boundingRectWithSize:CGSizeMake(width,   80000) options:NSStringDrawingTruncatesLastVisibleLine |   NSStringDrawingUsesFontLeading    |NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:font} context:nil];
+    return rect.size;
+}
 
 @end

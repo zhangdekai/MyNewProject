@@ -35,7 +35,7 @@
 @property (nonatomic,strong) LoactionIdentityView *authCodeView;
 
 @property (nonatomic,strong) UIView *dynamicView;
-
+@property (nonatomic,strong) UIImageView *rightIcon;
 
 
 @end
@@ -65,12 +65,19 @@
 
     [_phoneBackView addCornerRadius:5];
     
-//    [_phoneBackView addShadow];
-    
     UIImageView *icon = [[UIImageView alloc]initWithFrame:CGRectMake(15, 10, 15, 15)];
     icon.center = CGPointMake(22.5, textHeight / 2);
     icon.image = [UIImage imageNamed:@"login_phone"];
     [_phoneBackView addSubview:icon];
+    
+    
+    _rightIcon = [[UIImageView alloc]initWithFrame:CGRectMake(textWidth - 30, 10, 15, 15)];
+    _rightIcon.center = CGPointMake(textWidth - 22.5, textHeight / 2);
+    _rightIcon.alpha = 1;
+    _rightIcon.userInteractionEnabled = YES;
+    _rightIcon.image = [UIImage imageNamed:@"login_3"];
+    [_phoneBackView addSubview:_rightIcon];
+    _rightIcon.hidden = YES;
     
     
     
@@ -161,13 +168,6 @@
     [_loginButton addCornerRadius:5];
 
     
-    
-    
-    //
-    
-    
-    
-    
 
     [_getIdentityButton addTarget:self action:@selector(getIdentity:) forControlEvents:(UIControlEventTouchUpInside)];
     
@@ -179,7 +179,7 @@
 
 
     UIImageView *backgroundImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"login_background"]];
-    backgroundImage.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
+    backgroundImage.frame = CGRectMake(0, 0, ScreenWidth, 230);
     [self.view addSubview:backgroundImage];
     
     [self.view sendSubviewToBack:backgroundImage];
@@ -198,6 +198,7 @@
     
     _identityBackView.hidden = NO;
     _authCodeView.hidden = NO;
+    _rightIcon.hidden = NO;
 
 
     CGFloat textHeight = [TSPublicTool getRealPX:44];
@@ -211,14 +212,13 @@
     _userGuideButton.frame = CGRectMake(40, _getIdentityButton.bottom +25 , ScreenWidth - 80, 18);
     
     _loginButton.frame = CGRectMake(15, _userGuideButton.bottom + 30, ScreenWidth - 30, textHeight);
-    
-    
+ 
 }
 
 #pragma mark UITextFieldDelegate
 
 - (BOOL)textFieldShouldClear:(UITextField *)textField {
-    
+
     return YES;
 }
 
@@ -228,8 +228,14 @@
         
         NSString *new = [textField.text stringByReplacingCharactersInRange:range withString:string];
         if(new.length >= 11){
-            
+            _phoneTextFiled.clearButtonMode = UITextFieldViewModeNever;
+
             [self changeUI];
+        } else {
+            _phoneTextFiled.clearButtonMode = UITextFieldViewModeWhileEditing;
+
+            _rightIcon.hidden = YES;
+
         }
 
     } else if (textField == _identityTextFiled) {

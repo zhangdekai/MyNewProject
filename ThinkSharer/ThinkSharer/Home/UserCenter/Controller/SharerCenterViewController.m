@@ -55,8 +55,6 @@
     _thirdCellIconData = [NSArray arrayWithObjects:@"user_zan",@"user_xin",@"user_hongbao",@"user_guanzhu",@"user_pinglun",@"user_fenxiang",nil];
     _fourthCellIconData = [NSArray arrayWithObjects:@"user_zhanghao",@"user_yinsi",@"user_help",@"user_ue",@"user_new",@"user_tui",nil];
     _fourthCellData = [NSArray arrayWithObjects:@"账号与安全",@"隐私权限",@"帮助与反馈",@"关于我们",@"版本更新",@"退出登录",nil];
-
-
     
 }
 

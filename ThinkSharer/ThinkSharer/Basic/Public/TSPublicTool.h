@@ -11,6 +11,8 @@
 #import "TSActionAlterView.h"
 #import "TSDatePickerView.h"
 
+#import "ThinkSharer-Bridging-Header.h"
+
 //可自行添加公共tool
 
 typedef void(^AlterBlock)();
@@ -36,5 +38,16 @@ typedef void(^AlterBlock)();
 //首页操作提示
 + (TSActionAlterView *)shareInstance;
 
+
+/**
+ 动态获取文字内容CGSize
+
+ @param string 文字
+ @param font 字号
+ @param width 宽度
+ @return CGSize
+ 
+ */
++ (CGSize)sizeWithString:(NSString*)string font:(UIFont*)font width:(CGFloat)width;
 
 @end

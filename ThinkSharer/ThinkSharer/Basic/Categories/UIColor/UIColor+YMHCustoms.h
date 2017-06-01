@@ -41,7 +41,7 @@
  *  background colors
  */
 + (UIColor *)backgroundRedColor;//底色红 #fa4619
-+ (UIColor *)backgroundGrayColorA;//底色A #ffffff
++ (UIColor *)backgroundGrayColorA;//底色A 0xfafafa
 + (UIColor *)backgroundGrayColorB;//底色B #f4f4f4
 
 /**
