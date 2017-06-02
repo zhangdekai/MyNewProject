@@ -39,6 +39,14 @@ typedef void(^NavigationBarButtonItemBlockForRight)();
 //设置导航栏左侧image
 - (void)setNavigationBarLeftItemWithImageName:(NSString *)imageName itemBlock:(NavigationBarButtonItemBlock)leftBlock ;
 
+/**
+ 设置导航栏右侧文字
+
+ @param title 文字
+ @param rightBlock block
+ */
+- (void)setNavigationBarRightItemWithTitle:(NSString *)title itemBlock:(NavigationBarButtonItemBlockForRight)rightBlock;
+
 //给导航条家阴影，去掉阴影
 - (void)addShadow ;
 - (void)hiddenShadow ;

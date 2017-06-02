@@ -21,6 +21,10 @@
 @property (nonatomic,copy) void (^SelectPhotoBlock)();
 @property (nonatomic,copy) void (^SelectBirthdatBlock)();
 
+@property (nonatomic,strong) UIImageView *iconGirl;
+@property (nonatomic,strong) UIImageView *iconBoy;
+@property (nonatomic,copy) void (^SelectSexBlock)(NSString *sex);
+
 
 @property (nonatomic,strong) UITextView *textView;
 @property (nonatomic,strong) UILabel *numLabel;

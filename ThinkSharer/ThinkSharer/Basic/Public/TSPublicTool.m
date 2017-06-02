@@ -143,4 +143,10 @@
     return rect.size;
 }
 
+//+ (NSInteger)numberWithString:(NSString *)string font:(CGFloat)font width:(CGFloat)width {
+//    UILabel *label = [UILabel alloc]ini
+//}
+
+
+
 @end

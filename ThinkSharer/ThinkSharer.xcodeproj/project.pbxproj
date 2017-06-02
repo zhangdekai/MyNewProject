@@ -13,6 +13,9 @@
 		491C46191ECC1D91009F43A4 /* SelectClassCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 491C46171ECC1D91009F43A4 /* SelectClassCollectionViewCell.xib */; };
 		491C461F1ECC23A1009F43A4 /* SelectClassheaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 491C461E1ECC23A1009F43A4 /* SelectClassheaderView.m */; };
 		491C46281ECC2CD4009F43A4 /* SelectClassTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 491C46271ECC2CD4009F43A4 /* SelectClassTableViewCell.m */; };
+		491EA6111EE104FC00C2B8ED /* ShareMessageSecondCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 491EA6101EE104FC00C2B8ED /* ShareMessageSecondCell.m */; };
+		491EA6141EE1165A00C2B8ED /* ShareMessageThirdCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 491EA6131EE1165A00C2B8ED /* ShareMessageThirdCell.m */; };
+		491EA6171EE12B2400C2B8ED /* ShareMessageFourthCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 491EA6161EE12B2400C2B8ED /* ShareMessageFourthCell.m */; };
 		492331B11ED446F400E45338 /* TSPublicTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 492331B01ED446F400E45338 /* TSPublicTool.m */; };
 		492331B51ED457C300E45338 /* ShareFourceCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 492331B31ED457C300E45338 /* ShareFourceCollectionViewCell.m */; };
 		492331B61ED457C300E45338 /* ShareFourceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 492331B41ED457C300E45338 /* ShareFourceCollectionViewCell.xib */; };
@@ -60,7 +63,6 @@
 		498BE1541ED598E300D7D004 /* CTAssetsPicker.strings in Resources */ = {isa = PBXBuildFile; fileRef = 498BE13C1ED598E300D7D004 /* CTAssetsPicker.strings */; };
 		498BE1581ED59A6D00D7D004 /* CTAssetsPickerController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 498BE1571ED59A6D00D7D004 /* CTAssetsPickerController.bundle */; };
 		49902DC91EE01ABF00DAD3DE /* ShareMessageTableFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49902DC81EE01ABF00DAD3DE /* ShareMessageTableFooterView.swift */; };
-		49902DCB1EE01EDB00DAD3DE /* ShareMessageFirstTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49902DCA1EE01EDB00DAD3DE /* ShareMessageFirstTableViewCell.swift */; };
 		49902DCE1EE0352C00DAD3DE /* ShareMessageFirstCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49902DCD1EE0352C00DAD3DE /* ShareMessageFirstCell.m */; };
 		499478B81ED68412003E7E4C /* UITableView+YMHRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 499478B71ED68412003E7E4C /* UITableView+YMHRefresh.m */; };
 		4996B8211ECA981F00272439 /* ThinkSharerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4996B8201ECA981F00272439 /* ThinkSharerTests.m */; };
@@ -132,6 +134,12 @@
 		491C46241ECC23DB009F43A4 /* SelectClassheaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectClassheaderView.h; sourceTree = "<group>"; };
 		491C46261ECC2CD4009F43A4 /* SelectClassTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectClassTableViewCell.h; sourceTree = "<group>"; };
 		491C46271ECC2CD4009F43A4 /* SelectClassTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectClassTableViewCell.m; sourceTree = "<group>"; };
+		491EA60F1EE104FC00C2B8ED /* ShareMessageSecondCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareMessageSecondCell.h; sourceTree = "<group>"; };
+		491EA6101EE104FC00C2B8ED /* ShareMessageSecondCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareMessageSecondCell.m; sourceTree = "<group>"; };
+		491EA6121EE1165A00C2B8ED /* ShareMessageThirdCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareMessageThirdCell.h; sourceTree = "<group>"; };
+		491EA6131EE1165A00C2B8ED /* ShareMessageThirdCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareMessageThirdCell.m; sourceTree = "<group>"; };
+		491EA6151EE12B2400C2B8ED /* ShareMessageFourthCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareMessageFourthCell.h; sourceTree = "<group>"; };
+		491EA6161EE12B2400C2B8ED /* ShareMessageFourthCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareMessageFourthCell.m; sourceTree = "<group>"; };
 		492331AF1ED446F400E45338 /* TSPublicTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSPublicTool.h; sourceTree = "<group>"; };
 		492331B01ED446F400E45338 /* TSPublicTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSPublicTool.m; sourceTree = "<group>"; };
 		492331B21ED457C300E45338 /* ShareFourceCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareFourceCollectionViewCell.h; sourceTree = "<group>"; };
@@ -246,7 +254,6 @@
 		498BE1531ED598E300D7D004 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/CTAssetsPicker.strings"; sourceTree = "<group>"; };
 		498BE1571ED59A6D00D7D004 /* CTAssetsPickerController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CTAssetsPickerController.bundle; sourceTree = "<group>"; };
 		49902DC81EE01ABF00DAD3DE /* ShareMessageTableFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareMessageTableFooterView.swift; sourceTree = "<group>"; };
-		49902DCA1EE01EDB00DAD3DE /* ShareMessageFirstTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareMessageFirstTableViewCell.swift; sourceTree = "<group>"; };
 		49902DCC1EE0352C00DAD3DE /* ShareMessageFirstCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareMessageFirstCell.h; sourceTree = "<group>"; };
 		49902DCD1EE0352C00DAD3DE /* ShareMessageFirstCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareMessageFirstCell.m; sourceTree = "<group>"; };
 		499478B61ED68412003E7E4C /* UITableView+YMHRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+YMHRefresh.h"; sourceTree = "<group>"; };
@@ -727,9 +734,14 @@
 				498BE00A1ED5552900D7D004 /* ShareMessageTableHeaderView.m */,
 				490CC4211EDFF42300E5C7B2 /* ShareMessageSectionView.swift */,
 				49902DC81EE01ABF00DAD3DE /* ShareMessageTableFooterView.swift */,
-				49902DCA1EE01EDB00DAD3DE /* ShareMessageFirstTableViewCell.swift */,
 				49902DCC1EE0352C00DAD3DE /* ShareMessageFirstCell.h */,
 				49902DCD1EE0352C00DAD3DE /* ShareMessageFirstCell.m */,
+				491EA60F1EE104FC00C2B8ED /* ShareMessageSecondCell.h */,
+				491EA6101EE104FC00C2B8ED /* ShareMessageSecondCell.m */,
+				491EA6121EE1165A00C2B8ED /* ShareMessageThirdCell.h */,
+				491EA6131EE1165A00C2B8ED /* ShareMessageThirdCell.m */,
+				491EA6151EE12B2400C2B8ED /* ShareMessageFourthCell.h */,
+				491EA6161EE12B2400C2B8ED /* ShareMessageFourthCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1094,7 +1106,6 @@
 				491C46141ECBF3C8009F43A4 /* SelectScrollView.m in Sources */,
 				49B744021ED2F57200FFDBDB /* TSActionAlterView.m in Sources */,
 				490CC4221EDFF42300E5C7B2 /* ShareMessageSectionView.swift in Sources */,
-				49902DCB1EE01EDB00DAD3DE /* ShareMessageFirstTableViewCell.swift in Sources */,
 				49B743DF1ED2E4B700FFDBDB /* ClassListViewController.m in Sources */,
 				498BE12B1ED5950500D7D004 /* CTAssetsNavigationController.m in Sources */,
 				498BE1171ED5950500D7D004 /* NSIndexSet+CTAssetsPickerController.m in Sources */,
@@ -1136,6 +1147,7 @@
 				493533141ED6D703001CCCF2 /* UIImageView+YMHPlaceholder.m in Sources */,
 				498BE0051ED52C2D00D7D004 /* UserShareCenterFotterCollectionReusableView.m in Sources */,
 				498BE1311ED5950500D7D004 /* CTAssetsViewControllerTransition.m in Sources */,
+				491EA6141EE1165A00C2B8ED /* ShareMessageThirdCell.m in Sources */,
 				491C46181ECC1D91009F43A4 /* SelectClassCollectionViewCell.m in Sources */,
 				499478B81ED68412003E7E4C /* UITableView+YMHRefresh.m in Sources */,
 				49F38FA51ECADDBE00D83E95 /* YMHIdenCodeTool.m in Sources */,
@@ -1143,8 +1155,10 @@
 				498BE12C1ED5950500D7D004 /* CTAssetsPageView.m in Sources */,
 				498BE1331ED5950500D7D004 /* CTAssetThumbnailStacks.m in Sources */,
 				49B743F41ED2EA6900FFDBDB /* SharerFirstCollectionViewCell.m in Sources */,
+				491EA6111EE104FC00C2B8ED /* ShareMessageSecondCell.m in Sources */,
 				498BE1161ED5950500D7D004 /* NSDateFormatter+CTAssetsPickerController.m in Sources */,
 				494533191ED6C04B00F9340F /* NetWorkManager.m in Sources */,
+				491EA6171EE12B2400C2B8ED /* ShareMessageFourthCell.m in Sources */,
 				49902DC91EE01ABF00DAD3DE /* ShareMessageTableFooterView.swift in Sources */,
 				492331B51ED457C300E45338 /* ShareFourceCollectionViewCell.m in Sources */,
 				498BE1241ED5950500D7D004 /* CTAssetSelectionLabel.m in Sources */,

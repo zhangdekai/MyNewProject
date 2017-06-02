@@ -121,6 +121,28 @@
     
 }
 
+- (void)setNavigationBarRightItemWithTitle:(NSString *)title itemBlock:(NavigationBarButtonItemBlockForRight)rightBlock {
+    self.rightItemBlock = rightBlock;
+    
+    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 25)];
+    [button setTitle:title forState:(UIControlStateNormal)];
+    [button setTitleColor:[UIColor generalTitleFontBlackColor] forState:(UIControlStateNormal)];
+    button.titleLabel.font = [UIFont systemFontOfSize:16];
+    [button addTarget:self action:@selector(buttonClick) forControlEvents:(UIControlEventTouchUpInside)];
+    
+    UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithCustomView:button];;
+    
+    UIBarButtonItem *fixedSpaceBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    fixedSpaceBarButtonItem.width = -8;
+    
+    self.navigationItem.rightBarButtonItems = @[fixedSpaceBarButtonItem,rightBarItem];
+    
+}
+
+- (void)buttonClick {
+    self.rightItemBlock();
+}
+
 - (void)setNavigationBarLeftItemWithImageName:(NSString *)imageName itemBlock:(NavigationBarButtonItemBlock)leftBlock {
     self.navigationItemBlock = leftBlock;
     

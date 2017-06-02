@@ -52,7 +52,7 @@
     
     _birthdayPickerView = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, line.bottom, ScreenWidth, 200)];
     _birthdayPickerView.backgroundColor = [UIColor whiteColor];
-    _birthdayPickerView.datePickerMode = UIDatePickerModeDateAndTime;
+    _birthdayPickerView.datePickerMode = UIDatePickerModeDate;
     [_birthdayContainer addSubview:_birthdayPickerView];
     
     NSCalendar *calendar = [NSCalendar currentCalendar];
@@ -63,8 +63,6 @@
     [comps setYear:0];
     [comps setMonth:0];
     [comps setDay:0];
-    [comps setHour:0];
-    [comps setMinute:0];
     NSDate *maxDate = [calendar dateByAddingComponents:comps toDate:currentDate options:0];
     [comps setYear:-120];
     NSDate *minDate = [calendar dateByAddingComponents:comps toDate:currentDate options:0];

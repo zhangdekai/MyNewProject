@@ -17,7 +17,7 @@
     
     if (self) {
         
-        self.frame = CGRectMake(0, 0, ScreenWidth, 400);
+        self.frame = CGRectMake(0, 0, ScreenWidth, 350);
         self.backgroundColor = [UIColor whiteColor];
         
         //头像
@@ -61,6 +61,8 @@
         
         _nickTextFiled = [[UITextField alloc]initWithFrame:CGRectMake(nickName.right +15, nickName.top, ScreenWidth - nickName.right - 30, 30)];
         [self addSubview:_nickTextFiled];
+        _nickTextFiled.font = [UIFont systemFontOfSize:15];
+        _nickTextFiled.textColor = [UIColor generalTitleFontBlackColor];
         _nickTextFiled.textAlignment = NSTextAlignmentRight;
         _nickTextFiled.placeholder = @"填写昵称";
         
@@ -77,30 +79,28 @@
         sexLabel.font = [UIFont systemFontOfSize:17];
         sexLabel.text = @"性别";
 
-        UIButton *sexButton = [[UIButton alloc]initWithFrame:CGRectMake(ScreenWidth - 100, sexLabel.top, 40, 20)];
+        UIButton *sexButton = [[UIButton alloc]initWithFrame:CGRectMake(ScreenWidth - 110, sexLabel.top, 40, 20)];
         [self addSubview:sexButton];
         [sexButton setTitle:@"女" forState:(UIControlStateNormal)];
-        [sexButton setTitleColor:[UIColor generalTitleFontBlackColor] forState:(UIControlStateNormal)];
+        [sexButton setTitleColor:[UIColor generalTitleFontGrayColor] forState:(UIControlStateNormal)];
         sexButton.tag = 100;
         sexButton.titleLabel.font = [UIFont systemFontOfSize:15];
-        UIImageView *iconGirl = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 15, 15)];
-        iconGirl.image = [UIImage imageNamed:@"user_icon-girl"];
-        [sexButton addSubview:iconGirl];
+        _iconGirl = [[UIImageView alloc]initWithFrame:CGRectMake(0, 2, 15, 15)];
+        _iconGirl.image = [UIImage imageNamed:@"user_icon-girl"];
+        [sexButton addSubview:_iconGirl];
+        [sexButton setContentHorizontalAlignment:(UIControlContentHorizontalAlignmentRight)];
         
-        [sexButton setContentEdgeInsets:(UIEdgeInsetsMake(0, 15, 0, 0))];
         
-        
-        UIButton *sexButtonBoy = [[UIButton alloc]initWithFrame:CGRectMake(ScreenWidth - 60, sexLabel.top, 40, 20)];
+        UIButton *sexButtonBoy = [[UIButton alloc]initWithFrame:CGRectMake(ScreenWidth - 55, sexLabel.top, 40, 20)];
         [self addSubview:sexButtonBoy];
         [sexButtonBoy setTitle:@"男" forState:(UIControlStateNormal)];
-        [sexButtonBoy setTitleColor:[UIColor generalTitleFontBlackColor] forState:(UIControlStateNormal)];
+        [sexButtonBoy setTitleColor:[UIColor generalTitleFontGrayColor] forState:(UIControlStateNormal)];
         sexButtonBoy.titleLabel.font = [UIFont systemFontOfSize:15];
 
-        UIImageView *iconBoy = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 15, 15)];
-        iconBoy.image = [UIImage imageNamed:@"user_icon-boy"];
-        [sexButtonBoy addSubview:iconBoy];
-        [sexButtonBoy setContentHorizontalAlignment:(UIControlContentHorizontalAlignmentLeft)];
-        [sexButtonBoy setContentEdgeInsets:(UIEdgeInsetsMake(0, 15, 0, 0))];
+        _iconBoy = [[UIImageView alloc]initWithFrame:CGRectMake(0, 2, 15, 15)];
+        _iconBoy.image = [UIImage imageNamed:@"user_icon-boy"];
+        [sexButtonBoy addSubview:_iconBoy];
+        [sexButtonBoy setContentHorizontalAlignment:(UIControlContentHorizontalAlignmentRight)];
 
         UIView *sexLine = [[UIView alloc]initWithFrame:CGRectMake(0, sexLabel.bottom + 10, ScreenWidth, 0.5)];
         [self addSubview:sexLine];
@@ -118,7 +118,7 @@
          _birthdayButton = [[UIButton alloc]initWithFrame:CGRectMake(birthday.right, birthday.top, ScreenWidth - birthday.right - 15, 20)];
         [self addSubview:_birthdayButton];
         [_birthdayButton setTitle:@"请选择" forState:(UIControlStateNormal)];
-        [_birthdayButton setTitleColor:[UIColor generalTitleFontBlackColor] forState:(UIControlStateNormal)];
+        [_birthdayButton setTitleColor:[UIColor generalTitleFontGrayColor] forState:(UIControlStateNormal)];
         _birthdayButton.titleLabel.font = [UIFont systemFontOfSize:15];
         [_birthdayButton setContentHorizontalAlignment:(UIControlContentHorizontalAlignmentRight)];
 
@@ -134,38 +134,10 @@
         
         [_birthdayButton addTarget:self action:@selector(birthdayButtonClick) forControlEvents:(UIControlEventTouchUpInside)];
         
+        CGFloat maxH = CGRectGetMaxY(birthdayLine.frame);
         
-        //思享者简介
+        self.frame = CGRectMake(0, 0, ScreenWidth, maxH);
         
-        
-        UILabel *introLabel = [[UILabel alloc]initWithFrame:CGRectMake(15, birthdayLine.bottom + 10, 90, 20)];
-        [self addSubview:introLabel];
-        introLabel.textColor = [UIColor generalTitleFontBlackColor];
-        introLabel.font = [UIFont systemFontOfSize:17];
-        introLabel.text = @"思享者简介";
-        
-        _introButton = [[UIButton alloc]initWithFrame:CGRectMake(ScreenWidth - 40, introLabel.top, 15, 15)];
-        [self addSubview:_introButton];
-        [_introButton setImage:[UIImage imageNamed:@"login_x"] forState:(UIControlStateNormal)];
- 
-        
-        //textView
-        _textView = [[UITextView alloc]initWithFrame:CGRectMake(15, _introButton.bottom + 10, ScreenWidth - 30, 30)];
-        [self addSubview:_textView];
-        _textView.font = [UIFont systemFontOfSize:15];
-        _textView.layer.borderWidth = 1;
-        _textView.layer.borderColor = [UIColor blackColor].CGColor;
-        
-        
-        _numLabel = [[UILabel alloc]initWithFrame:CGRectMake(ScreenWidth - 60, 15, 25, 15)];
-        [_textView addSubview:_numLabel];
-        _numLabel.text = @"100";
-
-        
-        
-        
-
-
     }
     return self;
 }
@@ -186,7 +158,18 @@
 
 - (void)sexButtonClick:(UIButton *)button {
     if (button.tag == 100) {
+        _iconGirl.image = [UIImage imageNamed:@"user_icon-boy"];
+        _iconBoy.image = [UIImage imageNamed:@"user_icon-boy"];
+
+        self.SelectSexBlock(@"女");
         
+    } else {
+        _iconGirl.image = [UIImage imageNamed:@"user_icon-boy"];
+        _iconBoy.image = [UIImage imageNamed:@"user_icon-boy"];
+
+
+        self.SelectSexBlock(@"男");
+
     }
     
 }

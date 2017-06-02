@@ -14,9 +14,14 @@
 #import "TSDatePickerView.h"
 #import "ThinkSharer-Swift.h"
 #import "ShareMessageFirstCell.h"
+#import "ShareMessageSecondCell.h"
+#import "ShareMessageThirdCell.h"
+#import "ShareMessageFourthCell.h"
+
+//  userMessage_location   userMessage_ArrowsDown   userMessage_ArrowsUp  userMessage_add
 
 
-@interface ShareMessageViewController ()<UITableViewDelegate,UITableViewDataSource,CTAssetsPickerControllerDelegate,UITextFieldDelegate,UIImagePickerControllerDelegate,UITextViewDelegate>
+@interface ShareMessageViewController ()<UITableViewDelegate,UITableViewDataSource,CTAssetsPickerControllerDelegate,UITextFieldDelegate,UIImagePickerControllerDelegate,UITextViewDelegate,UIGestureRecognizerDelegate>
 
 @property (nonatomic,strong) UITableView *tableView;
 
@@ -39,7 +44,32 @@
 
 @property (nonatomic,assign) NSInteger number;
 
-@property (nonatomic,strong) UITextView *tmpTextView;
+//weak tmp
+@property (nonatomic,weak) UITextView *tmpTextView;
+@property (nonatomic,weak) UILabel *tmpLabel;//数字
+@property (nonatomic,weak) UITextField *workPlaceTextField;
+@property (nonatomic,weak) UITextField *workNameTextField;
+@property (nonatomic,weak) UITextField *graduationSchoolTextField;
+@property (nonatomic,weak) UITextField *majorTextField;
+@property (nonatomic,weak) UITextField *educationBackgroundTextField;
+
+//@property (nonatomic,weak) UIView *<#object#>;
+
+
+@property (nonatomic,assign) NSInteger sctionOne;
+@property (nonatomic,strong) NSMutableArray *sctionTwoArray;
+@property (nonatomic,assign) NSInteger sctionThree;
+@property (nonatomic,assign) NSInteger sctionFource;
+@property (nonatomic,assign) NSInteger sctionFive;
+
+
+@property (nonatomic,copy) NSArray *sctionThreeArray;
+@property (nonatomic,copy) NSArray *sctionFourceArray;
+@property (nonatomic,copy) NSArray *sctionfiveArray;
+@property (nonatomic,copy) NSArray *sctionfiveArray1;
+
+@property (nonatomic,copy) NSString *sexString;//性别
+
 
 
 @end
@@ -49,17 +79,44 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.userInteractionEnabled = YES;
     [self setNavigationBar];
-    
+    [self initUI];
+
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(changeLineColor) name:UIKeyboardWillHideNotification object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyBoardShow) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyBoardHidden) name:UIKeyboardWillHideNotification object:nil];
+    
+    
 }
+
+
+-(void)initData {
+    _sctionOne = 0;
+    _sctionTwoArray = [NSMutableArray arrayWithObjects:@"蓝色的看法你来说可能疯了快十年来反馈是你生生世世",@"善良的空间里发生困难都流口水",@"基本上看到节省空间的",@"蓝色的看法你来说可能疯了快十年来反馈是你生生世世", nil];
+    _sctionThree = 0;
+    _sctionFource = 0;
+    _sctionFive = 0;
+    
+    _sctionThreeArray = @[@"行业信息：",@"工作单位：",@"专业职称："];
+    _sctionFourceArray = @[@"毕业院校：",@"所学专业：",@"学历学位："];
+    _sctionfiveArray = @[@"身份证认证",@"毕业证认证",@"教师证认证",@"其他资质认证"];
+    _sctionfiveArray1 = @[@"已认证",@"认证中",@"未认证",@""];
+    
+    
+}
+
 
 
 #pragma mark UI
 - (void)setNavigationBar {
     [self setNavigationBarTitle:@"思享者信息"];
     [self setNavigationBarBack];
-    [self initUI];
+    TSWeakSelf
+    [self setNavigationBarRightItemWithTitle:@"保存" itemBlock:^{
+        
+        NSLog(@"昵称：%@ sex :%@  生日： %@  简介：%@  工作单位：%@   专业职称：%@ 毕业院校：%@  所学专业：%@  学历学位：%@",weakSelf.tableHeaderView.nickTextFiled.text,weakSelf.sexString,weakSelf.birthday,weakSelf.tmpTextView.text,weakSelf.workPlaceTextField.text,weakSelf.workNameTextField.text,weakSelf.graduationSchoolTextField.text,weakSelf.majorTextField.text,weakSelf.educationBackgroundTextField.text);
+    }];
 }
 
 - (void)initUI {
@@ -69,14 +126,19 @@
     [self.view addSubview:_tableView];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
+    _tableView.showsVerticalScrollIndicator = NO;
     _tableView.delegate = self;
     _tableView.dataSource = self;
     
     [_tableView registerClass:[ShareMessageFirstCell class] forCellReuseIdentifier:@"ShareMessageFirstCell"];
+    [_tableView registerClass:[ShareMessageSecondCell class] forCellReuseIdentifier:@"ShareMessageSecondCell"];
+    [_tableView registerClass:[ShareMessageThirdCell class] forCellReuseIdentifier:@"ShareMessageThirdCell"];
+    [_tableView registerClass:[ShareMessageFourthCell class] forCellReuseIdentifier:@"ShareMessageFourthCell"];
+
+    
     
     [self initTableHeaderView];
     [self initTableFooterView];
-    
     
 }
 
@@ -96,6 +158,11 @@
     _tableHeaderView.SelectBirthdatBlock = ^{
         [weakSelf selectBirthday];
     };
+    
+    _tableHeaderView.SelectSexBlock = ^(NSString *sex) {
+        NSLog(@"%@",sex);
+        weakSelf.sexString = sex;
+    };
 }
 
 - (void)initTableFooterView {
@@ -104,168 +171,158 @@
     
 }
 
-#pragma mark UITextViewDelegate
-
-//-(void)textViewDidChange:(UITextView *)textView{
-//    //获取文本中字体的size
-//    CGSize size = [TSPublicTool sizeWithString:textView.text font:[UIFont systemFontOfSize:15] width:textView.width];
-//    NSLog(@"height = %f",size.height);
-//    //获取一行的高度
-//    CGSize size1 = [TSPublicTool sizeWithString:@"Hello" font:[UIFont systemFontOfSize:15] width:textView.width];
-//    NSInteger i = size.height/size1.height;
-//    if (i==1) {
-//        //设置全局的变量存储数字如果换行就改变这个全局变量
-//        self.number = i;
-//    }
-//    if (self.number!=i) {
-//        self.number = i;
-//        NSLog(@"selfnum = %ld",self.number);
-//        _tmpTextView.height = size.height;
-//        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-//        [_tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:(UITableViewRowAnimationAutomatic)];
-//    }
-//}
-
-- (void)selectPhoto {
-    
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:(UIAlertControllerStyleActionSheet)];
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
-        
-    }];
-    
-    
-    UIAlertAction *deleteAction = [UIAlertAction actionWithTitle:@"相机" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [self openCamer];
-    }];
-
-    UIAlertAction *archiveAction = [UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [self openPhoto];
-
-    }];
-
-    [alertController addAction:cancelAction];
-    [alertController addAction:deleteAction];
-    [alertController addAction:archiveAction];
-    
-    [self presentViewController:alertController animated:YES completion:nil];
-
-}
-
-- (void)openCamer {
-    
-    AVAuthorizationStatus status = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
-    if (status == AVAuthorizationStatusDenied)
-    {
-        
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"无法访问相机" message:@"请在iPhone的\"设置-隐私-相机\"选项中,允许思享者访问你的手机相机" preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *leftAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"确定", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-            [self.navigationController popViewControllerAnimated:YES];
-        }];
-        [alertController addAction:leftAction];
-        [self presentViewController:alertController animated:YES completion:nil];
-        return;
-    }
-    
-    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
-    {
-        UIImagePickerController *photoPicker = [[UIImagePickerController alloc] init];
-        photoPicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-        photoPicker.modalPresentationStyle = UIModalPresentationFullScreen;
-        photoPicker.delegate = (id)self;
-        photoPicker.allowsEditing = NO;
-        
-        photoPicker.mediaTypes = @[(NSString *)kUTTypeImage];
-        [self presentViewController:photoPicker animated:YES completion:NULL];
-    }
-
-}
-
-#pragma mark - UIImagePickerController delegate -
-
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
-    
-    NSString *type = info[UIImagePickerControllerMediaType];
-    NSString *tmpStr = (NSString *)kUTTypeImage;
-    
-    if ([type isEqualToString:tmpStr]) {
-        UIImage *image = info[UIImagePickerControllerOriginalImage];
-        
-        _tableHeaderView.headerImageView.image = image;
-        __block NSString *createdAssetID =nil;//唯一标识，可以用于图片资源获取  保存到系统相册
-        NSError *error =nil;
-        [[PHPhotoLibrary sharedPhotoLibrary]performChangesAndWait:^{
-            createdAssetID = [PHAssetChangeRequest creationRequestForAssetFromImage:image].placeholderForCreatedAsset.localIdentifier;
-        } error:&error];
-        
-    }
-    
-    [picker dismissViewControllerAnimated:YES completion:nil];
-}
-
-
-
-- (void)selectBirthday {
-    
-    TSDatePickerView *date = [[TSDatePickerView alloc]init];
-    
-    [date showInView];
-    
-    date.TSDatePickerBlock = ^(NSString *date) {
-        NSLog(@"%@",date);
-    };
-    
-}
-
-
-#pragma mark UITextFiledDelegate
-
-- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
-    
-    if (textField == _tableHeaderView.nickTextFiled) {
-        _tableHeaderView.nickLine.backgroundColor = [UIColor mainColorBlue];
-    }
-    
-    return YES;
-}
-
-
 #pragma mark UITableViewDelegate UITableViewDatasource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 0;
+    return 5;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    switch (section) {
+        case 0:
+            return _sctionOne;
+            break;
+        case 1:
+            return _sctionTwoArray.count;
+            break;
+        case 2:
+            if (_sctionThree > 0) {
+                return 3;
+            }
+            return 0;
+            break;
+        case 3:
+            if (_sctionFource > 0) {
+                return 3;
+            }
+            return 0;
+            break;
+        case 4:
+            if (_sctionFive > 0) {
+                return 4;
+            }
+            return 0;
+            break;
+            
+        default:
+            return 0;
+
+            break;
+    }
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 50;
+    switch (indexPath.section) {
+        case 0:
+            if (_sctionOne == 1) {
+                return 80;
+            }
+            return 0;
+            break;
+        case 1:
+            if (_sctionTwoArray.count > 0) {
+                NSString *tmp = _sctionTwoArray[indexPath.row];
+                CGFloat height = [TSPublicTool sizeWithString:tmp font:[UIFont systemFontOfSize:15] width:ScreenWidth - 80].height;
+                
+
+                return height + 30;
+            }
+            return 0;
+            break;
+        case 2:
+            if (_sctionThree > 0) {
+                return 44;
+            }
+            return 0;
+            break;
+        case 3:
+            if (_sctionFource > 0) {
+                return 44;
+            }
+            return 0;
+            break;
+        case 4:
+            if (_sctionFive > 0) {
+                return 44;
+            }
+            return 0;
+            break;
+        default:
+            return 0;
+            
+            break;
+    }
+
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    ShareMessageFirstCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ShareMessageFirstCell"];
-    _tmpTextView = cell.textView;
-    _tmpTextView.delegate = self;
-    TSWeakSelf
-    cell.reloadHeight = ^{
-        [weakSelf.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-    };
-    
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyBoardShow) name:UIKeyboardWillShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyBoardHidden) name:UIKeyboardWillHideNotification object:nil];
+    switch (indexPath.section) {
+        case 0:{//简介
+            ShareMessageFirstCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ShareMessageFirstCell"];
+           
+            _tmpTextView = cell.textView;
+            _tmpLabel = cell.numLabel;
+            _tmpTextView.delegate = self;
+            return cell;
+        }
+            break;
+        case 1:{//地址信息
+            ShareMessageSecondCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ShareMessageSecondCell"];
+            if (_sctionTwoArray.count > 0) {
+                [cell setAddressModel:_sctionTwoArray[indexPath.row]];
+            }
+            
+            return cell;
+        }
+            break;
+        case 2:{//职业信息
+            if (indexPath.row == 0) {
+                ShareMessageFourthCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ShareMessageFourthCell"];
+                cell.leftLabel.text = _sctionThreeArray[indexPath.row];
+                return cell;
+            }
+            ShareMessageThirdCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ShareMessageThirdCell"];
+            cell.leftLabel.text = _sctionThreeArray[indexPath.row];
+            cell.rightTextFiled.delegate = self;
+            if (indexPath.row == 1) {
+                _workPlaceTextField = cell.rightTextFiled;
+            } else {
+                _workNameTextField = cell.rightTextFiled;
+            }
 
-    
-    return cell;
-}
+            return cell;
+        }
+            break;
+        case 3:{//教育经历
+            ShareMessageThirdCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ShareMessageThirdCell"];
+            cell.leftLabel.text = _sctionFourceArray[indexPath.row];
+            cell.rightTextFiled.delegate = self;
+            if (indexPath.row == 0) {
+                _graduationSchoolTextField = cell.rightTextFiled;
+            } else if (indexPath.row == 1) {
+                _majorTextField = cell.rightTextFiled;
+            }  else {
+                _educationBackgroundTextField = cell.rightTextFiled;
+            }
+            
+            return cell;
+        }
+            break;
+            
+        case 4:{//资质认证
+            ShareMessageFourthCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ShareMessageFourthCell"];
+            cell.leftLabel.text = _sctionfiveArray[indexPath.row];
+            [cell setRightButtonString:_sctionfiveArray1[indexPath.row]];
+            return cell;
+        }
+            break;
 
-- (void)keyBoardShow {
-    CGRect frame1 = _tableView.frame;
-    frame1.origin.y -= 100;
-    _tableView.frame = frame1;
-}
 
-- (void)keyBoardHidden {
-    CGRect frame1 = _tableView.frame;
-    frame1.origin.y += 100;
-    _tableView.frame = frame1;
+            
+        default:{
+            UITableViewCell *cell = [[UITableViewCell alloc]init];
+            return cell;
+        }
+            
+            break;
+    }
+
 }
 
 
@@ -275,8 +332,114 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
     ShareMessageSectionView *header = [[ShareMessageSectionView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 40)];
+    TSWeakSelf
+    switch (section) {
+        case 0:{
+            
+            BOOL open = _sctionOne == 1 ? YES:NO;
+            [header setRightImageWithOpen:open];
+            header.openOrCloseBlock = ^(BOOL open) {
+                if (open) {
+                    _sctionOne = 0;
+                } else {
+                    _sctionOne = 1;
+                }
+                NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:section];
+                [weakSelf.tableView reloadSections:indexSet withRowAnimation:(UITableViewRowAnimationAutomatic)];
+            };
+        }
+            break;
+        case 1:{
+            
+            header.leftLabel.text = @"地址信息";
+            header.rightIcon.image = [UIImage imageNamed:@"userMessage_add"];
+            header.addAddressBlock = ^{
+                [weakSelf.sctionTwoArray addObject:@"六十多年历史的那份快乐思念对方离开你"];
+                NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:section];
+                [weakSelf.tableView reloadSections:indexSet withRowAnimation:(UITableViewRowAnimationAutomatic)];
+            };
+            
+        }
+            break;
+            
+        case 2:{
+            
+            header.leftLabel.text = @"职业信息";
+            BOOL open = _sctionThree > 0 ? YES:NO;
+            [header setRightImageWithOpen:open];
+            header.openOrCloseBlock = ^(BOOL open) {
+                if (open) {
+                    _sctionThree = 0;
+                } else {
+                    _sctionThree = 3;
+                }
+                NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:section];
+                [weakSelf.tableView reloadSections:indexSet withRowAnimation:(UITableViewRowAnimationAutomatic)];
+            };
+            
+        }
+            break;
+            
+        case 3:{
+            
+            header.leftLabel.text = @"教育经历";
+            BOOL open = _sctionFource > 0 ? YES:NO;
+            [header setRightImageWithOpen:open];
+            header.openOrCloseBlock = ^(BOOL open) {
+                if (open) {
+                    _sctionFource = 0;
+                } else {
+                    _sctionFource = 3;
+                }
+                NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:section];
+                [weakSelf.tableView reloadSections:indexSet withRowAnimation:(UITableViewRowAnimationAutomatic)];
+            };
+            
+        }
+            break;
+        case 4:{
+            
+            header.leftLabel.text = @"资质认证";
+            BOOL open = _sctionFive > 0 ? YES:NO;
+            [header setRightImageWithOpen:open];
+            header.openOrCloseBlock = ^(BOOL open) {
+                if (open) {
+                    _sctionFive = 0;
+                } else {
+                    _sctionFive = 4;
+                }
+                NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:section];
+                [weakSelf.tableView reloadSections:indexSet withRowAnimation:(UITableViewRowAnimationAutomatic)];
+            };
+            
+        }
+            break;
+
+        default:
+            break;
+    }
+    
     
     return header;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 1) {
+        return YES;
+
+    }
+    return NO;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [_sctionTwoArray removeObjectAtIndex:indexPath.row];
+        // Delete the row from the data source.
+        [_tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+    }
+   
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
@@ -290,7 +453,27 @@
     return footer;
 }
 
+#pragma mark UITextViewDelegate 
+- (void)textViewDidChange:(UITextView *)textView {
+    if (textView.text.length > 10) {
+        textView.text = [textView.text substringToIndex:10];
+    }
+    _tmpLabel.text = [NSString stringWithFormat:@"%ld",(10 - textView.text.length)];
+}
+
 #pragma mark private Methoeds
+
+- (void)keyBoardShow {
+    if (_tableView.contentOffset.y < 200) {
+        _tableView.frame = CGRectMake(0, -200, ScreenWidth, ScreenHeight);
+
+    }
+}
+
+- (void)keyBoardHidden {
+    _tableView.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
+}
+
 
 - (void)changeLineColor {
     
@@ -371,125 +554,113 @@
     
 }
 
+- (void)selectPhoto {
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:(UIAlertControllerStyleActionSheet)];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    
+    
+    UIAlertAction *deleteAction = [UIAlertAction actionWithTitle:@"相机" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self openCamer];
+    }];
+    
+    UIAlertAction *archiveAction = [UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self openPhoto];
+        
+    }];
+    
+    [alertController addAction:cancelAction];
+    [alertController addAction:deleteAction];
+    [alertController addAction:archiveAction];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+    
+}
+
+- (void)openCamer {
+    
+    AVAuthorizationStatus status = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+    if (status == AVAuthorizationStatusDenied)
+    {
+        
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"无法访问相机" message:@"请在iPhone的\"设置-隐私-相机\"选项中,允许思享者访问你的手机相机" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *leftAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"确定", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            [self.navigationController popViewControllerAnimated:YES];
+        }];
+        [alertController addAction:leftAction];
+        [self presentViewController:alertController animated:YES completion:nil];
+        return;
+    }
+    
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+    {
+        UIImagePickerController *photoPicker = [[UIImagePickerController alloc] init];
+        photoPicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        photoPicker.modalPresentationStyle = UIModalPresentationFullScreen;
+        photoPicker.delegate = (id)self;
+        photoPicker.allowsEditing = NO;
+        
+        photoPicker.mediaTypes = @[(NSString *)kUTTypeImage];
+        [self presentViewController:photoPicker animated:YES completion:NULL];
+    }
+    
+}
+
+#pragma mark - UIImagePickerController delegate -
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    
+    NSString *type = info[UIImagePickerControllerMediaType];
+    NSString *tmpStr = (NSString *)kUTTypeImage;
+    
+    if ([type isEqualToString:tmpStr]) {
+        UIImage *image = info[UIImagePickerControllerOriginalImage];
+        
+        _tableHeaderView.headerImageView.image = image;
+        __block NSString *createdAssetID =nil;//唯一标识，可以用于图片资源获取  保存到系统相册
+        NSError *error =nil;
+        [[PHPhotoLibrary sharedPhotoLibrary]performChangesAndWait:^{
+            createdAssetID = [PHAssetChangeRequest creationRequestForAssetFromImage:image].placeholderForCreatedAsset.localIdentifier;
+        } error:&error];
+        
+    }
+    
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+
+- (void)selectBirthday {
+    [self.view endEditing:YES];
+    TSDatePickerView *date = [[TSDatePickerView alloc]init];
+    
+    [date showInView];
+    TSWeakSelf
+    date.TSDatePickerBlock = ^(NSString *date) {
+        [weakSelf.tableHeaderView.birthdayButton setTitle:date forState:(UIControlStateNormal)];
+        weakSelf.birthday = date;
+        NSLog(@"%@",date);
+    };
+    
+}
+
+
+#pragma mark UITextFiledDelegate
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    
+    if (textField == _tableHeaderView.nickTextFiled) {
+        _tableHeaderView.nickLine.backgroundColor = [UIColor mainColorBlue];
+    }
+    
+    return YES;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
-
-/*
- 
- 
- - (void)configBirthdayPickerView {
- _birthdayPickerView = [[UIDatePicker alloc] init];
- _birthdayPickerView.backgroundColor = [UIColor whiteColor];
- _birthdayPickerView.datePickerMode = UIDatePickerModeDateAndTime;
- NSCalendar *calendar = [NSCalendar currentCalendar];
- [calendar setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
- [calendar setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"]];
- NSDate *currentDate = [NSDate date];
- NSDateComponents *comps = [[NSDateComponents alloc] init];
- [comps setYear:0];
- [comps setMonth:0];
- [comps setDay:0];
- [comps setHour:0];
- [comps setMinute:0];
- NSDate *maxDate = [calendar dateByAddingComponents:comps toDate:currentDate options:0];
- [comps setYear:-120];
- NSDate *minDate = [calendar dateByAddingComponents:comps toDate:currentDate options:0];
- _birthdayPickerView.maximumDate = maxDate;
- _birthdayPickerView.minimumDate = minDate;
- _birthdayPickerView.calendar = calendar;
- 
- _birthdayToolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 44)];
- _birthdayToolBar.barTintColor = [UIColor whiteColor];
- UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(toolBarCancleButtonClicked)];
- leftItem.tintColor = [UIColor generalSubTitleFontGrayColor];
- UIBarButtonItem *centerSpace=[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
- UIBarButtonItem *rightItem=[[UIBarButtonItem alloc] initWithTitle:@"确定" style:UIBarButtonItemStylePlain target:self action:@selector(birthdayToolBarDoneButtonClicked)];
- rightItem.tintColor = [UIColor mainColorBlue];
- _birthdayToolBar.items=@[leftItem, centerSpace, rightItem];
- 
- 
- }
- 
- //取消
- - (void)toolBarCancleButtonClicked {
- [_responderTextField resignFirstResponder];
- [self.maskView removeFromSuperview];
- }
- 
- 
- //确定
- - (void)birthdayToolBarDoneButtonClicked {
- [self toolBarCancleButtonClicked];
- 
- //设置源日期时区
- NSTimeZone* sourceTimeZone = [NSTimeZone timeZoneWithAbbreviation:@"UTC"];//或GMT
- //设置转换后的目标日期时区
- NSTimeZone* destinationTimeZone = [NSTimeZone localTimeZone];
- //得到源日期与世界标准时间的偏移量
- NSInteger sourceGMTOffset = [sourceTimeZone secondsFromGMTForDate:_birthdayPickerView.date];
- //目标日期与本地时区的偏移量
- NSInteger destinationGMTOffset = [destinationTimeZone secondsFromGMTForDate:_birthdayPickerView.date];
- //得到时间偏移量的差值
- NSTimeInterval interval = destinationGMTOffset - sourceGMTOffset;
- //转为现在时间
- NSDate *destinationDateNow = [[NSDate alloc] initWithTimeInterval:interval sinceDate:_birthdayPickerView.date];
- 
- self.birthday = [[NSString stringWithFormat:@"%@",destinationDateNow] substringToIndex:10];
- NSDateFormatter *dateformatter = [[NSDateFormatter alloc] init];
- [dateformatter setDateFormat:@"yyyy-MM-dd"];
- //    NSDate *reallyDate = [dateformatter dateFromString:self.birthday];
- 
- NSLog(@"%@",self.birthday);
- 
- [_tableHeaderView setBirthdayString:self.birthday];
- 
- }
- 
- #pragma mark - setter && getter
- //工具栏的分割线
- - (UIView *)separatorView {
- if (_separatorView == nil) {
- _separatorView = [[UIView alloc] init];
- _separatorView.frame = CGRectMake(0, 44 - 1, ScreenWidth, 1);
- _separatorView.backgroundColor = [UIColor mainColorBlue];
- }
- return _separatorView;
- }
- 
- //遮罩视图
- - (UIView *)maskView {
- if (_maskView == nil) {
- _maskView = [[UIView alloc] initWithFrame:self.view.bounds];
- _maskView.backgroundColor = [UIColor colorWithWhite:0.3 alpha:0.3];
- [_maskView addGestureRecognizer:self.tapGestureRecognizer];
- }
- return _maskView;
- }
- 
- //手势
- - (UITapGestureRecognizer *)tapGestureRecognizer {
- if (_tapGestureRecognizer == nil) {
- _tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toolBarCancleButtonClicked)];
- }
- return _tapGestureRecognizer;
- }
-
- 
- 
- 
- 
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
