@@ -16,16 +16,16 @@
         self.selectionStyle = UITableViewCellSelectionStyleNone;
 
         
-       _leftLabel = [[UILabel alloc]initWithFrame:CGRectMake(25, 10, 90, 20)];
+       _leftLabel = [[UILabel alloc]initWithFrame:CGRectMake(25, 15, 90, 20)];
         [self.contentView addSubview:_leftLabel];
         
-        _leftLabel.textColor = [UIColor generalTitleFontBlackColor];
+        _leftLabel.textColor = [UIColor generalTitleFontGrayColor];
         
         _leftLabel.font = [UIFont systemFontOfSize:15];
         
         _leftLabel.text = @"工作单位：";
         
-        _downLine = [[UIView alloc]initWithFrame:CGRectMake(0, 43.5, ScreenWidth, 0.5)];
+        _downLine = [[UIView alloc]initWithFrame:CGRectMake(0, 49.5, ScreenWidth, 0.5)];
         [self.contentView addSubview:_downLine];
         _downLine.backgroundColor = [UIColor seperateThinLineColor];
         

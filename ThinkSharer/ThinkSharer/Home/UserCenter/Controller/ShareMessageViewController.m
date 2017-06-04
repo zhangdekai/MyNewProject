@@ -18,9 +18,6 @@
 #import "ShareMessageThirdCell.h"
 #import "ShareMessageFourthCell.h"
 
-//  userMessage_location   userMessage_ArrowsDown   userMessage_ArrowsUp  userMessage_add
-
-
 @interface ShareMessageViewController ()<UITableViewDelegate,UITableViewDataSource,CTAssetsPickerControllerDelegate,UITextFieldDelegate,UIImagePickerControllerDelegate,UITextViewDelegate,UIGestureRecognizerDelegate>
 
 @property (nonatomic,strong) UITableView *tableView;
@@ -110,7 +107,7 @@
 
 #pragma mark UI
 - (void)setNavigationBar {
-    [self setNavigationBarTitle:@"思享者信息"];
+    [self setNavigationBarTitle:@"个人信息"];
     [self setNavigationBarBack];
     TSWeakSelf
     [self setNavigationBarRightItemWithTitle:@"保存" itemBlock:^{
@@ -212,7 +209,7 @@
     switch (indexPath.section) {
         case 0:
             if (_sctionOne == 1) {
-                return 80;
+                return 110;
             }
             return 0;
             break;
@@ -228,19 +225,19 @@
             break;
         case 2:
             if (_sctionThree > 0) {
-                return 44;
+                return 50;
             }
             return 0;
             break;
         case 3:
             if (_sctionFource > 0) {
-                return 44;
+                return 50;
             }
             return 0;
             break;
         case 4:
             if (_sctionFive > 0) {
-                return 44;
+                return 50;
             }
             return 0;
             break;
@@ -327,11 +324,11 @@
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 40;
+    return 50;
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     
-    ShareMessageSectionView *header = [[ShareMessageSectionView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 40)];
+    ShareMessageSectionView *header = [[ShareMessageSectionView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 50)];
     TSWeakSelf
     switch (section) {
         case 0:{
@@ -353,7 +350,11 @@
             
             header.leftLabel.text = @"地址信息";
             header.rightIcon.image = [UIImage imageNamed:@"userMessage_add"];
+            header.rightIcon.size = CGSizeMake(15, 15);
             header.addAddressBlock = ^{
+                if (weakSelf.sctionTwoArray.count > 5) {
+                    return ;
+                }
                 [weakSelf.sctionTwoArray addObject:@"六十多年历史的那份快乐思念对方离开你"];
                 NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:section];
                 [weakSelf.tableView reloadSections:indexSet withRowAnimation:(UITableViewRowAnimationAutomatic)];
@@ -464,10 +465,8 @@
 #pragma mark private Methoeds
 
 - (void)keyBoardShow {
-    if (_tableView.contentOffset.y < 200) {
-        _tableView.frame = CGRectMake(0, -200, ScreenWidth, ScreenHeight);
-
-    }
+    
+    _tableView.frame = CGRectMake(0, -100, ScreenWidth, ScreenHeight);
 }
 
 - (void)keyBoardHidden {

@@ -143,9 +143,15 @@
     return rect.size;
 }
 
-//+ (NSInteger)numberWithString:(NSString *)string font:(CGFloat)font width:(CGFloat)width {
-//    UILabel *label = [UILabel alloc]ini
-//}
++ (PersonalOrCompanyView *)personInstance {
+    static PersonalOrCompanyView *shareView = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        shareView = [[PersonalOrCompanyView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
+        
+    });
+    return shareView;
+}
 
 
 

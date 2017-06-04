@@ -26,7 +26,7 @@ class ShareMessageSectionView: UIView {
         let selfW = frame.size.width
         let selfH = frame.size.height
         //
-        leftLabel = UILabel.init(frame: CGRect(x: 15, y: 10, width: 120, height: 20))
+        leftLabel = UILabel.init(frame: CGRect(x: 15, y: 15, width: 120, height: 20))
         
         self.addSubview(leftLabel)
         
@@ -37,7 +37,7 @@ class ShareMessageSectionView: UIView {
         
         //
         
-        rightIcon = UIImageView.init(frame: CGRect(x:ScreenWidth - 35, y: 10, width: 20, height: 20))
+        rightIcon = UIImageView.init(frame: CGRect(x:ScreenWidth - 35, y: 20, width: 20, height: 10))
         self.addSubview(rightIcon)
         rightIcon.image = UIImage(named: "userMessage_ArrowsDown")
         rightIcon.isUserInteractionEnabled = true

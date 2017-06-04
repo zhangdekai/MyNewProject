@@ -17,11 +17,11 @@
     
     if (self) {
         
-        self.frame = CGRectMake(0, 0, ScreenWidth, 350);
+        self.frame = CGRectMake(0, 0, ScreenWidth, 482);
         self.backgroundColor = [UIColor whiteColor];
         
         //头像
-        _headerImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 200)];
+        _headerImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 310)];
         
         [self addSubview:_headerImageView];
         
@@ -30,7 +30,7 @@
         _headerImageView.image = [UIImage imageNamed:@"testHeader"];
         
         //相机icon
-        _camerIcon = [[UIImageView alloc]initWithFrame:CGRectMake(ScreenWidth - 50 , 170, 25, 25)];
+        _camerIcon = [[UIImageView alloc]initWithFrame:CGRectMake(ScreenWidth - 40 , 310 - 40, 25, 25)];
         
         [_headerImageView addSubview:_camerIcon];
         
@@ -42,26 +42,28 @@
         
         [_camerIcon addGestureRecognizer:tap];
         
+        //line
+        UIView *line = [[UIView alloc]initWithFrame:CGRectMake(0, _headerImageView.bottom, ScreenWidth, 25)];
+        [self addSubview:line];
+        line.backgroundColor = [UIColor backgroundGrayColorA];
+
         
         //昵称
         
-        UILabel *nickName = [[UILabel alloc]initWithFrame:CGRectMake(15, _headerImageView.bottom + 15 + 10, 90, 20)];
+        UILabel *nickName = [[UILabel alloc]initWithFrame:CGRectMake(15, line.bottom + 15, 90, 20)];
         [self addSubview:nickName];
         
         nickName.textColor = [UIColor generalTitleFontBlackColor];
         
-        nickName.font = [UIFont systemFontOfSize:17];
+        nickName.font = [UIFont systemFontOfSize:15];
         
         nickName.text = @"昵称";
         
-        UIView *line = [[UIView alloc]initWithFrame:CGRectMake(0, _headerImageView.bottom, ScreenWidth, 15)];
-        [self addSubview:line];
-        line.backgroundColor = [UIColor backgroundGrayColorA];
         
         
         _nickTextFiled = [[UITextField alloc]initWithFrame:CGRectMake(nickName.right +15, nickName.top, ScreenWidth - nickName.right - 30, 30)];
         [self addSubview:_nickTextFiled];
-        _nickTextFiled.font = [UIFont systemFontOfSize:15];
+        _nickTextFiled.font = [UIFont systemFontOfSize:13];
         _nickTextFiled.textColor = [UIColor generalTitleFontBlackColor];
         _nickTextFiled.textAlignment = NSTextAlignmentRight;
         _nickTextFiled.placeholder = @"填写昵称";
@@ -73,10 +75,10 @@
         
         //性别
         
-        UILabel *sexLabel = [[UILabel alloc]initWithFrame:CGRectMake(15, _nickLine.bottom + 10, 90, 20)];
+        UILabel *sexLabel = [[UILabel alloc]initWithFrame:CGRectMake(15, _nickLine.bottom + 15, 90, 20)];
         [self addSubview:sexLabel];
         sexLabel.textColor = [UIColor generalTitleFontBlackColor];
-        sexLabel.font = [UIFont systemFontOfSize:17];
+        sexLabel.font = [UIFont systemFontOfSize:15];
         sexLabel.text = @"性别";
 
         UIButton *sexButton = [[UIButton alloc]initWithFrame:CGRectMake(ScreenWidth - 110, sexLabel.top, 40, 20)];
@@ -102,14 +104,14 @@
         [sexButtonBoy addSubview:_iconBoy];
         [sexButtonBoy setContentHorizontalAlignment:(UIControlContentHorizontalAlignmentRight)];
 
-        UIView *sexLine = [[UIView alloc]initWithFrame:CGRectMake(0, sexLabel.bottom + 10, ScreenWidth, 0.5)];
+        UIView *sexLine = [[UIView alloc]initWithFrame:CGRectMake(0, sexLabel.bottom + 15, ScreenWidth, 0.5)];
         [self addSubview:sexLine];
         sexLine.backgroundColor = [UIColor seperateThinLineColor];
         sexButtonBoy.tag = 101;
 
         //出生日期
         
-        UILabel *birthday = [[UILabel alloc]initWithFrame:CGRectMake(15, sexLine.bottom + 10, 90, 20)];
+        UILabel *birthday = [[UILabel alloc]initWithFrame:CGRectMake(15, sexLine.bottom + 15, 90, 20)];
         [self addSubview:birthday];
         birthday.textColor = [UIColor generalTitleFontBlackColor];
         birthday.font = [UIFont systemFontOfSize:17];
@@ -119,11 +121,11 @@
         [self addSubview:_birthdayButton];
         [_birthdayButton setTitle:@"请选择" forState:(UIControlStateNormal)];
         [_birthdayButton setTitleColor:[UIColor generalTitleFontGrayColor] forState:(UIControlStateNormal)];
-        _birthdayButton.titleLabel.font = [UIFont systemFontOfSize:15];
+        _birthdayButton.titleLabel.font = [UIFont systemFontOfSize:13];
         [_birthdayButton setContentHorizontalAlignment:(UIControlContentHorizontalAlignmentRight)];
 
       
-        UIView *birthdayLine = [[UIView alloc]initWithFrame:CGRectMake(0, birthday.bottom + 10, ScreenWidth, 0.5)];
+        UIView *birthdayLine = [[UIView alloc]initWithFrame:CGRectMake(0, birthday.bottom + 15, ScreenWidth, 0.5)];
         [self addSubview:birthdayLine];
         birthdayLine.backgroundColor = [UIColor seperateThinLineColor];
         
@@ -158,13 +160,13 @@
 
 - (void)sexButtonClick:(UIButton *)button {
     if (button.tag == 100) {
-        _iconGirl.image = [UIImage imageNamed:@"user_icon-boy"];
-        _iconBoy.image = [UIImage imageNamed:@"user_icon-boy"];
+        _iconGirl.image = [UIImage imageNamed:@"user_icon-girl"];
+        _iconBoy.image = [UIImage imageNamed:@"user_icon-boyGray"];
 
         self.SelectSexBlock(@"女");
         
     } else {
-        _iconGirl.image = [UIImage imageNamed:@"user_icon-boy"];
+        _iconGirl.image = [UIImage imageNamed:@"user_icon-girlGray"];
         _iconBoy.image = [UIImage imageNamed:@"user_icon-boy"];
 
 

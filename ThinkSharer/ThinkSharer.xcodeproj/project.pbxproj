@@ -19,6 +19,11 @@
 		492331B11ED446F400E45338 /* TSPublicTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 492331B01ED446F400E45338 /* TSPublicTool.m */; };
 		492331B51ED457C300E45338 /* ShareFourceCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 492331B31ED457C300E45338 /* ShareFourceCollectionViewCell.m */; };
 		492331B61ED457C300E45338 /* ShareFourceCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 492331B41ED457C300E45338 /* ShareFourceCollectionViewCell.xib */; };
+		492ADDB41EE41B8F00E70ADD /* PersonalOrCompanyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 492ADDB31EE41B8F00E70ADD /* PersonalOrCompanyView.m */; };
+		492ADDB71EE4319200E70ADD /* CompanyMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 492ADDB61EE4319200E70ADD /* CompanyMessageViewController.m */; };
+		492ADDBA1EE431F800E70ADD /* CompanyTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 492ADDB91EE431F800E70ADD /* CompanyTableHeaderView.m */; };
+		492ADDBD1EE43FC700E70ADD /* CompanyFirstCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 492ADDBC1EE43FC700E70ADD /* CompanyFirstCell.m */; };
+		492ADDC01EE441E400E70ADD /* CompanyScondCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 492ADDBF1EE441E400E70ADD /* CompanyScondCell.m */; };
 		493533141ED6D703001CCCF2 /* UIImageView+YMHPlaceholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 493533131ED6D703001CCCF2 /* UIImageView+YMHPlaceholder.m */; };
 		4935331A1ED6D725001CCCF2 /* UIImage+TSAlpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 493533171ED6D725001CCCF2 /* UIImage+TSAlpha.m */; };
 		4935331B1ED6D725001CCCF2 /* UIImage+TSShape.m in Sources */ = {isa = PBXBuildFile; fileRef = 493533191ED6D725001CCCF2 /* UIImage+TSShape.m */; };
@@ -145,6 +150,16 @@
 		492331B21ED457C300E45338 /* ShareFourceCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareFourceCollectionViewCell.h; sourceTree = "<group>"; };
 		492331B31ED457C300E45338 /* ShareFourceCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareFourceCollectionViewCell.m; sourceTree = "<group>"; };
 		492331B41ED457C300E45338 /* ShareFourceCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShareFourceCollectionViewCell.xib; sourceTree = "<group>"; };
+		492ADDB21EE41B8F00E70ADD /* PersonalOrCompanyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalOrCompanyView.h; sourceTree = "<group>"; };
+		492ADDB31EE41B8F00E70ADD /* PersonalOrCompanyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalOrCompanyView.m; sourceTree = "<group>"; };
+		492ADDB51EE4319200E70ADD /* CompanyMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyMessageViewController.h; sourceTree = "<group>"; };
+		492ADDB61EE4319200E70ADD /* CompanyMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompanyMessageViewController.m; sourceTree = "<group>"; };
+		492ADDB81EE431F800E70ADD /* CompanyTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyTableHeaderView.h; sourceTree = "<group>"; };
+		492ADDB91EE431F800E70ADD /* CompanyTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompanyTableHeaderView.m; sourceTree = "<group>"; };
+		492ADDBB1EE43FC700E70ADD /* CompanyFirstCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyFirstCell.h; sourceTree = "<group>"; };
+		492ADDBC1EE43FC700E70ADD /* CompanyFirstCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompanyFirstCell.m; sourceTree = "<group>"; };
+		492ADDBE1EE441E400E70ADD /* CompanyScondCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CompanyScondCell.h; sourceTree = "<group>"; };
+		492ADDBF1EE441E400E70ADD /* CompanyScondCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CompanyScondCell.m; sourceTree = "<group>"; };
 		493533121ED6D703001CCCF2 /* UIImageView+YMHPlaceholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+YMHPlaceholder.h"; sourceTree = "<group>"; };
 		493533131ED6D703001CCCF2 /* UIImageView+YMHPlaceholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+YMHPlaceholder.m"; sourceTree = "<group>"; };
 		493533161ED6D725001CCCF2 /* UIImage+TSAlpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+TSAlpha.h"; sourceTree = "<group>"; };
@@ -707,6 +722,8 @@
 				49B743E91ED2EA1500FFDBDB /* SharerCenterViewController.m */,
 				498BE0061ED5511300D7D004 /* ShareMessageViewController.h */,
 				498BE0071ED5511300D7D004 /* ShareMessageViewController.m */,
+				492ADDB51EE4319200E70ADD /* CompanyMessageViewController.h */,
+				492ADDB61EE4319200E70ADD /* CompanyMessageViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -742,6 +759,14 @@
 				491EA6131EE1165A00C2B8ED /* ShareMessageThirdCell.m */,
 				491EA6151EE12B2400C2B8ED /* ShareMessageFourthCell.h */,
 				491EA6161EE12B2400C2B8ED /* ShareMessageFourthCell.m */,
+				492ADDB21EE41B8F00E70ADD /* PersonalOrCompanyView.h */,
+				492ADDB31EE41B8F00E70ADD /* PersonalOrCompanyView.m */,
+				492ADDB81EE431F800E70ADD /* CompanyTableHeaderView.h */,
+				492ADDB91EE431F800E70ADD /* CompanyTableHeaderView.m */,
+				492ADDBB1EE43FC700E70ADD /* CompanyFirstCell.h */,
+				492ADDBC1EE43FC700E70ADD /* CompanyFirstCell.m */,
+				492ADDBE1EE441E400E70ADD /* CompanyScondCell.h */,
+				492ADDBF1EE441E400E70ADD /* CompanyScondCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1093,6 +1118,7 @@
 				498BE1191ED5950500D7D004 /* PHAsset+CTAssetsPickerController.m in Sources */,
 				498BE00B1ED5552900D7D004 /* ShareMessageTableHeaderView.m in Sources */,
 				498BE1281ED5950500D7D004 /* CTAssetsGridViewController.m in Sources */,
+				492ADDBD1EE43FC700E70ADD /* CompanyFirstCell.m in Sources */,
 				498BE1201ED5950500D7D004 /* CTAssetItemViewController.m in Sources */,
 				498BE1181ED5950500D7D004 /* NSNumberFormatter+CTAssetsPickerController.m in Sources */,
 				49B743CE1ED2DC9D00FFDBDB /* LoginViewController.m in Sources */,
@@ -1119,6 +1145,7 @@
 				49902DCE1EE0352C00DAD3DE /* ShareMessageFirstCell.m in Sources */,
 				491C46281ECC2CD4009F43A4 /* SelectClassTableViewCell.m in Sources */,
 				498BE11A1ED5950500D7D004 /* PHAssetCollection+CTAssetsPickerController.m in Sources */,
+				492ADDB71EE4319200E70ADD /* CompanyMessageViewController.m in Sources */,
 				49FBF3161ED3D2B900CAC5F5 /* SelectScrollViewForM.m in Sources */,
 				498BE0021ED52BDB00D7D004 /* UserShareCenterCollectionReusableView.m in Sources */,
 				49A8503E1EDE94EB00EE521A /* LoactionIdentityView.m in Sources */,
@@ -1138,6 +1165,7 @@
 				49AF54BA1ECED69000406DFC /* TSCustomTextFiled.m in Sources */,
 				49B743FE1ED2F02400FFDBDB /* SearchClassViewController.m in Sources */,
 				498BE1251ED5950500D7D004 /* CTAssetsGridSelectedView.m in Sources */,
+				492ADDB41EE41B8F00E70ADD /* PersonalOrCompanyView.m in Sources */,
 				498BE1261ED5950500D7D004 /* CTAssetsGridView.m in Sources */,
 				492331B11ED446F400E45338 /* TSPublicTool.m in Sources */,
 				49B743D71ED2E47D00FFDBDB /* AppDelegate.m in Sources */,
@@ -1149,8 +1177,10 @@
 				498BE1311ED5950500D7D004 /* CTAssetsViewControllerTransition.m in Sources */,
 				491EA6141EE1165A00C2B8ED /* ShareMessageThirdCell.m in Sources */,
 				491C46181ECC1D91009F43A4 /* SelectClassCollectionViewCell.m in Sources */,
+				492ADDC01EE441E400E70ADD /* CompanyScondCell.m in Sources */,
 				499478B81ED68412003E7E4C /* UITableView+YMHRefresh.m in Sources */,
 				49F38FA51ECADDBE00D83E95 /* YMHIdenCodeTool.m in Sources */,
+				492ADDBA1EE431F800E70ADD /* CompanyTableHeaderView.m in Sources */,
 				498BE0081ED5511300D7D004 /* ShareMessageViewController.m in Sources */,
 				498BE12C1ED5950500D7D004 /* CTAssetsPageView.m in Sources */,
 				498BE1331ED5950500D7D004 /* CTAssetThumbnailStacks.m in Sources */,
@@ -1339,7 +1369,7 @@
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 9X97YKR3AP;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/zhangdekai/Desktop/ThinkSharer/ThinkSharer/ThinkSharer/Supporting Files/thinkSharer.pch";
+				GCC_PREFIX_HEADER = "/Users/wangzixin/Desktop/ThinkSharer/ThinkSharer/ThinkSharer/Supporting Files/thinkSharer.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/ThinkSharer/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1361,7 +1391,7 @@
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 9X97YKR3AP;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/zhangdekai/Desktop/ThinkSharer/ThinkSharer/ThinkSharer/Supporting Files/thinkSharer.pch";
+				GCC_PREFIX_HEADER = "/Users/wangzixin/Desktop/ThinkSharer/ThinkSharer/ThinkSharer/Supporting Files/thinkSharer.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/ThinkSharer/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

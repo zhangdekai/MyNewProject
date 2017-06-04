@@ -15,16 +15,16 @@
         
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         
-        _leftLabel = [[UILabel alloc]initWithFrame:CGRectMake(25, 10, 95, 20)];
+        _leftLabel = [[UILabel alloc]initWithFrame:CGRectMake(25, 15, 95, 20)];
         [self.contentView addSubview:_leftLabel];
         
-        _leftLabel.textColor = [UIColor generalTitleFontBlackColor];
+        _leftLabel.textColor = [UIColor generalTitleFontGrayColor];
         
         _leftLabel.font = [UIFont systemFontOfSize:15];
         
         _leftLabel.text = @"工作单位：";
         
-        UIView *line = [[UIView alloc]initWithFrame:CGRectMake(0, 43.5, ScreenWidth, 0.5)];
+        UIView *line = [[UIView alloc]initWithFrame:CGRectMake(0, 49.5, ScreenWidth, 0.5)];
         [self.contentView addSubview:line];
         line.backgroundColor = [UIColor seperateThinLineColor];
         
@@ -43,7 +43,7 @@
 
 - (void)setRightButtonString:(NSString *)title {
     if ([title isEqualToString:@"已认证"]) {
-        [_rightButton setTitleColor:[UIColor generalTitleFontGrayColor] forState:(UIControlStateNormal)];
+        [_rightButton setTitleColor:[UIColor generalTitleFontBlackColor] forState:(UIControlStateNormal)];
     } else if ([title isEqualToString:@"认证中"]) {
         [_rightButton setTitleColor:[UIColor mainColorBlue] forState:(UIControlStateNormal)];
 

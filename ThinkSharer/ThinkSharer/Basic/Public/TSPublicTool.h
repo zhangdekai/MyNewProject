@@ -10,6 +10,8 @@
 #import <UIKit/UIKit.h>
 #import "TSActionAlterView.h"
 #import "TSDatePickerView.h"
+#import "PersonalOrCompanyView.h"
+
 
 #import "ThinkSharer-Bridging-Header.h"
 
@@ -37,6 +39,10 @@ typedef void(^AlterBlock)();
 
 //首页操作提示
 + (TSActionAlterView *)shareInstance;
+
+
+//个人机构选择
++ (PersonalOrCompanyView *)personInstance;
 
 
 /**

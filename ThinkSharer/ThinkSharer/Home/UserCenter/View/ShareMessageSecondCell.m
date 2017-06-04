@@ -15,7 +15,7 @@
     if (self) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
 
-        UIImageView *icon = [[UIImageView alloc]initWithFrame:CGRectMake(15, 25, 10, 15)];
+        UIImageView *icon = [[UIImageView alloc]initWithFrame:CGRectMake(15, 15, 10, 15)];
         [self.contentView addSubview:icon];
         icon.image = [UIImage imageNamed:@"userMessage_location"];
         

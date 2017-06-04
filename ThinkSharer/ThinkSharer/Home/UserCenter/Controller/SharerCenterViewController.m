@@ -98,6 +98,22 @@
 
 }
 
+- (void)selectPersonOrCompany {
+    PersonalOrCompanyView *person = [[PersonalOrCompanyView alloc]initWithFrame:CGRectZero];//[TSPublicTool personInstance];
+    [person showInView];
+    TSWeakSelf
+    person.SelectPersonOrCompany = ^(NSInteger index) {
+        NSLog(@"%ld",index);
+        if (index == 0) {
+            ShareMessageViewController *vc = [[ShareMessageViewController alloc]init];
+            [weakSelf.navigationController pushViewController:vc animated:YES];
+            
+        } else {
+            
+        }
+    };
+}
+
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return 4;
@@ -263,8 +279,7 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
-        ShareMessageViewController *vc = [[ShareMessageViewController alloc]init];
-        [self.navigationController pushViewController:vc animated:YES];
+        [self selectPersonOrCompany];
     }
 }
 
