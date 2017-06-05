@@ -8,9 +8,6 @@
 
 import UIKit
 
-let ScreenWidth = UIScreen.main.bounds.width
-let ScreenHeight = UIScreen.main.bounds.height
-
 class ShareMessageSectionView: UIView {
     var leftLabel:UILabel!
     var rightIcon:UIImageView!

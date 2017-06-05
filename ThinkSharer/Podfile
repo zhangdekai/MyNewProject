@@ -1,8 +1,8 @@
 platform :ios, '9.0'
 inhibit_all_warnings!
 
-
 target 'ThinkSharer' do
+    
     
     pod 'AFNetworking', '~> 3.1.0'
     pod 'SDWebImage', '~> 4.0.0'
@@ -10,11 +10,10 @@ target 'ThinkSharer' do
     pod 'MBProgressHUD'
     pod 'AMap3DMap-NO-IDFA'
     pod 'AMapLocation-NO-IDFA'
-    pod 'Masonry'
+    pod 'Masonry', '~> 1.0.2'
     pod 'PYPhotoBrowser'
     pod 'PureLayout', '~> 3.0.2'
     pod 'YYCache', '~> 1.0.4'
-
 
 
 end

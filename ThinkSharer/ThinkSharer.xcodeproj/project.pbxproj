@@ -76,7 +76,6 @@
 		4996B8511ECAAC2900272439 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4996B8501ECAAC2900272439 /* Assets.xcassets */; };
 		4996B8621ECAADA900272439 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4996B8611ECAADA900272439 /* LaunchScreen.storyboard */; };
 		49A850381EDE594600EE521A /* TSDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A850371EDE594600EE521A /* TSDatePickerView.m */; };
-		49A8503B1EDE64A700EE521A /* testView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A8503A1EDE64A700EE521A /* testView.swift */; };
 		49A8503E1EDE94EB00EE521A /* LoactionIdentityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A8503D1EDE94EB00EE521A /* LoactionIdentityView.m */; };
 		49A850411EDED27200EE521A /* SelectClassLeftTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A850401EDED27200EE521A /* SelectClassLeftTableViewCell.m */; };
 		49AF54BA1ECED69000406DFC /* TSCustomTextFiled.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AF54B91ECED69000406DFC /* TSCustomTextFiled.m */; };
@@ -97,6 +96,13 @@
 		49B743F91ED2EA6900FFDBDB /* SharerThirdCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B743F31ED2EA6900FFDBDB /* SharerThirdCollectionViewCell.xib */; };
 		49B743FE1ED2F02400FFDBDB /* SearchClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B743FD1ED2F02400FFDBDB /* SearchClassViewController.m */; };
 		49B744021ED2F57200FFDBDB /* TSActionAlterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B744011ED2F57200FFDBDB /* TSActionAlterView.m */; };
+		49D7FB121EE5237C007CFC43 /* AccountMailIdentityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D7FB111EE5237C007CFC43 /* AccountMailIdentityCell.swift */; };
+		49D7FB141EE529AF007CFC43 /* AccountPayPassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D7FB131EE529AF007CFC43 /* AccountPayPassCell.swift */; };
+		49D7FB161EE52D19007CFC43 /* AccountLinkerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D7FB151EE52D19007CFC43 /* AccountLinkerCell.swift */; };
+		49D7FB181EE52EC4007CFC43 /* AccountTableFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D7FB171EE52EC4007CFC43 /* AccountTableFooterView.swift */; };
+		49D7FB1A1EE53C48007CFC43 /* SwiftConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D7FB191EE53C48007CFC43 /* SwiftConstraint.swift */; };
+		49E8D4511EE4F24A002C20E0 /* AccountSecureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E8D4501EE4F24A002C20E0 /* AccountSecureViewController.swift */; };
+		49E8D4531EE4F31C002C20E0 /* AccountSecurePhoneIdentityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E8D4521EE4F31C002C20E0 /* AccountSecurePhoneIdentityView.swift */; };
 		49F38FA51ECADDBE00D83E95 /* YMHIdenCodeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F38FA41ECADDBE00D83E95 /* YMHIdenCodeTool.m */; };
 		49F38FA81ECADDE300D83E95 /* YMHRegularExpression.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F38FA71ECADDE300D83E95 /* YMHRegularExpression.m */; };
 		49F38FAB1ECAE06B00D83E95 /* BasicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F38FAA1ECAE06B00D83E95 /* BasicViewController.m */; };
@@ -107,7 +113,7 @@
 		49F38FE01ECAFBFF00D83E95 /* TSAppInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F38FDF1ECAFBFF00D83E95 /* TSAppInfo.m */; };
 		49F38FE31ECAFDAB00D83E95 /* TSAccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F38FE21ECAFDAB00D83E95 /* TSAccountManager.m */; };
 		49FBF3161ED3D2B900CAC5F5 /* SelectScrollViewForM.m in Sources */ = {isa = PBXBuildFile; fileRef = 49FBF3151ED3D2B900CAC5F5 /* SelectScrollViewForM.m */; };
-		F5B593E7BE7966FC96D18082 /* libPods-ThinkSharer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01E78EB35798A2C580CD280C /* libPods-ThinkSharer.a */; };
+		E49E6FABBE32F1B90B8E69C3 /* libPods-ThinkSharer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D4E8FBDD85C3D679BB88AFD /* libPods-ThinkSharer.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,7 +134,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		01E78EB35798A2C580CD280C /* libPods-ThinkSharer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ThinkSharer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		490CC4211EDFF42300E5C7B2 /* ShareMessageSectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareMessageSectionView.swift; sourceTree = "<group>"; };
 		491C46121ECBF3C8009F43A4 /* SelectScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectScrollView.h; sourceTree = "<group>"; };
 		491C46131ECBF3C8009F43A4 /* SelectScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectScrollView.m; sourceTree = "<group>"; };
@@ -289,7 +294,6 @@
 		49A850361EDE594600EE521A /* TSDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSDatePickerView.h; sourceTree = "<group>"; };
 		49A850371EDE594600EE521A /* TSDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSDatePickerView.m; sourceTree = "<group>"; };
 		49A850391EDE64A600EE521A /* ThinkSharer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ThinkSharer-Bridging-Header.h"; sourceTree = "<group>"; };
-		49A8503A1EDE64A700EE521A /* testView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testView.swift; sourceTree = "<group>"; };
 		49A8503C1EDE94EB00EE521A /* LoactionIdentityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoactionIdentityView.h; sourceTree = "<group>"; };
 		49A8503D1EDE94EB00EE521A /* LoactionIdentityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoactionIdentityView.m; sourceTree = "<group>"; };
 		49A8503F1EDED27200EE521A /* SelectClassLeftTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectClassLeftTableViewCell.h; sourceTree = "<group>"; };
@@ -326,6 +330,13 @@
 		49B743FD1ED2F02400FFDBDB /* SearchClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchClassViewController.m; sourceTree = "<group>"; };
 		49B744001ED2F57200FFDBDB /* TSActionAlterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSActionAlterView.h; sourceTree = "<group>"; };
 		49B744011ED2F57200FFDBDB /* TSActionAlterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSActionAlterView.m; sourceTree = "<group>"; };
+		49D7FB111EE5237C007CFC43 /* AccountMailIdentityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountMailIdentityCell.swift; sourceTree = "<group>"; };
+		49D7FB131EE529AF007CFC43 /* AccountPayPassCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountPayPassCell.swift; sourceTree = "<group>"; };
+		49D7FB151EE52D19007CFC43 /* AccountLinkerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountLinkerCell.swift; sourceTree = "<group>"; };
+		49D7FB171EE52EC4007CFC43 /* AccountTableFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTableFooterView.swift; sourceTree = "<group>"; };
+		49D7FB191EE53C48007CFC43 /* SwiftConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftConstraint.swift; sourceTree = "<group>"; };
+		49E8D4501EE4F24A002C20E0 /* AccountSecureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSecureViewController.swift; sourceTree = "<group>"; };
+		49E8D4521EE4F31C002C20E0 /* AccountSecurePhoneIdentityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSecurePhoneIdentityView.swift; sourceTree = "<group>"; };
 		49F38FA31ECADDBE00D83E95 /* YMHIdenCodeTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMHIdenCodeTool.h; sourceTree = "<group>"; };
 		49F38FA41ECADDBE00D83E95 /* YMHIdenCodeTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMHIdenCodeTool.m; sourceTree = "<group>"; };
 		49F38FA61ECADDE300D83E95 /* YMHRegularExpression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMHRegularExpression.h; sourceTree = "<group>"; };
@@ -346,6 +357,7 @@
 		49F38FE21ECAFDAB00D83E95 /* TSAccountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSAccountManager.m; sourceTree = "<group>"; };
 		49FBF3141ED3D2B900CAC5F5 /* SelectScrollViewForM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectScrollViewForM.h; sourceTree = "<group>"; };
 		49FBF3151ED3D2B900CAC5F5 /* SelectScrollViewForM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectScrollViewForM.m; sourceTree = "<group>"; };
+		5D4E8FBDD85C3D679BB88AFD /* libPods-ThinkSharer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ThinkSharer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92DAA5E534C4A9D1FA2B48E8 /* Pods-ThinkSharer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThinkSharer.release.xcconfig"; path = "Pods/Target Support Files/Pods-ThinkSharer/Pods-ThinkSharer.release.xcconfig"; sourceTree = "<group>"; };
 		C89FF79DF7076669A0BEC232 /* Pods-ThinkSharer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThinkSharer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ThinkSharer/Pods-ThinkSharer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -356,7 +368,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4935331D1ED6E839001CCCF2 /* MobileCoreServices.framework in Frameworks */,
-				F5B593E7BE7966FC96D18082 /* libPods-ThinkSharer.a in Frameworks */,
+				E49E6FABBE32F1B90B8E69C3 /* libPods-ThinkSharer.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -724,6 +736,7 @@
 				498BE0071ED5511300D7D004 /* ShareMessageViewController.m */,
 				492ADDB51EE4319200E70ADD /* CompanyMessageViewController.h */,
 				492ADDB61EE4319200E70ADD /* CompanyMessageViewController.m */,
+				49E8D4501EE4F24A002C20E0 /* AccountSecureViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -731,42 +744,10 @@
 		49B743E71ED2E9FA00FFDBDB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				49B743EB1ED2EA6900FFDBDB /* SharerFirstCollectionViewCell.h */,
-				49B743EC1ED2EA6900FFDBDB /* SharerFirstCollectionViewCell.m */,
-				49B743ED1ED2EA6900FFDBDB /* SharerFirstCollectionViewCell.xib */,
-				49B743EE1ED2EA6900FFDBDB /* SharerScendCollectionViewCell.h */,
-				49B743EF1ED2EA6900FFDBDB /* SharerScendCollectionViewCell.m */,
-				49B743F01ED2EA6900FFDBDB /* SharerScendCollectionViewCell.xib */,
-				49B743F11ED2EA6900FFDBDB /* SharerThirdCollectionViewCell.h */,
-				49B743F21ED2EA6900FFDBDB /* SharerThirdCollectionViewCell.m */,
-				49B743F31ED2EA6900FFDBDB /* SharerThirdCollectionViewCell.xib */,
-				492331B21ED457C300E45338 /* ShareFourceCollectionViewCell.h */,
-				492331B31ED457C300E45338 /* ShareFourceCollectionViewCell.m */,
-				492331B41ED457C300E45338 /* ShareFourceCollectionViewCell.xib */,
-				498BE0001ED52BDB00D7D004 /* UserShareCenterCollectionReusableView.h */,
-				498BE0011ED52BDB00D7D004 /* UserShareCenterCollectionReusableView.m */,
-				498BE0031ED52C2D00D7D004 /* UserShareCenterFotterCollectionReusableView.h */,
-				498BE0041ED52C2D00D7D004 /* UserShareCenterFotterCollectionReusableView.m */,
-				498BE0091ED5552900D7D004 /* ShareMessageTableHeaderView.h */,
-				498BE00A1ED5552900D7D004 /* ShareMessageTableHeaderView.m */,
-				490CC4211EDFF42300E5C7B2 /* ShareMessageSectionView.swift */,
-				49902DC81EE01ABF00DAD3DE /* ShareMessageTableFooterView.swift */,
-				49902DCC1EE0352C00DAD3DE /* ShareMessageFirstCell.h */,
-				49902DCD1EE0352C00DAD3DE /* ShareMessageFirstCell.m */,
-				491EA60F1EE104FC00C2B8ED /* ShareMessageSecondCell.h */,
-				491EA6101EE104FC00C2B8ED /* ShareMessageSecondCell.m */,
-				491EA6121EE1165A00C2B8ED /* ShareMessageThirdCell.h */,
-				491EA6131EE1165A00C2B8ED /* ShareMessageThirdCell.m */,
-				491EA6151EE12B2400C2B8ED /* ShareMessageFourthCell.h */,
-				491EA6161EE12B2400C2B8ED /* ShareMessageFourthCell.m */,
-				492ADDB21EE41B8F00E70ADD /* PersonalOrCompanyView.h */,
-				492ADDB31EE41B8F00E70ADD /* PersonalOrCompanyView.m */,
-				492ADDB81EE431F800E70ADD /* CompanyTableHeaderView.h */,
-				492ADDB91EE431F800E70ADD /* CompanyTableHeaderView.m */,
-				492ADDBB1EE43FC700E70ADD /* CompanyFirstCell.h */,
-				492ADDBC1EE43FC700E70ADD /* CompanyFirstCell.m */,
-				492ADDBE1EE441E400E70ADD /* CompanyScondCell.h */,
-				492ADDBF1EE441E400E70ADD /* CompanyScondCell.m */,
+				49E8D44C1EE4F1D2002C20E0 /* AccountScurity */,
+				49E8D4481EE4ED2A002C20E0 /* UserCenter */,
+				49E8D4471EE4ECD6002C20E0 /* Person */,
+				49E8D4461EE4ECBA002C20E0 /* Company */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -797,10 +778,79 @@
 				49B744011ED2F57200FFDBDB /* TSActionAlterView.m */,
 				49A850361EDE594600EE521A /* TSDatePickerView.h */,
 				49A850371EDE594600EE521A /* TSDatePickerView.m */,
-				49A8503A1EDE64A700EE521A /* testView.swift */,
+				49D7FB191EE53C48007CFC43 /* SwiftConstraint.swift */,
 				49A850391EDE64A600EE521A /* ThinkSharer-Bridging-Header.h */,
 			);
 			path = Public;
+			sourceTree = "<group>";
+		};
+		49E8D4461EE4ECBA002C20E0 /* Company */ = {
+			isa = PBXGroup;
+			children = (
+				492ADDB81EE431F800E70ADD /* CompanyTableHeaderView.h */,
+				492ADDB91EE431F800E70ADD /* CompanyTableHeaderView.m */,
+				492ADDBB1EE43FC700E70ADD /* CompanyFirstCell.h */,
+				492ADDBC1EE43FC700E70ADD /* CompanyFirstCell.m */,
+				492ADDBE1EE441E400E70ADD /* CompanyScondCell.h */,
+				492ADDBF1EE441E400E70ADD /* CompanyScondCell.m */,
+			);
+			name = Company;
+			sourceTree = "<group>";
+		};
+		49E8D4471EE4ECD6002C20E0 /* Person */ = {
+			isa = PBXGroup;
+			children = (
+				498BE0091ED5552900D7D004 /* ShareMessageTableHeaderView.h */,
+				498BE00A1ED5552900D7D004 /* ShareMessageTableHeaderView.m */,
+				490CC4211EDFF42300E5C7B2 /* ShareMessageSectionView.swift */,
+				49902DC81EE01ABF00DAD3DE /* ShareMessageTableFooterView.swift */,
+				49902DCC1EE0352C00DAD3DE /* ShareMessageFirstCell.h */,
+				49902DCD1EE0352C00DAD3DE /* ShareMessageFirstCell.m */,
+				491EA60F1EE104FC00C2B8ED /* ShareMessageSecondCell.h */,
+				491EA6101EE104FC00C2B8ED /* ShareMessageSecondCell.m */,
+				491EA6121EE1165A00C2B8ED /* ShareMessageThirdCell.h */,
+				491EA6131EE1165A00C2B8ED /* ShareMessageThirdCell.m */,
+				491EA6151EE12B2400C2B8ED /* ShareMessageFourthCell.h */,
+				491EA6161EE12B2400C2B8ED /* ShareMessageFourthCell.m */,
+				492ADDB21EE41B8F00E70ADD /* PersonalOrCompanyView.h */,
+				492ADDB31EE41B8F00E70ADD /* PersonalOrCompanyView.m */,
+			);
+			name = Person;
+			sourceTree = "<group>";
+		};
+		49E8D4481EE4ED2A002C20E0 /* UserCenter */ = {
+			isa = PBXGroup;
+			children = (
+				49B743EB1ED2EA6900FFDBDB /* SharerFirstCollectionViewCell.h */,
+				49B743EC1ED2EA6900FFDBDB /* SharerFirstCollectionViewCell.m */,
+				49B743ED1ED2EA6900FFDBDB /* SharerFirstCollectionViewCell.xib */,
+				49B743EE1ED2EA6900FFDBDB /* SharerScendCollectionViewCell.h */,
+				49B743EF1ED2EA6900FFDBDB /* SharerScendCollectionViewCell.m */,
+				49B743F01ED2EA6900FFDBDB /* SharerScendCollectionViewCell.xib */,
+				49B743F11ED2EA6900FFDBDB /* SharerThirdCollectionViewCell.h */,
+				49B743F21ED2EA6900FFDBDB /* SharerThirdCollectionViewCell.m */,
+				49B743F31ED2EA6900FFDBDB /* SharerThirdCollectionViewCell.xib */,
+				492331B21ED457C300E45338 /* ShareFourceCollectionViewCell.h */,
+				492331B31ED457C300E45338 /* ShareFourceCollectionViewCell.m */,
+				492331B41ED457C300E45338 /* ShareFourceCollectionViewCell.xib */,
+				498BE0001ED52BDB00D7D004 /* UserShareCenterCollectionReusableView.h */,
+				498BE0011ED52BDB00D7D004 /* UserShareCenterCollectionReusableView.m */,
+				498BE0031ED52C2D00D7D004 /* UserShareCenterFotterCollectionReusableView.h */,
+				498BE0041ED52C2D00D7D004 /* UserShareCenterFotterCollectionReusableView.m */,
+			);
+			name = UserCenter;
+			sourceTree = "<group>";
+		};
+		49E8D44C1EE4F1D2002C20E0 /* AccountScurity */ = {
+			isa = PBXGroup;
+			children = (
+				49E8D4521EE4F31C002C20E0 /* AccountSecurePhoneIdentityView.swift */,
+				49D7FB111EE5237C007CFC43 /* AccountMailIdentityCell.swift */,
+				49D7FB131EE529AF007CFC43 /* AccountPayPassCell.swift */,
+				49D7FB151EE52D19007CFC43 /* AccountLinkerCell.swift */,
+				49D7FB171EE52EC4007CFC43 /* AccountTableFooterView.swift */,
+			);
+			name = AccountScurity;
 			sourceTree = "<group>";
 		};
 		49F38F9D1ECAB1BE00D83E95 /* Login */ = {
@@ -888,7 +938,7 @@
 			isa = PBXGroup;
 			children = (
 				4935331C1ED6E839001CCCF2 /* MobileCoreServices.framework */,
-				01E78EB35798A2C580CD280C /* libPods-ThinkSharer.a */,
+				5D4E8FBDD85C3D679BB88AFD /* libPods-ThinkSharer.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1125,13 +1175,14 @@
 				49F38FC01ECAE3A400D83E95 /* UIView+YMHAdditions.m in Sources */,
 				49A850381EDE594600EE521A /* TSDatePickerView.m in Sources */,
 				498BE12D1ED5950500D7D004 /* CTAssetsPageViewController.m in Sources */,
-				49A8503B1EDE64A700EE521A /* testView.swift in Sources */,
 				4996B8491ECAAABA00272439 /* main.m in Sources */,
 				49B743F81ED2EA6900FFDBDB /* SharerThirdCollectionViewCell.m in Sources */,
+				49D7FB161EE52D19007CFC43 /* AccountLinkerCell.swift in Sources */,
 				498BE12A1ED5950500D7D004 /* CTAssetsGridViewLayout.m in Sources */,
 				491C46141ECBF3C8009F43A4 /* SelectScrollView.m in Sources */,
 				49B744021ED2F57200FFDBDB /* TSActionAlterView.m in Sources */,
 				490CC4221EDFF42300E5C7B2 /* ShareMessageSectionView.swift in Sources */,
+				49D7FB181EE52EC4007CFC43 /* AccountTableFooterView.swift in Sources */,
 				49B743DF1ED2E4B700FFDBDB /* ClassListViewController.m in Sources */,
 				498BE12B1ED5950500D7D004 /* CTAssetsNavigationController.m in Sources */,
 				498BE1171ED5950500D7D004 /* NSIndexSet+CTAssetsPickerController.m in Sources */,
@@ -1150,6 +1201,7 @@
 				498BE0021ED52BDB00D7D004 /* UserShareCenterCollectionReusableView.m in Sources */,
 				49A8503E1EDE94EB00EE521A /* LoactionIdentityView.m in Sources */,
 				491C461F1ECC23A1009F43A4 /* SelectClassheaderView.m in Sources */,
+				49D7FB1A1EE53C48007CFC43 /* SwiftConstraint.swift in Sources */,
 				498BE12F1ED5950500D7D004 /* CTAssetsPickerController.m in Sources */,
 				498BE1291ED5950500D7D004 /* CTAssetsGridViewFooter.m in Sources */,
 				49B743E01ED2E4B700FFDBDB /* MainViewController.m in Sources */,
@@ -1158,6 +1210,7 @@
 				49B743D01ED2DC9D00FFDBDB /* SelectClassViewController.m in Sources */,
 				498BE1321ED5950500D7D004 /* CTAssetThumbnailOverlay.m in Sources */,
 				49A850411EDED27200EE521A /* SelectClassLeftTableViewCell.m in Sources */,
+				49D7FB121EE5237C007CFC43 /* AccountMailIdentityCell.swift in Sources */,
 				49F38FA81ECADDE300D83E95 /* YMHRegularExpression.m in Sources */,
 				49F38FE01ECAFBFF00D83E95 /* TSAppInfo.m in Sources */,
 				498BE11D1ED5950500D7D004 /* CTAssetCheckmark.m in Sources */,
@@ -1172,6 +1225,7 @@
 				498BE11F1ED5950500D7D004 /* CTAssetCollectionViewController.m in Sources */,
 				49B743D31ED2DCC800FFDBDB /* UserGuideViewController.m in Sources */,
 				498BE1211ED5950500D7D004 /* CTAssetPlayButton.m in Sources */,
+				49D7FB141EE529AF007CFC43 /* AccountPayPassCell.swift in Sources */,
 				493533141ED6D703001CCCF2 /* UIImageView+YMHPlaceholder.m in Sources */,
 				498BE0051ED52C2D00D7D004 /* UserShareCenterFotterCollectionReusableView.m in Sources */,
 				498BE1311ED5950500D7D004 /* CTAssetsViewControllerTransition.m in Sources */,
@@ -1179,10 +1233,12 @@
 				491C46181ECC1D91009F43A4 /* SelectClassCollectionViewCell.m in Sources */,
 				492ADDC01EE441E400E70ADD /* CompanyScondCell.m in Sources */,
 				499478B81ED68412003E7E4C /* UITableView+YMHRefresh.m in Sources */,
+				49E8D4531EE4F31C002C20E0 /* AccountSecurePhoneIdentityView.swift in Sources */,
 				49F38FA51ECADDBE00D83E95 /* YMHIdenCodeTool.m in Sources */,
 				492ADDBA1EE431F800E70ADD /* CompanyTableHeaderView.m in Sources */,
 				498BE0081ED5511300D7D004 /* ShareMessageViewController.m in Sources */,
 				498BE12C1ED5950500D7D004 /* CTAssetsPageView.m in Sources */,
+				49E8D4511EE4F24A002C20E0 /* AccountSecureViewController.swift in Sources */,
 				498BE1331ED5950500D7D004 /* CTAssetThumbnailStacks.m in Sources */,
 				49B743F41ED2EA6900FFDBDB /* SharerFirstCollectionViewCell.m in Sources */,
 				491EA6111EE104FC00C2B8ED /* ShareMessageSecondCell.m in Sources */,
@@ -1369,14 +1425,14 @@
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 9X97YKR3AP;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/wangzixin/Desktop/ThinkSharer/ThinkSharer/ThinkSharer/Supporting Files/thinkSharer.pch";
+				GCC_PREFIX_HEADER = "/Users/zhangdekai/Desktop/ThinkSharer/ThinkSharer/ThinkSharer/Supporting Files/thinkSharer.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/ThinkSharer/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ts.thinkSharer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "ThinkSharer/Basic/Public/ThinkSharer-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zhangdekai/Desktop/ThinkSharer/ThinkSharer/ThinkSharer/Basic/Public/ThinkSharer-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1391,14 +1447,14 @@
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 9X97YKR3AP;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "/Users/wangzixin/Desktop/ThinkSharer/ThinkSharer/ThinkSharer/Supporting Files/thinkSharer.pch";
+				GCC_PREFIX_HEADER = "/Users/zhangdekai/Desktop/ThinkSharer/ThinkSharer/ThinkSharer/Supporting Files/thinkSharer.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/ThinkSharer/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ts.thinkSharer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "ThinkSharer/Basic/Public/ThinkSharer-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zhangdekai/Desktop/ThinkSharer/ThinkSharer/ThinkSharer/Basic/Public/ThinkSharer-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

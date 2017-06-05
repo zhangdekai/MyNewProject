@@ -15,6 +15,7 @@
 #import "UserShareCenterFotterCollectionReusableView.h"
 #import <PYPhotoBrowser/PYPhotoBrowser.h>
 #import "ShareMessageViewController.h"
+#import "ThinkSharer-Swift.h"
 
 
 @interface SharerCenterViewController ()<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
@@ -277,10 +278,72 @@
     return 0;
 }
 
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 0) {
-        [self selectPersonOrCompany];
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    switch (indexPath.section) {
+        case 0:
+            [self selectPersonOrCompany];
+            break;
+        case 1: {
+            if (indexPath.row == 0) {//资产
+            } else if (indexPath.row == 1) {//预定
+                
+            } else {//发布
+                
+            }
+
+        }
+            
+            break;
+        case 2: {
+            
+            if (indexPath.row == 0) {  //点赞
+
+                
+            } else if (indexPath.row == 1) {//收藏
+                
+            } else if (indexPath.row == 2) { //红包
+                
+            } else if (indexPath.row == 3) {//浏览
+                
+            } else if (indexPath.row == 4) {//评论
+                
+            } else if (indexPath.row == 5) {//分享
+                
+            }
+            
+        }
+            
+            break;
+        case 3: {
+            
+            
+            if (indexPath.row == 0) { //账号与安全
+                
+                AccountSecureViewController *vc = [[AccountSecureViewController alloc]init];
+                [self.navigationController pushViewController:vc animated:YES];
+
+            } else if (indexPath.row == 1) {//隐私权限
+                
+            } else if (indexPath.row == 2) {//语言设置
+                
+            } else if (indexPath.row == 3) {//帮助鱼反馈
+                
+            } else if (indexPath.row == 4) {//关于我们
+                
+            } else if (indexPath.row == 5) {//版本更新
+                
+            } else {//退出登录
+                
+            }
+        }
+            
+            break;
+            
+        default:
+            break;
     }
+
 }
 
 

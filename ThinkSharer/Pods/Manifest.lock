@@ -41,7 +41,7 @@ DEPENDENCIES:
   - AFNetworking (~> 3.1.0)
   - AMap3DMap-NO-IDFA
   - AMapLocation-NO-IDFA
-  - Masonry
+  - Masonry (~> 1.0.2)
   - MBProgressHUD
   - MJRefresh
   - PureLayout (~> 3.0.2)
@@ -64,6 +64,6 @@ SPEC CHECKSUMS:
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
 
-PODFILE CHECKSUM: 23c837b5d40ed2f9b84171bd7dcbf0fbdf4460ca
+PODFILE CHECKSUM: aed592bfb43e0e6ba1bcc65b81e6a0f5d1d5b5b4
 
 COCOAPODS: 1.2.1

@@ -45,6 +45,12 @@
 + (UIColor *)backgroundGrayColorB;//底色B #f4f4f4
 
 /**
+ 灰色C 0xe5e5e5
+
+ @return UIColor
+ */
++ (UIColor *)backgroundGrayColorC;
+/**
  *  assistant colors
  */
 

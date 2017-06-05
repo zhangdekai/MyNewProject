@@ -78,6 +78,12 @@
     return [UIColor ymh_colorWithHex:0xf4f4f4];
 }
 
++ (UIColor *)backgroundGrayColorC
+{
+    return [UIColor ymh_colorWithHex:0xe5e5e5];
+}
+
+
 /**
  *  assistant colors
  */
