@@ -324,6 +324,8 @@
                 [self.navigationController pushViewController:vc animated:YES];
 
             } else if (indexPath.row == 1) {//隐私权限
+                PrivacyViewController *vc = [[PrivacyViewController alloc]init];
+                [self.navigationController pushViewController:vc animated:YES];
                 
             } else if (indexPath.row == 2) {//语言设置
                 

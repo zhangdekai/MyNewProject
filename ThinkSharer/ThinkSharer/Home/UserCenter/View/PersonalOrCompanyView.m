@@ -20,10 +20,17 @@
         _backHUD.backgroundColor = [UIColor blackColor];
         _backHUD.alpha = 0.3;
         [self addSubview:_backHUD];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapMethod:)];
+        _backHUD.userInteractionEnabled = YES;
+        [_backHUD addGestureRecognizer:tap];
         [self creatActionAlterView];
         
     }
     return self;
+}
+
+- (void)tapMethod:(UITapGestureRecognizer *)tap {
+    [self hiddenAlter];
 }
 
 - (void)creatActionAlterView {
@@ -39,7 +46,8 @@
         make.size.mas_equalTo(CGSizeMake(300, 230));
         
     }];
-    
+    backView.layer.masksToBounds = YES;
+    backView.layer.cornerRadius = 5;
     //个人
     UIButton *person = [[UIButton alloc]init];
     [backView addSubview:person];

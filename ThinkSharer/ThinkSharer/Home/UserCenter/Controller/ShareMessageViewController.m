@@ -17,6 +17,9 @@
 #import "ShareMessageSecondCell.h"
 #import "ShareMessageThirdCell.h"
 #import "ShareMessageFourthCell.h"
+#import "ThinkSharer-Swift.h"
+#import "IdentityIdentificatesViewController.h"
+
 
 @interface ShareMessageViewController ()<UITableViewDelegate,UITableViewDataSource,CTAssetsPickerControllerDelegate,UITextFieldDelegate,UIImagePickerControllerDelegate,UITextViewDelegate,UIGestureRecognizerDelegate>
 
@@ -118,7 +121,7 @@
 
 - (void)initUI {
     if (!_tableView) {
-        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight) style:(UITableViewStylePlain)];
+        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight) style:(UITableViewStyleGrouped)];
     }
     [self.view addSubview:_tableView];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -454,6 +457,15 @@
     return footer;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (indexPath.section == 4 && indexPath.row == 0) {//身份证认证
+        IdentityIdentificatesViewController *vc = [[IdentityIdentificatesViewController alloc]init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+}
+
+
 #pragma mark UITextViewDelegate 
 - (void)textViewDidChange:(UITextView *)textView {
     if (textView.text.length > 10) {
@@ -475,10 +487,9 @@
 
 
 - (void)changeLineColor {
-    
     _tableHeaderView.nickLine.backgroundColor = [UIColor seperateThinLineColor];
-    
 }
+#pragma mark 相册选择
 /** 打开相册*/
 - (void)openPhoto {
     /** 判断当前授权状态*/

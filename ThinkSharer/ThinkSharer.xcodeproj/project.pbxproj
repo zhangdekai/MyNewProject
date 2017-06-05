@@ -101,6 +101,10 @@
 		49D7FB161EE52D19007CFC43 /* AccountLinkerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D7FB151EE52D19007CFC43 /* AccountLinkerCell.swift */; };
 		49D7FB181EE52EC4007CFC43 /* AccountTableFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D7FB171EE52EC4007CFC43 /* AccountTableFooterView.swift */; };
 		49D7FB1A1EE53C48007CFC43 /* SwiftConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D7FB191EE53C48007CFC43 /* SwiftConstraint.swift */; };
+		49D7FB1C1EE557E4007CFC43 /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D7FB1B1EE557E4007CFC43 /* PrivacyViewController.swift */; };
+		49D7FB201EE56845007CFC43 /* IdentityIdentificateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D7FB1F1EE56845007CFC43 /* IdentityIdentificateCell.swift */; };
+		49D7FB251EE5753C007CFC43 /* IdentityIdentificatesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D7FB241EE5753C007CFC43 /* IdentityIdentificatesViewController.m */; };
+		49D7FB281EE575E1007CFC43 /* StanderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D7FB271EE575E1007CFC43 /* StanderViewController.m */; };
 		49E8D4511EE4F24A002C20E0 /* AccountSecureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E8D4501EE4F24A002C20E0 /* AccountSecureViewController.swift */; };
 		49E8D4531EE4F31C002C20E0 /* AccountSecurePhoneIdentityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E8D4521EE4F31C002C20E0 /* AccountSecurePhoneIdentityView.swift */; };
 		49F38FA51ECADDBE00D83E95 /* YMHIdenCodeTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F38FA41ECADDBE00D83E95 /* YMHIdenCodeTool.m */; };
@@ -335,6 +339,12 @@
 		49D7FB151EE52D19007CFC43 /* AccountLinkerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountLinkerCell.swift; sourceTree = "<group>"; };
 		49D7FB171EE52EC4007CFC43 /* AccountTableFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountTableFooterView.swift; sourceTree = "<group>"; };
 		49D7FB191EE53C48007CFC43 /* SwiftConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftConstraint.swift; sourceTree = "<group>"; };
+		49D7FB1B1EE557E4007CFC43 /* PrivacyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
+		49D7FB1F1EE56845007CFC43 /* IdentityIdentificateCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdentityIdentificateCell.swift; sourceTree = "<group>"; };
+		49D7FB231EE5753C007CFC43 /* IdentityIdentificatesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IdentityIdentificatesViewController.h; sourceTree = "<group>"; };
+		49D7FB241EE5753C007CFC43 /* IdentityIdentificatesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IdentityIdentificatesViewController.m; sourceTree = "<group>"; };
+		49D7FB261EE575E1007CFC43 /* StanderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StanderViewController.h; sourceTree = "<group>"; };
+		49D7FB271EE575E1007CFC43 /* StanderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StanderViewController.m; sourceTree = "<group>"; };
 		49E8D4501EE4F24A002C20E0 /* AccountSecureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSecureViewController.swift; sourceTree = "<group>"; };
 		49E8D4521EE4F31C002C20E0 /* AccountSecurePhoneIdentityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSecurePhoneIdentityView.swift; sourceTree = "<group>"; };
 		49F38FA31ECADDBE00D83E95 /* YMHIdenCodeTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMHIdenCodeTool.h; sourceTree = "<group>"; };
@@ -737,6 +747,9 @@
 				492ADDB51EE4319200E70ADD /* CompanyMessageViewController.h */,
 				492ADDB61EE4319200E70ADD /* CompanyMessageViewController.m */,
 				49E8D4501EE4F24A002C20E0 /* AccountSecureViewController.swift */,
+				49D7FB1B1EE557E4007CFC43 /* PrivacyViewController.swift */,
+				49D7FB231EE5753C007CFC43 /* IdentityIdentificatesViewController.h */,
+				49D7FB241EE5753C007CFC43 /* IdentityIdentificatesViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -778,6 +791,8 @@
 				49B744011ED2F57200FFDBDB /* TSActionAlterView.m */,
 				49A850361EDE594600EE521A /* TSDatePickerView.h */,
 				49A850371EDE594600EE521A /* TSDatePickerView.m */,
+				49D7FB261EE575E1007CFC43 /* StanderViewController.h */,
+				49D7FB271EE575E1007CFC43 /* StanderViewController.m */,
 				49D7FB191EE53C48007CFC43 /* SwiftConstraint.swift */,
 				49A850391EDE64A600EE521A /* ThinkSharer-Bridging-Header.h */,
 			);
@@ -814,6 +829,7 @@
 				491EA6161EE12B2400C2B8ED /* ShareMessageFourthCell.m */,
 				492ADDB21EE41B8F00E70ADD /* PersonalOrCompanyView.h */,
 				492ADDB31EE41B8F00E70ADD /* PersonalOrCompanyView.m */,
+				49D7FB1F1EE56845007CFC43 /* IdentityIdentificateCell.swift */,
 			);
 			name = Person;
 			sourceTree = "<group>";
@@ -1193,14 +1209,18 @@
 				49B743EA1ED2EA1500FFDBDB /* SharerCenterViewController.m in Sources */,
 				498BE1221ED5950500D7D004 /* CTAssetScrollView.m in Sources */,
 				4935331A1ED6D725001CCCF2 /* UIImage+TSAlpha.m in Sources */,
+				49D7FB1C1EE557E4007CFC43 /* PrivacyViewController.swift in Sources */,
 				49902DCE1EE0352C00DAD3DE /* ShareMessageFirstCell.m in Sources */,
 				491C46281ECC2CD4009F43A4 /* SelectClassTableViewCell.m in Sources */,
+				49D7FB251EE5753C007CFC43 /* IdentityIdentificatesViewController.m in Sources */,
 				498BE11A1ED5950500D7D004 /* PHAssetCollection+CTAssetsPickerController.m in Sources */,
 				492ADDB71EE4319200E70ADD /* CompanyMessageViewController.m in Sources */,
 				49FBF3161ED3D2B900CAC5F5 /* SelectScrollViewForM.m in Sources */,
 				498BE0021ED52BDB00D7D004 /* UserShareCenterCollectionReusableView.m in Sources */,
 				49A8503E1EDE94EB00EE521A /* LoactionIdentityView.m in Sources */,
 				491C461F1ECC23A1009F43A4 /* SelectClassheaderView.m in Sources */,
+				49D7FB201EE56845007CFC43 /* IdentityIdentificateCell.swift in Sources */,
+				49D7FB281EE575E1007CFC43 /* StanderViewController.m in Sources */,
 				49D7FB1A1EE53C48007CFC43 /* SwiftConstraint.swift in Sources */,
 				498BE12F1ED5950500D7D004 /* CTAssetsPickerController.m in Sources */,
 				498BE1291ED5950500D7D004 /* CTAssetsGridViewFooter.m in Sources */,

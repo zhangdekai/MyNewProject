@@ -139,18 +139,6 @@ class AccountSecureViewController: BasicViewController,UITextFieldDelegate {
                 }
                 return true
             }
-        }  else if textField == idnetityTextFiled {
-            
-            if newstring.characters.count > 6 {
-                return false
-            } else {
-                if newstring.characters.count == 6 {
-                   
-                } else {
-                    
-                }
-                return true
-            }
         }
         return true
         
