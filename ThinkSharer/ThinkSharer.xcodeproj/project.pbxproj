@@ -31,6 +31,8 @@
 		494533191ED6C04B00F9340F /* NetWorkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 494533181ED6C04B00F9340F /* NetWorkManager.m */; };
 		4981425F1EE637F500873655 /* BasicViewController+TSTakePhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 4981425E1EE637F500873655 /* BasicViewController+TSTakePhotos.m */; };
 		498142631EE6429B00873655 /* TSCustomTextFiled.m in Sources */ = {isa = PBXBuildFile; fileRef = 498142621EE6429B00873655 /* TSCustomTextFiled.m */; };
+		498142661EE69F1300873655 /* SelectPhotoAlterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 498142651EE69F1300873655 /* SelectPhotoAlterView.m */; };
+		498142691EE6A19000873655 /* TSAlterShowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 498142681EE6A19000873655 /* TSAlterShowView.m */; };
 		498BE0021ED52BDB00D7D004 /* UserShareCenterCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 498BE0011ED52BDB00D7D004 /* UserShareCenterCollectionReusableView.m */; };
 		498BE0051ED52C2D00D7D004 /* UserShareCenterFotterCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 498BE0041ED52C2D00D7D004 /* UserShareCenterFotterCollectionReusableView.m */; };
 		498BE0081ED5511300D7D004 /* ShareMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 498BE0071ED5511300D7D004 /* ShareMessageViewController.m */; };
@@ -97,6 +99,10 @@
 		49B743F91ED2EA6900FFDBDB /* SharerThirdCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B743F31ED2EA6900FFDBDB /* SharerThirdCollectionViewCell.xib */; };
 		49B743FE1ED2F02400FFDBDB /* SearchClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B743FD1ED2F02400FFDBDB /* SearchClassViewController.m */; };
 		49B744021ED2F57200FFDBDB /* TSActionAlterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B744011ED2F57200FFDBDB /* TSActionAlterView.m */; };
+		49D161221EE6B52000440784 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49D161241EE6B52000440784 /* InfoPlist.strings */; };
+		49D161291EE6B70E00440784 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49D1612B1EE6B70E00440784 /* Localizable.strings */; };
+		49D1612F1EE6BF7800440784 /* UserLangageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D1612E1EE6BF7800440784 /* UserLangageViewController.swift */; };
+		49D161321EE6C18500440784 /* UserLanguageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D161311EE6C18500440784 /* UserLanguageCell.swift */; };
 		49D7FB121EE5237C007CFC43 /* AccountMailIdentityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D7FB111EE5237C007CFC43 /* AccountMailIdentityCell.swift */; };
 		49D7FB141EE529AF007CFC43 /* AccountPayPassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D7FB131EE529AF007CFC43 /* AccountPayPassCell.swift */; };
 		49D7FB161EE52D19007CFC43 /* AccountLinkerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D7FB151EE52D19007CFC43 /* AccountLinkerCell.swift */; };
@@ -183,6 +189,10 @@
 		4981425E1EE637F500873655 /* BasicViewController+TSTakePhotos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BasicViewController+TSTakePhotos.m"; sourceTree = "<group>"; };
 		498142611EE6429B00873655 /* TSCustomTextFiled.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCustomTextFiled.h; sourceTree = "<group>"; };
 		498142621EE6429B00873655 /* TSCustomTextFiled.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCustomTextFiled.m; sourceTree = "<group>"; };
+		498142641EE69F1300873655 /* SelectPhotoAlterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectPhotoAlterView.h; sourceTree = "<group>"; };
+		498142651EE69F1300873655 /* SelectPhotoAlterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectPhotoAlterView.m; sourceTree = "<group>"; };
+		498142671EE6A19000873655 /* TSAlterShowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSAlterShowView.h; sourceTree = "<group>"; };
+		498142681EE6A19000873655 /* TSAlterShowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSAlterShowView.m; sourceTree = "<group>"; };
 		498BE0001ED52BDB00D7D004 /* UserShareCenterCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserShareCenterCollectionReusableView.h; sourceTree = "<group>"; };
 		498BE0011ED52BDB00D7D004 /* UserShareCenterCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserShareCenterCollectionReusableView.m; sourceTree = "<group>"; };
 		498BE0031ED52C2D00D7D004 /* UserShareCenterFotterCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserShareCenterFotterCollectionReusableView.h; sourceTree = "<group>"; };
@@ -271,14 +281,12 @@
 		498BE1471ED598E300D7D004 /* hu */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hu; path = hu.lproj/CTAssetsPicker.strings; sourceTree = "<group>"; };
 		498BE1481ED598E300D7D004 /* id */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = id; path = id.lproj/CTAssetsPicker.strings; sourceTree = "<group>"; };
 		498BE1491ED598E300D7D004 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/CTAssetsPicker.strings; sourceTree = "<group>"; };
-		498BE14A1ED598E300D7D004 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/CTAssetsPicker.strings; sourceTree = "<group>"; };
 		498BE14B1ED598E300D7D004 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/CTAssetsPicker.strings; sourceTree = "<group>"; };
 		498BE14C1ED598E300D7D004 /* nl-NL */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "nl-NL"; path = "nl-NL.lproj/CTAssetsPicker.strings"; sourceTree = "<group>"; };
 		498BE14D1ED598E300D7D004 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/CTAssetsPicker.strings; sourceTree = "<group>"; };
 		498BE14E1ED598E300D7D004 /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/CTAssetsPicker.strings"; sourceTree = "<group>"; };
 		498BE14F1ED598E300D7D004 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/CTAssetsPicker.strings; sourceTree = "<group>"; };
 		498BE1501ED598E300D7D004 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/CTAssetsPicker.strings; sourceTree = "<group>"; };
-		498BE1511ED598E300D7D004 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/CTAssetsPicker.strings; sourceTree = "<group>"; };
 		498BE1521ED598E300D7D004 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/CTAssetsPicker.strings"; sourceTree = "<group>"; };
 		498BE1531ED598E300D7D004 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/CTAssetsPicker.strings"; sourceTree = "<group>"; };
 		498BE1571ED59A6D00D7D004 /* CTAssetsPickerController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CTAssetsPickerController.bundle; sourceTree = "<group>"; };
@@ -337,6 +345,14 @@
 		49B743FD1ED2F02400FFDBDB /* SearchClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchClassViewController.m; sourceTree = "<group>"; };
 		49B744001ED2F57200FFDBDB /* TSActionAlterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSActionAlterView.h; sourceTree = "<group>"; };
 		49B744011ED2F57200FFDBDB /* TSActionAlterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSActionAlterView.m; sourceTree = "<group>"; };
+		49D161231EE6B52000440784 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		49D161251EE6B52900440784 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		49D161261EE6B54F00440784 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		49D1612A1EE6B70E00440784 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		49D1612C1EE6B71200440784 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		49D1612D1EE6B71300440784 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		49D1612E1EE6BF7800440784 /* UserLangageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLangageViewController.swift; sourceTree = "<group>"; };
+		49D161311EE6C18500440784 /* UserLanguageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLanguageCell.swift; sourceTree = "<group>"; };
 		49D7FB111EE5237C007CFC43 /* AccountMailIdentityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountMailIdentityCell.swift; sourceTree = "<group>"; };
 		49D7FB131EE529AF007CFC43 /* AccountPayPassCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountPayPassCell.swift; sourceTree = "<group>"; };
 		49D7FB151EE52D19007CFC43 /* AccountLinkerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountLinkerCell.swift; sourceTree = "<group>"; };
@@ -685,6 +701,8 @@
 				4996B8471ECAAABA00272439 /* main.m */,
 				4996B8481ECAAABA00272439 /* thinkSharer.pch */,
 				4996B8611ECAADA900272439 /* LaunchScreen.storyboard */,
+				49D161241EE6B52000440784 /* InfoPlist.strings */,
+				49D1612B1EE6B70E00440784 /* Localizable.strings */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -760,6 +778,7 @@
 				49D7FB1B1EE557E4007CFC43 /* PrivacyViewController.swift */,
 				49D7FB231EE5753C007CFC43 /* IdentityIdentificatesViewController.h */,
 				49D7FB241EE5753C007CFC43 /* IdentityIdentificatesViewController.m */,
+				49D1612E1EE6BF7800440784 /* UserLangageViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -767,6 +786,7 @@
 		49B743E71ED2E9FA00FFDBDB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				49D161301EE6C15B00440784 /* UserLanguage */,
 				49E8D44C1EE4F1D2002C20E0 /* AccountScurity */,
 				49E8D4481EE4ED2A002C20E0 /* UserCenter */,
 				49E8D4471EE4ECD6002C20E0 /* Person */,
@@ -801,12 +821,24 @@
 				49B744011ED2F57200FFDBDB /* TSActionAlterView.m */,
 				49A850361EDE594600EE521A /* TSDatePickerView.h */,
 				49A850371EDE594600EE521A /* TSDatePickerView.m */,
+				498142641EE69F1300873655 /* SelectPhotoAlterView.h */,
+				498142651EE69F1300873655 /* SelectPhotoAlterView.m */,
+				498142671EE6A19000873655 /* TSAlterShowView.h */,
+				498142681EE6A19000873655 /* TSAlterShowView.m */,
 				49D7FB261EE575E1007CFC43 /* StanderViewController.h */,
 				49D7FB271EE575E1007CFC43 /* StanderViewController.m */,
 				49D7FB191EE53C48007CFC43 /* SwiftConstraint.swift */,
 				49A850391EDE64A600EE521A /* ThinkSharer-Bridging-Header.h */,
 			);
 			path = Public;
+			sourceTree = "<group>";
+		};
+		49D161301EE6C15B00440784 /* UserLanguage */ = {
+			isa = PBXGroup;
+			children = (
+				49D161311EE6C18500440784 /* UserLanguageCell.swift */,
+			);
+			name = UserLanguage;
 			sourceTree = "<group>";
 		};
 		49E8D4461EE4ECBA002C20E0 /* Company */ = {
@@ -1077,16 +1109,16 @@
 				hu,
 				id,
 				it,
-				ja,
 				ko,
 				"nl-NL",
 				nl,
 				"pt-PT",
 				pt,
 				ru,
-				sv,
 				"zh-Hans",
 				"zh-Hant",
+				ja,
+				sv,
 			);
 			mainGroup = 4996B7FA1ECA981D00272439;
 			productRefGroup = 4996B8041ECA981D00272439 /* Products */;
@@ -1106,6 +1138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				492331B61ED457C300E45338 /* ShareFourceCollectionViewCell.xib in Resources */,
+				49D161291EE6B70E00440784 /* Localizable.strings in Resources */,
 				49B743F71ED2EA6900FFDBDB /* SharerScendCollectionViewCell.xib in Resources */,
 				49B743F91ED2EA6900FFDBDB /* SharerThirdCollectionViewCell.xib in Resources */,
 				49B743CF1ED2DC9D00FFDBDB /* LoginViewController.xib in Resources */,
@@ -1114,6 +1147,7 @@
 				49B743F51ED2EA6900FFDBDB /* SharerFirstCollectionViewCell.xib in Resources */,
 				4996B8621ECAADA900272439 /* LaunchScreen.storyboard in Resources */,
 				4996B8511ECAAC2900272439 /* Assets.xcassets in Resources */,
+				49D161221EE6B52000440784 /* InfoPlist.strings in Resources */,
 				498BE1541ED598E300D7D004 /* CTAssetsPicker.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1191,6 +1225,7 @@
 				498BE1151ED5950500D7D004 /* NSBundle+CTAssetsPickerController.m in Sources */,
 				49F38FD51ECAEAF900D83E95 /* UIViewController+YMHLoginCheck.m in Sources */,
 				498BE11B1ED5950500D7D004 /* UICollectionView+CTAssetsPickerController.m in Sources */,
+				49D1612F1EE6BF7800440784 /* UserLangageViewController.swift in Sources */,
 				49F38FB71ECAE2BC00D83E95 /* UIColor+YMHCustoms.m in Sources */,
 				498BE1271ED5950500D7D004 /* CTAssetsGridViewCell.m in Sources */,
 				49B743F61ED2EA6900FFDBDB /* SharerScendCollectionViewCell.m in Sources */,
@@ -1251,6 +1286,8 @@
 				49B0D9EB1ECC4D4B00CA3299 /* SelectClassFooterView.m in Sources */,
 				49B743FE1ED2F02400FFDBDB /* SearchClassViewController.m in Sources */,
 				498BE1251ED5950500D7D004 /* CTAssetsGridSelectedView.m in Sources */,
+				498142661EE69F1300873655 /* SelectPhotoAlterView.m in Sources */,
+				49D161321EE6C18500440784 /* UserLanguageCell.swift in Sources */,
 				492ADDB41EE41B8F00E70ADD /* PersonalOrCompanyView.m in Sources */,
 				498BE1261ED5950500D7D004 /* CTAssetsGridView.m in Sources */,
 				492331B11ED446F400E45338 /* TSPublicTool.m in Sources */,
@@ -1261,6 +1298,7 @@
 				49D7FB141EE529AF007CFC43 /* AccountPayPassCell.swift in Sources */,
 				493533141ED6D703001CCCF2 /* UIImageView+YMHPlaceholder.m in Sources */,
 				498BE0051ED52C2D00D7D004 /* UserShareCenterFotterCollectionReusableView.m in Sources */,
+				498142691EE6A19000873655 /* TSAlterShowView.m in Sources */,
 				498BE1311ED5950500D7D004 /* CTAssetsViewControllerTransition.m in Sources */,
 				491EA6141EE1165A00C2B8ED /* ShareMessageThirdCell.m in Sources */,
 				491C46181ECC1D91009F43A4 /* SelectClassCollectionViewCell.m in Sources */,
@@ -1336,18 +1374,36 @@
 				498BE1471ED598E300D7D004 /* hu */,
 				498BE1481ED598E300D7D004 /* id */,
 				498BE1491ED598E300D7D004 /* it */,
-				498BE14A1ED598E300D7D004 /* ja */,
 				498BE14B1ED598E300D7D004 /* ko */,
 				498BE14C1ED598E300D7D004 /* nl-NL */,
 				498BE14D1ED598E300D7D004 /* nl */,
 				498BE14E1ED598E300D7D004 /* pt-PT */,
 				498BE14F1ED598E300D7D004 /* pt */,
 				498BE1501ED598E300D7D004 /* ru */,
-				498BE1511ED598E300D7D004 /* sv */,
 				498BE1521ED598E300D7D004 /* zh-Hans */,
 				498BE1531ED598E300D7D004 /* zh-Hant */,
 			);
 			name = CTAssetsPicker.strings;
+			sourceTree = "<group>";
+		};
+		49D161241EE6B52000440784 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49D161231EE6B52000440784 /* en */,
+				49D161251EE6B52900440784 /* zh-Hans */,
+				49D161261EE6B54F00440784 /* zh-Hant */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		49D1612B1EE6B70E00440784 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49D1612A1EE6B70E00440784 /* en */,
+				49D1612C1EE6B71200440784 /* zh-Hans */,
+				49D1612D1EE6B71300440784 /* zh-Hant */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1469,6 +1525,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zhangdekai/Desktop/ThinkSharer/ThinkSharer/ThinkSharer/Basic/Public/ThinkSharer-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
+				WARNING_CFLAGS = "-Wno-objc-protocol-method-implementation";
 			};
 			name = Debug;
 		};
@@ -1490,6 +1547,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "/Users/zhangdekai/Desktop/ThinkSharer/ThinkSharer/ThinkSharer/Basic/Public/ThinkSharer-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				WARNING_CFLAGS = "-Wno-objc-protocol-method-implementation";
 			};
 			name = Release;
 		};

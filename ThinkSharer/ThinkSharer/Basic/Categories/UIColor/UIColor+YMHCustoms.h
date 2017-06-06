@@ -10,12 +10,6 @@
 
 @interface UIColor (YMHCustoms)
 
-/**
- *  main colors
- */
-+ (UIColor *)mainColorGreen;//惨绿    0xa6b886
-
-
 
 /**
  海蓝  0x57bdd4

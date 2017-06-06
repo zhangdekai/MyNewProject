@@ -54,8 +54,8 @@
 -(void)initData {
     _scondCellData = [NSArray arrayWithObjects:@"资产",@"预定",@"发布",nil];
     _thirdCellIconData = [NSArray arrayWithObjects:@"user_zan",@"user_xin",@"user_hongbao",@"user_guanzhu",@"user_pinglun",@"user_fenxiang",nil];
-    _fourthCellIconData = [NSArray arrayWithObjects:@"user_zhanghao",@"user_yinsi",@"user_help",@"user_ue",@"user_new",@"user_tui",nil];
-    _fourthCellData = [NSArray arrayWithObjects:@"账号与安全",@"隐私权限",@"帮助与反馈",@"关于我们",@"版本更新",@"退出登录",nil];
+    _fourthCellIconData = [NSArray arrayWithObjects:@"user_zhanghao",@"user_yinsi",@"user_yuyan",@"user_help",@"user_ue",@"user_new",@"user_tui",nil];
+    _fourthCellData = [NSArray arrayWithObjects:@"账号与安全",@"隐私权限",@"语言设置",@"帮助与反馈",@"关于我们",@"版本更新",@"退出登录",nil];
     
 }
 
@@ -86,7 +86,8 @@
 }
 
 - (void)setNavigationBar {
-    [self setNavigationBarTitle:@"思享者中心"];
+    NSString *title = NSLocalizedString(@"thinkSharerCenter", nil);
+    [self setNavigationBarTitle:title];
     TSWeakSelf
     [self setNavigationBarRightItemWithImageName:@"user_QR-code" itemBlock:^{
         NSLog(@"你好");
@@ -328,6 +329,9 @@
                 [self.navigationController pushViewController:vc animated:YES];
                 
             } else if (indexPath.row == 2) {//语言设置
+                
+                UserLangageViewController *vc = [[UserLangageViewController alloc]init];
+                [self.navigationController pushViewController:vc animated:YES];
                 
             } else if (indexPath.row == 3) {//帮助鱼反馈
                 

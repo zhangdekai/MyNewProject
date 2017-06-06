@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  ThinkSharer
+
+  Created by 张德凯 on 2017/6/6.
+  Copyright © 2017年 张德凯. All rights reserved.
+*/
+
+CFBundleDisplayName = "思享者";

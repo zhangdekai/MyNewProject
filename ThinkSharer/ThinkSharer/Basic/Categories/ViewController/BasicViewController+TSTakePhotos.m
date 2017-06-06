@@ -10,6 +10,7 @@
 #import "CTAssetsPickerController.h"
 #import <Photos/Photos.h>
 #import <MobileCoreServices/MobileCoreServices.h>
+#import "SelectPhotoAlterView.h"
 
 @interface BasicViewController ()<CTAssetsPickerControllerDelegate>
 
@@ -19,6 +20,38 @@
 
 
 #pragma mark 相册选择
+
+- (void)selectPhoto {
+    
+    SelectPhotoAlterView *container = [[SelectPhotoAlterView alloc]init];
+    
+    TSAlterShowView *alterView = [[TSAlterShowView alloc]init];
+    
+    [alterView creatContainerView:container];
+    
+    [alterView showView];
+    
+    container.SelectPhotoBlock = ^(SelectPhotoType type) {
+        switch (type) {
+            case SelectPhotoTypeByLibrary:
+                [self openPhoto];
+                break;
+            case SelectPhotoTypeByTakePhoto:
+                [self openCamer];
+                break;
+            case SelectPhotoTypeCancle:
+                break;
+            default:
+                break;
+        }
+        [alterView hiddenAlter];
+    };
+
+}
+
+
+
+
 /** 打开相册*/
 - (void)openPhoto {
     /** 判断当前授权状态*/
@@ -89,30 +122,6 @@
     
 }
 
-- (void)selectPhoto {
-    
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:(UIAlertControllerStyleActionSheet)];
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
-        
-    }];
-    
-    
-    UIAlertAction *deleteAction = [UIAlertAction actionWithTitle:@"相机" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [self openCamer];
-    }];
-    
-    UIAlertAction *archiveAction = [UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [self openPhoto];
-        
-    }];
-    
-    [alertController addAction:cancelAction];
-    [alertController addAction:deleteAction];
-    [alertController addAction:archiveAction];
-    
-    [self presentViewController:alertController animated:YES completion:nil];
-    
-}
 
 - (void)openCamer {
     
@@ -143,7 +152,7 @@
     
 }
 
-#pragma mark - UIImagePickerController delegate -
+#pragma mark - UIImagePickerController delegate
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     

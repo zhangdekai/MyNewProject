@@ -73,6 +73,7 @@ class AccountPayPassCell: UITableViewCell {
             }
             
         }
+        
         //再次输入新密码
         passWordAgainTextFiled.frame = CGRect(x: 15, y: line1.bottom + 15, width: 200, height: 20)
         self.addSubview(passWordAgainTextFiled)
@@ -121,10 +122,12 @@ class AccountPayPassCell: UITableViewCell {
         getIdentityButton.layer.cornerRadius = 5
         getIdentityButton.addTarget(self, action: #selector(buttonClick(button:)), for: UIControlEvents.touchUpInside)
         
-        confirm.addTarget(self, action: #selector(buttonClick1(button:)), for: UIControlEvents.touchUpInside)
+        confirm.addTarget(self, action: #selector(buttonClick1(button:)), for:
+            UIControlEvents.touchUpInside)
         
         
-        let line3 = UIView(frame: CGRect(x: 0, y:line2.bottom + 49.5, width: ScreenWidth, height: 0.5))
+        let line3 = UIView(frame: CGRect(x: 0, y:line2.bottom + 49.5, width:
+            ScreenWidth, height: 0.5))
         self.contentView.addSubview(line3)
         line3.backgroundColor = UIColor.white
 
@@ -136,7 +139,6 @@ class AccountPayPassCell: UITableViewCell {
                 line3.backgroundColor = UIColor.white
                 
             }
-            
         }
         
     }

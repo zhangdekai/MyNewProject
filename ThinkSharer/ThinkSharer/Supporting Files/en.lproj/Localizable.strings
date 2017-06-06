@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  ThinkSharer
+
+  Created by 张德凯 on 2017/6/6.
+  Copyright © 2017年 张德凯. All rights reserved.
+*/
+//APP内部语言本地化    此文件必须为Localizable.strings
+//需要在Localizable.strings下对应的文件中，分别以Key-Value的形式，为代码中每一个需要本地化的字符串赋值
+
+"thinkSharerCenter" = "ThinkSharerCenter";
+"Language Settings" = "Language Settings";

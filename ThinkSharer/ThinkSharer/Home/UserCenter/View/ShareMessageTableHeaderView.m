@@ -34,7 +34,7 @@
         
         [_headerImageView addSubview:_camerIcon];
         
-        _camerIcon.image = [UIImage imageNamed:@"user_fenxiang"];
+        _camerIcon.image = [UIImage imageNamed:@"user_message_photo"];
         
         _camerIcon.userInteractionEnabled = YES;
         

@@ -26,6 +26,8 @@
 #import "UIImage+TSShape.h"
 #import "UIImage+TSAlpha.h"
 
+#import "TSAlterShowView.h"
+#import "BasicViewController+TSTakePhotos.h"
 
 
 
