@@ -12,11 +12,11 @@ class AccountSecurePhoneIdentityView: UIView {
 
     var phoneTextFiled = UITextField()
     
-    var changePhoneTextFiled = UITextField()
+    var changePhoneTextFiled = TSCustomTextFiled()
     
-    var identityTextfiled = UITextField()
+    var identityTextfiled = TSCustomTextFiled()
+    
     var getIdentityButton = UIButton()
-    
     var confirmBlock:((_ phone:String, _ identity:String)-> Void)?
     var getIdentityBlock:((_ phone:String, _ button:UIButton)-> Void)?
     
@@ -69,12 +69,13 @@ class AccountSecurePhoneIdentityView: UIView {
         self.addSubview(changePhoneTextFiled)
         changePhoneTextFiled.placeholder = "更换手机号"
         changePhoneTextFiled.keyboardType = .numberPad
+        changePhoneTextFiled.maxNum = 11
 
         changePhoneTextFiled.font = UIFont.systemFont(ofSize: 13)
         changePhoneTextFiled.textColor = UIColor.generalTitleFontGray()
 
-        
-        let line1 = UIView(frame: CGRect(x: 0, y: line.bottom + 49.5, width: ScreenWidth, height: 0.5))
+        let line1 = UIView()
+        line1.frame = CGRect(x: 0, y: line.bottom + 49.5, width: ScreenWidth, height: 0.5)
         self.addSubview(line1)
         line1.backgroundColor = UIColor.seperateThinLine()
 
@@ -85,6 +86,7 @@ class AccountSecurePhoneIdentityView: UIView {
         identityTextfiled.font = UIFont.systemFont(ofSize: 13)
         identityTextfiled.textColor = UIColor.generalTitleFontGray()
         identityTextfiled.keyboardType = .numberPad
+        identityTextfiled.maxNum = 6
 
         
         //确定
@@ -101,6 +103,36 @@ class AccountSecurePhoneIdentityView: UIView {
         getIdentityButton.addTarget(self, action: #selector(buttonClick(button:)), for: UIControlEvents.touchUpInside)
     
         confirm.addTarget(self, action: #selector(buttonClick1(button:)), for: UIControlEvents.touchUpInside)
+        
+        changePhoneTextFiled.editingStatasBlcok = {(index) in
+            if index == 0 {
+                line1.backgroundColor = UIColor.mainColorBlue()
+                
+            } else {
+                line1.backgroundColor = UIColor.seperateThinLine()
+                
+            }
+            
+        }
+        
+        let line2 = UIView(frame: CGRect(x: 0, y: line1.bottom + 49.5, width: ScreenWidth, height: 0.5))
+        self.addSubview(line2)
+        line2.backgroundColor = UIColor.white
+            
+
+        
+        identityTextfiled.editingStatasBlcok = {(index) in
+            if index == 0 {
+                line2.backgroundColor = UIColor.mainColorBlue()
+                
+            } else {
+                line2.backgroundColor = UIColor.white
+                
+            }
+            
+        }
+
+        self.frame = CGRect(x: 0, y: 0, width: ScreenWidth, height: line2.frame.maxY)
 
     }
     

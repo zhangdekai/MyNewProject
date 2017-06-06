@@ -10,9 +10,9 @@ import UIKit
 
 class AccountPayPassCell: UITableViewCell {
 
-    var passWordTextFiled = UITextField()
-    var passWordAgainTextFiled = UITextField()
-    var identityTextFiled = UITextField()
+    var passWordTextFiled = TSCustomTextFiled()
+    var passWordAgainTextFiled = TSCustomTextFiled()
+    var identityTextFiled = TSCustomTextFiled()
     var getIdentityButton = UIButton()
     
     var getIdentityBlock:((_ button:UIButton)-> Void)?
@@ -57,12 +57,22 @@ class AccountPayPassCell: UITableViewCell {
         passWordTextFiled.placeholder = "输入新密码"
         passWordTextFiled.font = UIFont.systemFont(ofSize: 13)
         passWordTextFiled.textColor = UIColor.generalTitleFontGray()
-        
+        passWordTextFiled.maxNum = 6
         
         let line1 = UIView(frame: CGRect(x: 0, y:line.bottom + 49.5, width: ScreenWidth, height: 0.5))
         self.contentView.addSubview(line1)
         line1.backgroundColor = UIColor.seperateThinLine()
         
+        passWordTextFiled.editingStatasBlcok = {(index) in
+            if index == 0 {
+                line1.backgroundColor = UIColor.mainColorBlue()
+                
+            } else {
+                line1.backgroundColor = UIColor.seperateThinLine()
+                
+            }
+            
+        }
         //再次输入新密码
         passWordAgainTextFiled.frame = CGRect(x: 15, y: line1.bottom + 15, width: 200, height: 20)
         self.addSubview(passWordAgainTextFiled)
@@ -72,11 +82,22 @@ class AccountPayPassCell: UITableViewCell {
         passWordAgainTextFiled.placeholder = "再次输入新密码"
         passWordAgainTextFiled.font = UIFont.systemFont(ofSize: 13)
         passWordAgainTextFiled.textColor = UIColor.generalTitleFontGray()
-
+        passWordAgainTextFiled.maxNum = 6
+        
         let line2 = UIView(frame: CGRect(x: 0, y:line1.bottom + 49.5, width: ScreenWidth, height: 0.5))
         self.contentView.addSubview(line2)
         line2.backgroundColor = UIColor.seperateThinLine()
         
+        passWordAgainTextFiled.editingStatasBlcok = {(index) in
+            if index == 0 {
+                line2.backgroundColor = UIColor.mainColorBlue()
+                
+            } else {
+                line2.backgroundColor = UIColor.seperateThinLine()
+                
+            }
+            
+        }
         //输入验证码
         identityTextFiled.frame = CGRect(x: 15, y: line2.bottom + 15, width: 200, height: 20)
         self.contentView.addSubview(identityTextFiled)
@@ -85,7 +106,7 @@ class AccountPayPassCell: UITableViewCell {
         identityTextFiled.placeholder = "输入验证码"
         identityTextFiled.font = UIFont.systemFont(ofSize: 13)
         identityTextFiled.textColor = UIColor.generalTitleFontGray()
-
+        identityTextFiled.maxNum = 6
         
         //确定
         self.addSubview(getIdentityButton)
@@ -101,6 +122,22 @@ class AccountPayPassCell: UITableViewCell {
         getIdentityButton.addTarget(self, action: #selector(buttonClick(button:)), for: UIControlEvents.touchUpInside)
         
         confirm.addTarget(self, action: #selector(buttonClick1(button:)), for: UIControlEvents.touchUpInside)
+        
+        
+        let line3 = UIView(frame: CGRect(x: 0, y:line2.bottom + 49.5, width: ScreenWidth, height: 0.5))
+        self.contentView.addSubview(line3)
+        line3.backgroundColor = UIColor.white
+
+        identityTextFiled.editingStatasBlcok = {(index) in
+            if index == 0 {
+                line3.backgroundColor = UIColor.mainColorBlue()
+                
+            } else {
+                line3.backgroundColor = UIColor.white
+                
+            }
+            
+        }
         
     }
     

@@ -12,4 +12,7 @@
 
 @property (nonatomic,assign) NSInteger MaxNum;
 
+@property (nonatomic,copy) void (^EditingStatasBlcok)(NSInteger index);
+
+
 @end

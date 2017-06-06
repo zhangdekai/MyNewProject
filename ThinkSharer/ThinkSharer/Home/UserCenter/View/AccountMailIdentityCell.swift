@@ -10,7 +10,8 @@ import UIKit
 
 class AccountMailIdentityCell: UITableViewCell {
     
-    var mailTextFiled = UITextField()
+    var mailTextFiled = TSCustomTextFiled()
+    var mailLine = UIView()
     var confirmBlock:((_ mail:String)-> Void)?
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -50,8 +51,27 @@ class AccountMailIdentityCell: UITableViewCell {
         mailTextFiled.placeholder = "请输入邮箱"
         mailTextFiled.font = UIFont.systemFont(ofSize: 13)
         mailTextFiled.textColor = UIColor.generalTitleFontGray()
-
         
+        
+        mailLine.frame = CGRect(x: 0, y: line.bottom + 49.5, width: ScreenWidth, height: 0.5)
+        self.addSubview(mailLine)
+        mailLine.backgroundColor = UIColor.white
+        
+        mailTextFiled.editingStatasBlcok = {[weak self](index) in
+            guard let `self` = self else {
+                return
+            }
+            if index == 0 {
+                self.mailLine.backgroundColor = UIColor.mainColorBlue()
+
+            } else {
+                self.mailLine.backgroundColor = UIColor.white
+
+            }
+            
+        }
+
+       
         
     }
     

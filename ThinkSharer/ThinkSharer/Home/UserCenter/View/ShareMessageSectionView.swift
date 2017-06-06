@@ -19,7 +19,7 @@ class ShareMessageSectionView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+        self.backgroundColor = UIColor.white
         let selfW = frame.size.width
         let selfH = frame.size.height
         //

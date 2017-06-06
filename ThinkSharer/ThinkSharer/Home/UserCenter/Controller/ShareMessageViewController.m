@@ -53,7 +53,6 @@
 @property (nonatomic,weak) UITextField *majorTextField;
 @property (nonatomic,weak) UITextField *educationBackgroundTextField;
 
-//@property (nonatomic,weak) UIView *<#object#>;
 
 
 @property (nonatomic,assign) NSInteger sctionOne;

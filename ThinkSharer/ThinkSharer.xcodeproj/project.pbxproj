@@ -29,6 +29,8 @@
 		4935331B1ED6D725001CCCF2 /* UIImage+TSShape.m in Sources */ = {isa = PBXBuildFile; fileRef = 493533191ED6D725001CCCF2 /* UIImage+TSShape.m */; };
 		4935331D1ED6E839001CCCF2 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4935331C1ED6E839001CCCF2 /* MobileCoreServices.framework */; };
 		494533191ED6C04B00F9340F /* NetWorkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 494533181ED6C04B00F9340F /* NetWorkManager.m */; };
+		4981425F1EE637F500873655 /* BasicViewController+TSTakePhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 4981425E1EE637F500873655 /* BasicViewController+TSTakePhotos.m */; };
+		498142631EE6429B00873655 /* TSCustomTextFiled.m in Sources */ = {isa = PBXBuildFile; fileRef = 498142621EE6429B00873655 /* TSCustomTextFiled.m */; };
 		498BE0021ED52BDB00D7D004 /* UserShareCenterCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 498BE0011ED52BDB00D7D004 /* UserShareCenterCollectionReusableView.m */; };
 		498BE0051ED52C2D00D7D004 /* UserShareCenterFotterCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 498BE0041ED52C2D00D7D004 /* UserShareCenterFotterCollectionReusableView.m */; };
 		498BE0081ED5511300D7D004 /* ShareMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 498BE0071ED5511300D7D004 /* ShareMessageViewController.m */; };
@@ -78,7 +80,6 @@
 		49A850381EDE594600EE521A /* TSDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A850371EDE594600EE521A /* TSDatePickerView.m */; };
 		49A8503E1EDE94EB00EE521A /* LoactionIdentityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A8503D1EDE94EB00EE521A /* LoactionIdentityView.m */; };
 		49A850411EDED27200EE521A /* SelectClassLeftTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A850401EDED27200EE521A /* SelectClassLeftTableViewCell.m */; };
-		49AF54BA1ECED69000406DFC /* TSCustomTextFiled.m in Sources */ = {isa = PBXBuildFile; fileRef = 49AF54B91ECED69000406DFC /* TSCustomTextFiled.m */; };
 		49B0D9EB1ECC4D4B00CA3299 /* SelectClassFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B0D9EA1ECC4D4B00CA3299 /* SelectClassFooterView.m */; };
 		49B743CE1ED2DC9D00FFDBDB /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B743CA1ED2DC9D00FFDBDB /* LoginViewController.m */; };
 		49B743CF1ED2DC9D00FFDBDB /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B743CB1ED2DC9D00FFDBDB /* LoginViewController.xib */; };
@@ -178,6 +179,10 @@
 		4935331C1ED6E839001CCCF2 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		494533171ED6C04B00F9340F /* NetWorkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkManager.h; sourceTree = "<group>"; };
 		494533181ED6C04B00F9340F /* NetWorkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkManager.m; sourceTree = "<group>"; };
+		4981425D1EE637F500873655 /* BasicViewController+TSTakePhotos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BasicViewController+TSTakePhotos.h"; sourceTree = "<group>"; };
+		4981425E1EE637F500873655 /* BasicViewController+TSTakePhotos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BasicViewController+TSTakePhotos.m"; sourceTree = "<group>"; };
+		498142611EE6429B00873655 /* TSCustomTextFiled.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCustomTextFiled.h; sourceTree = "<group>"; };
+		498142621EE6429B00873655 /* TSCustomTextFiled.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCustomTextFiled.m; sourceTree = "<group>"; };
 		498BE0001ED52BDB00D7D004 /* UserShareCenterCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserShareCenterCollectionReusableView.h; sourceTree = "<group>"; };
 		498BE0011ED52BDB00D7D004 /* UserShareCenterCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserShareCenterCollectionReusableView.m; sourceTree = "<group>"; };
 		498BE0031ED52C2D00D7D004 /* UserShareCenterFotterCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserShareCenterFotterCollectionReusableView.h; sourceTree = "<group>"; };
@@ -302,8 +307,6 @@
 		49A8503D1EDE94EB00EE521A /* LoactionIdentityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoactionIdentityView.m; sourceTree = "<group>"; };
 		49A8503F1EDED27200EE521A /* SelectClassLeftTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectClassLeftTableViewCell.h; sourceTree = "<group>"; };
 		49A850401EDED27200EE521A /* SelectClassLeftTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectClassLeftTableViewCell.m; sourceTree = "<group>"; };
-		49AF54B81ECED69000406DFC /* TSCustomTextFiled.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSCustomTextFiled.h; sourceTree = "<group>"; };
-		49AF54B91ECED69000406DFC /* TSCustomTextFiled.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSCustomTextFiled.m; sourceTree = "<group>"; };
 		49B0D9E91ECC4D4B00CA3299 /* SelectClassFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectClassFooterView.h; sourceTree = "<group>"; };
 		49B0D9EA1ECC4D4B00CA3299 /* SelectClassFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectClassFooterView.m; sourceTree = "<group>"; };
 		49B743C91ED2DC9D00FFDBDB /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -417,8 +420,6 @@
 				491C461E1ECC23A1009F43A4 /* SelectClassheaderView.m */,
 				49B0D9E91ECC4D4B00CA3299 /* SelectClassFooterView.h */,
 				49B0D9EA1ECC4D4B00CA3299 /* SelectClassFooterView.m */,
-				49AF54B81ECED69000406DFC /* TSCustomTextFiled.h */,
-				49AF54B91ECED69000406DFC /* TSCustomTextFiled.m */,
 				49A8503F1EDED27200EE521A /* SelectClassLeftTableViewCell.h */,
 				49A850401EDED27200EE521A /* SelectClassLeftTableViewCell.m */,
 			);
@@ -452,6 +453,15 @@
 				494533181ED6C04B00F9340F /* NetWorkManager.m */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		498142601EE6429B00873655 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				498142611EE6429B00873655 /* TSCustomTextFiled.h */,
+				498142621EE6429B00873655 /* TSCustomTextFiled.m */,
+			);
+			path = Others;
 			sourceTree = "<group>";
 		};
 		498BE0B31ED5950500D7D004 /* CTAssetsPickerController */ = {
@@ -881,6 +891,7 @@
 		49F38FB01ECAE29E00D83E95 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				498142601EE6429B00873655 /* Others */,
 				493533151ED6D725001CCCF2 /* UIImage */,
 				493533111ED6D703001CCCF2 /* UIImageView */,
 				499478B51ED68412003E7E4C /* UITableView */,
@@ -914,6 +925,8 @@
 		49F38FD21ECAEAF900D83E95 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				4981425D1EE637F500873655 /* BasicViewController+TSTakePhotos.h */,
+				4981425E1EE637F500873655 /* BasicViewController+TSTakePhotos.m */,
 				49F38FD31ECAEAF900D83E95 /* UIViewController+YMHLoginCheck.h */,
 				49F38FD41ECAEAF900D83E95 /* UIViewController+YMHLoginCheck.m */,
 			);
@@ -1196,6 +1209,7 @@
 				49D7FB161EE52D19007CFC43 /* AccountLinkerCell.swift in Sources */,
 				498BE12A1ED5950500D7D004 /* CTAssetsGridViewLayout.m in Sources */,
 				491C46141ECBF3C8009F43A4 /* SelectScrollView.m in Sources */,
+				4981425F1EE637F500873655 /* BasicViewController+TSTakePhotos.m in Sources */,
 				49B744021ED2F57200FFDBDB /* TSActionAlterView.m in Sources */,
 				490CC4221EDFF42300E5C7B2 /* ShareMessageSectionView.swift in Sources */,
 				49D7FB181EE52EC4007CFC43 /* AccountTableFooterView.swift in Sources */,
@@ -1235,7 +1249,6 @@
 				49F38FE01ECAFBFF00D83E95 /* TSAppInfo.m in Sources */,
 				498BE11D1ED5950500D7D004 /* CTAssetCheckmark.m in Sources */,
 				49B0D9EB1ECC4D4B00CA3299 /* SelectClassFooterView.m in Sources */,
-				49AF54BA1ECED69000406DFC /* TSCustomTextFiled.m in Sources */,
 				49B743FE1ED2F02400FFDBDB /* SearchClassViewController.m in Sources */,
 				498BE1251ED5950500D7D004 /* CTAssetsGridSelectedView.m in Sources */,
 				492ADDB41EE41B8F00E70ADD /* PersonalOrCompanyView.m in Sources */,
@@ -1271,6 +1284,7 @@
 				49F38FAB1ECAE06B00D83E95 /* BasicViewController.m in Sources */,
 				498BE1301ED5950500D7D004 /* CTAssetsPickerNoAssetsView.m in Sources */,
 				498BE1341ED5950500D7D004 /* CTAssetThumbnailView.m in Sources */,
+				498142631EE6429B00873655 /* TSCustomTextFiled.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

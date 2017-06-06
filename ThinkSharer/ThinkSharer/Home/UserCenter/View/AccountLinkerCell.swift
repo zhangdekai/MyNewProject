@@ -10,9 +10,8 @@ import UIKit
 
 class AccountLinkerCell: UITableViewCell {
 
-    var linkerTextFiled = UITextField()
-    var linkerPhoneTextFiled = UITextField()
-    var identityTextFiled = UITextField()
+    var linkerTextFiled = TSCustomTextFiled()
+    var linkerPhoneTextFiled = TSCustomTextFiled()
     var getIdentityButton = UIButton()
     
     var confirmBlock:((_ name:String, _ phoneString:String)-> Void)?
@@ -54,12 +53,22 @@ class AccountLinkerCell: UITableViewCell {
         linkerTextFiled.placeholder = "姓名"
         linkerTextFiled.font = UIFont.systemFont(ofSize: 13)
         linkerTextFiled.textColor = UIColor.generalTitleFontGray()
-        
+        linkerTextFiled.maxNum = 8
         
         let line1 = UIView(frame: CGRect(x: 0, y:line.bottom + 49.5, width: ScreenWidth, height: 0.5))
         self.contentView.addSubview(line1)
         line1.backgroundColor = UIColor.seperateThinLine()
         
+        linkerTextFiled.editingStatasBlcok = {(index) in
+            if index == 0 {
+                line1.backgroundColor = UIColor.mainColorBlue()
+                
+            } else {
+                line1.backgroundColor = UIColor.seperateThinLine()
+                
+            }
+            
+        }
         //再次输入新密码
         linkerPhoneTextFiled.frame = CGRect(x: 15, y: line1.bottom + 15, width: 200, height: 20)
         self.addSubview(linkerPhoneTextFiled)
@@ -69,6 +78,19 @@ class AccountLinkerCell: UITableViewCell {
         linkerPhoneTextFiled.font = UIFont.systemFont(ofSize: 13)
         linkerPhoneTextFiled.textColor = UIColor.generalTitleFontGray()
         
+        let line2 = UIView(frame: CGRect(x: 0, y:line1.bottom + 49.5, width: ScreenWidth, height: 0.5))
+        self.contentView.addSubview(line2)
+        line2.backgroundColor = UIColor.seperateThinLine()
+        linkerPhoneTextFiled.editingStatasBlcok = {(index) in
+            if index == 0 {
+                line2.backgroundColor = UIColor.mainColorBlue()
+                
+            } else {
+                line2.backgroundColor = UIColor.white
+                
+            }
+            
+        }
     }
     
     func buttonClick() {

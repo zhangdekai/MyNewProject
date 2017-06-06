@@ -10,24 +10,31 @@
 
 @implementation TSCustomTextFiled
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
-
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         
+        //内容变化
         [self addTarget:self action:@selector(textFieldDidChange:) forControlEvents:(UIControlEventEditingChanged)];
         
+        //监听开始编辑状态
+        [self addTarget:self action:@selector(didediting) forControlEvents:UIControlEventEditingDidBegin];// 可在自定义selector处
+        //监听编辑完成的状态
+        [self addTarget:self action:@selector(endediting) forControlEvents:UIControlEventEditingDidEnd];// 可在自定义selector处
     }
     return self;
 }
 
+-(void)didediting {
+    NSLog(@"开始编辑");
+    
+    self.EditingStatasBlcok(0);
+}
+
+-(void)endediting {
+    NSLog(@"停止编辑");
+    self.EditingStatasBlcok(1);
+}
 
 - (void)textFieldDidChange:(UITextField *)textFiled {
     NSInteger num = self.MaxNum > 0 ? self.MaxNum:11; // dk: 默认 30

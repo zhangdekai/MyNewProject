@@ -15,6 +15,9 @@ class AccountSecureViewController: BasicViewController,UITextFieldDelegate {
     
     var tableView:UITableView!
     
+    var mailTextFiled:UITextField!
+    var mailLine:UIView!
+
     var passWordTextFiled:UITextField!
     var passWordAgainTextFiled:UITextField!
     var idnetityTextFiled:UITextField!
@@ -28,7 +31,8 @@ class AccountSecureViewController: BasicViewController,UITextFieldDelegate {
         
         let view = AccountSecurePhoneIdentityView(frame: CGRect.zero)
         view.changePhoneTextFiled.delegate = self
-        
+        view.identityTextfiled.delegate = self
+
         view.confirmBlock = {[weak self](_ phone:String, _ identity:String) in
             print(phone,identity)
             
@@ -50,8 +54,6 @@ class AccountSecureViewController: BasicViewController,UITextFieldDelegate {
     //MARK: life style
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
         self.setNavigationBarBack()
         self.setNavigationBarTitle("账号与安全")
@@ -89,6 +91,7 @@ class AccountSecureViewController: BasicViewController,UITextFieldDelegate {
     //MARK: UITextFiledDelegate
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        
         if textField == passWordTextFiled || textField == passWordAgainTextFiled  || textField == idnetityTextFiled {
             tableView.frame = CGRect(x: 0, y: -120, width: ScreenWidth, height: ScreenHeight)
         }
@@ -104,9 +107,7 @@ class AccountSecureViewController: BasicViewController,UITextFieldDelegate {
         
         let newstring = NSString(string: textField.text ?? "").replacingCharacters(in: range, with: string)
         if textField == tableHeaderView.changePhoneTextFiled {
-            if (newstring.characters.count) > 11{
-                return false
-            } else {
+           
                 if newstring.characters.count == 11 {
                     tableHeaderView.getIdentityButton.isEnabled = true
                     tableHeaderView.getIdentityButton.backgroundColor = UIColor.mainColorBlue()
@@ -115,20 +116,9 @@ class AccountSecureViewController: BasicViewController,UITextFieldDelegate {
                     tableHeaderView.getIdentityButton.backgroundColor = UIColor.backgroundGrayColorC()
                 }
                 return true
-            }
 
-        } else if textField == passWordTextFiled {
-            if newstring.characters.count > 6 {
-                return false
-            } else {
-                return true
-            }
+        }  else if textField == passWordAgainTextFiled {
             
-        } else if textField == passWordAgainTextFiled {
-            
-            if newstring.characters.count > 6 {
-                return false
-            } else {
                 if newstring.characters.count == 6 && newstring == (passWordTextFiled.text ?? ""){
                     getIdentityButton.isEnabled = true
                     getIdentityButton.backgroundColor = UIColor.mainColorBlue()
@@ -138,7 +128,6 @@ class AccountSecureViewController: BasicViewController,UITextFieldDelegate {
 
                 }
                 return true
-            }
         }
         return true
         
@@ -171,6 +160,11 @@ extension AccountSecureViewController:UITableViewDelegate,UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "AccountMailIdentityCell")as!AccountMailIdentityCell
+            
+            mailLine = cell.mailLine
+            mailTextFiled = cell.mailTextFiled
+            mailTextFiled.delegate = self
+            
             cell.confirmBlock = {[weak self](mail:String) in
                 guard let `self` = self else {
                     return
