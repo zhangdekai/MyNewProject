@@ -24,6 +24,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    
+    [self setTSLanguage];
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     
     self.window.backgroundColor =  [UIColor whiteColor];
@@ -64,6 +66,12 @@
     return YES;
 }
 
+- (void)setTSLanguage {
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"Think_Sharer_APP_Language"] && ![[[NSUserDefaults standardUserDefaults] objectForKey:@"Think_Sharer_APP_Language"] isEqualToString:@""]) {
+        [NSBundle setLanguage:[[NSUserDefaults standardUserDefaults] objectForKey:@"Think_Sharer_APP_Language"]];
+    }
+
+}
 
 - (void)setRootViewController {
     

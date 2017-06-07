@@ -25,9 +25,28 @@
  */
 + (UIColor *)generalFontWhiteColor;//主调白色 #ffffff
 + (UIColor *)generalFontOrangeColor;//主调橙色 #ff9933
+
+/**
+ 黑色 标题内容 #333333
+
+ @return UIColor
+ */
 + (UIColor *)generalTitleFontBlackColor;//标题内容 #333333
+
+/**
+ 灰色 标题 #666666
+
+ @return UIColor
+ */
 + (UIColor *)generalTitleFontGrayColor;//标题 #666666
+
+/**
+ 灰色 副标题 #999999
+
+ @return UIColor
+ */
 + (UIColor *)generalSubTitleFontGrayColor;//副标题 #999999
+
 + (UIColor *)generalFontRedColor;//主调红色 #fa4619
 + (UIColor *)generalFontRedColorWithAlpha :(CGFloat)alpha;//主调红色带Alpha
 
@@ -35,6 +54,11 @@
  *  background colors
  */
 + (UIColor *)backgroundRedColor;//底色红 #fa4619
+/**
+ 灰色A 0xfafafa
+ 
+ @return UIColor
+ */
 + (UIColor *)backgroundGrayColorA;//底色A 0xfafafa
 + (UIColor *)backgroundGrayColorB;//底色B #f4f4f4
 

@@ -12,6 +12,7 @@
 #import "TSCustomTextFiled.h"
 #import "UserGuideViewController.h"
 #import "LoactionIdentityView.h"
+#import "YMHRegularExpression.h"
 
 
 @interface LoginViewController ()<UITextFieldDelegate>
@@ -89,6 +90,9 @@
     _phoneTextFiled.placeholder = @"请输入手机号";
     _phoneTextFiled.font = [UIFont systemFontOfSize:17];
 //    [_phoneTextFiled setValue:[UIFont systemFontOfSize:17] forKeyPath:@"_placeholderLabel.font"];
+    _phoneTextFiled.EditingStatasBlcok = ^(NSInteger index) {
+        
+    };
     
     [_phoneBackView addSubview:_phoneTextFiled];
     
@@ -108,12 +112,14 @@
     _identityTextFiled.delegate = self;
 
     _identityTextFiled.MaxNum = 6;
-    _identityTextFiled.keyboardType = UIKeyboardTypeNumberPad;
+    _identityTextFiled.keyboardType = UIKeyboardTypeDefault;
     _identityTextFiled.clearButtonMode = UITextFieldViewModeWhileEditing;
     _identityTextFiled.placeholder = @"验证码";
     _identityTextFiled.font = [UIFont systemFontOfSize:15];
 //    [_identityTextFiled setValue:[UIFont systemFontOfSize:14] forKeyPath:@"_placeholderLabel.font"];
-    
+    _identityTextFiled.EditingStatasBlcok = ^(NSInteger index) {
+        
+    };
     [_identityBackView addSubview:_identityTextFiled];
     
     
@@ -150,7 +156,9 @@
     _locateCodeTextFiled.clearButtonMode = UITextFieldViewModeWhileEditing;
     _locateCodeTextFiled.placeholder = @"动态码";
     _locateCodeTextFiled.font = [UIFont systemFontOfSize:17];
-    
+    _locateCodeTextFiled.EditingStatasBlcok = ^(NSInteger index) {
+        
+    };
     [_dynamicView addSubview:_locateCodeTextFiled];
 
 
@@ -196,6 +204,10 @@
 
 - (void)changeUI {
     
+    //验证手机号
+    if (![YMHRegularExpression validateMobile:_phoneTextFiled.text]) {
+        [self showHudWithTextOnly:@"请输入正确的手机号"];
+    }
     _identityBackView.hidden = NO;
     _authCodeView.hidden = NO;
     _rightIcon.hidden = NO;
@@ -223,11 +235,12 @@
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    
+    NSString *newString = [textField.text stringByReplacingCharactersInRange:range withString:string];
+
     if (textField == _phoneTextFiled) {
         
-        NSString *new = [textField.text stringByReplacingCharactersInRange:range withString:string];
-        if(new.length >= 11){
+        if(newString.length >= 11) {
+            _rightIcon.hidden = NO;
             _phoneTextFiled.clearButtonMode = UITextFieldViewModeNever;
 
             [self changeUI];
@@ -240,8 +253,7 @@
 
     } else if (textField == _identityTextFiled) {
         
-        NSString *new = [textField.text stringByReplacingCharactersInRange:range withString:string];
-        if(new.length >= 6){
+        if(newString.length >= 6){
             
             _getIdentityButton.enabled = YES;
             _getIdentityButton.backgroundColor = [UIColor mainColorBlue];
@@ -287,6 +299,17 @@
 #pragma mark Actions
 //获取验证码
 - (void )getIdentity:(UIButton *)button {
+    
+    NSLog(@"%@", _authCodeView.authCodeStr);
+    
+    NSString *inputString = [_identityTextFiled.text lowercaseString];
+    NSString *compareString = [_authCodeView.authCodeStr lowercaseString];
+    
+    
+    if (![inputString isEqualToString:compareString]) {
+        [self showHudWithTextOnly:@"验证码输入不正确"];
+        return;
+    }
     
     [YMHIdenCodeTool idenCodeActionWithButton:button controller:self phoneNum:_phoneTextFiled.text];
     

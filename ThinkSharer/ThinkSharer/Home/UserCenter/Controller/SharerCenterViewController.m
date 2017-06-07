@@ -35,15 +35,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self setNavigationBar];
-    [self initilizeUI];
     
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = NO;
+    self.automaticallyAdjustsScrollViewInsets = NO;
     [self addShadow];
+    [self setNavigationBar];
+    [self initData];
+    [self initilizeUI];
+
 
 }
 - (void)viewWillDisappear:(BOOL)animated {
@@ -55,7 +58,26 @@
     _scondCellData = [NSArray arrayWithObjects:@"资产",@"预定",@"发布",nil];
     _thirdCellIconData = [NSArray arrayWithObjects:@"user_zan",@"user_xin",@"user_hongbao",@"user_guanzhu",@"user_pinglun",@"user_fenxiang",nil];
     _fourthCellIconData = [NSArray arrayWithObjects:@"user_zhanghao",@"user_yinsi",@"user_yuyan",@"user_help",@"user_ue",@"user_new",@"user_tui",nil];
-    _fourthCellData = [NSArray arrayWithObjects:@"账号与安全",@"隐私权限",@"语言设置",@"帮助与反馈",@"关于我们",@"版本更新",@"退出登录",nil];
+    /*
+    "Account and security" = "账号与安全";
+    "Privacy rights" = "隐私权限";
+    "Language Settings" = "语言设置";
+    "Help and feedback" = "帮助与反馈";
+    "About us" = "关于我们";
+    "Version update" = "版本更新";
+     "Log out" = "退出登录";
+     */
+    NSString *string1 = NSLocalizedString(@"Account and security", @"账号与安全");
+     NSString *string2 = NSLocalizedString(@"Privacy rights", @"隐私权限");
+    NSString *string3 = NSLocalizedString(@"Language Settings", @"语言设置");
+     NSString *string4 = NSLocalizedString(@"Help and feedback", @"帮助与反馈");
+     NSString *string5 = NSLocalizedString(@"About us", @"关于我们");
+     NSString *string6 = NSLocalizedString(@"Version update", @"版本更新");
+    NSString *string7 = NSLocalizedString(@"Log out", @"退出登录");
+
+    
+    
+    _fourthCellData = [NSArray arrayWithObjects:string1,string2,string3,string4,string5,string6,string7,nil];
     
 }
 
@@ -65,7 +87,7 @@
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     
-    self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight) collectionViewLayout:layout];
+    self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 64, ScreenWidth, ScreenHeight-64) collectionViewLayout:layout];
     self.collectionView.backgroundColor = [UIColor backgroundGrayColorB];
 
     [self.view addSubview:self.collectionView];
@@ -101,19 +123,19 @@
 }
 
 - (void)selectPersonOrCompany {
-    PersonalOrCompanyView *person = [[PersonalOrCompanyView alloc]initWithFrame:CGRectZero];//[TSPublicTool personInstance];
-    [person showInView];
-    TSWeakSelf
-    person.SelectPersonOrCompany = ^(NSInteger index) {
-        NSLog(@"%ld",index);
-        if (index == 0) {
+//    PersonalOrCompanyView *person = [[PersonalOrCompanyView alloc]initWithFrame:CGRectZero];
+//    [person showInView];
+//    TSWeakSelf
+//    person.SelectPersonOrCompany = ^(NSInteger index) {
+//        NSLog(@"%ld",index);
+//        if (index == 0) {
             ShareMessageViewController *vc = [[ShareMessageViewController alloc]init];
-            [weakSelf.navigationController pushViewController:vc animated:YES];
-            
-        } else {
-            
-        }
-    };
+            [self.navigationController pushViewController:vc animated:YES];
+//            
+//        } else {
+//            
+//        }
+//    };
 }
 
 
@@ -134,7 +156,7 @@
             return 6;
             break;
         case 3:
-            return 6;
+            return _fourthCellData.count;
             break;
             
         default:
@@ -334,6 +356,9 @@
                 [self.navigationController pushViewController:vc animated:YES];
                 
             } else if (indexPath.row == 3) {//帮助鱼反馈
+                
+                UserCenterHelpFeedbackViewController *vc = [[UserCenterHelpFeedbackViewController alloc]init];
+                [self.navigationController pushViewController:vc animated:YES];
                 
             } else if (indexPath.row == 4) {//关于我们
                 

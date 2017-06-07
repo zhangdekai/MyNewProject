@@ -11,9 +11,8 @@ import UIKit
 class UserLanguageCell: UITableViewCell {
     
     var languageLabel : UILabel!
-    var confirm:UIButton!
-    var languageSelectedIndex:Int = 0
-    var selectStatsIndex:((_ index:Int)-> Void)?
+    private var confirm:UIButton!
+//    var selectStatsIndex:(()-> Void)?
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -34,8 +33,8 @@ class UserLanguageCell: UITableViewCell {
         confirm.top = 15
         
         confirm.setImage(UIImage.init(named: "user_language_normal"), for: UIControlState.normal)
-
-        confirm.addTarget(self, action: #selector(buttonClick(button:)), for: UIControlEvents.touchUpInside)
+        confirm.isEnabled = false
+//        confirm.addTarget(self, action: #selector(buttonClick(button:)), for: UIControlEvents.touchUpInside)
         
         let line = UIView(frame: CGRect(x: 0, y:49.5, width: ScreenWidth, height: 0.5))
         self.addSubview(line)
@@ -49,26 +48,17 @@ class UserLanguageCell: UITableViewCell {
         } else {
             confirm.setImage(UIImage.init(named: "user_language_selected"), for: UIControlState.normal)
         }
-        languageSelectedIndex = style
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func buttonClick(button:UIButton) {
-        if languageSelectedIndex == 0 {
-            button.setImage(UIImage.init(named: "user_language_selected"), for: UIControlState.normal)
-        } else {
-            button.setImage(UIImage.init(named: "user_language_normal"), for: UIControlState.normal)
-
-        }
-       
-        languageSelectedIndex = languageSelectedIndex == 0 ? 0:1
-        if let block = selectStatsIndex {
-            block(languageSelectedIndex)
-        }
-    }
+//    func buttonClick(button:UIButton) {
+//        if let block = selectStatsIndex {
+//            block()
+//        }
+//    }
 
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -9,4 +9,18 @@
 //需要在Localizable.strings下对应的文件中，分别以Key-Value的形式，为代码中每一个需要本地化的字符串赋值
 
 "thinkSharerCenter" = "ThinkSharerCenter";
+"setting language" = "setting language";
+"Account and security" = "Account and security";
+"Privacy rights" = "Privacy rights";
 "Language Settings" = "Language Settings";
+"Help and feedback" = "Help and feedback";
+"About us" = "About us";
+"Version update" = "Version update";
+"Log out" = "Log out";
+
+"新手帮助" = "Rookie help";
+"视频中心" = "Video center";
+"使用手册" = "The manual";
+"常见问题" = "Common problems";
+"角色体验" = "Role experience";
+"客服咨询" = "Customer service consultation";

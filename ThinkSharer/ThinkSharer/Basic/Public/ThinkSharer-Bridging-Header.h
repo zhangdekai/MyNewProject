@@ -17,7 +17,9 @@
 #import "UIImage+TSShape.h"
 #import "UIImage+TSAlpha.h"
 #import "BasicViewController.h"
+#import "BasicViewController+TSTakePhotos.h"
 
 #import "YMHIdenCodeTool.h"
 #import "YMHRegularExpression.h"
 #import "TSCustomTextFiled.h"
+#import "NSBundle+Language.h"

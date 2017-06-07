@@ -9,13 +9,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ThinkSharer/Home/UserCenter/View/UserLanguageCell.swift"
-            timestampString = "518442190.521166"
+            filePath = "ThinkSharer/Views/YMHRegularExpression.m"
+            timestampString = "518506683.107592"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "buttonClick(button:)"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "+validateMobile:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ThinkSharer/Views/YMHRegularExpression.m"
+            timestampString = "518506714.522047"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "+validateMobile:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

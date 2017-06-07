@@ -11,11 +11,11 @@
 
 @interface BasicViewController (TSTakePhotos)
 
-
 /**
  选择相册，照片
  */
 - (void)selectPhoto;
 
+- (void)selectedPhoto:(NSArray *)photos;
 
 @end

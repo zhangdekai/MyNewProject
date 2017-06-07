@@ -13,6 +13,12 @@
 		491C46191ECC1D91009F43A4 /* SelectClassCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 491C46171ECC1D91009F43A4 /* SelectClassCollectionViewCell.xib */; };
 		491C461F1ECC23A1009F43A4 /* SelectClassheaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 491C461E1ECC23A1009F43A4 /* SelectClassheaderView.m */; };
 		491C46281ECC2CD4009F43A4 /* SelectClassTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 491C46271ECC2CD4009F43A4 /* SelectClassTableViewCell.m */; };
+		491E15131EE7A4DF00215151 /* NSBundle+Language.m in Sources */ = {isa = PBXBuildFile; fileRef = 491E15121EE7A4DF00215151 /* NSBundle+Language.m */; };
+		491E15151EE7DF9900215151 /* UserCenterHelpFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491E15141EE7DF9900215151 /* UserCenterHelpFeedbackViewController.swift */; };
+		491E15181EE7E0AD00215151 /* UserHelpAndFeedbackTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491E15171EE7E0AD00215151 /* UserHelpAndFeedbackTableHeaderView.swift */; };
+		491E151A1EE7F43800215151 /* UserHelpFeedbackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491E15191EE7F43800215151 /* UserHelpFeedbackCell.swift */; };
+		491E151D1EE7FA9400215151 /* UserFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491E151C1EE7FA9400215151 /* UserFeedbackViewController.swift */; };
+		491E15211EE808FB00215151 /* UserFeedbackCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491E15201EE808FB00215151 /* UserFeedbackCollectionViewCell.swift */; };
 		491EA6111EE104FC00C2B8ED /* ShareMessageSecondCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 491EA6101EE104FC00C2B8ED /* ShareMessageSecondCell.m */; };
 		491EA6141EE1165A00C2B8ED /* ShareMessageThirdCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 491EA6131EE1165A00C2B8ED /* ShareMessageThirdCell.m */; };
 		491EA6171EE12B2400C2B8ED /* ShareMessageFourthCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 491EA6161EE12B2400C2B8ED /* ShareMessageFourthCell.m */; };
@@ -155,6 +161,13 @@
 		491C46241ECC23DB009F43A4 /* SelectClassheaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectClassheaderView.h; sourceTree = "<group>"; };
 		491C46261ECC2CD4009F43A4 /* SelectClassTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectClassTableViewCell.h; sourceTree = "<group>"; };
 		491C46271ECC2CD4009F43A4 /* SelectClassTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectClassTableViewCell.m; sourceTree = "<group>"; };
+		491E15111EE7A4DF00215151 /* NSBundle+Language.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+Language.h"; sourceTree = "<group>"; };
+		491E15121EE7A4DF00215151 /* NSBundle+Language.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+Language.m"; sourceTree = "<group>"; };
+		491E15141EE7DF9900215151 /* UserCenterHelpFeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCenterHelpFeedbackViewController.swift; sourceTree = "<group>"; };
+		491E15171EE7E0AD00215151 /* UserHelpAndFeedbackTableHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHelpAndFeedbackTableHeaderView.swift; sourceTree = "<group>"; };
+		491E15191EE7F43800215151 /* UserHelpFeedbackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHelpFeedbackCell.swift; sourceTree = "<group>"; };
+		491E151C1EE7FA9400215151 /* UserFeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFeedbackViewController.swift; sourceTree = "<group>"; };
+		491E15201EE808FB00215151 /* UserFeedbackCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFeedbackCollectionViewCell.swift; sourceTree = "<group>"; };
 		491EA60F1EE104FC00C2B8ED /* ShareMessageSecondCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareMessageSecondCell.h; sourceTree = "<group>"; };
 		491EA6101EE104FC00C2B8ED /* ShareMessageSecondCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareMessageSecondCell.m; sourceTree = "<group>"; };
 		491EA6121EE1165A00C2B8ED /* ShareMessageThirdCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareMessageThirdCell.h; sourceTree = "<group>"; };
@@ -442,6 +455,25 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		491E15161EE7E02F00215151 /* UserHelp */ = {
+			isa = PBXGroup;
+			children = (
+				491E15171EE7E0AD00215151 /* UserHelpAndFeedbackTableHeaderView.swift */,
+				491E15191EE7F43800215151 /* UserHelpFeedbackCell.swift */,
+				491E15201EE808FB00215151 /* UserFeedbackCollectionViewCell.swift */,
+			);
+			name = UserHelp;
+			sourceTree = "<group>";
+		};
+		491E151B1EE7FA5700215151 /* HelpFeedback */ = {
+			isa = PBXGroup;
+			children = (
+				491E15141EE7DF9900215151 /* UserCenterHelpFeedbackViewController.swift */,
+				491E151C1EE7FA9400215151 /* UserFeedbackViewController.swift */,
+			);
+			name = HelpFeedback;
+			sourceTree = "<group>";
+		};
 		493533111ED6D703001CCCF2 /* UIImageView */ = {
 			isa = PBXGroup;
 			children = (
@@ -476,6 +508,8 @@
 			children = (
 				498142611EE6429B00873655 /* TSCustomTextFiled.h */,
 				498142621EE6429B00873655 /* TSCustomTextFiled.m */,
+				491E15111EE7A4DF00215151 /* NSBundle+Language.h */,
+				491E15121EE7A4DF00215151 /* NSBundle+Language.m */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -779,6 +813,7 @@
 				49D7FB231EE5753C007CFC43 /* IdentityIdentificatesViewController.h */,
 				49D7FB241EE5753C007CFC43 /* IdentityIdentificatesViewController.m */,
 				49D1612E1EE6BF7800440784 /* UserLangageViewController.swift */,
+				491E151B1EE7FA5700215151 /* HelpFeedback */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -786,6 +821,7 @@
 		49B743E71ED2E9FA00FFDBDB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				491E15161EE7E02F00215151 /* UserHelp */,
 				49D161301EE6C15B00440784 /* UserLanguage */,
 				49E8D44C1EE4F1D2002C20E0 /* AccountScurity */,
 				49E8D4481EE4ED2A002C20E0 /* UserCenter */,
@@ -1248,6 +1284,7 @@
 				49B744021ED2F57200FFDBDB /* TSActionAlterView.m in Sources */,
 				490CC4221EDFF42300E5C7B2 /* ShareMessageSectionView.swift in Sources */,
 				49D7FB181EE52EC4007CFC43 /* AccountTableFooterView.swift in Sources */,
+				491E15181EE7E0AD00215151 /* UserHelpAndFeedbackTableHeaderView.swift in Sources */,
 				49B743DF1ED2E4B700FFDBDB /* ClassListViewController.m in Sources */,
 				498BE12B1ED5950500D7D004 /* CTAssetsNavigationController.m in Sources */,
 				498BE1171ED5950500D7D004 /* NSIndexSet+CTAssetsPickerController.m in Sources */,
@@ -1261,6 +1298,7 @@
 				49D7FB1C1EE557E4007CFC43 /* PrivacyViewController.swift in Sources */,
 				49902DCE1EE0352C00DAD3DE /* ShareMessageFirstCell.m in Sources */,
 				491C46281ECC2CD4009F43A4 /* SelectClassTableViewCell.m in Sources */,
+				491E15211EE808FB00215151 /* UserFeedbackCollectionViewCell.swift in Sources */,
 				49D7FB251EE5753C007CFC43 /* IdentityIdentificatesViewController.m in Sources */,
 				498BE11A1ED5950500D7D004 /* PHAssetCollection+CTAssetsPickerController.m in Sources */,
 				492ADDB71EE4319200E70ADD /* CompanyMessageViewController.m in Sources */,
@@ -1281,6 +1319,7 @@
 				49A850411EDED27200EE521A /* SelectClassLeftTableViewCell.m in Sources */,
 				49D7FB121EE5237C007CFC43 /* AccountMailIdentityCell.swift in Sources */,
 				49F38FA81ECADDE300D83E95 /* YMHRegularExpression.m in Sources */,
+				491E151D1EE7FA9400215151 /* UserFeedbackViewController.swift in Sources */,
 				49F38FE01ECAFBFF00D83E95 /* TSAppInfo.m in Sources */,
 				498BE11D1ED5950500D7D004 /* CTAssetCheckmark.m in Sources */,
 				49B0D9EB1ECC4D4B00CA3299 /* SelectClassFooterView.m in Sources */,
@@ -1289,10 +1328,12 @@
 				498142661EE69F1300873655 /* SelectPhotoAlterView.m in Sources */,
 				49D161321EE6C18500440784 /* UserLanguageCell.swift in Sources */,
 				492ADDB41EE41B8F00E70ADD /* PersonalOrCompanyView.m in Sources */,
+				491E15131EE7A4DF00215151 /* NSBundle+Language.m in Sources */,
 				498BE1261ED5950500D7D004 /* CTAssetsGridView.m in Sources */,
 				492331B11ED446F400E45338 /* TSPublicTool.m in Sources */,
 				49B743D71ED2E47D00FFDBDB /* AppDelegate.m in Sources */,
 				498BE11F1ED5950500D7D004 /* CTAssetCollectionViewController.m in Sources */,
+				491E151A1EE7F43800215151 /* UserHelpFeedbackCell.swift in Sources */,
 				49B743D31ED2DCC800FFDBDB /* UserGuideViewController.m in Sources */,
 				498BE1211ED5950500D7D004 /* CTAssetPlayButton.m in Sources */,
 				49D7FB141EE529AF007CFC43 /* AccountPayPassCell.swift in Sources */,
@@ -1302,6 +1343,7 @@
 				498BE1311ED5950500D7D004 /* CTAssetsViewControllerTransition.m in Sources */,
 				491EA6141EE1165A00C2B8ED /* ShareMessageThirdCell.m in Sources */,
 				491C46181ECC1D91009F43A4 /* SelectClassCollectionViewCell.m in Sources */,
+				491E15151EE7DF9900215151 /* UserCenterHelpFeedbackViewController.swift in Sources */,
 				492ADDC01EE441E400E70ADD /* CompanyScondCell.m in Sources */,
 				499478B81ED68412003E7E4C /* UITableView+YMHRefresh.m in Sources */,
 				49E8D4531EE4F31C002C20E0 /* AccountSecurePhoneIdentityView.swift in Sources */,

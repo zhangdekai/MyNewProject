@@ -7,5 +7,14 @@
 //
 
 import UIKit
+import Foundation
 
-		
+
+public extension CGFloat {
+    /// 返回根据屏幕缩放后的尺寸
+    public var scalValue: CGFloat {
+        let scal = UIScreen.main.bounds.size.width / 375.0
+        return scal * CGFloat(native)
+
+    }
+}

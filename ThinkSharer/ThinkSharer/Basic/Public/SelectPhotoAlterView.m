@@ -23,7 +23,7 @@
         [self addSubview:photoLibiaryLabel];
         photoLibiaryLabel.backgroundColor = [UIColor whiteColor];
         photoLibiaryLabel.textAlignment = NSTextAlignmentCenter;
-        photoLibiaryLabel.font = [UIFont boldSystemFontOfSize:15];
+        photoLibiaryLabel.font = [UIFont systemFontOfSize:15];
         photoLibiaryLabel.textColor = [UIColor generalTitleFontBlackColor];
         photoLibiaryLabel.userInteractionEnabled = YES;
         photoLibiaryLabel.text = @"从相册选择图片";
@@ -40,7 +40,7 @@
         [self addSubview:takePhotoLable];
         takePhotoLable.backgroundColor = [UIColor whiteColor];
         takePhotoLable.textAlignment = NSTextAlignmentCenter;
-        takePhotoLable.font = [UIFont boldSystemFontOfSize:15];
+        takePhotoLable.font = [UIFont systemFontOfSize:15];
         takePhotoLable.textColor = [UIColor generalTitleFontBlackColor];
         takePhotoLable.userInteractionEnabled = YES;
         takePhotoLable.text = @"拍照";
@@ -54,7 +54,7 @@
         [self addSubview:cancleLabel];
         cancleLabel.backgroundColor = [UIColor whiteColor];
         cancleLabel.textAlignment = NSTextAlignmentCenter;
-        cancleLabel.font = [UIFont boldSystemFontOfSize:15];
+        cancleLabel.font = [UIFont systemFontOfSize:15];
         cancleLabel.textColor = [UIColor generalTitleFontBlackColor];
         cancleLabel.userInteractionEnabled = YES;
         cancleLabel.text = @"取消";

@@ -144,6 +144,13 @@
     
 }
 
+//重写获得photos
+- (void)selectedPhoto:(NSArray *)photos {
+    for (UIImage *image in photos) {
+        self.tableHeaderView.headerImageView.image = image;
+    }
+}
+
 - (void)initTableHeaderView {
     
     _tableHeaderView = [[ShareMessageTableHeaderView alloc]init];
@@ -158,6 +165,9 @@
     _tableHeaderView.SelectPhotoBlock = ^{
         [weakSelf selectPhoto];
     };
+    
+   
+    
     
     _tableHeaderView.SelectBirthdatBlock = ^{
         [weakSelf selectBirthday];
@@ -493,6 +503,8 @@
 - (void)changeLineColor {
     _tableHeaderView.nickLine.backgroundColor = [UIColor seperateThinLineColor];
 }
+
+
 //#pragma mark 相册选择
 ///** 打开相册*/
 //- (void)openPhoto {

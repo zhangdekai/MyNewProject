@@ -78,6 +78,13 @@ typedef void(^NavigationBarButtonItemBlockForRight)();
  *  @param text  文本内容
  */
 - (void)showHudWithText:(NSString *)text;
+/**
+ *  显示loading(菊花&文字 hud加到self.view上),自动消失
+ *
+ *  @param text  文本内容
+ */
+
+- (void)showHudWithTextAndAutoHidden:(NSString *)text;
 
 /**
  *  显示loading(只有文字 hud加到self.view上)

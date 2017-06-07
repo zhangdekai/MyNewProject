@@ -214,6 +214,29 @@
     [self.hud showAnimated:YES];
 }
 
+- (void)showHudWithTextAndAutoHidden:(NSString *)text
+{
+    if (text.length == 0)
+    {
+        return;
+    }
+    
+    if (self.hud)
+    {
+        [self.hud removeFromSuperview];
+        self.hud = nil;
+    }
+    
+    self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [self.view addSubview:self.hud];
+
+    self.hud.delegate = self;
+    self.hud.label.text = text;
+    
+    [self.hud hideAnimated:YES afterDelay:1.5];
+}
+
+
 - (void)showHudWithTextOnly:(NSString *)text
 {
     if (text.length == 0)
@@ -228,7 +251,6 @@
     }
     
     self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    
     self.hud.delegate = self;
     self.hud.mode = MBProgressHUDModeText;
     self.hud.label.text = text;

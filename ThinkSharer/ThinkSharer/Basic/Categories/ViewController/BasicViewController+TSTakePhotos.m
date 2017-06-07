@@ -102,6 +102,7 @@
         options.deliveryMode = PHImageRequestOptionsDeliveryModeHighQualityFormat;
         
         /** 遍历选择的所有图片*/
+        NSMutableArray *images = [NSMutableArray array];
         for (NSInteger i = 0; i < assets.count; i++) {
             PHAsset *asset = assets[i];
             CGSize size = CGSizeMake(asset.pixelWidth / scale, asset.pixelHeight / scale);
@@ -113,12 +114,18 @@
                       contentMode:PHImageContentModeDefault
                           options:options
              resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
-  
-                 
-                                                    }];
+                 [images addObject:result];
+                 if (images.count == assets.count) {
+                     [self selectedPhoto:images];
+                 }
+            }];
         }
     }];
     NSLog(@"选择的照片");
+    
+}
+
+- (void)selectedPhoto:(NSArray *)photos {
     
 }
 
