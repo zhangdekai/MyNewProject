@@ -23,8 +23,8 @@
 
 #pragma mark 相册选择
 
-- (void)selectPhoto {
-    
+- (void)selectPhoto:(NSInteger)maxNum {
+    self.selectPhotoMaxNum = maxNum;
     SelectPhotoAlterView *container = [[SelectPhotoAlterView alloc]init];
     
     TSAlterShowView *alterView = [[TSAlterShowView alloc]init];
@@ -163,6 +163,9 @@
 }
 
 - (BOOL)assetsPickerController:(CTAssetsPickerController *)picker shouldSelectAsset:(PHAsset *)asset {
+    if (self.selectPhotoMaxNum == 0) {
+        return YES;
+    }
     if (picker.selectedAssets.count >= self.selectPhotoMaxNum) {
         
         MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:picker.view animated:YES];
@@ -178,7 +181,7 @@
     return YES;
 }
 
-- (void)selectedPhoto:(NSArray *)photos {
+- (void)selectedPhoto:(NSArray<UIImage *> *)photos {
     
 }
 

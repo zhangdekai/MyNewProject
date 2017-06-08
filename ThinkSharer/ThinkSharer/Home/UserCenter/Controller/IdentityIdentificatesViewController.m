@@ -15,7 +15,9 @@
 
 @interface IdentityIdentificatesViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong) UITableView *tableView;
-@property (nonatomic,strong) NSMutableArray<UIImage*> *photos;
+@property (nonatomic,strong) UIImage *frontPhoto;
+@property (nonatomic,strong) UIImage *backPhoto;
+
 @property (nonatomic,assign) NSInteger selectedIndex;
 @end
 
@@ -44,7 +46,7 @@
 }
 
 - (void)initUI {
-    _photos =[NSMutableArray array];
+    
     if (!_tableView) {
         _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 64, ScreenWidth, ScreenHeight-64) style:(UITableViewStylePlain)];
     }
@@ -59,7 +61,17 @@
 }
 
 - (void)selectedPhoto:(NSArray *)photos {
-    
+    if (_selectedIndex == 0) {
+        
+        self.frontPhoto = photos[0];
+
+    } else {
+        
+        self.backPhoto = photos[0];
+
+
+    }
+    [_tableView reloadData];
 }
 
 #pragma mark UITableViewDelegate UITableViewDatasource
@@ -88,13 +100,32 @@
         cell.identityLabel.text = @"身份证反面照";
 
     }
+    
+    if (_selectedIndex == 0) {
+        if (_frontPhoto) {
+            cell.showImageView.image = _frontPhoto;
+            [cell hiddenWithHidden:YES];
+        } else {
+            cell.showImageView.image = nil;
+            [cell hiddenWithHidden:NO];
+        }
+    } else {
+        if (_backPhoto) {
+            cell.showImageView.image = _frontPhoto;
+            [cell hiddenWithHidden:YES];
+        } else {
+            cell.showImageView.image = nil;
+            [cell hiddenWithHidden:NO];
+        }
+
+    }
 
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     _selectedIndex = indexPath.row;
-    [self selectPhoto];
+    [self selectPhoto:1];
 }
 
 

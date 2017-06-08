@@ -161,7 +161,7 @@
     TSWeakSelf
     
     _tableHeaderView.SelectPhotoBlock = ^{
-        [weakSelf selectPhoto];
+        [weakSelf selectPhoto:1];
     };
     
     _tableHeaderView.SelectBirthdatBlock = ^{

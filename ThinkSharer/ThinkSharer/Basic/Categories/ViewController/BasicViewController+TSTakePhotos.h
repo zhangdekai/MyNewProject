@@ -15,8 +15,7 @@
 /**
  选择相册，照片
  */
-- (void)selectPhoto;
-
+- (void)selectPhoto:(NSInteger)maxNum;
 
 /**
  从相册获得照片

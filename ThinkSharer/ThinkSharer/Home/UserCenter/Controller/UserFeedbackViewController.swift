@@ -138,8 +138,7 @@ extension UserFeedbackViewController:UICollectionViewDataSource, UICollectionVie
                 }
                 guard self.photos.count != indexPath.row else {
                     self.view.endEditing(true)
-                    self.selectPhotoMaxNum = 2
-                    self.selectPhoto()
+                    self.selectPhoto(3)
                     return
                 }
                 self.browerPhotos(self.photoImageViews, touch: indexPath.row)
@@ -161,7 +160,7 @@ extension UserFeedbackViewController:UICollectionViewDataSource, UICollectionVie
         if indexPath.section == 0 {
             if indexPath.row == photos.count {
                 self.view.endEditing(true)
-                self.selectPhoto()
+                self.selectPhoto(3)
             } 
         }
     }
