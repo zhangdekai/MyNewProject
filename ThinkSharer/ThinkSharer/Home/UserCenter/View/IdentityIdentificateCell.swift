@@ -116,7 +116,7 @@ class IdentityIdentificateCell: UITableViewCell {
     func hidden(hidden:Bool) {
         iconImageView.isHidden = hidden
         identityLabel.isHidden = hidden
-        deleteImageView.isHidden = hidden
+        deleteImageView.isHidden = !hidden
     }
     
     required init?(coder aDecoder: NSCoder) {

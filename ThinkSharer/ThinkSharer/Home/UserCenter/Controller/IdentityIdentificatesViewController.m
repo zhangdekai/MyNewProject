@@ -91,7 +91,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     IdentityIdentificateCell *cell = [tableView dequeueReusableCellWithIdentifier:@"IdentityIdentificateCell"];
-    [cell hiddenWithHidden:YES];
     if (indexPath.row == 0) {
         cell.identityLabel.text = @"身份证正面照";
 
@@ -100,8 +99,7 @@
         cell.identityLabel.text = @"身份证反面照";
 
     }
-    
-    if (_selectedIndex == 0) {
+    if (indexPath.row == 0) {
         if (_frontPhoto) {
             cell.showImageView.image = _frontPhoto;
             [cell hiddenWithHidden:YES];
@@ -111,7 +109,7 @@
         }
     } else {
         if (_backPhoto) {
-            cell.showImageView.image = _frontPhoto;
+            cell.showImageView.image = _backPhoto;
             [cell hiddenWithHidden:YES];
         } else {
             cell.showImageView.image = nil;
@@ -119,6 +117,15 @@
         }
 
     }
+    TSWeakSelf
+    cell.deletePhotoBlock = ^{
+        if (indexPath.row == 0) {
+            weakSelf.frontPhoto = nil;
+        } else {
+            weakSelf.backPhoto = nil;
+        }
+        [tableView reloadData];
+    };
 
     return cell;
 }

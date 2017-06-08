@@ -353,6 +353,9 @@
                 
             } else if (indexPath.row == 4) {//关于我们
                 
+                UserAbloutUsViewController *vc = [[UserAbloutUsViewController alloc]init];
+                [self.navigationController pushViewController:vc animated:YES];
+                
             } else if (indexPath.row == 5) {//版本更新
                 
             } else {//退出登录

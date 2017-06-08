@@ -25,6 +25,9 @@
 
 - (void)selectPhoto:(NSInteger)maxNum {
     self.selectPhotoMaxNum = maxNum;
+    if (maxNum == 1) {
+        self.selectedAssets = nil;
+    }
     SelectPhotoAlterView *container = [[SelectPhotoAlterView alloc]init];
     
     TSAlterShowView *alterView = [[TSAlterShowView alloc]init];
