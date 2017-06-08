@@ -14,11 +14,12 @@ class UserFeedbackCollectionViewCell: UICollectionViewCell {
     var deletePhotosBlock:(()-> Void)?
     var icon = UIImageView()
     var addPhotoLabel = UILabel()
-
+    var tapPhotoBlock:(()-> Void)?
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = UIColor.backgroundGrayColorA()
         self.addSubview(selectedImageView)
+        
         selectedImageView.mas_makeConstraints { (make) in
             make?.left.mas_equalTo()(0)
             make?.top.mas_equalTo()(22.5)
@@ -26,6 +27,10 @@ class UserFeedbackCollectionViewCell: UICollectionViewCell {
             make?.bottom.mas_equalTo()(0)
         }
         selectedImageView.backgroundColor = UIColor.backgroundGrayColorC()
+        selectedImageView.isUserInteractionEnabled = true
+        let tap1 = UITapGestureRecognizer(target: self, action: #selector(tapMethod1(tap:)))
+        selectedImageView.addGestureRecognizer(tap1)
+        
         self.addSubview(deleteImageView)
         deleteImageView.mas_makeConstraints { (make) in
             make?.top.mas_equalTo()(15)
@@ -73,4 +78,9 @@ class UserFeedbackCollectionViewCell: UICollectionViewCell {
         }
     }
 
+    func tapMethod1(tap:UITapGestureRecognizer) {
+        if let block = tapPhotoBlock {
+            block()
+        }
+    }
 }

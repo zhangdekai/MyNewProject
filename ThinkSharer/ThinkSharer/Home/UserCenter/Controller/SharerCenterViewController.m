@@ -173,19 +173,10 @@
         SharerFirstCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"SharerFirstCollectionViewCell" forIndexPath:indexPath];
         
         __weak typeof(cell)weakCell = cell;
-        
+        [cell.headerImageView TSLoadAvertWithTFSKey:@"http://ww1.sinaimg.cn/large/536e7093jw1f6bqdj3lpjj20va134ana.jpg"];
+        TSWeakSelf
         cell.headerImageBlock = ^{
-            // 1. 创建photoBroseView对象
-            PYPhotoBrowseView *photoBroseView = [[PYPhotoBrowseView alloc] init];
-            
-            // 2.1 设置图片源(UIImageView)数组
-            NSArray *array = [NSArray arrayWithObjects:weakCell.headerImageView, nil];
-            photoBroseView.sourceImgageViews = array;
-            // 2.2 设置初始化图片下标（即当前点击第几张图片）
-            photoBroseView.currentIndex = 0;
-            
-            // 3.显示(浏览)
-            [photoBroseView show];
+            [weakSelf browerPhotos:@[weakCell.headerImageView] touchIndex:0];
         };
         
         return cell;

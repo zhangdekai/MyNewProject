@@ -11,13 +11,15 @@
 #import <Photos/Photos.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "SelectPhotoAlterView.h"
+#import <PYPhotoBrowser/PYPhotoBrowser.h>
+
 
 @interface BasicViewController ()<CTAssetsPickerControllerDelegate>
+
 
 @end
 
 @implementation BasicViewController (TSTakePhotos)
-
 
 #pragma mark 相册选择
 
@@ -47,6 +49,38 @@
         [alterView hiddenAlter];
     };
 
+}
+
+- (void)browerPhotos:(NSArray<UIImageView *> *)photoImageViews touchIndex:(NSInteger)index {
+    // 1. 创建photoBroseView对象
+    PYPhotoBrowseView *photoBroseView = [[PYPhotoBrowseView alloc] init];
+    
+    // 2.1 设置图片源(UIImageView)数组
+    photoBroseView.sourceImgageViews = photoImageViews;
+    
+    // 2.2 设置初始化图片下标（即当前点击第几张图片）
+    photoBroseView.currentIndex = index;
+    
+    // 3.显示(浏览)
+    [photoBroseView show];
+}
+
+- (void)browerPhotosByUIImage:(NSArray<UIImage *> *)photoImages touchIndex:(NSInteger)index {
+    
+    // 1. 创建photoBroseView对象
+    PYPhotoBrowseView *photoBroseView = [[PYPhotoBrowseView alloc] init];
+    
+    // 2.1 设置图片源(UIImage)数组
+    photoBroseView.images = photoImages;
+    
+    photoBroseView.frameFormWindow = CGRectMake(0, 0, 0, 0);
+    photoBroseView.frameToWindow = CGRectMake(0, 0, 0, 0);
+    
+    // 2.2 设置初始化图片下标（即当前点击第几张图片）
+    photoBroseView.currentIndex = index;
+    
+    // 3.显示(浏览)
+    [photoBroseView show];
 }
 
 
@@ -79,7 +113,10 @@
         CTAssetsPickerController *picker = [[CTAssetsPickerController alloc] init];
         
         picker.showsSelectionIndex = YES;
-        
+        if (self.selectedAssets) {
+            picker.selectedAssets = self.selectedAssets;
+
+        }
         picker.delegate = self;
         
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
@@ -123,6 +160,22 @@
     }];
     NSLog(@"选择的照片");
     
+}
+
+- (BOOL)assetsPickerController:(CTAssetsPickerController *)picker shouldSelectAsset:(PHAsset *)asset {
+    if (picker.selectedAssets.count >= self.selectPhotoMaxNum) {
+        
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:picker.view animated:YES];
+        hud.mode = MBProgressHUDModeText;
+        hud.label.text = [NSString stringWithFormat:@"最多能加%ld张照片",self.selectPhotoMaxNum];
+        
+        [hud hideAnimated:YES afterDelay:1.5];
+        
+        return NO;
+    }
+    self.selectedAssets = picker.selectedAssets;
+    
+    return YES;
 }
 
 - (void)selectedPhoto:(NSArray *)photos {

@@ -95,7 +95,13 @@
 
 - (void)TSLoadAvertWithTFSKey:(NSString *)tfsKey
 {
+    
     self.contentMode = UIViewContentModeScaleToFill;
-    [self sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",TSAPI_TFSUrl,tfsKey]] placeholderImage:[UIImage imageNamed:@"logo_gray_circle"] completed:NULL];
+    
+    [self sd_setImageWithURL:[NSURL URLWithString:tfsKey] placeholderImage:[UIImage imageNamed:@"testHeader"] completed:NULL];
+
+    
+//    [self sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",TSAPI_TFSUrl,tfsKey]] placeholderImage:[UIImage imageNamed:@"testHeader"] completed:NULL];
+    
 }
 @end

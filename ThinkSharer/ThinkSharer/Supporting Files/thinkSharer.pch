@@ -22,6 +22,7 @@
 #import "Masonry.h"
 
 #import "UIImageView+WebCache.h"
+#import "UIImageView+YMHPlaceholder.h"
 
 #import "UIImage+TSShape.h"
 #import "UIImage+TSAlpha.h"

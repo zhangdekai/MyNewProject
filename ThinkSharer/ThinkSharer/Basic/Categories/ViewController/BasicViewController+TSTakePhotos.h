@@ -11,6 +11,7 @@
 
 @interface BasicViewController (TSTakePhotos)
 
+
 /**
  选择相册，照片
  */
@@ -31,6 +32,17 @@
  @param photo 照片
  */
 - (void)takedPhoto:(UIImage *)photo;
+
+
+/**
+ 放大图片
+
+ @param photoImageViews UIImageView 数组
+ @param index 点击图片的index
+ */
+- (void)browerPhotos:(NSArray<UIImageView *> *)photoImageViews touchIndex:(NSInteger)index;
+
+- (void)browerPhotosByUIImage:(NSArray<UIImage *> *)photoImages touchIndex:(NSInteger)index;
 
 
 @end

@@ -11,6 +11,8 @@ import UIKit
 class UserFeedbackViewController: BasicViewController {
 
     var photos = [UIImage]()
+    var photoImageViews = [UIImageView]()
+
     var feedContent = ""
     
     private lazy var collectionView: UICollectionView = {
@@ -49,12 +51,22 @@ class UserFeedbackViewController: BasicViewController {
     }
 
     override func selectedPhoto(_ photos: [Any]!) {
-        self.photos = photos as! [UIImage]
+        for image in photos {
+            if self.photos.count > 3 {
+                break
+            }
+            self.photos.append(image as! UIImage)
+        }
+        self.photoImageViews.removeAll()
         collectionView.reloadData()
     }
     
     override func takedPhoto(_ photo: UIImage!) {
+        if self.photos.count > 3 {
+            return
+        }
         self.photos.append(photo)
+        self.photoImageViews.removeAll()
         collectionView.reloadData()
     }
 
@@ -99,19 +111,38 @@ extension UserFeedbackViewController:UICollectionViewDataSource, UICollectionVie
                 cell.selectedImageView.image = nil
             } else {
                 cell.selectedImageView.image = photos[indexPath.row]
+                self.photoImageViews.append(cell.selectedImageView)
                 cell.deleteImageView.isHidden = false
                 cell.icon.isHidden = true
                 cell.addPhotoLabel.isHidden = true
                 
             }
-            
             cell.deletePhotosBlock = {[weak self] in
                 guard let `self` = self else {
                     return
                 }
                 
                 self.photos.remove(at: indexPath.row)
+                if (self.selectedAssets != nil) {
+                    if self.selectedAssets.count > indexPath.row {
+                        self.selectedAssets.removeObject(at: indexPath.row)
+                    }
+                }
+                self.photoImageViews.removeAll()
                 collectionView.reloadData()
+            }
+            
+            cell.tapPhotoBlock = {[weak self] in
+                guard let `self` = self else {
+                    return
+                }
+                guard self.photos.count != indexPath.row else {
+                    self.view.endEditing(true)
+                    self.selectPhotoMaxNum = 2
+                    self.selectPhoto()
+                    return
+                }
+                self.browerPhotos(self.photoImageViews, touch: indexPath.row)
             }
             
             return cell
@@ -131,7 +162,7 @@ extension UserFeedbackViewController:UICollectionViewDataSource, UICollectionVie
             if indexPath.row == photos.count {
                 self.view.endEditing(true)
                 self.selectPhoto()
-            }
+            } 
         }
     }
     

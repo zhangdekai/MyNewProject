@@ -19,6 +19,10 @@ typedef void(^NavigationBarButtonItemBlockForRight)();
 @interface BasicViewController : UIViewController
 
 
+@property (nonatomic,strong) NSMutableArray *selectedAssets;
+@property (nonatomic,assign) NSInteger selectPhotoMaxNum;
+
+
 //设置导航栏title
 - (void)setNavigationBarTitle:(NSString *)title;
 
