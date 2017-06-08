@@ -16,6 +16,21 @@
  */
 - (void)selectPhoto;
 
+
+/**
+ 从相册获得照片
+
+ @param photos 照片们
+ */
 - (void)selectedPhoto:(NSArray *)photos;
+
+
+/**
+ 拍照
+
+ @param photo 照片
+ */
+- (void)takedPhoto:(UIImage *)photo;
+
 
 @end

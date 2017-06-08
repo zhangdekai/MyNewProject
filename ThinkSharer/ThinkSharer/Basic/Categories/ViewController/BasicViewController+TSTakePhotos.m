@@ -176,9 +176,14 @@
             createdAssetID = [PHAssetChangeRequest creationRequestForAssetFromImage:image].placeholderForCreatedAsset.localIdentifier;
         } error:&error];
         
+        [self takedPhoto:image];
     }
     
     [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)takedPhoto:(UIImage *)photo {
+    
 }
 
 

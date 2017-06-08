@@ -23,3 +23,4 @@
 #import "YMHRegularExpression.h"
 #import "TSCustomTextFiled.h"
 #import "NSBundle+Language.h"
+#import "XXTextView.h"

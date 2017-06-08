@@ -11,6 +11,8 @@ import UIKit
 class UserFeedbackViewController: BasicViewController {
 
     var photos = [UIImage]()
+    var feedContent = ""
+    
     private lazy var collectionView: UICollectionView = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         let collectionView: UICollectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: ScreenWidth, height: ScreenHeight), collectionViewLayout: layout)
@@ -20,6 +22,9 @@ class UserFeedbackViewController: BasicViewController {
         collectionView.dataSource = self
         
         collectionView.register(UserFeedbackCollectionViewCell.self, forCellWithReuseIdentifier: "UserFeedbackCollectionViewCell")
+        collectionView.register(UserFeedbackContentCell.self, forCellWithReuseIdentifier: "UserFeedbackContentCell")
+
+        
         return collectionView
     }()
     
@@ -29,11 +34,15 @@ class UserFeedbackViewController: BasicViewController {
         initilizeUI()
     }
     
+    
     func initilizeUI() {
         self.setNavigationBarBack()
         self.setNavigationBarTitle("信息反馈")
-        self.setNavigationBarRightItemWithTitle("提交") {
-            print("提交")
+        
+        self.setNavigationBarRightItemWithTitle("提交") {[weak self] in
+            guard let `self` = self else {return}
+            
+            print("提交",self.feedContent)
         }
         self.view.addSubview(collectionView)
         
@@ -44,6 +53,12 @@ class UserFeedbackViewController: BasicViewController {
         collectionView.reloadData()
     }
     
+    override func takedPhoto(_ photo: UIImage!) {
+        self.photos.append(photo)
+        collectionView.reloadData()
+    }
+
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -51,61 +66,95 @@ class UserFeedbackViewController: BasicViewController {
     
 
 }
-extension UserFeedbackViewController:UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension UserFeedbackViewController:UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UITextViewDelegate {
     
     // MARK: - UICollectionViewDataSource
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if photos.isEmpty {
+        if section == 0 {
+            if photos.isEmpty {
+                return 1
+            }
+            if photos.count == 3 {
+                return 3
+            }
+            return photos.count + 1
+        } else {
             return 1
         }
-        if photos.count == 3 {
-            return 3
-        }
-        return photos.count + 1
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UserFeedbackCollectionViewCell", for: indexPath)as!UserFeedbackCollectionViewCell
-        if indexPath.row == photos.count {
-            cell.deleteImageView.isHidden = true
-            cell.icon.isHidden = false
-            cell.addPhotoLabel.isHidden = false
-            cell.selectedImageView.image = nil
-        } else {
-            cell.selectedImageView.image = photos[indexPath.row]
-            cell.deleteImageView.isHidden = false
-            cell.icon.isHidden = true
-            cell.addPhotoLabel.isHidden = true
-
-        }
-        
-        cell.deletePhotosBlock = {[weak self] in
-            guard let `self` = self else {
-                return
+        if indexPath.section == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UserFeedbackCollectionViewCell", for: indexPath)as!UserFeedbackCollectionViewCell
+            if indexPath.row == photos.count {
+                cell.deleteImageView.isHidden = true
+                cell.icon.isHidden = false
+                cell.addPhotoLabel.isHidden = false
+                cell.selectedImageView.image = nil
+            } else {
+                cell.selectedImageView.image = photos[indexPath.row]
+                cell.deleteImageView.isHidden = false
+                cell.icon.isHidden = true
+                cell.addPhotoLabel.isHidden = true
+                
             }
             
-            self.photos.remove(at: indexPath.row)
-            collectionView.reloadData()
+            cell.deletePhotosBlock = {[weak self] in
+                guard let `self` = self else {
+                    return
+                }
+                
+                self.photos.remove(at: indexPath.row)
+                collectionView.reloadData()
+            }
+            
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UserFeedbackContentCell", for: indexPath)as!UserFeedbackContentCell
+            cell.feedbackTextView.delegate = self
+            
+            return cell
         }
         
-        return cell
     }
+    
     
     // MARK: - UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
             if indexPath.row == photos.count {
+                self.view.endEditing(true)
                 self.selectPhoto()
             }
+        }
     }
     
     // MARK: - UICollectionViewDelegateFlowLayout
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (ScreenWidth - CGFloat(60).scalValue) / 3, height: CGFloat(112.5).scalValue)
+        if indexPath.section == 0 {
+            return CGSize(width: (ScreenWidth - CGFloat(60).scalValue) / 3, height: CGFloat(112.5).scalValue)
+
+        } else {
+            return CGSize(width: ScreenWidth, height: 175)
+
+        }
     }
+
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsetsMake(0, CGFloat(15).scalValue, 0, CGFloat(15).scalValue)
+        if section == 0 {
+            return UIEdgeInsetsMake(0, CGFloat(15).scalValue, 0, CGFloat(15).scalValue)
+
+        } else {
+            return UIEdgeInsetsMake(0, 0, 0, 0)
+
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -115,5 +164,10 @@ extension UserFeedbackViewController:UICollectionViewDataSource, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return CGFloat(0).scalValue
     }
+    //MARK: UITextViewDelegate
+    func textViewDidChange(_ textView: UITextView) {
+        feedContent = textView.text
+    }
+    
 
 }

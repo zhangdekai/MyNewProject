@@ -17,19 +17,18 @@ class UserFeedbackCollectionViewCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-//        self.backgroundColor = UIColor.backgroundGrayColorC()
+        self.backgroundColor = UIColor.backgroundGrayColorA()
         self.addSubview(selectedImageView)
         selectedImageView.mas_makeConstraints { (make) in
             make?.left.mas_equalTo()(0)
-            make?.top.mas_equalTo()(7.5)
+            make?.top.mas_equalTo()(22.5)
             make?.right.mas_equalTo()(-7.5)
             make?.bottom.mas_equalTo()(0)
         }
         selectedImageView.backgroundColor = UIColor.backgroundGrayColorC()
         self.addSubview(deleteImageView)
         deleteImageView.mas_makeConstraints { (make) in
-            make?.top.mas_equalTo()(0)
+            make?.top.mas_equalTo()(15)
             make?.right.mas_equalTo()(0)
             make?.size.mas_equalTo()(CGSize(width: 15, height: 15))
         }
