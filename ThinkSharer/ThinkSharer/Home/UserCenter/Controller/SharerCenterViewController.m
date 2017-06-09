@@ -231,7 +231,7 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     switch (indexPath.section) {
         case 0:
-            return CGSizeMake(ScreenWidth, 147);
+            return CGSizeMake(ScreenWidth, 162);
 
             break;
         case 1:

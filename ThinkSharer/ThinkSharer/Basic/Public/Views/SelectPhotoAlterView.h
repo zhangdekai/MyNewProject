@@ -14,6 +14,7 @@ typedef NS_ENUM(NSUInteger, SelectPhotoType) {
     SelectPhotoTypeCancle,
 };
 
+
 @interface SelectPhotoAlterView : UIView
 
 @property (nonatomic,copy) void (^SelectPhotoBlock) (SelectPhotoType type);

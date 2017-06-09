@@ -11,7 +11,11 @@ import UIKit
 class UserCenterHelpFeedbackViewController: BasicViewController {
 
     var tableView:UITableView!
-    let cellDataSource = [NSLocalizedString("视频中心", comment: "视频中心"),NSLocalizedString("使用手册", comment: "使用手册"),NSLocalizedString("常见问题", comment: "常见问题"),NSLocalizedString("角色体验", comment: "角色体验"),NSLocalizedString("客服咨询", comment: "客服咨询")]
+    let cellDataSource = [NSLocalizedString("视频中心", comment: "视频中心"),
+                          NSLocalizedString("使用手册", comment: "使用手册"),
+                          NSLocalizedString("常见问题", comment: "常见问题"),
+                          NSLocalizedString("角色体验", comment: "角色体验"),
+                          NSLocalizedString("客服咨询", comment: "客服咨询")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +31,9 @@ class UserCenterHelpFeedbackViewController: BasicViewController {
             switch index {
             case 0:
                 print(index)
+                let vc = UserCustomServiceViewController(nibName: "UserCustomServiceViewController",
+                                                         bundle: Bundle.main)
+                self.navigationController?.pushViewController(vc, animated: true)
                 break
             case 1:
                 print(index)

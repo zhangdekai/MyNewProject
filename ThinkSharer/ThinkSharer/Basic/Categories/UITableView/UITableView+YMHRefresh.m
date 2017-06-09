@@ -2,8 +2,8 @@
 //  UITableView+YMHRefresh.m
 //  CoreFrame
 //
-//  Created by 袁向阳 on 15/12/15.
-//  Copyright © 2015年 Beijing Yimay Holiday Information Science & Technology Co.,Ltd. All rights reserved.
+//  Created by 张德凯 on 2017/6/5.
+//  Copyright © 2017年 张德凯. All rights reserved.
 //
 
 #import "UITableView+YMHRefresh.h"

@@ -16,7 +16,7 @@
 {
     self = [super init];
     if (self) {
-        self.frame = CGRectMake(0, 0, ScreenWidth, 165);
+        self.frame = CGRectMake(0, 0, ScreenWidth, 156);
         self.backgroundColor = [UIColor clearColor];
         
         UILabel *photoLibiaryLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, 50)];
@@ -50,7 +50,7 @@
         [takePhotoLable addGestureRecognizer:tap1];
 
         
-        UILabel *cancleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, takePhotoLable.bottom + 14, ScreenWidth, 50)];
+        UILabel *cancleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, takePhotoLable.bottom + 5, ScreenWidth, 50)];
         [self addSubview:cancleLabel];
         cancleLabel.backgroundColor = [UIColor whiteColor];
         cancleLabel.textAlignment = NSTextAlignmentCenter;

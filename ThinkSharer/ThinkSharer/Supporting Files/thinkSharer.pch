@@ -31,6 +31,8 @@
 #import "BasicViewController+TSTakePhotos.h"
 
 #import "XXTextView.h"
+#import "ACMacros.h"
+#import "UITableView+YMHRefresh.h"
 
 
 

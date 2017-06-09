@@ -22,7 +22,8 @@
 #import "BasicViewController+TSTakePhotos.h"
 
 
-@interface ShareMessageViewController ()<UITableViewDelegate,UITableViewDataSource,CTAssetsPickerControllerDelegate,UITextFieldDelegate,UIImagePickerControllerDelegate,UITextViewDelegate,UIGestureRecognizerDelegate>
+@interface ShareMessageViewController ()<UITableViewDelegate,UITableViewDataSource,
+UITextFieldDelegate,UIImagePickerControllerDelegate,UITextViewDelegate,UIGestureRecognizerDelegate>
 
 @property (nonatomic,strong) UITableView *tableView;
 
