@@ -17,9 +17,8 @@ class UserAbloutUsViewController: BasicViewController {
         self.setNavigationBarTitle(NSLocalizedString("About us", comment: ""))
         initilizeUI()
     }
-    
     func initilizeUI() {
-        let line = UIView(frame: CGRect(x: 0, y: 0, width: ScreenWidth, height: 15))
+        let line = UIView(frame: CGRect(x: 0, y: 64, width: ScreenWidth, height: 15))
         self.view.addSubview(line)
         line.backgroundColor = UIColor.backgroundGrayColorA()
         
@@ -38,7 +37,8 @@ class UserAbloutUsViewController: BasicViewController {
         lawButton.setTitle("法律信息", for: UIControlState.normal)
         lawButton.setTitleColor(UIColor.mainColorBlue(), for: UIControlState.normal)
         lawButton.titleLabel?.font = UIFont.systemFont(ofSize: 15)
-        
+        lawButton.contentHorizontalAlignment = .left
+        lawButton.addTarget(self, action: #selector(buttonClick), for: UIControlEvents.touchUpInside)
     
         let reportLabel = UILabel(frame: CGRect(x: gap, y: lawButton.bottom + 20, width: ScreenWidth - 30, height: 20))
         self.view.addSubview(reportLabel)
@@ -72,14 +72,14 @@ class UserAbloutUsViewController: BasicViewController {
         self.view.addSubview(hotLineLabel)
         hotLineLabel.font = UIFont.systemFont(ofSize: labelFont)
         hotLineLabel.textColor = UIColor.generalTitleFontGray()
-        hotLineLabel.text = "4008178178"
+        hotLineLabel.text = "服务热线：4008178178"
         
         
         let serviceTimeLabel = UILabel(frame: CGRect(x: gap, y: hotLineLabel.bottom + 20, width: ScreenWidth - 30, height: 20))
         self.view.addSubview(serviceTimeLabel)
         serviceTimeLabel.font = UIFont.systemFont(ofSize: labelFont)
         serviceTimeLabel.textColor = UIColor.generalTitleFontGray()
-        serviceTimeLabel.text = "09:00——22:00"
+        serviceTimeLabel.text = "服务时间：09:00——22:00"
         
         let companyLabel = UILabel(frame: CGRect(x: 0, y: ScreenHeight - 120, width: ScreenWidth, height: 20))
         self.view.addSubview(companyLabel)
@@ -96,6 +96,11 @@ class UserAbloutUsViewController: BasicViewController {
         versionLabel.textAlignment = .center
         versionLabel.text = "Version1.0"
 
+    }
+    
+    func buttonClick() {
+        let vc = UserLawViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
     override func didReceiveMemoryWarning() {

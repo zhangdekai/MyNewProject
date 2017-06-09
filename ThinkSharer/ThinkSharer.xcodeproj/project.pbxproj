@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		490126161EEA2F040013A3AB /* UserAbloutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490126151EEA2F040013A3AB /* UserAbloutUsViewController.swift */; };
+		490126191EEA34E50013A3AB /* UserLawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490126181EEA34E50013A3AB /* UserLawViewController.swift */; };
 		490CC4221EDFF42300E5C7B2 /* ShareMessageSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CC4211EDFF42300E5C7B2 /* ShareMessageSectionView.swift */; };
 		491C46141ECBF3C8009F43A4 /* SelectScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 491C46131ECBF3C8009F43A4 /* SelectScrollView.m */; };
 		491C46181ECC1D91009F43A4 /* SelectClassCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 491C46161ECC1D91009F43A4 /* SelectClassCollectionViewCell.m */; };
@@ -154,6 +156,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		490126151EEA2F040013A3AB /* UserAbloutUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAbloutUsViewController.swift; sourceTree = "<group>"; };
+		490126181EEA34E50013A3AB /* UserLawViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLawViewController.swift; sourceTree = "<group>"; };
 		490CC4211EDFF42300E5C7B2 /* ShareMessageSectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareMessageSectionView.swift; sourceTree = "<group>"; };
 		491C46121ECBF3C8009F43A4 /* SelectScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectScrollView.h; sourceTree = "<group>"; };
 		491C46131ECBF3C8009F43A4 /* SelectScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectScrollView.m; sourceTree = "<group>"; };
@@ -438,6 +442,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		490126171EEA34990013A3AB /* AboutUs */ = {
+			isa = PBXGroup;
+			children = (
+				490126151EEA2F040013A3AB /* UserAbloutUsViewController.swift */,
+				490126181EEA34E50013A3AB /* UserLawViewController.swift */,
+			);
+			name = AboutUs;
+			sourceTree = "<group>";
+		};
 		491C46111ECBF38C009F43A4 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -855,6 +868,7 @@
 				49D7FB231EE5753C007CFC43 /* IdentityIdentificatesViewController.h */,
 				49D7FB241EE5753C007CFC43 /* IdentityIdentificatesViewController.m */,
 				49D1612E1EE6BF7800440784 /* UserLangageViewController.swift */,
+				490126171EEA34990013A3AB /* AboutUs */,
 				491E151B1EE7FA5700215151 /* HelpFeedback */,
 			);
 			path = Controller;
@@ -1324,6 +1338,7 @@
 				498BE1171ED5950500D7D004 /* NSIndexSet+CTAssetsPickerController.m in Sources */,
 				49F38FB61ECAE2BC00D83E95 /* UIColor+YMHAddition.m in Sources */,
 				498BE11E1ED5950500D7D004 /* CTAssetCollectionViewCell.m in Sources */,
+				490126161EEA2F040013A3AB /* UserAbloutUsViewController.swift in Sources */,
 				49F38FE31ECAFDAB00D83E95 /* TSAccountManager.m in Sources */,
 				498BE12E1ED5950500D7D004 /* CTAssetsPickerAccessDeniedView.m in Sources */,
 				49B743EA1ED2EA1500FFDBDB /* SharerCenterViewController.m in Sources */,
@@ -1381,6 +1396,7 @@
 				492ADDC01EE441E400E70ADD /* CompanyScondCell.m in Sources */,
 				499478B81ED68412003E7E4C /* UITableView+YMHRefresh.m in Sources */,
 				49E8D4531EE4F31C002C20E0 /* AccountSecurePhoneIdentityView.swift in Sources */,
+				490126191EEA34E50013A3AB /* UserLawViewController.swift in Sources */,
 				49F38FA51ECADDBE00D83E95 /* YMHIdenCodeTool.m in Sources */,
 				492ADDBA1EE431F800E70ADD /* CompanyTableHeaderView.m in Sources */,
 				498BB9E31EE8F29100E4089D /* XXTextView.m in Sources */,
