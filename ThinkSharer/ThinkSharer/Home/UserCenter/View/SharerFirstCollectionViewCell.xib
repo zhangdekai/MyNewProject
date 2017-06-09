@@ -19,9 +19,24 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ihO-4W-27X">
                         <rect key="frame" x="0.0" y="15" width="375" height="125"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_center_identity_no" translatesAutoresizingMaskIntoConstraints="NO" id="L22-2y-SAQ">
+                                <rect key="frame" x="131" y="80" width="17" height="17"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未认证" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8NT-LX-8Ia">
+                                <rect key="frame" x="154" y="77" width="73" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="73" id="rZc-fQ-w88"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="125" id="5My-LT-clZ"/>
+                            <constraint firstItem="8NT-LX-8Ia" firstAttribute="leading" secondItem="L22-2y-SAQ" secondAttribute="trailing" constant="6" id="mFE-xT-tV7"/>
                         </constraints>
                     </view>
                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="testHeader" translatesAutoresizingMaskIntoConstraints="NO" id="C4Y-Np-U5w">
@@ -48,7 +63,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Zg-m9-kNm">
-                        <rect key="frame" x="130" y="99" width="254" height="35"/>
+                        <rect key="frame" x="130" y="120" width="254" height="35"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="思享者文化传媒公司巴达克斯你的空间是你的" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="re5-JN-MZP">
                                 <rect key="frame" x="0.0" y="0.0" width="346.5" height="20.5"/>
@@ -60,8 +75,8 @@
                         <constraints>
                             <constraint firstItem="re5-JN-MZP" firstAttribute="top" secondItem="2Zg-m9-kNm" secondAttribute="top" id="2s4-Bz-q2n"/>
                             <constraint firstItem="re5-JN-MZP" firstAttribute="leading" secondItem="2Zg-m9-kNm" secondAttribute="leading" id="Yyy-1u-k47"/>
-                            <constraint firstAttribute="trailing" secondItem="re5-JN-MZP" secondAttribute="trailing" id="bSK-Aw-sNY"/>
-                            <constraint firstAttribute="bottom" secondItem="re5-JN-MZP" secondAttribute="bottom" id="gAs-6G-lv5"/>
+                            <constraint firstAttribute="trailing" secondItem="re5-JN-MZP" secondAttribute="trailing" constant="-92.5" id="bSK-Aw-sNY"/>
+                            <constraint firstAttribute="bottom" secondItem="re5-JN-MZP" secondAttribute="bottom" constant="14.5" id="gAs-6G-lv5"/>
                         </constraints>
                     </scrollView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UI设计师" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f0p-Cn-P8U">
@@ -88,9 +103,11 @@
                 <constraint firstAttribute="trailing" secondItem="f0p-Cn-P8U" secondAttribute="trailing" constant="6" id="D4Y-ZI-0x4"/>
                 <constraint firstItem="C7y-3t-N08" firstAttribute="leading" secondItem="C4Y-Np-U5w" secondAttribute="trailing" constant="9" id="YUC-hh-oZ3"/>
                 <constraint firstItem="f0p-Cn-P8U" firstAttribute="top" secondItem="rfz-NW-ieV" secondAttribute="bottom" constant="9" id="Zof-12-L5g"/>
-                <constraint firstAttribute="bottom" secondItem="2Zg-m9-kNm" secondAttribute="bottom" constant="13" id="b1h-9W-Ixz"/>
+                <constraint firstAttribute="bottom" secondItem="2Zg-m9-kNm" secondAttribute="bottom" constant="-8" id="b1h-9W-Ixz"/>
+                <constraint firstItem="L22-2y-SAQ" firstAttribute="top" secondItem="G5c-Zf-U8B" secondAttribute="bottom" constant="13" id="cXv-kQ-kcc"/>
                 <constraint firstItem="rfz-NW-ieV" firstAttribute="leading" secondItem="C7y-3t-N08" secondAttribute="trailing" constant="8" id="hIx-cC-bHG"/>
                 <constraint firstItem="ihO-4W-27X" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="iS6-7Q-xff"/>
+                <constraint firstItem="L22-2y-SAQ" firstAttribute="leading" secondItem="C4Y-Np-U5w" secondAttribute="trailing" constant="11" id="iu4-GE-uuQ"/>
                 <constraint firstAttribute="trailing" secondItem="rfz-NW-ieV" secondAttribute="trailing" constant="6" id="jm7-rM-9KS"/>
                 <constraint firstItem="C4Y-Np-U5w" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="kSO-4m-238"/>
                 <constraint firstAttribute="trailing" secondItem="ihO-4W-27X" secondAttribute="trailing" id="llg-js-hNA"/>
@@ -98,8 +115,9 @@
                 <constraint firstItem="C7y-3t-N08" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="38" id="mq2-Hj-8QD"/>
                 <constraint firstItem="C4Y-Np-U5w" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="25" id="ojf-sJ-ldL"/>
                 <constraint firstItem="2Zg-m9-kNm" firstAttribute="leading" secondItem="C4Y-Np-U5w" secondAttribute="trailing" constant="10" id="uxN-IJ-Fg3"/>
-                <constraint firstItem="2Zg-m9-kNm" firstAttribute="top" secondItem="G5c-Zf-U8B" secondAttribute="bottom" constant="17" id="xqz-tG-OCA"/>
+                <constraint firstItem="2Zg-m9-kNm" firstAttribute="top" secondItem="G5c-Zf-U8B" secondAttribute="bottom" constant="38" id="xqz-tG-OCA"/>
                 <constraint firstItem="G5c-Zf-U8B" firstAttribute="leading" secondItem="C4Y-Np-U5w" secondAttribute="trailing" constant="11" id="y82-fp-ZbL"/>
+                <constraint firstItem="8NT-LX-8Ia" firstAttribute="top" secondItem="f0p-Cn-P8U" secondAttribute="bottom" constant="6" id="zLi-2C-4oS"/>
             </constraints>
             <size key="customSize" width="316" height="116"/>
             <connections>
@@ -112,11 +130,12 @@
                 <outlet property="sexIcon" destination="C7y-3t-N08" id="gcR-Np-suk"/>
                 <outlet property="userNameLabel" destination="rfz-NW-ieV" id="U3c-OF-wm5"/>
             </connections>
-            <point key="canvasLocation" x="148.5" y="-264.5"/>
+            <point key="canvasLocation" x="462.5" y="-106.5"/>
         </collectionViewCell>
     </objects>
     <resources>
         <image name="testHeader" width="200" height="200"/>
+        <image name="user_center_identity_no" width="17" height="17"/>
         <image name="user_icon-girl" width="17" height="17"/>
         <image name="user_v" width="17" height="17"/>
     </resources>
