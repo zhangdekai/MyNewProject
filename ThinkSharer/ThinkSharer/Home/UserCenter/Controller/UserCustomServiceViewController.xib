@@ -21,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="dyp-1R-xTY">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="464"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="429"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="Nr9-03-dfZ"/>
                         <outlet property="delegate" destination="-1" id="LBN-fb-sO7"/>
@@ -32,7 +32,7 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="dyp-1R-xTY" secondAttribute="trailing" id="OJJ-b4-D8T"/>
                 <constraint firstItem="dyp-1R-xTY" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="SSU-5N-DNK"/>
-                <constraint firstAttribute="bottom" secondItem="dyp-1R-xTY" secondAttribute="bottom" constant="40" id="XyL-18-qIM"/>
+                <constraint firstAttribute="bottom" secondItem="dyp-1R-xTY" secondAttribute="bottom" constant="75" id="XyL-18-qIM"/>
                 <constraint firstItem="dyp-1R-xTY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hrf-D0-Wex"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>

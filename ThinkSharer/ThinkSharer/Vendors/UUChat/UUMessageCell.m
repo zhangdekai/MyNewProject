@@ -184,11 +184,11 @@
     
     if (message.from == UUMessageFromMe) {
         self.btnContent.isMyMessage = YES;
-        [self.btnContent setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [self.btnContent setTitleColor:[UIColor generalTitleFontGrayColor] forState:UIControlStateNormal];
         self.btnContent.contentEdgeInsets = UIEdgeInsetsMake(ChatContentTop, ChatContentRight, ChatContentBottom, ChatContentLeft);
     }else{
         self.btnContent.isMyMessage = NO;
-        [self.btnContent setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        [self.btnContent setTitleColor:[UIColor generalTitleFontGrayColor] forState:UIControlStateNormal];
         self.btnContent.contentEdgeInsets = UIEdgeInsetsMake(ChatContentTop, ChatContentLeft, ChatContentBottom, ChatContentRight);
     }
     

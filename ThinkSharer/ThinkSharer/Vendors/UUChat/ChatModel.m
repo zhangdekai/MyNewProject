@@ -39,7 +39,7 @@
     NSString *URLStr = @"http://img0.bdstatic.com/img/image/shouye/xinshouye/mingxing16.jpg";
     [dataDic setObject:@(UUMessageFromMe) forKey:@"from"];
     [dataDic setObject:[[NSDate date] description] forKey:@"strTime"];
-    [dataDic setObject:@"Hello,Sister" forKey:@"strName"];
+//    [dataDic setObject:@"Hello,Sister" forKey:@"strName"];
     [dataDic setObject:URLStr forKey:@"strIcon"];
     
     [message setWithDict:dataDic];
@@ -97,7 +97,7 @@ static int dateNum = 10;
     [dictionary setObject:[date description] forKey:@"strTime"];
     // 这里判断是否是私人会话、群会话
     int index = _isGroupChat ? arc4random()%6 : 0;
-    [dictionary setObject:[self getName:index] forKey:@"strName"];
+//    [dictionary setObject:[self getName:index] forKey:@"strName"];
     [dictionary setObject:[self getImageStr:index] forKey:@"strIcon"];
     
     return dictionary;

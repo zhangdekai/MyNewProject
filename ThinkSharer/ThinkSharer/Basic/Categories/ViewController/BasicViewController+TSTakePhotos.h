@@ -34,6 +34,17 @@
 
 
 /**
+ 打开相册
+ */
+- (void)openPhoto;
+
+
+/**
+ 打开相机
+ */
+- (void)openCamer;
+
+/**
  放大图片
 
  @param photoImageViews UIImageView 数组

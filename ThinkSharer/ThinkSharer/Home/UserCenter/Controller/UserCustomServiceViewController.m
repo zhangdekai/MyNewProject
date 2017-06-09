@@ -13,6 +13,8 @@
 #import "ChatModel.h"
 #import "UUMessageFrame.h"
 #import "UUMessage.h"
+#import "UserChatAlterVIew.h"
+
 
 @interface UserCustomServiceViewController ()<UUInputFunctionViewDelegate,UUMessageCellDelegate,
 UITableViewDataSource,UITableViewDelegate>
@@ -60,13 +62,8 @@ UITableViewDataSource,UITableViewDelegate>
 {
     [self setNavigationBarBack];
     [self setNavigationBarTitle:@"客服咨询"];
-}
-- (void)segmentChanged:(UISegmentedControl *)segment
-{
-    self.chatModel.isGroupChat = segment.selectedSegmentIndex;
-    [self.chatModel.dataSource removeAllObjects];
-    [self.chatModel populateRandomDataSource];
-    [self.chatTableView reloadData];
+    self.chatTableView.showsVerticalScrollIndicator = NO;
+    self.chatTableView.backgroundColor = [UIColor backgroundGrayColorA];
 }
 
 - (void)addRefreshViews
@@ -123,9 +120,9 @@ UITableViewDataSource,UITableViewDelegate>
     
     //adjust ChatTableView's height
     if (notification.name == UIKeyboardWillShowNotification) {
-        self.bottomConstraint.constant = keyboardEndFrame.size.height+40;
+        self.bottomConstraint.constant = keyboardEndFrame.size.height+75;
     }else{
-        self.bottomConstraint.constant = 40;
+        self.bottomConstraint.constant = 75;
     }
     
     [self.view layoutIfNeeded];
@@ -187,6 +184,61 @@ UITableViewDataSource,UITableViewDelegate>
                           @"strVoiceTime": [NSString stringWithFormat:@"%d",(int)second],
                           @"type": @(UUMessageTypeVoice)};
     [self dealTheFunctionData:dic];
+}
+
+- (void)UUInputFunctionView:(UUInputFunctionView *)funcView touchIndex:(NSInteger)index {
+    
+    switch (index) {
+        case 0:
+            [self openPhoto];
+            break;
+        case 1:
+            [self openCamer];
+            break;
+        case 2:
+            NSLog(@"表情");
+            break;
+        case 3:
+            NSLog(@"定位");
+            break;
+
+        case 4:
+            [self commentCustomService];
+            break;
+            
+        default:
+            break;
+    }
+    NSLog(@"%ld",index);
+}
+
+- (void)commentCustomService {
+    UserChatAlterVIew *container = [[UserChatAlterVIew alloc]init];
+    
+    TSAlterShowView *alterView = [[TSAlterShowView alloc]init];
+    
+    [alterView creatContainerView:container];
+    
+    [alterView showView];
+    
+    container.ChatCommentBlock = ^(ChatCommentType type) {
+        switch (type) {
+            case ChatCommentTypeGood:
+                NSLog(@"满意");
+                break;
+            case ChatCommentTypeNotGood:
+                NSLog(@"不满意");
+                break; 
+            case ChatCommentTypeBad:
+                NSLog(@"差");
+
+                break;
+            default:
+                break;
+        }
+        [alterView hiddenAlter];
+    };
+
 }
 
 - (void)dealTheFunctionData:(NSDictionary *)dic
