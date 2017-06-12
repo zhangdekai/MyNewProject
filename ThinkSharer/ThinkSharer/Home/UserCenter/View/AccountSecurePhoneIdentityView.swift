@@ -28,19 +28,22 @@ class AccountSecurePhoneIdentityView: UIView {
         self.addSubview(grayLine)
         grayLine.backgroundColor = UIColor.backgroundGrayColorA()
 
+        let textFont:CGFloat = 17;
+        let subTextFont:CGFloat = 15;
+
         
         //手机号
         let phoneLabel = UILabel(frame: CGRect(x: 15, y: grayLine.bottom + 15, width: 60, height: 20))
         self.addSubview(phoneLabel)
         phoneLabel.textColor = UIColor.generalTitleFontBlack()
-        phoneLabel.font = UIFont.systemFont(ofSize: 15)
+        phoneLabel.font = UIFont.systemFont(ofSize: textFont)
         phoneLabel.text = "手机号"
         
         //
         self.addSubview(phoneTextFiled)
         phoneTextFiled.frame = CGRect(x: phoneLabel.right + 10, y: phoneLabel.top, width: 150, height: 20)
         phoneTextFiled.keyboardType = .numberPad
-        phoneTextFiled.font = UIFont.systemFont(ofSize: 15)
+        phoneTextFiled.font = UIFont.systemFont(ofSize: textFont)
         phoneTextFiled.textColor = UIColor.generalTitleFontBlack()
         phoneTextFiled.text = "+86 15612345678"
         
@@ -53,7 +56,7 @@ class AccountSecurePhoneIdentityView: UIView {
         confirm.top = grayLine.bottom + 10
         
         confirm.setTitle("确定", for: UIControlState.normal)
-        confirm.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+        confirm.titleLabel?.font = UIFont.systemFont(ofSize: subTextFont)
         confirm.setTitleColor(UIColor.mainColorBlue(), for: UIControlState.normal)
         
         confirm.layer.cornerRadius = 5
@@ -71,7 +74,7 @@ class AccountSecurePhoneIdentityView: UIView {
         changePhoneTextFiled.keyboardType = .numberPad
         changePhoneTextFiled.maxNum = 11
 
-        changePhoneTextFiled.font = UIFont.systemFont(ofSize: 13)
+        changePhoneTextFiled.font = UIFont.systemFont(ofSize: subTextFont)
         changePhoneTextFiled.textColor = UIColor.generalTitleFontGray()
 
         let line1 = UIView()
@@ -83,7 +86,7 @@ class AccountSecurePhoneIdentityView: UIView {
         identityTextfiled.frame = CGRect(x: 15, y: line1.bottom + 15, width: 200, height: 20)
         self.addSubview(identityTextfiled)
         identityTextfiled.placeholder = "输入验证码"
-        identityTextfiled.font = UIFont.systemFont(ofSize: 13)
+        identityTextfiled.font = UIFont.systemFont(ofSize: subTextFont)
         identityTextfiled.textColor = UIColor.generalTitleFontGray()
         identityTextfiled.keyboardType = .numberPad
         identityTextfiled.maxNum = 6
@@ -96,7 +99,7 @@ class AccountSecurePhoneIdentityView: UIView {
         getIdentityButton.top = line1.bottom + 10
         
         getIdentityButton.setTitle("获取验证码", for: UIControlState.normal)
-        getIdentityButton.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+        getIdentityButton.titleLabel?.font = UIFont.systemFont(ofSize: subTextFont)
         getIdentityButton.setTitleColor(UIColor.white, for: UIControlState.normal)
         getIdentityButton.backgroundColor = UIColor.backgroundGrayColorC()
         getIdentityButton.layer.cornerRadius = 5
@@ -110,16 +113,12 @@ class AccountSecurePhoneIdentityView: UIView {
                 
             } else {
                 line1.backgroundColor = UIColor.seperateThinLine()
-                
             }
-            
         }
         
         let line2 = UIView(frame: CGRect(x: 0, y: line1.bottom + 49.5, width: ScreenWidth, height: 0.5))
         self.addSubview(line2)
         line2.backgroundColor = UIColor.white
-            
-
         
         identityTextfiled.editingStatasBlcok = {(index) in
             if index == 0 {
@@ -127,9 +126,7 @@ class AccountSecurePhoneIdentityView: UIView {
                 
             } else {
                 line2.backgroundColor = UIColor.white
-                
             }
-            
         }
 
         self.frame = CGRect(x: 0, y: 0, width: ScreenWidth, height: line2.frame.maxY)

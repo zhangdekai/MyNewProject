@@ -22,11 +22,15 @@ class AccountPayPassCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         self.selectionStyle = .none
+        
+        let textFont:CGFloat = 17;
+        let subTextFont:CGFloat = 15;
+
         //支付密码设置
         let phoneLabel = UILabel(frame: CGRect(x: 15, y:15, width: 120, height: 20))
         self.contentView.addSubview(phoneLabel)
         phoneLabel.textColor = UIColor.generalTitleFontBlack()
-        phoneLabel.font = UIFont.systemFont(ofSize: 15)
+        phoneLabel.font = UIFont.systemFont(ofSize: textFont)
         phoneLabel.text = "支付密码设置"
         
         //确定
@@ -37,7 +41,7 @@ class AccountPayPassCell: UITableViewCell {
         confirm.top = 10
         
         confirm.setTitle("确定", for: UIControlState.normal)
-        confirm.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+        confirm.titleLabel?.font = UIFont.systemFont(ofSize: subTextFont)
         confirm.setTitleColor(UIColor.mainColorBlue(), for: UIControlState.normal)
         
         confirm.layer.cornerRadius = 5
@@ -55,7 +59,7 @@ class AccountPayPassCell: UITableViewCell {
 //        passWordTextFiled.clearButtonMode = .whileEditing
         passWordTextFiled.keyboardType = .numberPad
         passWordTextFiled.placeholder = "输入新密码"
-        passWordTextFiled.font = UIFont.systemFont(ofSize: 13)
+        passWordTextFiled.font = UIFont.systemFont(ofSize: subTextFont)
         passWordTextFiled.textColor = UIColor.generalTitleFontGray()
         passWordTextFiled.maxNum = 6
         
@@ -81,7 +85,7 @@ class AccountPayPassCell: UITableViewCell {
         passWordAgainTextFiled.keyboardType = .numberPad
 
         passWordAgainTextFiled.placeholder = "再次输入新密码"
-        passWordAgainTextFiled.font = UIFont.systemFont(ofSize: 13)
+        passWordAgainTextFiled.font = UIFont.systemFont(ofSize: subTextFont)
         passWordAgainTextFiled.textColor = UIColor.generalTitleFontGray()
         passWordAgainTextFiled.maxNum = 6
         
@@ -105,7 +109,7 @@ class AccountPayPassCell: UITableViewCell {
 //        identityTextFiled.clearButtonMode = .whileEditing
         identityTextFiled.keyboardType = .numberPad
         identityTextFiled.placeholder = "输入验证码"
-        identityTextFiled.font = UIFont.systemFont(ofSize: 13)
+        identityTextFiled.font = UIFont.systemFont(ofSize: subTextFont)
         identityTextFiled.textColor = UIColor.generalTitleFontGray()
         identityTextFiled.maxNum = 6
         
@@ -116,7 +120,7 @@ class AccountPayPassCell: UITableViewCell {
         getIdentityButton.top = line2.bottom + 10
         
         getIdentityButton.setTitle("获取验证码", for: UIControlState.normal)
-        getIdentityButton.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+        getIdentityButton.titleLabel?.font = UIFont.systemFont(ofSize: subTextFont)
         getIdentityButton.setTitleColor(UIColor.white, for: UIControlState.normal)
         getIdentityButton.backgroundColor = UIColor.backgroundGrayColorC()
         getIdentityButton.layer.cornerRadius = 5

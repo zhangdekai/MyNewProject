@@ -19,11 +19,16 @@ class AccountLinkerCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         self.selectionStyle = .none
+        
+        let textFont:CGFloat = 17;
+        let subTextFont:CGFloat = 15;
+
+        
         //应急联系人
         let phoneLabel = UILabel(frame: CGRect(x: 15, y:15, width: 120, height: 20))
         self.contentView.addSubview(phoneLabel)
         phoneLabel.textColor = UIColor.generalTitleFontBlack()
-        phoneLabel.font = UIFont.systemFont(ofSize: 15)
+        phoneLabel.font = UIFont.systemFont(ofSize: textFont)
         phoneLabel.text = "应急联系人"
         
         //确定
@@ -34,7 +39,7 @@ class AccountLinkerCell: UITableViewCell {
         confirm.top = 10
         
         confirm.setTitle("确定", for: UIControlState.normal)
-        confirm.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+        confirm.titleLabel?.font = UIFont.systemFont(ofSize: subTextFont)
         confirm.setTitleColor(UIColor.mainColorBlue(), for: UIControlState.normal)
         
         confirm.layer.cornerRadius = 5
@@ -51,7 +56,7 @@ class AccountLinkerCell: UITableViewCell {
         self.contentView.addSubview(linkerTextFiled)
 //        linkerTextFiled.clearButtonMode = .whileEditing
         linkerTextFiled.placeholder = "姓名"
-        linkerTextFiled.font = UIFont.systemFont(ofSize: 13)
+        linkerTextFiled.font = UIFont.systemFont(ofSize: subTextFont)
         linkerTextFiled.textColor = UIColor.generalTitleFontGray()
         linkerTextFiled.maxNum = 8
         
@@ -75,7 +80,7 @@ class AccountLinkerCell: UITableViewCell {
 //        linkerPhoneTextFiled.clearButtonMode = .whileEditing
         linkerPhoneTextFiled.keyboardType = .numberPad
         linkerPhoneTextFiled.placeholder = "手机号码"
-        linkerPhoneTextFiled.font = UIFont.systemFont(ofSize: 13)
+        linkerPhoneTextFiled.font = UIFont.systemFont(ofSize: subTextFont)
         linkerPhoneTextFiled.textColor = UIColor.generalTitleFontGray()
         
         let line2 = UIView(frame: CGRect(x: 0, y:line1.bottom + 49.5, width: ScreenWidth, height: 0.5))

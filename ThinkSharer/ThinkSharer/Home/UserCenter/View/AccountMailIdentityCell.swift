@@ -17,11 +17,14 @@ class AccountMailIdentityCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         self.selectionStyle = .none
+        let textFont:CGFloat = 17;
+        let subTextFont:CGFloat = 15;
+
         //验证邮箱
         let phoneLabel = UILabel(frame: CGRect(x: 15, y:15, width: 90, height: 20))
         self.addSubview(phoneLabel)
         phoneLabel.textColor = UIColor.generalTitleFontBlack()
-        phoneLabel.font = UIFont.systemFont(ofSize: 15)
+        phoneLabel.font = UIFont.systemFont(ofSize: textFont)
         phoneLabel.text = "验证邮箱"
         
         //确定
@@ -32,7 +35,7 @@ class AccountMailIdentityCell: UITableViewCell {
         confirm.top = 10
         
         confirm.setTitle("确定", for: UIControlState.normal)
-        confirm.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+        confirm.titleLabel?.font = UIFont.systemFont(ofSize: subTextFont)
         confirm.setTitleColor(UIColor.mainColorBlue(), for: UIControlState.normal)
         
         confirm.layer.cornerRadius = 5
@@ -49,7 +52,7 @@ class AccountMailIdentityCell: UITableViewCell {
         self.addSubview(mailTextFiled)
         mailTextFiled.clearButtonMode = .whileEditing
         mailTextFiled.placeholder = "请输入邮箱"
-        mailTextFiled.font = UIFont.systemFont(ofSize: 13)
+        mailTextFiled.font = UIFont.systemFont(ofSize: subTextFont)
         mailTextFiled.textColor = UIColor.generalTitleFontGray()
         
         

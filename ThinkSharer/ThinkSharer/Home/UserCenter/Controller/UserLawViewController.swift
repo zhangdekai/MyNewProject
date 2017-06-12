@@ -14,7 +14,7 @@ class UserLawViewController: BasicViewController {
         super.viewDidLoad()
 
         self.setNavigationBarBack()
-        self.setNavigationBarTitle(NSLocalizedString("About us", comment: ""))
+        self.setNavigationBarTitle(NSLocalizedString("法律信息", comment: ""))
         // Do any additional setup after loading the view.
     }
 
