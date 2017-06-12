@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+
+/**
+ 展示 container View
+ */
 @interface TSAlterShowView : UIView
 
 /**

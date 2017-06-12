@@ -18,6 +18,9 @@ typedef void(^AlterBlock)();
 @property (nonatomic,strong) UIImageView *startImageView;
 
 
+/**
+    首页展示提示操作View
+ */
 @property (nonatomic,copy) AlterBlock actionBlock;
 
 - (void)creatActionAlterView:(NSString *)imageName size:(CGSize)size action:(AlterBlock)block;

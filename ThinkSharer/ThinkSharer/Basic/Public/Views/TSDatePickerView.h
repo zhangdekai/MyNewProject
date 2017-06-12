@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+
+/**
+ 时间选择器
+ */
 @interface TSDatePickerView : UIView
 
 @property (nonatomic,strong) UIView *backHUD;
@@ -17,8 +21,6 @@
 @property (nonatomic,strong) UIToolbar *birthdayToolBar;
 
 @property (nonatomic,copy) void (^TSDatePickerBlock)(NSString *date);
-
-
 
 - (void)showInView;
 

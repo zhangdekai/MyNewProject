@@ -15,6 +15,10 @@ typedef NS_ENUM(NSUInteger, SelectPhotoType) {
 };
 
 
+
+/**
+ 选择相册、拍照 view
+ */
 @interface SelectPhotoAlterView : UIView
 
 @property (nonatomic,copy) void (^SelectPhotoBlock) (SelectPhotoType type);
