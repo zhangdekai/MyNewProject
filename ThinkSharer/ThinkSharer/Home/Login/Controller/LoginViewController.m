@@ -91,7 +91,7 @@
     _phoneTextFiled.textColor = [UIColor generalTitleFontGrayColor];
     _phoneTextFiled.keyboardType = UIKeyboardTypeNumberPad;
     _phoneTextFiled.clearButtonMode = UITextFieldViewModeWhileEditing;
-    _phoneTextFiled.placeholder = @"请输入手机号";
+    _phoneTextFiled.placeholder = @"请输入手机号".internationalLanguage;
     _phoneTextFiled.font = [UIFont systemFontOfSize:17];
 //    [_phoneTextFiled setValue:[UIFont systemFontOfSize:17] forKeyPath:@"_placeholderLabel.font"];
     _phoneTextFiled.EditingStatasBlcok = ^(NSInteger index) {
@@ -118,7 +118,7 @@
     _identityTextFiled.MaxNum = 6;
     _identityTextFiled.keyboardType = UIKeyboardTypeDefault;
     _identityTextFiled.clearButtonMode = UITextFieldViewModeWhileEditing;
-    _identityTextFiled.placeholder = @"验证码";
+    _identityTextFiled.placeholder = @"验证码".internationalLanguage;
     _identityTextFiled.font = [UIFont systemFontOfSize:15];
 //    [_identityTextFiled setValue:[UIFont systemFontOfSize:14] forKeyPath:@"_placeholderLabel.font"];
     _identityTextFiled.EditingStatasBlcok = ^(NSInteger index) {
@@ -158,7 +158,7 @@
     _locateCodeTextFiled.textColor = [UIColor generalSubTitleFontGrayColor];
     _locateCodeTextFiled.keyboardType = UIKeyboardTypeNumberPad;
     _locateCodeTextFiled.clearButtonMode = UITextFieldViewModeWhileEditing;
-    _locateCodeTextFiled.placeholder = @"动态码";
+    _locateCodeTextFiled.placeholder = @"动态码".internationalLanguage;
     _locateCodeTextFiled.font = [UIFont systemFontOfSize:17];
     _locateCodeTextFiled.EditingStatasBlcok = ^(NSInteger index) {
         
@@ -188,7 +188,7 @@
 
     [_loginButton addTarget:self action:@selector(login:) forControlEvents:(UIControlEventTouchUpInside)];
     
-
+    [_loginButton setTitle:@"登入思享者".internationalLanguage forState:(UIControlStateNormal)];
 
    
     
@@ -233,6 +233,10 @@
 
 - (BOOL)textFieldShouldClear:(UITextField *)textField {
 
+    if (textField == _identityTextFiled || textField == _phoneTextFiled) {
+        _getIdentityButton.enabled = NO;
+        _getIdentityButton.backgroundColor = [UIColor backgroundGrayColorC];
+    }
     return YES;
 }
 
@@ -252,6 +256,9 @@
         if(newString.length >= 6){
             _getIdentityButton.enabled = YES;
             _getIdentityButton.backgroundColor = [UIColor mainColorBlue];
+        } else {
+            _getIdentityButton.enabled = NO;
+            _getIdentityButton.backgroundColor = [UIColor backgroundGrayColorC];
         }
     }
     
@@ -286,8 +293,6 @@
     _phoneBackView.layer.borderColor = [UIColor generalSubTitleFontGrayColor].CGColor;
     _identityBackView.layer.borderColor = [UIColor generalSubTitleFontGrayColor].CGColor;
     _dynamicView.layer.borderColor = [UIColor generalSubTitleFontGrayColor].CGColor;
-
-
 }
 
 #pragma mark Actions
@@ -315,16 +320,8 @@
 }
 
 - (void)selectUserGuide:(UIButton *)button {
-//    if (self.selectUserGuide) {
-//        [button setBackgroundImage:[UIImage imageNamed:@"login-selected"] forState:(UIControlStateNormal)];
-//
-//    } else {
-//        [button setBackgroundImage:[UIImage imageNamed:@"login-pre"] forState:(UIControlStateNormal)];
-//
-//    }
-//
-//    self.selectUserGuide = !self.selectUserGuide;
 
+    
 }
 
 //登录

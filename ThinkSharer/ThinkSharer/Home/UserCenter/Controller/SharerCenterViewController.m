@@ -17,6 +17,9 @@
 #import "ShareMessageViewController.h"
 #import "ThinkSharer-Swift.h"
 
+#import "ClassReserveByPhotoLibraryViewController.h"
+
+
 
 @interface SharerCenterViewController ()<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
@@ -55,9 +58,15 @@
 }
 
 -(void)initData {
-    _scondCellData = [NSArray arrayWithObjects:@"资产",@"预定",@"发布",nil];
-    _thirdCellIconData = [NSArray arrayWithObjects:@"user_zan",@"user_xin",@"user_hongbao",@"user_guanzhu",@"user_pinglun",@"user_fenxiang",nil];
-    _fourthCellIconData = [NSArray arrayWithObjects:@"user_zhanghao",@"user_yinsi",@"user_yuyan",@"user_help",@"user_ue",@"user_new",@"user_tui",nil];
+    
+    _scondCellData = [NSArray arrayWithObjects:@"资产".internationalLanguage,
+                      @"订单".internationalLanguage,@"思享课".internationalLanguage,nil];
+    _thirdCellIconData = [NSArray arrayWithObjects:@"user_zan",@"user_xin",
+                          @"user_hongbao",@"user_guanzhu",@"user_pinglun",
+                          @"user_fenxiang",nil];
+    _fourthCellIconData = [NSArray arrayWithObjects:@"user_zhanghao",
+                           @"user_yinsi",@"user_yuyan",@"user_help",
+                           @"user_ue",@"user_new",@"user_tui",nil];
     /*
     "Account and security" = "账号与安全";
     "Privacy rights" = "隐私权限";
@@ -67,13 +76,15 @@
     "Version update" = "版本更新";
      "Log out" = "退出登录";
      */
+    
+//    @"退出登录".internationalLanguage;
     NSString *string1 = NSLocalizedString(@"Account and security", @"账号与安全");
      NSString *string2 = NSLocalizedString(@"Privacy rights", @"隐私权限");
     NSString *string3 = NSLocalizedString(@"Language Settings", @"语言设置");
      NSString *string4 = NSLocalizedString(@"Help and feedback", @"帮助与反馈");
      NSString *string5 = NSLocalizedString(@"About us", @"关于我们");
      NSString *string6 = NSLocalizedString(@"Version update", @"版本更新");
-    NSString *string7 = NSLocalizedString(@"Log out", @"退出登录");
+    NSString *string7 = @"Log out".internationalLanguage;
 
     
     
@@ -138,6 +149,7 @@
 //    };
 }
 
+#pragma mark UICollectionViewDelegate UICollectionViewDatasource
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
     return 4;
@@ -357,7 +369,8 @@
                 [self.navigationController pushViewController:vc animated:YES];
                 
             } else if (indexPath.row == 5) {//版本更新
-                
+                ClassReserveByPhotoLibraryViewController *vc = [[ClassReserveByPhotoLibraryViewController alloc]init];
+                [self.navigationController pushViewController:vc animated:YES];
             } else {//退出登录
                 
             }

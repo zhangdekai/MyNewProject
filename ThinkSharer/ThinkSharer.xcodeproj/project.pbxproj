@@ -53,6 +53,11 @@
 		4935331B1ED6D725001CCCF2 /* UIImage+TSShape.m in Sources */ = {isa = PBXBuildFile; fileRef = 493533191ED6D725001CCCF2 /* UIImage+TSShape.m */; };
 		4935331D1ED6E839001CCCF2 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4935331C1ED6E839001CCCF2 /* MobileCoreServices.framework */; };
 		494533191ED6C04B00F9340F /* NetWorkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 494533181ED6C04B00F9340F /* NetWorkManager.m */; };
+		49601EAF1EEFC6EB000A7305 /* NSString+Language.m in Sources */ = {isa = PBXBuildFile; fileRef = 49601EAE1EEFC6EB000A7305 /* NSString+Language.m */; };
+		49601ED71EF012A7000A7305 /* PhotoLibraryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49601ED61EF012A7000A7305 /* PhotoLibraryView.m */; };
+		49601EDC1EF015F6000A7305 /* PhotoLibraryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49601EDA1EF015F6000A7305 /* PhotoLibraryCollectionViewCell.m */; };
+		49601EDD1EF015F6000A7305 /* PhotoLibraryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49601EDB1EF015F6000A7305 /* PhotoLibraryCollectionViewCell.xib */; };
+		49601EE11EF01BFF000A7305 /* ClassReserveByPhotoLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49601EE01EF01BFF000A7305 /* ClassReserveByPhotoLibraryViewController.m */; };
 		4981425F1EE637F500873655 /* BasicViewController+TSTakePhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 4981425E1EE637F500873655 /* BasicViewController+TSTakePhotos.m */; };
 		498BB9DE1EE8E2DB00E4089D /* UserFeedbackHeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498BB9DD1EE8E2DB00E4089D /* UserFeedbackHeaderReusableView.swift */; };
 		498BB9E01EE8E3A000E4089D /* UserFeedbackContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498BB9DF1EE8E3A000E4089D /* UserFeedbackContentCell.swift */; };
@@ -252,6 +257,15 @@
 		4935331C1ED6E839001CCCF2 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		494533171ED6C04B00F9340F /* NetWorkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkManager.h; sourceTree = "<group>"; };
 		494533181ED6C04B00F9340F /* NetWorkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkManager.m; sourceTree = "<group>"; };
+		49601EAD1EEFC6EB000A7305 /* NSString+Language.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Language.h"; sourceTree = "<group>"; };
+		49601EAE1EEFC6EB000A7305 /* NSString+Language.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Language.m"; sourceTree = "<group>"; };
+		49601ED51EF012A7000A7305 /* PhotoLibraryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoLibraryView.h; sourceTree = "<group>"; };
+		49601ED61EF012A7000A7305 /* PhotoLibraryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoLibraryView.m; sourceTree = "<group>"; };
+		49601ED91EF015F6000A7305 /* PhotoLibraryCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoLibraryCollectionViewCell.h; sourceTree = "<group>"; };
+		49601EDA1EF015F6000A7305 /* PhotoLibraryCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoLibraryCollectionViewCell.m; sourceTree = "<group>"; };
+		49601EDB1EF015F6000A7305 /* PhotoLibraryCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoLibraryCollectionViewCell.xib; sourceTree = "<group>"; };
+		49601EDF1EF01BFF000A7305 /* ClassReserveByPhotoLibraryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassReserveByPhotoLibraryViewController.h; sourceTree = "<group>"; };
+		49601EE01EF01BFF000A7305 /* ClassReserveByPhotoLibraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassReserveByPhotoLibraryViewController.m; sourceTree = "<group>"; };
 		4981425D1EE637F500873655 /* BasicViewController+TSTakePhotos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BasicViewController+TSTakePhotos.h"; sourceTree = "<group>"; };
 		4981425E1EE637F500873655 /* BasicViewController+TSTakePhotos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BasicViewController+TSTakePhotos.m"; sourceTree = "<group>"; };
 		498BB9DD1EE8E2DB00E4089D /* UserFeedbackHeaderReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFeedbackHeaderReusableView.swift; sourceTree = "<group>"; };
@@ -654,11 +668,34 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		49601ED81EF01512000A7305 /* PhotoLibraryView */ = {
+			isa = PBXGroup;
+			children = (
+				49601ED51EF012A7000A7305 /* PhotoLibraryView.h */,
+				49601ED61EF012A7000A7305 /* PhotoLibraryView.m */,
+				49601ED91EF015F6000A7305 /* PhotoLibraryCollectionViewCell.h */,
+				49601EDA1EF015F6000A7305 /* PhotoLibraryCollectionViewCell.m */,
+				49601EDB1EF015F6000A7305 /* PhotoLibraryCollectionViewCell.xib */,
+			);
+			name = PhotoLibraryView;
+			sourceTree = "<group>";
+		};
+		49601EDE1EF01A22000A7305 /* ClassReserve */ = {
+			isa = PBXGroup;
+			children = (
+				49601EDF1EF01BFF000A7305 /* ClassReserveByPhotoLibraryViewController.h */,
+				49601EE01EF01BFF000A7305 /* ClassReserveByPhotoLibraryViewController.m */,
+			);
+			path = ClassReserve;
+			sourceTree = "<group>";
+		};
 		498142601EE6429B00873655 /* Others */ = {
 			isa = PBXGroup;
 			children = (
 				498BB9E11EE8F29100E4089D /* XXTextView.h */,
 				498BB9E21EE8F29100E4089D /* XXTextView.m */,
+				49601EAD1EEFC6EB000A7305 /* NSString+Language.h */,
+				49601EAE1EEFC6EB000A7305 /* NSString+Language.m */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -882,6 +919,7 @@
 				49F38FA41ECADDBE00D83E95 /* YMHIdenCodeTool.m */,
 				49F38FA61ECADDE300D83E95 /* YMHRegularExpression.h */,
 				49F38FA71ECADDE300D83E95 /* YMHRegularExpression.m */,
+				49601ED81EF01512000A7305 /* PhotoLibraryView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -889,6 +927,7 @@
 		4996B83C1ECA9A1700272439 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				49601EDE1EF01A22000A7305 /* ClassReserve */,
 				49F38FD91ECAF25A00D83E95 /* Main */,
 				49B743FA1ED2EFF000FFDBDB /* SearchMakeClass */,
 				49F38F9D1ECAB1BE00D83E95 /* Login */,
@@ -1371,6 +1410,7 @@
 				498BE1541ED598E300D7D004 /* CTAssetsPicker.strings in Resources */,
 				490126721EEA76A20013A3AB /* 1.jpeg in Resources */,
 				490126711EEA76A20013A3AB /* 0.jpeg in Resources */,
+				49601EDD1EF015F6000A7305 /* PhotoLibraryCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1482,6 +1522,7 @@
 				490126351EEA4FA00013A3AB /* UUMessageCell.m in Sources */,
 				49F38FE31ECAFDAB00D83E95 /* TSAccountManager.m in Sources */,
 				498BE12E1ED5950500D7D004 /* CTAssetsPickerAccessDeniedView.m in Sources */,
+				49601ED71EF012A7000A7305 /* PhotoLibraryView.m in Sources */,
 				49B743EA1ED2EA1500FFDBDB /* SharerCenterViewController.m in Sources */,
 				490126761EEAAFEE0013A3AB /* UserChatAlterVIew.m in Sources */,
 				498BE1221ED5950500D7D004 /* CTAssetScrollView.m in Sources */,
@@ -1497,6 +1538,7 @@
 				49FBF3161ED3D2B900CAC5F5 /* SelectScrollViewForM.m in Sources */,
 				498BE0021ED52BDB00D7D004 /* UserShareCenterCollectionReusableView.m in Sources */,
 				49A8503E1EDE94EB00EE521A /* LoactionIdentityView.m in Sources */,
+				49601EDC1EF015F6000A7305 /* PhotoLibraryCollectionViewCell.m in Sources */,
 				491C461F1ECC23A1009F43A4 /* SelectClassheaderView.m in Sources */,
 				49D7FB201EE56845007CFC43 /* IdentityIdentificateCell.swift in Sources */,
 				49D7FB281EE575E1007CFC43 /* StanderViewController.m in Sources */,
@@ -1505,6 +1547,7 @@
 				498BE12F1ED5950500D7D004 /* CTAssetsPickerController.m in Sources */,
 				498BE1291ED5950500D7D004 /* CTAssetsGridViewFooter.m in Sources */,
 				49B743E01ED2E4B700FFDBDB /* MainViewController.m in Sources */,
+				49601EE11EF01BFF000A7305 /* ClassReserveByPhotoLibraryViewController.m in Sources */,
 				498BB9E01EE8E3A000E4089D /* UserFeedbackContentCell.swift in Sources */,
 				498BE1231ED5950500D7D004 /* CTAssetSelectionButton.m in Sources */,
 				498BE11C1ED5950500D7D004 /* UIImage+CTAssetsPickerController.m in Sources */,
@@ -1546,6 +1589,7 @@
 				49E8D4531EE4F31C002C20E0 /* AccountSecurePhoneIdentityView.swift in Sources */,
 				490126191EEA34E50013A3AB /* UserLawViewController.swift in Sources */,
 				49F38FA51ECADDBE00D83E95 /* YMHIdenCodeTool.m in Sources */,
+				49601EAF1EEFC6EB000A7305 /* NSString+Language.m in Sources */,
 				492ADDBA1EE431F800E70ADD /* CompanyTableHeaderView.m in Sources */,
 				490126481EEA6D020013A3AB /* UserCustomServiceViewController.m in Sources */,
 				498BB9E31EE8F29100E4089D /* XXTextView.m in Sources */,

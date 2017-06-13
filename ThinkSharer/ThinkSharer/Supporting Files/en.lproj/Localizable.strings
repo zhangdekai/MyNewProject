@@ -8,6 +8,7 @@
 //APP内部语言本地化    此文件必须为Localizable.strings
 //需要在Localizable.strings下对应的文件中，分别以Key-Value的形式，为代码中每一个需要本地化的字符串赋值
 
+//思享者中心
 "thinkSharerCenter" = "ThinkSharerCenter";
 "setting language" = "setting language";
 "Account and security" = "Account and security";
@@ -17,15 +18,26 @@
 "About us" = "About us";
 "Version update" = "Version update";
 "Log out" = "Log out";
+"资产" = "Property";
+"订单" = "Order";
+"思享课" = "MyClass";
 
 //帮助与反馈
 "新手帮助" = "Rookie help";
 "视频中心" = "Video center";
 "使用手册" = "The manual";
-"常见问题" = "Common problems";
+"常见问题" = "Common problem";
 "角色体验" = "Role experience";
 
-"客服咨询" = "Customer service consultation";
+"客服咨询" = "Customer service";
 "导师服务" = "Mentor services";
-"信息反馈" = "Information feedback";
+"信息反馈" = "Info feedback";
 "提交" = "Submit";
+
+//登录
+"获取验证码" = "Get verification code";
+"登录思享者" = "Login ThinkSharer";
+"请输入手机号" = "Please enter the phone number";
+"动态码" = "Dynamic code";
+"验证码" = "Verification code";
+"登入代表同意《用户服务条款》" = "the agreed terms of user service";
