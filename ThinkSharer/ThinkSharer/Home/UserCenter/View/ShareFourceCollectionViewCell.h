@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *rightLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *leftIcon;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *leftConstance;
 
 - (void)setModel:(NSString *)title iocn:(NSString *)iconName;
 

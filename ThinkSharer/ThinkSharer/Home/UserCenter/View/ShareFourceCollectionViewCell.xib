@@ -64,6 +64,7 @@
             </constraints>
             <connections>
                 <outlet property="containerView" destination="7uy-7p-gmB" id="c41-wc-Tbn"/>
+                <outlet property="leftConstance" destination="1x7-6O-g5r" id="3VZ-0q-mK0"/>
                 <outlet property="leftIcon" destination="a3W-6I-8zn" id="C6u-zF-EDk"/>
                 <outlet property="rightLabel" destination="pDm-he-5wm" id="scI-nd-F2E"/>
             </connections>

@@ -16,6 +16,10 @@
     self.companyScrollView.contentSize = CGSizeMake(ScreenHeight * 2, 0);
     // Initialization code
     
+    CGRect frame = _backView.frame;
+    frame.size.width = ScreenWidth;
+    _backView.frame = frame;
+    
     [_backView addShadowWithoutCorner];
     [self.contentView sendSubviewToBack:_backView];
     

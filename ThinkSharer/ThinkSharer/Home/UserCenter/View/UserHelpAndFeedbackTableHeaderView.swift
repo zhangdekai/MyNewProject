@@ -8,6 +8,10 @@
 
 import UIKit
 
+// 是否iPad
+let isPad = (UI_USER_INTERFACE_IDIOM() == .pad)
+
+
 class UserHelpAndFeedbackTableHeaderView: UIView {
     
     var headerImageView = UIImageView()
@@ -26,9 +30,14 @@ class UserHelpAndFeedbackTableHeaderView: UIView {
         }
         headerImageView.image = UIImage(named: "testHeader")
         let imageWidth = TSPublicTool.getRealPX(65)
-        let imageHeight = TSPublicTool.getRealPX(78)
+        var imageHeight = TSPublicTool.getRealPX(78)
+        if isPad {
+            imageHeight = 78
+        }
         let imageName = [#imageLiteral(resourceName: "user_customer_service"),#imageLiteral(resourceName: "user_teacher_service"),#imageLiteral(resourceName: "user_feedback")]
-        let labelName = ["客服咨询","导师服务","信息反馈"]
+        let labelName = [NSLocalizedString("客服咨询", comment: "客服咨询"),
+                         NSLocalizedString("导师服务", comment: "导师服务"),
+                         NSLocalizedString("信息反馈", comment: "信息反馈")]
         let gap = (ScreenWidth - 3 * imageWidth) / 4
         
         for i in 0..<3 {
@@ -56,8 +65,8 @@ class UserHelpAndFeedbackTableHeaderView: UIView {
             backView.addSubview(label)
             label.mas_makeConstraints({ (make) in
                 make?.top.equalTo()(icon.mas_bottom)?.offset()(10)
-                make?.left.equalTo()(backView.mas_left)
-                make?.right.equalTo()(backView.mas_right)
+                make?.left.equalTo()(backView.mas_left)?.offset()(-20)
+                make?.right.equalTo()(backView.mas_right)?.offset()(20)
                 make?.height.mas_equalTo()(20)
             })
             
@@ -65,6 +74,8 @@ class UserHelpAndFeedbackTableHeaderView: UIView {
             label.textColor = UIColor.generalSubTitleFontGray()
             label.font = UIFont.systemFont(ofSize: 13)
             label.text = labelName[i]
+            label.numberOfLines = 2;
+            label.sizeToFit()
         }
         
         //新手服务

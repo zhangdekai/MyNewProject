@@ -54,15 +54,15 @@ class UserCenterHelpFeedbackViewController: BasicViewController {
         return view
     }()
     func initilizeUI() {
-        tableView = UITableView(frame: CGRect.init(x: 0, y: 0, width: ScreenWidth, height: ScreenHeight), style: UITableViewStyle.plain)
+        tableView = UITableView(frame: CGRect.init(x: 0, y: 0, width: ScreenWidth, height: ScreenHeight),
+                                style: UITableViewStyle.plain)
         self.view.addSubview(tableView)
         tableView.showsVerticalScrollIndicator = false
+        tableView.separatorStyle = .none
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UserHelpFeedbackCell.self, forCellReuseIdentifier: "UserHelpFeedbackCell")
         tableView.tableHeaderView = tableHeaderView
-        
-        
     }
     
     

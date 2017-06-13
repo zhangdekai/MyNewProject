@@ -20,19 +20,31 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8vz-5e-wJv">
                         <rect key="frame" x="0.0" y="15" width="105" height="60"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="24" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mfq-k7-hY3">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mfq-k7-hY3">
                                 <rect key="frame" x="0.0" y="8" width="105" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="hZB-5s-rr9"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user_hongbao" translatesAutoresizingMaskIntoConstraints="NO" id="z3C-dF-8XO">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_hongbao" translatesAutoresizingMaskIntoConstraints="NO" id="z3C-dF-8XO">
                                 <rect key="frame" x="41" y="32" width="22" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="gME-ip-D2y"/>
+                                    <constraint firstAttribute="width" constant="22" id="yfE-Cv-b9a"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Mfq-k7-hY3" firstAttribute="leading" secondItem="8vz-5e-wJv" secondAttribute="leading" id="7fd-Zk-wZE"/>
+                            <constraint firstAttribute="trailing" secondItem="Mfq-k7-hY3" secondAttribute="trailing" id="Bwh-VA-XrT"/>
+                            <constraint firstItem="z3C-dF-8XO" firstAttribute="centerX" secondItem="8vz-5e-wJv" secondAttribute="centerX" id="Eir-p3-2Oe"/>
+                            <constraint firstItem="Mfq-k7-hY3" firstAttribute="top" secondItem="8vz-5e-wJv" secondAttribute="top" constant="8" id="KJ7-iU-6Wc"/>
+                            <constraint firstItem="z3C-dF-8XO" firstAttribute="top" secondItem="8vz-5e-wJv" secondAttribute="top" constant="32" id="rV5-6d-jya"/>
+                        </constraints>
                     </view>
                 </subviews>
             </view>

@@ -17,15 +17,15 @@ class UserHelpFeedbackCell: UITableViewCell {
         
         self.selectionStyle = .none
         //简体中文
-        helpLabel = UILabel(frame: CGRect(x: 15, y:15, width: 200, height: 20))
-        self.addSubview(helpLabel)
+        helpLabel = UILabel(frame: CGRect(x: 15, y:15, width: ScreenWidth, height: 20))
+        self.contentView.addSubview(helpLabel)
         helpLabel.textColor = UIColor.generalTitleFontBlack()
         helpLabel.font = UIFont.systemFont(ofSize: 15)
 
         
         
         let line = UIView(frame: CGRect(x: 0, y:49.5, width: ScreenWidth, height: 0.5))
-        self.addSubview(line)
+        self.contentView.addSubview(line)
         line.backgroundColor = UIColor.seperateThinLine()
     }
     

@@ -56,11 +56,15 @@
 
 - (void)initilizeUI {
     
-    CGFloat rheight = [TSPublicTool getRealPX:230];
+    CGFloat rheight = 230;//[TSPublicTool getRealPX:230];
     CGFloat textHeight = [TSPublicTool getRealPX:44];
     CGFloat textWidth = ScreenWidth - 30;
-    CGFloat identityW = [TSPublicTool getRealPX:195];
+    CGFloat identityW = [TSPublicTool getRealPX:210];
     CGFloat getIdentityW = [TSPublicTool getRealPX:120];
+    
+    UIImageView *backgroundImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"login_background"]];
+    backgroundImage.frame = CGRectMake(0, 0, ScreenWidth, rheight);
+    [self.view addSubview:backgroundImage];
     
     _phoneBackView.frame = CGRectMake(15, rheight, textWidth, textHeight);
 
@@ -186,9 +190,7 @@
     
 
 
-    UIImageView *backgroundImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"login_background"]];
-    backgroundImage.frame = CGRectMake(0, 0, ScreenWidth, 230);
-    [self.view addSubview:backgroundImage];
+   
     
     [self.view sendSubviewToBack:backgroundImage];
     
@@ -204,17 +206,17 @@
 
 - (void)changeUI {
     
-    //验证手机号
-    if (![YMHRegularExpression validateMobile:_phoneTextFiled.text]) {
-        [self showHudWithTextOnly:@"请输入正确的手机号"];
-    }
+//    //验证手机号
+//    if (![YMHRegularExpression validateMobile:_phoneTextFiled.text]) {
+//        [self showHudWithTextOnly:@"请输入正确的手机号"];
+//    }
     _identityBackView.hidden = NO;
     _authCodeView.hidden = NO;
     _rightIcon.hidden = NO;
 
 
     CGFloat textHeight = [TSPublicTool getRealPX:44];
-    CGFloat identityW = [TSPublicTool getRealPX:195];
+    CGFloat identityW = [TSPublicTool getRealPX:210];
     CGFloat getIdentityW = [TSPublicTool getRealPX:120];
 
     _dynamicView.frame =CGRectMake(15, _identityBackView.bottom + 15, identityW, textHeight);
@@ -238,26 +240,18 @@
     NSString *newString = [textField.text stringByReplacingCharactersInRange:range withString:string];
 
     if (textField == _phoneTextFiled) {
-        
         if(newString.length >= 11) {
             _rightIcon.hidden = NO;
             _phoneTextFiled.clearButtonMode = UITextFieldViewModeNever;
-
             [self changeUI];
         } else {
             _phoneTextFiled.clearButtonMode = UITextFieldViewModeWhileEditing;
-
             _rightIcon.hidden = YES;
-
         }
-
     } else if (textField == _identityTextFiled) {
-        
         if(newString.length >= 6){
-            
             _getIdentityButton.enabled = YES;
             _getIdentityButton.backgroundColor = [UIColor mainColorBlue];
-            
         }
     }
     

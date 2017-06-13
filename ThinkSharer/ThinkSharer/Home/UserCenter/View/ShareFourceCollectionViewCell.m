@@ -27,6 +27,9 @@
     [[_containerView layer]setShadowOpacity:0.3];
     [[_containerView layer]setShadowColor:[UIColor viewShaowColor].CGColor];
     
+    if (isPad) {
+        _leftConstance.constant = (ScreenWidth - 30) / 2 -50 ;
+    }
     
 }
 

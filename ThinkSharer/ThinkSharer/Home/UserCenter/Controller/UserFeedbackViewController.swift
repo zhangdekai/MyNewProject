@@ -39,9 +39,9 @@ class UserFeedbackViewController: BasicViewController {
     
     func initilizeUI() {
         self.setNavigationBarBack()
-        self.setNavigationBarTitle("信息反馈")
+        self.setNavigationBarTitle(NSLocalizedString("信息反馈", comment: "信息反馈"))
         
-        self.setNavigationBarRightItemWithTitle("提交") {[weak self] in
+        self.setNavigationBarRightItemWithTitle(NSLocalizedString("提交", comment: "提交")) {[weak self] in
             guard let `self` = self else {return}
             
             print("提交",self.feedContent)
