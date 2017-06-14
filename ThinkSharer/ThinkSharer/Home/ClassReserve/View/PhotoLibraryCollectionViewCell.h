@@ -11,5 +11,5 @@
 @interface PhotoLibraryCollectionViewCell : UICollectionViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
-
+@property (nonatomic,copy) void (^deletePhotoBlock)();
 @end

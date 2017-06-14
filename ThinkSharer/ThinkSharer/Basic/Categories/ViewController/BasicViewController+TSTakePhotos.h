@@ -13,7 +13,7 @@
 
 
 /**
- 选择相册，照片
+ 选择相册，照片,最多选择个数
  */
 - (void)selectPhoto:(NSInteger)maxNum;
 

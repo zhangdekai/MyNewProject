@@ -13,10 +13,13 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    
+    [self.contentView sendSubviewToBack:_photoImageView];
+    
 }
 - (IBAction)buttonClick:(id)sender {
     
-    
+    self.deletePhotoBlock();
 }
 
 @end

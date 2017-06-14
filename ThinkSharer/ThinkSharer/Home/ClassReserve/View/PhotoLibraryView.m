@@ -9,11 +9,7 @@
 #import "PhotoLibraryView.h"
 #import "PhotoLibraryCollectionViewCell.h"
 
-@interface PhotoLibraryView ()<UICollectionViewDelegate,UICollectionViewDataSource,
-UICollectionViewDelegateFlowLayout>
-
-@property (nonatomic,strong) UICollectionView *collectionView;
-
+@interface PhotoLibraryView ()
 
 @end
 

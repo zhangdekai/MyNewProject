@@ -18,6 +18,9 @@
 #import "ThinkSharer-Swift.h"
 
 #import "ClassReserveByPhotoLibraryViewController.h"
+#import "ClassReserveByTakePhotoViewController.h"
+#import "ClassReserveFromPhotosViewController.h"
+
 
 
 
@@ -372,7 +375,8 @@
                 ClassReserveByPhotoLibraryViewController *vc = [[ClassReserveByPhotoLibraryViewController alloc]init];
                 [self.navigationController pushViewController:vc animated:YES];
             } else {//退出登录
-                
+                ClassReserveFromPhotosViewController *vc = [[ClassReserveFromPhotosViewController alloc]init];
+                [self.navigationController pushViewController:vc animated:YES];
             }
         }
             
