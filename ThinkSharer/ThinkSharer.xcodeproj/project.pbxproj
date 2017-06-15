@@ -34,6 +34,7 @@
 		49187A831EF240A5009DD2C2 /* ClassSearchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 49187A821EF240A5009DD2C2 /* ClassSearchModel.m */; };
 		49187A861EF25EFB009DD2C2 /* ClassSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49187A851EF25EFB009DD2C2 /* ClassSearchViewController.m */; };
 		49187A891EF27965009DD2C2 /* ClassSearchClassTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49187A881EF27965009DD2C2 /* ClassSearchClassTimeView.m */; };
+		49187A8C1EF2BF32009DD2C2 /* SearchClassResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49187A8B1EF2BF32009DD2C2 /* SearchClassResultView.m */; };
 		491C46141ECBF3C8009F43A4 /* SelectScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 491C46131ECBF3C8009F43A4 /* SelectScrollView.m */; };
 		491C46181ECC1D91009F43A4 /* SelectClassCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 491C46161ECC1D91009F43A4 /* SelectClassCollectionViewCell.m */; };
 		491C46191ECC1D91009F43A4 /* SelectClassCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 491C46171ECC1D91009F43A4 /* SelectClassCollectionViewCell.xib */; };
@@ -239,6 +240,8 @@
 		49187A851EF25EFB009DD2C2 /* ClassSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassSearchViewController.m; sourceTree = "<group>"; };
 		49187A871EF27965009DD2C2 /* ClassSearchClassTimeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassSearchClassTimeView.h; sourceTree = "<group>"; };
 		49187A881EF27965009DD2C2 /* ClassSearchClassTimeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassSearchClassTimeView.m; sourceTree = "<group>"; };
+		49187A8A1EF2BF32009DD2C2 /* SearchClassResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchClassResultView.h; sourceTree = "<group>"; };
+		49187A8B1EF2BF32009DD2C2 /* SearchClassResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchClassResultView.m; sourceTree = "<group>"; };
 		491C46121ECBF3C8009F43A4 /* SelectScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectScrollView.h; sourceTree = "<group>"; };
 		491C46131ECBF3C8009F43A4 /* SelectScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectScrollView.m; sourceTree = "<group>"; };
 		491C46151ECC1D91009F43A4 /* SelectClassCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectClassCollectionViewCell.h; sourceTree = "<group>"; };
@@ -1098,6 +1101,8 @@
 		49AF54B21ECE975400406DFC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				49187A8A1EF2BF32009DD2C2 /* SearchClassResultView.h */,
+				49187A8B1EF2BF32009DD2C2 /* SearchClassResultView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1675,6 +1680,7 @@
 				491F5F8E1EF159F000182CB6 /* XLCardSwitchFlowLayout.m in Sources */,
 				49B743D31ED2DCC800FFDBDB /* UserGuideViewController.m in Sources */,
 				498BE1211ED5950500D7D004 /* CTAssetPlayButton.m in Sources */,
+				49187A8C1EF2BF32009DD2C2 /* SearchClassResultView.m in Sources */,
 				49D7FB141EE529AF007CFC43 /* AccountPayPassCell.swift in Sources */,
 				4901264B1EEA6E310013A3AB /* ChatModel.m in Sources */,
 				493533141ED6D703001CCCF2 /* UIImageView+YMHPlaceholder.m in Sources */,

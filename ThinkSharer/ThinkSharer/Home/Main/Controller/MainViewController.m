@@ -16,6 +16,8 @@
 #import "TSAppInfo.h"
 
 #import "ClassSearchAndReserveViewController.h"
+#import "SearchClassResultView.h"
+
 
 @interface MainViewController ()<MAMapViewDelegate,AMapLocationManagerDelegate>
 
@@ -35,6 +37,7 @@
     // Do any additional setup after loading the view.
     
     //    定位授权
+    [self showResultView];
     
     [self showAlterView];
     
@@ -315,9 +318,15 @@
 //    }
 
     
+}
+
+- (void)showResultView {
+    SearchClassResultView *result = [[SearchClassResultView alloc]init];
+    [result creatActionAlterView:@"很抱歉，目前还没有相关课程发布，您可私人订制此课程，我们将尽快为您找到合适的授课者。" action:^{
+        NSLog(@"jieguo");
+    }];
     
-    
-    
+    [result showInView];
 }
 
 

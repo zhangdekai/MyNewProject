@@ -225,7 +225,6 @@
     }
 }
 
-
 - (void)sexButtonClick:(UIButton *)button {
     
     [button setTitleColor:[UIColor mainColorBlue] forState:(UIControlStateNormal)];
