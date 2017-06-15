@@ -27,13 +27,17 @@
 
 -(void)didediting {
     NSLog(@"开始编辑");
-    
-    self.EditingStatasBlcok(0);
+    if (self.EditingStatasBlcok != nil) {
+        self.EditingStatasBlcok(0);
+    }
 }
 
 -(void)endediting {
     NSLog(@"停止编辑");
-    self.EditingStatasBlcok(1);
+    if (self.EditingStatasBlcok != nil) {
+        self.EditingStatasBlcok(1);
+    }
+    
 }
 
 - (void)textFieldDidChange:(UITextField *)textFiled {

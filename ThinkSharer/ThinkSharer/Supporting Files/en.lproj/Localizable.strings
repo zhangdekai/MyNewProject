@@ -41,3 +41,17 @@
 "动态码" = "Dynamic code";
 "验证码" = "Verification code";
 "登入代表同意《用户服务条款》" = "the agreed terms of user service";
+
+//学习 搜索
+"学习" = "study";
+"授课" = "teaching";
+"搜索课程" = "Search courses";
+"订制课程" = "Reserve courses";
+"找订制课" = "find courses";
+"发布课程" = "Release courses";
+
+"您可以设置相关条件搜索学习需求，以获得能力的提升。" = "You can set the search learning demand conditions, related to get ability to ascend.";
+"您可以按照自己的个人需求制订学习计划，以获得有效的帮助。" = "You can according to their individual needs learning plan, to achieve effective help.";
+"您可以查找学习者的订制课程请求，并帮助TA以获得经济效益。" = "You can find the learners' request custom-made course, and help the TA to gain economic benefits.";
+"您可以根据自己的专业特长发布技能帮助TA人，获得经济效益。" = "You can according to your own professional competence skills help TA, obtain economic benefits.";
+"" = "";

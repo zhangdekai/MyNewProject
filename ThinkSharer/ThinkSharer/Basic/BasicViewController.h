@@ -34,13 +34,36 @@ typedef void(^NavigationBarButtonItemBlockForRight)();
  */
 - (void)setNavigationBarTitle:(NSString *)title titleColor:(UIColor *)color;
 
-//设置导航栏默认返回箭头
+
+/**
+ 设置导航栏默认返回箭头 默认灰色
+ */
 - (void)setNavigationBarBack;
 
-//设置导航栏右侧image
+
+/**
+ 导航条返回尖头 image
+
+ @param image image
+ */
+- (void)setNavigationBarBack:(UIImage *)image;
+
+
+/**
+ 设置导航栏右侧image
+
+ @param imageName imageName
+ @param rightBlock block
+ */
 - (void)setNavigationBarRightItemWithImageName:(NSString *)imageName itemBlock:(NavigationBarButtonItemBlockForRight)rightBlock ;
 
-//设置导航栏左侧image
+/**
+ 设置导航栏左侧image
+ 
+ @param imageName imageName
+ @param leftBlock block
+ */
+
 - (void)setNavigationBarLeftItemWithImageName:(NSString *)imageName itemBlock:(NavigationBarButtonItemBlock)leftBlock ;
 
 /**
@@ -50,6 +73,14 @@ typedef void(^NavigationBarButtonItemBlockForRight)();
  @param rightBlock block
  */
 - (void)setNavigationBarRightItemWithTitle:(NSString *)title itemBlock:(NavigationBarButtonItemBlockForRight)rightBlock;
+/**
+ 设置导航栏右侧文字 颜色
+ 
+ @param title 文字
+ @param textColor 文字颜色
+ @param rightBlock block
+ */
+- (void)setBarRightItemWithTitle:(NSString *)title textColor:(UIColor *)textColor itemBlock:(NavigationBarButtonItemBlockForRight)rightBlock;
 
 //给导航条家阴影，去掉阴影
 - (void)addShadow ;

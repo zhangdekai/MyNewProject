@@ -28,11 +28,21 @@
 		490126731EEA76A20013A3AB /* headImage.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 490126611EEA76A20013A3AB /* headImage.jpeg */; };
 		490126761EEAAFEE0013A3AB /* UserChatAlterVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = 490126751EEAAFEE0013A3AB /* UserChatAlterVIew.m */; };
 		490CC4221EDFF42300E5C7B2 /* ShareMessageSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CC4211EDFF42300E5C7B2 /* ShareMessageSectionView.swift */; };
+		49187A7A1EF222FC009DD2C2 /* ClassSearchAndReserveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49187A791EF222FC009DD2C2 /* ClassSearchAndReserveViewController.m */; };
+		49187A7E1EF237D7009DD2C2 /* ClassSearchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49187A7C1EF237D7009DD2C2 /* ClassSearchTableViewCell.m */; };
+		49187A7F1EF237D7009DD2C2 /* ClassSearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49187A7D1EF237D7009DD2C2 /* ClassSearchTableViewCell.xib */; };
+		49187A831EF240A5009DD2C2 /* ClassSearchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 49187A821EF240A5009DD2C2 /* ClassSearchModel.m */; };
+		49187A861EF25EFB009DD2C2 /* ClassSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49187A851EF25EFB009DD2C2 /* ClassSearchViewController.m */; };
+		49187A891EF27965009DD2C2 /* ClassSearchClassTimeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49187A881EF27965009DD2C2 /* ClassSearchClassTimeView.m */; };
 		491C46141ECBF3C8009F43A4 /* SelectScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 491C46131ECBF3C8009F43A4 /* SelectScrollView.m */; };
 		491C46181ECC1D91009F43A4 /* SelectClassCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 491C46161ECC1D91009F43A4 /* SelectClassCollectionViewCell.m */; };
 		491C46191ECC1D91009F43A4 /* SelectClassCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 491C46171ECC1D91009F43A4 /* SelectClassCollectionViewCell.xib */; };
 		491C461F1ECC23A1009F43A4 /* SelectClassheaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 491C461E1ECC23A1009F43A4 /* SelectClassheaderView.m */; };
 		491C46281ECC2CD4009F43A4 /* SelectClassTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 491C46271ECC2CD4009F43A4 /* SelectClassTableViewCell.m */; };
+		491D1EDF1EF21F77002438D1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 491D1EDE1EF21F77002438D1 /* AppDelegate.m */; };
+		491D1EE71EF2202E002438D1 /* ClassReserveByPhotoLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 491D1EE21EF2202E002438D1 /* ClassReserveByPhotoLibraryViewController.m */; };
+		491D1EE81EF2202E002438D1 /* ClassReserveByTakePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 491D1EE41EF2202E002438D1 /* ClassReserveByTakePhotoViewController.m */; };
+		491D1EE91EF2202E002438D1 /* ClassReserveFromPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 491D1EE61EF2202E002438D1 /* ClassReserveFromPhotosViewController.m */; };
 		491E15151EE7DF9900215151 /* UserCenterHelpFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491E15141EE7DF9900215151 /* UserCenterHelpFeedbackViewController.swift */; };
 		491E15181EE7E0AD00215151 /* UserHelpAndFeedbackTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491E15171EE7E0AD00215151 /* UserHelpAndFeedbackTableHeaderView.swift */; };
 		491E151A1EE7F43800215151 /* UserHelpFeedbackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491E15191EE7F43800215151 /* UserHelpFeedbackCell.swift */; };
@@ -45,8 +55,6 @@
 		491F5F741EF0CE3300182CB6 /* PhotoLibraryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 491F5F701EF0CE3300182CB6 /* PhotoLibraryCollectionViewCell.xib */; };
 		491F5F751EF0CE3300182CB6 /* PhotoLibraryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 491F5F721EF0CE3300182CB6 /* PhotoLibraryView.m */; };
 		491F5F781EF1166300182CB6 /* TakePhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 491F5F771EF1166300182CB6 /* TakePhotoView.m */; };
-		491F5F7B1EF11A1A00182CB6 /* ClassReserveByTakePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 491F5F7A1EF11A1A00182CB6 /* ClassReserveByTakePhotoViewController.m */; };
-		491F5F7E1EF1517E00182CB6 /* ClassReserveFromPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 491F5F7D1EF1517E00182CB6 /* ClassReserveFromPhotosViewController.m */; };
 		491F5F811EF1523900182CB6 /* LQScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 491F5F801EF1523900182CB6 /* LQScrollView.m */; };
 		491F5F8B1EF159F000182CB6 /* XLCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 491F5F841EF159F000182CB6 /* XLCard.m */; };
 		491F5F8C1EF159F000182CB6 /* XLCardItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 491F5F861EF159F000182CB6 /* XLCardItem.m */; };
@@ -65,7 +73,6 @@
 		4935331D1ED6E839001CCCF2 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4935331C1ED6E839001CCCF2 /* MobileCoreServices.framework */; };
 		494533191ED6C04B00F9340F /* NetWorkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 494533181ED6C04B00F9340F /* NetWorkManager.m */; };
 		49601EAF1EEFC6EB000A7305 /* NSString+Language.m in Sources */ = {isa = PBXBuildFile; fileRef = 49601EAE1EEFC6EB000A7305 /* NSString+Language.m */; };
-		49601EE11EF01BFF000A7305 /* ClassReserveByPhotoLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49601EE01EF01BFF000A7305 /* ClassReserveByPhotoLibraryViewController.m */; };
 		4981425F1EE637F500873655 /* BasicViewController+TSTakePhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 4981425E1EE637F500873655 /* BasicViewController+TSTakePhotos.m */; };
 		498BB9DE1EE8E2DB00E4089D /* UserFeedbackHeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498BB9DD1EE8E2DB00E4089D /* UserFeedbackHeaderReusableView.swift */; };
 		498BB9E01EE8E3A000E4089D /* UserFeedbackContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498BB9DF1EE8E3A000E4089D /* UserFeedbackContentCell.swift */; };
@@ -130,7 +137,6 @@
 		49B743CF1ED2DC9D00FFDBDB /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B743CB1ED2DC9D00FFDBDB /* LoginViewController.xib */; };
 		49B743D01ED2DC9D00FFDBDB /* SelectClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B743CD1ED2DC9D00FFDBDB /* SelectClassViewController.m */; };
 		49B743D31ED2DCC800FFDBDB /* UserGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B743D21ED2DCC800FFDBDB /* UserGuideViewController.m */; };
-		49B743D71ED2E47D00FFDBDB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B743D61ED2E47D00FFDBDB /* AppDelegate.m */; };
 		49B743DF1ED2E4B700FFDBDB /* ClassListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B743DA1ED2E4B700FFDBDB /* ClassListViewController.m */; };
 		49B743E01ED2E4B700FFDBDB /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B743DC1ED2E4B700FFDBDB /* MainViewController.m */; };
 		49B743EA1ED2EA1500FFDBDB /* SharerCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B743E91ED2EA1500FFDBDB /* SharerCenterViewController.m */; };
@@ -140,7 +146,6 @@
 		49B743F71ED2EA6900FFDBDB /* SharerScendCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B743F01ED2EA6900FFDBDB /* SharerScendCollectionViewCell.xib */; };
 		49B743F81ED2EA6900FFDBDB /* SharerThirdCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B743F21ED2EA6900FFDBDB /* SharerThirdCollectionViewCell.m */; };
 		49B743F91ED2EA6900FFDBDB /* SharerThirdCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B743F31ED2EA6900FFDBDB /* SharerThirdCollectionViewCell.xib */; };
-		49B743FE1ED2F02400FFDBDB /* SearchClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B743FD1ED2F02400FFDBDB /* SearchClassViewController.m */; };
 		49D161221EE6B52000440784 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49D161241EE6B52000440784 /* InfoPlist.strings */; };
 		49D161291EE6B70E00440784 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49D1612B1EE6B70E00440784 /* Localizable.strings */; };
 		49D1612F1EE6BF7800440784 /* UserLangageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D1612E1EE6BF7800440784 /* UserLangageViewController.swift */; };
@@ -223,6 +228,17 @@
 		490126741EEAAFEE0013A3AB /* UserChatAlterVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserChatAlterVIew.h; sourceTree = "<group>"; };
 		490126751EEAAFEE0013A3AB /* UserChatAlterVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserChatAlterVIew.m; sourceTree = "<group>"; };
 		490CC4211EDFF42300E5C7B2 /* ShareMessageSectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareMessageSectionView.swift; sourceTree = "<group>"; };
+		49187A781EF222FC009DD2C2 /* ClassSearchAndReserveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassSearchAndReserveViewController.h; sourceTree = "<group>"; };
+		49187A791EF222FC009DD2C2 /* ClassSearchAndReserveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassSearchAndReserveViewController.m; sourceTree = "<group>"; };
+		49187A7B1EF237D7009DD2C2 /* ClassSearchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassSearchTableViewCell.h; sourceTree = "<group>"; };
+		49187A7C1EF237D7009DD2C2 /* ClassSearchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassSearchTableViewCell.m; sourceTree = "<group>"; };
+		49187A7D1EF237D7009DD2C2 /* ClassSearchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClassSearchTableViewCell.xib; sourceTree = "<group>"; };
+		49187A811EF240A5009DD2C2 /* ClassSearchModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassSearchModel.h; sourceTree = "<group>"; };
+		49187A821EF240A5009DD2C2 /* ClassSearchModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassSearchModel.m; sourceTree = "<group>"; };
+		49187A841EF25EFB009DD2C2 /* ClassSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassSearchViewController.h; sourceTree = "<group>"; };
+		49187A851EF25EFB009DD2C2 /* ClassSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassSearchViewController.m; sourceTree = "<group>"; };
+		49187A871EF27965009DD2C2 /* ClassSearchClassTimeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassSearchClassTimeView.h; sourceTree = "<group>"; };
+		49187A881EF27965009DD2C2 /* ClassSearchClassTimeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassSearchClassTimeView.m; sourceTree = "<group>"; };
 		491C46121ECBF3C8009F43A4 /* SelectScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectScrollView.h; sourceTree = "<group>"; };
 		491C46131ECBF3C8009F43A4 /* SelectScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectScrollView.m; sourceTree = "<group>"; };
 		491C46151ECC1D91009F43A4 /* SelectClassCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectClassCollectionViewCell.h; sourceTree = "<group>"; };
@@ -232,6 +248,14 @@
 		491C46241ECC23DB009F43A4 /* SelectClassheaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectClassheaderView.h; sourceTree = "<group>"; };
 		491C46261ECC2CD4009F43A4 /* SelectClassTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectClassTableViewCell.h; sourceTree = "<group>"; };
 		491C46271ECC2CD4009F43A4 /* SelectClassTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectClassTableViewCell.m; sourceTree = "<group>"; };
+		491D1EDD1EF21F77002438D1 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		491D1EDE1EF21F77002438D1 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		491D1EE11EF2202E002438D1 /* ClassReserveByPhotoLibraryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassReserveByPhotoLibraryViewController.h; sourceTree = "<group>"; };
+		491D1EE21EF2202E002438D1 /* ClassReserveByPhotoLibraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassReserveByPhotoLibraryViewController.m; sourceTree = "<group>"; };
+		491D1EE31EF2202E002438D1 /* ClassReserveByTakePhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassReserveByTakePhotoViewController.h; sourceTree = "<group>"; };
+		491D1EE41EF2202E002438D1 /* ClassReserveByTakePhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassReserveByTakePhotoViewController.m; sourceTree = "<group>"; };
+		491D1EE51EF2202E002438D1 /* ClassReserveFromPhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassReserveFromPhotosViewController.h; sourceTree = "<group>"; };
+		491D1EE61EF2202E002438D1 /* ClassReserveFromPhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassReserveFromPhotosViewController.m; sourceTree = "<group>"; };
 		491E15141EE7DF9900215151 /* UserCenterHelpFeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCenterHelpFeedbackViewController.swift; sourceTree = "<group>"; };
 		491E15171EE7E0AD00215151 /* UserHelpAndFeedbackTableHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHelpAndFeedbackTableHeaderView.swift; sourceTree = "<group>"; };
 		491E15191EE7F43800215151 /* UserHelpFeedbackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHelpFeedbackCell.swift; sourceTree = "<group>"; };
@@ -250,10 +274,6 @@
 		491F5F721EF0CE3300182CB6 /* PhotoLibraryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoLibraryView.m; sourceTree = "<group>"; };
 		491F5F761EF1166300182CB6 /* TakePhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakePhotoView.h; sourceTree = "<group>"; };
 		491F5F771EF1166300182CB6 /* TakePhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakePhotoView.m; sourceTree = "<group>"; };
-		491F5F791EF11A1A00182CB6 /* ClassReserveByTakePhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassReserveByTakePhotoViewController.h; sourceTree = "<group>"; };
-		491F5F7A1EF11A1A00182CB6 /* ClassReserveByTakePhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassReserveByTakePhotoViewController.m; sourceTree = "<group>"; };
-		491F5F7C1EF1517E00182CB6 /* ClassReserveFromPhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassReserveFromPhotosViewController.h; sourceTree = "<group>"; };
-		491F5F7D1EF1517E00182CB6 /* ClassReserveFromPhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassReserveFromPhotosViewController.m; sourceTree = "<group>"; };
 		491F5F7F1EF1523900182CB6 /* LQScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LQScrollView.h; sourceTree = "<group>"; };
 		491F5F801EF1523900182CB6 /* LQScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LQScrollView.m; sourceTree = "<group>"; };
 		491F5F831EF159F000182CB6 /* XLCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLCard.h; sourceTree = "<group>"; };
@@ -288,8 +308,6 @@
 		494533181ED6C04B00F9340F /* NetWorkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkManager.m; sourceTree = "<group>"; };
 		49601EAD1EEFC6EB000A7305 /* NSString+Language.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Language.h"; sourceTree = "<group>"; };
 		49601EAE1EEFC6EB000A7305 /* NSString+Language.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Language.m"; sourceTree = "<group>"; };
-		49601EDF1EF01BFF000A7305 /* ClassReserveByPhotoLibraryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassReserveByPhotoLibraryViewController.h; sourceTree = "<group>"; };
-		49601EE01EF01BFF000A7305 /* ClassReserveByPhotoLibraryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassReserveByPhotoLibraryViewController.m; sourceTree = "<group>"; };
 		4981425D1EE637F500873655 /* BasicViewController+TSTakePhotos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BasicViewController+TSTakePhotos.h"; sourceTree = "<group>"; };
 		4981425E1EE637F500873655 /* BasicViewController+TSTakePhotos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BasicViewController+TSTakePhotos.m"; sourceTree = "<group>"; };
 		498BB9DD1EE8E2DB00E4089D /* UserFeedbackHeaderReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFeedbackHeaderReusableView.swift; sourceTree = "<group>"; };
@@ -439,8 +457,6 @@
 		49B743CD1ED2DC9D00FFDBDB /* SelectClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectClassViewController.m; sourceTree = "<group>"; };
 		49B743D11ED2DCC800FFDBDB /* UserGuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserGuideViewController.h; sourceTree = "<group>"; };
 		49B743D21ED2DCC800FFDBDB /* UserGuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserGuideViewController.m; sourceTree = "<group>"; };
-		49B743D51ED2E47D00FFDBDB /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		49B743D61ED2E47D00FFDBDB /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		49B743D91ED2E4B700FFDBDB /* ClassListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassListViewController.h; sourceTree = "<group>"; };
 		49B743DA1ED2E4B700FFDBDB /* ClassListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassListViewController.m; sourceTree = "<group>"; };
 		49B743DB1ED2E4B700FFDBDB /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -456,8 +472,6 @@
 		49B743F11ED2EA6900FFDBDB /* SharerThirdCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharerThirdCollectionViewCell.h; sourceTree = "<group>"; };
 		49B743F21ED2EA6900FFDBDB /* SharerThirdCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharerThirdCollectionViewCell.m; sourceTree = "<group>"; };
 		49B743F31ED2EA6900FFDBDB /* SharerThirdCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SharerThirdCollectionViewCell.xib; sourceTree = "<group>"; };
-		49B743FC1ED2F02400FFDBDB /* SearchClassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchClassViewController.h; sourceTree = "<group>"; };
-		49B743FD1ED2F02400FFDBDB /* SearchClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchClassViewController.m; sourceTree = "<group>"; };
 		49D161231EE6B52000440784 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		49D161251EE6B52900440784 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		49D161261EE6B54F00440784 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -616,6 +630,15 @@
 			path = photo;
 			sourceTree = "<group>";
 		};
+		49187A801EF24091009DD2C2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				49187A811EF240A5009DD2C2 /* ClassSearchModel.h */,
+				49187A821EF240A5009DD2C2 /* ClassSearchModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		491C46111ECBF38C009F43A4 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -638,6 +661,61 @@
 				49A850401EDED27200EE521A /* SelectClassLeftTableViewCell.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		491D1EDC1EF21F77002438D1 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				491D1EDD1EF21F77002438D1 /* AppDelegate.h */,
+				491D1EDE1EF21F77002438D1 /* AppDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		491D1EE01EF22003002438D1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				491D1EE11EF2202E002438D1 /* ClassReserveByPhotoLibraryViewController.h */,
+				491D1EE21EF2202E002438D1 /* ClassReserveByPhotoLibraryViewController.m */,
+				491D1EE31EF2202E002438D1 /* ClassReserveByTakePhotoViewController.h */,
+				491D1EE41EF2202E002438D1 /* ClassReserveByTakePhotoViewController.m */,
+				491D1EE51EF2202E002438D1 /* ClassReserveFromPhotosViewController.h */,
+				491D1EE61EF2202E002438D1 /* ClassReserveFromPhotosViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		491D1EEA1EF22071002438D1 /* ClassSearch */ = {
+			isa = PBXGroup;
+			children = (
+				49187A801EF24091009DD2C2 /* Model */,
+				491D1EEB1EF2209D002438D1 /* View */,
+				491D1EEC1EF2209D002438D1 /* Controller */,
+			);
+			path = ClassSearch;
+			sourceTree = "<group>";
+		};
+		491D1EEB1EF2209D002438D1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				49187A7B1EF237D7009DD2C2 /* ClassSearchTableViewCell.h */,
+				49187A7C1EF237D7009DD2C2 /* ClassSearchTableViewCell.m */,
+				49187A7D1EF237D7009DD2C2 /* ClassSearchTableViewCell.xib */,
+				49187A871EF27965009DD2C2 /* ClassSearchClassTimeView.h */,
+				49187A881EF27965009DD2C2 /* ClassSearchClassTimeView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		491D1EEC1EF2209D002438D1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				49187A781EF222FC009DD2C2 /* ClassSearchAndReserveViewController.h */,
+				49187A791EF222FC009DD2C2 /* ClassSearchAndReserveViewController.m */,
+				49187A841EF25EFB009DD2C2 /* ClassSearchViewController.h */,
+				49187A851EF25EFB009DD2C2 /* ClassSearchViewController.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		491E15161EE7E02F00215151 /* UserHelp */ = {
@@ -727,13 +805,8 @@
 		49601EDE1EF01A22000A7305 /* ClassReserve */ = {
 			isa = PBXGroup;
 			children = (
+				491D1EE01EF22003002438D1 /* Controller */,
 				491F5F6D1EF0CE3300182CB6 /* View */,
-				49601EDF1EF01BFF000A7305 /* ClassReserveByPhotoLibraryViewController.h */,
-				49601EE01EF01BFF000A7305 /* ClassReserveByPhotoLibraryViewController.m */,
-				491F5F7C1EF1517E00182CB6 /* ClassReserveFromPhotosViewController.h */,
-				491F5F7D1EF1517E00182CB6 /* ClassReserveFromPhotosViewController.m */,
-				491F5F791EF11A1A00182CB6 /* ClassReserveByTakePhotoViewController.h */,
-				491F5F7A1EF11A1A00182CB6 /* ClassReserveByTakePhotoViewController.m */,
 			);
 			path = ClassReserve;
 			sourceTree = "<group>";
@@ -918,12 +991,12 @@
 		4996B8051ECA981E00272439 /* ThinkSharer */ = {
 			isa = PBXGroup;
 			children = (
-				49B743D41ED2E47D00FFDBDB /* App */,
+				491D1EDC1EF21F77002438D1 /* AppDelegate */,
 				4996B83A1ECA99B600272439 /* Basic */,
 				4996B83E1ECA9A6400272439 /* Vendors */,
 				4996B83D1ECA9A1C00272439 /* Service */,
-				4996B83C1ECA9A1700272439 /* Home */,
 				4996B83B1ECA9A1200272439 /* Views */,
+				4996B83C1ECA9A1700272439 /* Home */,
 				4996B8461ECAAABA00272439 /* Supporting Files */,
 				4996B84F1ECAAB8100272439 /* Resources */,
 			);
@@ -975,9 +1048,9 @@
 		4996B83C1ECA9A1700272439 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				49601EDE1EF01A22000A7305 /* ClassReserve */,
 				49F38FD91ECAF25A00D83E95 /* Main */,
-				49B743FA1ED2EFF000FFDBDB /* SearchMakeClass */,
+				491D1EEA1EF22071002438D1 /* ClassSearch */,
+				49601EDE1EF01A22000A7305 /* ClassReserve */,
 				49F38F9D1ECAB1BE00D83E95 /* Login */,
 				49B743E21ED2E9AD00FFDBDB /* UserCenter */,
 			);
@@ -1043,15 +1116,6 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		49B743D41ED2E47D00FFDBDB /* App */ = {
-			isa = PBXGroup;
-			children = (
-				49B743D51ED2E47D00FFDBDB /* AppDelegate.h */,
-				49B743D61ED2E47D00FFDBDB /* AppDelegate.m */,
-			);
-			path = App;
-			sourceTree = "<group>";
-		};
 		49B743D81ED2E4B700FFDBDB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -1104,23 +1168,6 @@
 				49E8D4461EE4ECBA002C20E0 /* Company */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		49B743FA1ED2EFF000FFDBDB /* SearchMakeClass */ = {
-			isa = PBXGroup;
-			children = (
-				49B743FB1ED2F00300FFDBDB /* Controller */,
-			);
-			path = SearchMakeClass;
-			sourceTree = "<group>";
-		};
-		49B743FB1ED2F00300FFDBDB /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				49B743FC1ED2F02400FFDBDB /* SearchClassViewController.h */,
-				49B743FD1ED2F02400FFDBDB /* SearchClassViewController.m */,
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		49B743FF1ED2F54800FFDBDB /* Public */ = {
@@ -1446,6 +1493,7 @@
 				49D161291EE6B70E00440784 /* Localizable.strings in Resources */,
 				49B743F71ED2EA6900FFDBDB /* SharerScendCollectionViewCell.xib in Resources */,
 				49B743F91ED2EA6900FFDBDB /* SharerThirdCollectionViewCell.xib in Resources */,
+				49187A7F1EF237D7009DD2C2 /* ClassSearchTableViewCell.xib in Resources */,
 				4901264D1EEA72160013A3AB /* UserCustomServiceViewController.xib in Resources */,
 				49B743CF1ED2DC9D00FFDBDB /* LoginViewController.xib in Resources */,
 				491C46191ECC1D91009F43A4 /* SelectClassCollectionViewCell.xib in Resources */,
@@ -1587,6 +1635,7 @@
 				492ADDB71EE4319200E70ADD /* CompanyMessageViewController.m in Sources */,
 				49FBF3161ED3D2B900CAC5F5 /* SelectScrollViewForM.m in Sources */,
 				491F5F781EF1166300182CB6 /* TakePhotoView.m in Sources */,
+				491D1EE71EF2202E002438D1 /* ClassReserveByPhotoLibraryViewController.m in Sources */,
 				498BE0021ED52BDB00D7D004 /* UserShareCenterCollectionReusableView.m in Sources */,
 				49A8503E1EDE94EB00EE521A /* LoactionIdentityView.m in Sources */,
 				491C461F1ECC23A1009F43A4 /* SelectClassheaderView.m in Sources */,
@@ -1598,7 +1647,6 @@
 				498BE12F1ED5950500D7D004 /* CTAssetsPickerController.m in Sources */,
 				498BE1291ED5950500D7D004 /* CTAssetsGridViewFooter.m in Sources */,
 				49B743E01ED2E4B700FFDBDB /* MainViewController.m in Sources */,
-				49601EE11EF01BFF000A7305 /* ClassReserveByPhotoLibraryViewController.m in Sources */,
 				498BB9E01EE8E3A000E4089D /* UserFeedbackContentCell.swift in Sources */,
 				498BE1231ED5950500D7D004 /* CTAssetSelectionButton.m in Sources */,
 				498BE11C1ED5950500D7D004 /* UIImage+CTAssetsPickerController.m in Sources */,
@@ -1610,35 +1658,38 @@
 				49F38FA81ECADDE300D83E95 /* YMHRegularExpression.m in Sources */,
 				491E151D1EE7FA9400215151 /* UserFeedbackViewController.swift in Sources */,
 				49F38FE01ECAFBFF00D83E95 /* TSAppInfo.m in Sources */,
-				491F5F7B1EF11A1A00182CB6 /* ClassReserveByTakePhotoViewController.m in Sources */,
 				498BB9FC1EE8FBB700E4089D /* TSAlterShowView.m in Sources */,
 				498BE11D1ED5950500D7D004 /* CTAssetCheckmark.m in Sources */,
+				49187A7A1EF222FC009DD2C2 /* ClassSearchAndReserveViewController.m in Sources */,
 				498BB9FE1EE8FBB700E4089D /* TSDatePickerView.m in Sources */,
 				49B0D9EB1ECC4D4B00CA3299 /* SelectClassFooterView.m in Sources */,
-				49B743FE1ED2F02400FFDBDB /* SearchClassViewController.m in Sources */,
 				498BE1251ED5950500D7D004 /* CTAssetsGridSelectedView.m in Sources */,
 				49D161321EE6C18500440784 /* UserLanguageCell.swift in Sources */,
 				492ADDB41EE41B8F00E70ADD /* PersonalOrCompanyView.m in Sources */,
 				490126381EEA4FA00013A3AB /* UUProgressHUD.m in Sources */,
 				498BE1261ED5950500D7D004 /* CTAssetsGridView.m in Sources */,
-				49B743D71ED2E47D00FFDBDB /* AppDelegate.m in Sources */,
 				498BE11F1ED5950500D7D004 /* CTAssetCollectionViewController.m in Sources */,
+				491D1EE81EF2202E002438D1 /* ClassReserveByTakePhotoViewController.m in Sources */,
 				491E151A1EE7F43800215151 /* UserHelpFeedbackCell.swift in Sources */,
+				491D1EDF1EF21F77002438D1 /* AppDelegate.m in Sources */,
 				491F5F8E1EF159F000182CB6 /* XLCardSwitchFlowLayout.m in Sources */,
 				49B743D31ED2DCC800FFDBDB /* UserGuideViewController.m in Sources */,
 				498BE1211ED5950500D7D004 /* CTAssetPlayButton.m in Sources */,
 				49D7FB141EE529AF007CFC43 /* AccountPayPassCell.swift in Sources */,
 				4901264B1EEA6E310013A3AB /* ChatModel.m in Sources */,
 				493533141ED6D703001CCCF2 /* UIImageView+YMHPlaceholder.m in Sources */,
+				49187A7E1EF237D7009DD2C2 /* ClassSearchTableViewCell.m in Sources */,
 				498BE0051ED52C2D00D7D004 /* UserShareCenterFotterCollectionReusableView.m in Sources */,
 				498BE1311ED5950500D7D004 /* CTAssetsViewControllerTransition.m in Sources */,
 				491EA6141EE1165A00C2B8ED /* ShareMessageThirdCell.m in Sources */,
 				490126321EEA4FA00013A3AB /* UUImageAvatarBrowser.m in Sources */,
 				491C46181ECC1D91009F43A4 /* SelectClassCollectionViewCell.m in Sources */,
 				491E15151EE7DF9900215151 /* UserCenterHelpFeedbackViewController.swift in Sources */,
+				49187A831EF240A5009DD2C2 /* ClassSearchModel.m in Sources */,
 				498BB9E71EE8FA1900E4089D /* NSBundle+Language.m in Sources */,
 				492ADDC01EE441E400E70ADD /* CompanyScondCell.m in Sources */,
 				499478B81ED68412003E7E4C /* UITableView+YMHRefresh.m in Sources */,
+				49187A861EF25EFB009DD2C2 /* ClassSearchViewController.m in Sources */,
 				49E8D4531EE4F31C002C20E0 /* AccountSecurePhoneIdentityView.swift in Sources */,
 				490126191EEA34E50013A3AB /* UserLawViewController.swift in Sources */,
 				49F38FA51ECADDBE00D83E95 /* YMHIdenCodeTool.m in Sources */,
@@ -1664,10 +1715,11 @@
 				498BB9FB1EE8FBB700E4089D /* TSActionAlterView.m in Sources */,
 				492331B51ED457C300E45338 /* ShareFourceCollectionViewCell.m in Sources */,
 				498BE1241ED5950500D7D004 /* CTAssetSelectionLabel.m in Sources */,
+				491D1EE91EF2202E002438D1 /* ClassReserveFromPhotosViewController.m in Sources */,
+				49187A891EF27965009DD2C2 /* ClassSearchClassTimeView.m in Sources */,
 				49F38FAB1ECAE06B00D83E95 /* BasicViewController.m in Sources */,
 				498BE1301ED5950500D7D004 /* CTAssetsPickerNoAssetsView.m in Sources */,
 				498BE1341ED5950500D7D004 /* CTAssetThumbnailView.m in Sources */,
-				491F5F7E1EF1517E00182CB6 /* ClassReserveFromPhotosViewController.m in Sources */,
 				498BB9FD1EE8FBB700E4089D /* TSCustomTextFiled.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

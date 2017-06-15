@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+
+
 @interface TakePhotoView : NSObject
 
 @property (nonatomic, strong) UIImageView  * cameraShowView;
+
 //放置预览图层的View
 
 - (void)startTakePhoto;

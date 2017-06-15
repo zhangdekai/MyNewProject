@@ -8,15 +8,22 @@
 
 #import "SelectScrollView.h"
 
+@interface SelectScrollView ()
+
+@property (nonatomic, strong) NSMutableArray *items;
+@property (nonatomic, strong) UIView *blueLine;
+@property (nonatomic,assign) NSInteger maxNum;
+
+@end
+
 @implementation SelectScrollView
-
-
 
 - (instancetype)initWithFrame:(CGRect)frame selectItems:(NSMutableArray *)items {
     self = [super initWithFrame:frame];
     
     if (self) {
         self.items = items;
+        _maxNum = 7;
         self.backgroundColor = [UIColor whiteColor];
         self.contentSize = CGSizeMake(ScreenWidth, 0);
         self.showsHorizontalScrollIndicator = false;
@@ -29,10 +36,7 @@
             self.contentSize = CGSizeMake(backWidth * count, 0);
 
         }
-        
-       
-
-        for (int i = 0; i < count; i++) {
+         for (int i = 0; i < count; i++) {
             
             UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake( 15 + i * backWidth, 0, backWidth, 47)];
             [self addSubview:button];
@@ -63,11 +67,62 @@
     return self;
 }
 
+- (instancetype)initWithFrame:(CGRect)frame selectItems:(NSMutableArray *)items maxNumInAline:(NSInteger)maxNum {
+    
+    self = [super initWithFrame:frame];
+    
+    if (self) {
+        self.items = items;
+        _maxNum = maxNum;
+        
+        self.backgroundColor = [UIColor whiteColor];
+        self.contentSize = CGSizeMake(ScreenWidth, 0);
+        self.showsHorizontalScrollIndicator = false;
+        self.showsVerticalScrollIndicator = false;
+        
+        NSInteger count = items.count;
+        CGFloat backWidth = (ScreenWidth - 15) / maxNum;
+        
+        if (count > maxNum) {
+            self.contentSize = CGSizeMake(backWidth * count, 0);
+        }
+        for (int i = 0; i < count; i++) {
+            
+            UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake( 15 + i * backWidth, 0, backWidth, 47)];
+            [self addSubview:button];
+            
+            [button setTitle:items[i] forState:(UIControlStateNormal)];
+            if (0 == i) {
+                [button setTitleColor:[UIColor mainColorBlue] forState:(UIControlStateNormal)];
+            } else {
+                [button setTitleColor:[UIColor generalTitleFontBlackColor] forState:(UIControlStateNormal)];
+            }
+            button.titleLabel.font = [UIFont systemFontOfSize:17];
+            [button setContentHorizontalAlignment:(UIControlContentHorizontalAlignmentCenter)];
+            button.tag = 100 + i;
+            
+            [button addTarget:self action:@selector(buttonClick:) forControlEvents:(UIControlEventTouchUpInside)];
+        }
+        
+        _blueLine = [[UIView alloc]initWithFrame:CGRectMake(15, 47, backWidth, 3)];
+        _blueLine.backgroundColor = [UIColor whiteColor];
+        [self addSubview:_blueLine];
+        
+        UILabel *blueLine = [[UILabel alloc]initWithFrame:CGRectMake(backWidth / 4, 0, backWidth  / 2, 3)];
+        [_blueLine addSubview:blueLine];
+        blueLine.backgroundColor = [UIColor mainColorBlue];
+        
+    }
+    
+    return self;
+}
+
+
 - (void)buttonClick:(UIButton *)button {
     NSInteger tag = button.tag - 100;
     [button setTitleColor:[UIColor mainColorBlue] forState:(UIControlStateNormal)];
 
-    CGFloat backWidth = (ScreenWidth - 15) / 7;
+    CGFloat backWidth = (ScreenWidth - 15) / _maxNum;
 
     [UIView animateWithDuration:0.3 animations:^{
         _blueLine.frame = CGRectMake(15 + tag * backWidth, 47, backWidth, 3);

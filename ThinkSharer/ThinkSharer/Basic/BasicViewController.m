@@ -101,13 +101,23 @@
 
 
 - (void)setNavigationBarBack {
-
+    
     UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStylePlain target:self action:@selector(itemAction2)];
     
     self.navigationItem.leftBarButtonItem = rightBarItem;
     
     [self.navigationItem.leftBarButtonItem setImage:[[UIImage imageNamed:@"navigation_back"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
 }
+
+- (void)setNavigationBarBack:(UIImage *)image {
+    
+    UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStylePlain target:self action:@selector(itemAction2)];
+    
+    self.navigationItem.leftBarButtonItem = rightBarItem;
+
+    [self.navigationItem.leftBarButtonItem setImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+}
+
 
 
 - (void)setNavigationBarRightItemWithImageName:(NSString *)imageName itemBlock:(NavigationBarButtonItemBlockForRight)rightBlock {
@@ -138,6 +148,25 @@
     self.navigationItem.rightBarButtonItems = @[fixedSpaceBarButtonItem,rightBarItem];
     
 }
+
+- (void)setBarRightItemWithTitle:(NSString *)title textColor:(UIColor *)textColor itemBlock:(NavigationBarButtonItemBlockForRight)rightBlock {
+    self.rightItemBlock = rightBlock;
+    
+    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 25)];
+    [button setTitle:title forState:(UIControlStateNormal)];
+    [button setTitleColor:textColor forState:(UIControlStateNormal)];
+    button.titleLabel.font = [UIFont systemFontOfSize:16];
+    [button addTarget:self action:@selector(buttonClick) forControlEvents:(UIControlEventTouchUpInside)];
+    
+    UIBarButtonItem *rightBarItem = [[UIBarButtonItem alloc] initWithCustomView:button];;
+    
+    UIBarButtonItem *fixedSpaceBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    fixedSpaceBarButtonItem.width = -8;
+    
+    self.navigationItem.rightBarButtonItems = @[fixedSpaceBarButtonItem,rightBarItem];
+    
+}
+
 
 - (void)buttonClick {
     self.rightItemBlock();

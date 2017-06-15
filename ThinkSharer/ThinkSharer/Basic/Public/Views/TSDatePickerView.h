@@ -7,20 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-
-
 /**
  时间选择器
  */
 @interface TSDatePickerView : UIView
 
-@property (nonatomic,strong) UIView *backHUD;
-@property (nonatomic,strong) UIView *birthdayContainer;
-
-@property (nonatomic,strong) UIDatePicker *birthdayPickerView;
-@property (nonatomic,strong) UIToolbar *birthdayToolBar;
 
 @property (nonatomic,copy) void (^TSDatePickerBlock)(NSString *date);
+
+@property (nonatomic,copy) void (^TSDatePickerWithIntervalBlock)(NSString *date, NSTimeInterval timeInterval);
+
+- (instancetype)initWithDateAndTime:(BOOL)dateAndTime;
 
 - (void)showInView;
 

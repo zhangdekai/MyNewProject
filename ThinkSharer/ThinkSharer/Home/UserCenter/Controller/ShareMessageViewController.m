@@ -88,7 +88,6 @@ UITextFieldDelegate,UIImagePickerControllerDelegate,UITextViewDelegate,UIGesture
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyBoardShow) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyBoardHidden) name:UIKeyboardWillHideNotification object:nil];
     
-    
 }
 
 - (void)dealloc {

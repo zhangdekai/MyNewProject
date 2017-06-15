@@ -8,10 +8,21 @@
 
 #import "TSDatePickerView.h"
 
+@interface TSDatePickerView ()
+
+@property (nonatomic,strong) UIView *backHUD;
+@property (nonatomic,strong) UIView *birthdayContainer;
+
+@property (nonatomic,strong) UIDatePicker *birthdayPickerView;
+@property (nonatomic,strong) UIToolbar *birthdayToolBar;
+
+@property (nonatomic,assign) BOOL dateAndTime;
+
+@end
+
 @implementation TSDatePickerView
 
-- (instancetype)init
-{
+- (instancetype)init {
     self = [super init];
     if (self) {
         self.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
@@ -22,12 +33,30 @@
         _backHUD.alpha = 0.3;
         [self addSubview:_backHUD];
         
-        [self creatActionAlterView];
+        [self creatActionAlterView:NO];
     }
     return self;
 }
 
-- (void)creatActionAlterView {
+- (instancetype)initWithDateAndTime:(BOOL)dateAndTime {
+    self = [super init];
+    if (self) {
+        self.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
+        self.backgroundColor = [UIColor clearColor];
+        _dateAndTime = dateAndTime;
+        _backHUD = [[UIView alloc]initWithFrame:self.bounds];
+        _backHUD.backgroundColor = [UIColor blackColor];
+        _backHUD.alpha = 0.3;
+        [self addSubview:_backHUD];
+        [self creatActionAlterView:dateAndTime];
+    }
+    return self;
+}
+
+
+
+
+- (void)creatActionAlterView:(BOOL)dateAndTime {
     
     _birthdayContainer = [[UIView alloc]initWithFrame:CGRectMake(0, ScreenHeight, ScreenWidth, 255)];
     _birthdayContainer.backgroundColor = [UIColor whiteColor];
@@ -52,7 +81,11 @@
     
     _birthdayPickerView = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, line.bottom, ScreenWidth, 200)];
     _birthdayPickerView.backgroundColor = [UIColor whiteColor];
-    _birthdayPickerView.datePickerMode = UIDatePickerModeDate;
+    if (dateAndTime) {
+        _birthdayPickerView.datePickerMode = UIDatePickerModeDateAndTime;
+    } else {
+        _birthdayPickerView.datePickerMode = UIDatePickerModeDate;
+    }
     [_birthdayContainer addSubview:_birthdayPickerView];
     
     NSCalendar *calendar = [NSCalendar currentCalendar];
@@ -60,11 +93,19 @@
     [calendar setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"]];
     NSDate *currentDate = [NSDate date];
     NSDateComponents *comps = [[NSDateComponents alloc] init];
-    [comps setYear:0];
+    if (dateAndTime) {
+        [comps setYear:50];
+    } else {
+        [comps setYear:0];
+    }
     [comps setMonth:0];
     [comps setDay:0];
     NSDate *maxDate = [calendar dateByAddingComponents:comps toDate:currentDate options:0];
-    [comps setYear:-120];
+    if (dateAndTime) {
+        [comps setYear:0];
+    } else {
+        [comps setYear:-120];
+    }
     NSDate *minDate = [calendar dateByAddingComponents:comps toDate:currentDate options:0];
     _birthdayPickerView.maximumDate = maxDate;
     _birthdayPickerView.minimumDate = minDate;
@@ -124,10 +165,18 @@
     NSDate *destinationDateNow = [[NSDate alloc] initWithTimeInterval:interval sinceDate:_birthdayPickerView.date];
     
     NSString *birthday = [[NSString stringWithFormat:@"%@",destinationDateNow] substringToIndex:10];
-    NSDateFormatter *dateformatter = [[NSDateFormatter alloc] init];
-    [dateformatter setDateFormat:@"yyyy-MM-dd"];
-    //    NSDate *reallyDate = [dateformatter dateFromString:self.birthday];
     
+    NSDateFormatter *dateformatter = [[NSDateFormatter alloc] init];
+    if (_dateAndTime) {
+        [dateformatter setDateFormat:@"yyyy-MM-dd EEE HH:mm"];
+        NSString *currentDateStr = [dateformatter stringFromDate:_birthdayPickerView.date];
+        NSLog(@"%@",currentDateStr);
+        self.TSDatePickerWithIntervalBlock(currentDateStr, [_birthdayPickerView.date timeIntervalSinceReferenceDate]);
+//        self.TSDatePickerBlock(currentDateStr);
+        return;
+    } else {
+        [dateformatter setDateFormat:@"yyyy-MM-dd"];
+    }
     NSLog(@"%@",birthday);
     
     self.TSDatePickerBlock(birthday);

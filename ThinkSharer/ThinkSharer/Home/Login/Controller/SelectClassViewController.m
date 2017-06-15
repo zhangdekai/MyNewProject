@@ -20,12 +20,6 @@
 
 @interface SelectClassViewController ()<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UITableViewDelegate,UITableViewDataSource>
 
-//@property (nonatomic,strong) UICollectionView *collectionView;
-//
-//@property (nonatomic,strong) UITableView *tableView;
-
-
-
 @property (nonatomic,strong) NSMutableArray *sectionArray;
 @property (nonatomic,strong) NSMutableDictionary *datasource;
 @property (nonatomic,assign) CGFloat  tableCellHeight;
@@ -48,6 +42,7 @@
 @property (nonatomic,strong) NSMutableArray *rightDateArray;
 
 @property (nonatomic,copy) NSString *selectedItem;
+@property (nonatomic,copy) NSString *selectedItem1;
 
 
 @end
@@ -112,7 +107,9 @@
 
 - (void)initilizeUI {
     
-    [self setNavigationBarRightItem];
+    if (!_backSearchClass) {
+        [self setNavigationBarRightItem];
+    }
     self.view.backgroundColor = [UIColor backgroundGrayColorA];
     NSMutableArray *items = [NSMutableArray arrayWithObjects:@"胎教",@"幼教",@"小学",@"初中",@"高中",@"大学",@"职教", @"胎教",@"幼教",@"小学",@"初中",@"高中",@"大学",@"职教",nil];
     
@@ -131,10 +128,12 @@
     NSMutableArray *array3 = [NSMutableArray arrayWithObjects:@"心音胎教",@"情绪胎教",@"音乐胎教",@"胎教故事",@"语言",@"抚摸",@"运动",@"饮食",@"微笑",@"语言",@"抚摸",@"运动",@"饮食",@"微笑",@"语言",@"抚摸",@"运动",@"饮食",@"微笑", nil];
     
     
-    
+    _selectedItem = items[0];
     _leftDateArray = [NSMutableArray arrayWithArray:items1];
-    _rightDateArray = [NSMutableArray arrayWithArray:array3];
+    _selectedItem1 = _leftDateArray[0];
     
+    _rightDateArray = [NSMutableArray arrayWithArray:array3];
+
     _tableViewDataSource = [NSMutableArray array];
     _tableViewDataSource =  [TSPublicTool convertArray:array3];
     
@@ -179,7 +178,7 @@
         if (_rightDateArray.count!= 0 && _rightDateArray.count / 2 != 0) {
             [_rightDateArray addObject:@""];
         }
-        
+        weakSelf.selectedItem1 = weakSelf.leftDateArray[0];
         [weakSelf.leftTableView reloadData];
         [weakSelf.rightCollectionView reloadData];
         
@@ -252,6 +251,10 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (_leftDateArray.count != 0) {
+        _selectedItem1 = _leftDateArray[indexPath.row];
+    }
+
     if ([_selectedItem isEqualToString:@"职教"]) {
         switch (indexPath.row) {
             case 0:
@@ -259,12 +262,15 @@
                 break;
             case 1:
                 _rightDateArray = [NSMutableArray arrayWithArray:_array1];
+
                 break;
             case 2:
                 _rightDateArray = [NSMutableArray arrayWithArray:_array2];
+
                 break;
             default:
                 _rightDateArray = [NSMutableArray arrayWithArray:_array];
+
                 break;
         }
         if (_rightDateArray.count!= 0 && _rightDateArray.count / 2 != 0) {
@@ -317,9 +323,17 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
 
     if (_rightDateArray.count != 0) {
-        if (![_rightDateArray[indexPath.row] isEqualToString:@""]) {
-            MainViewController *vc = [[MainViewController alloc]init];
-            [self.navigationController pushViewController:vc animated:YES];
+        if (_rightDateArray.count != indexPath.row) {
+            NSString *lastString = [NSString stringWithFormat:@"%@%@%@",_selectedItem,_selectedItem1,
+                                    _rightDateArray[indexPath.row]];
+            if (_backSearchClass) {
+                self.backSearchClassWithKey(lastString);
+                [self.navigationController popViewControllerAnimated:YES];
+            } else {
+                MainViewController *vc = [[MainViewController alloc]init];
+                vc.keyWord = lastString;
+                [self.navigationController pushViewController:vc animated:YES];
+            }
         }
     }
     NSLog(@"%@",self.rightDateArray[indexPath.row]);

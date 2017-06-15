@@ -64,7 +64,7 @@ XLCardSwitchDelegate>
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
     _tableView.showsVerticalScrollIndicator = NO;
-    _tableView.delegate = self;
+     _tableView.delegate = self;
     _tableView.dataSource = self;
     
     _tableView.tableHeaderView = _imageView;

@@ -12,9 +12,10 @@
 #import <AMapLocationKit/AMapLocationKit.h>
 #import "ClassListViewController.h"
 #import "SharerCenterViewController.h"
-#import "SearchClassViewController.h"
 #import "TSActionAlterView.h"
 #import "TSAppInfo.h"
+
+#import "ClassSearchAndReserveViewController.h"
 
 @interface MainViewController ()<MAMapViewDelegate,AMapLocationManagerDelegate>
 
@@ -119,6 +120,11 @@
 //    self.navigationController.navigationBarHidden = YES;
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    self.navigationController.navigationBarHidden = NO;
+
+}
 
 #pragma mark MAMapViewDelegate
 /**
@@ -146,9 +152,7 @@
         header.layer.masksToBounds = YES;
 
         [customView addSubview:header];
-        
-        
-
+ 
         customView.image = [UIImage imageNamed:@"map_boy"];
 
     }
@@ -263,7 +267,8 @@
 
 - (void)singleTap:(UIGestureRecognizer*)gestureRecognizer {
     NSLog(@"-----singleTap-----");
-    SearchClassViewController *vc= [[SearchClassViewController alloc]init];
+    ClassSearchAndReserveViewController *vc= [[ClassSearchAndReserveViewController alloc]init];
+    vc.keyWord = _keyWord;
     [self.navigationController pushViewController:vc animated:YES];
     
 }
