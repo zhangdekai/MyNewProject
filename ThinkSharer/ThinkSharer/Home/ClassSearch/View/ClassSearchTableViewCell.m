@@ -14,8 +14,13 @@
     [super awakeFromNib];
     // Initialization code
     self.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    
+    
+    
     _reserveButton.layer.cornerRadius = 5;
-    [_reserveButton addTarget:self action:@selector(buttonClick) forControlEvents:(UIControlEventTouchUpInside)];
+    [_reserveButton addTarget:self action:@selector(buttonClick)
+             forControlEvents:(UIControlEventTouchUpInside)];
     
 }
 
@@ -26,7 +31,15 @@
 }
 
 - (void)setCellModel:(ClassSearchModel *)model {
-    _introduceLabel.text = model.uplabelString;
+    
+    
+    NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc]init];
+    style.lineSpacing = 8;
+    
+    NSMutableAttributedString *attributeStr = [[NSMutableAttributedString alloc]initWithString:model.uplabelString];
+    [attributeStr addAttribute:NSParagraphStyleAttributeName value:style range:NSMakeRange(0, model.uplabelString.length)];
+    _introduceLabel.attributedText = attributeStr;
+    
     [_reserveButton setTitle:model.buttonString forState:(UIControlStateNormal)];
     [_reserveButton setBackgroundColor:model.buttonColor];
 }

@@ -75,6 +75,7 @@
 		494533191ED6C04B00F9340F /* NetWorkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 494533181ED6C04B00F9340F /* NetWorkManager.m */; };
 		49601EAF1EEFC6EB000A7305 /* NSString+Language.m in Sources */ = {isa = PBXBuildFile; fileRef = 49601EAE1EEFC6EB000A7305 /* NSString+Language.m */; };
 		4981425F1EE637F500873655 /* BasicViewController+TSTakePhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 4981425E1EE637F500873655 /* BasicViewController+TSTakePhotos.m */; };
+		4985C0BE1EF37B7400A1C6B9 /* UILabel+Space.m in Sources */ = {isa = PBXBuildFile; fileRef = 4985C0BD1EF37B7400A1C6B9 /* UILabel+Space.m */; };
 		498BB9DE1EE8E2DB00E4089D /* UserFeedbackHeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498BB9DD1EE8E2DB00E4089D /* UserFeedbackHeaderReusableView.swift */; };
 		498BB9E01EE8E3A000E4089D /* UserFeedbackContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498BB9DF1EE8E3A000E4089D /* UserFeedbackContentCell.swift */; };
 		498BB9E31EE8F29100E4089D /* XXTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 498BB9E21EE8F29100E4089D /* XXTextView.m */; };
@@ -313,6 +314,8 @@
 		49601EAE1EEFC6EB000A7305 /* NSString+Language.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Language.m"; sourceTree = "<group>"; };
 		4981425D1EE637F500873655 /* BasicViewController+TSTakePhotos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BasicViewController+TSTakePhotos.h"; sourceTree = "<group>"; };
 		4981425E1EE637F500873655 /* BasicViewController+TSTakePhotos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BasicViewController+TSTakePhotos.m"; sourceTree = "<group>"; };
+		4985C0BC1EF37B7400A1C6B9 /* UILabel+Space.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Space.h"; sourceTree = "<group>"; };
+		4985C0BD1EF37B7400A1C6B9 /* UILabel+Space.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Space.m"; sourceTree = "<group>"; };
 		498BB9DD1EE8E2DB00E4089D /* UserFeedbackHeaderReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFeedbackHeaderReusableView.swift; sourceTree = "<group>"; };
 		498BB9DF1EE8E3A000E4089D /* UserFeedbackContentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFeedbackContentCell.swift; sourceTree = "<group>"; };
 		498BB9E11EE8F29100E4089D /* XXTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XXTextView.h; sourceTree = "<group>"; };
@@ -825,6 +828,15 @@
 			path = Others;
 			sourceTree = "<group>";
 		};
+		4985C0BB1EF37B4800A1C6B9 /* UILabel */ = {
+			isa = PBXGroup;
+			children = (
+				4985C0BC1EF37B7400A1C6B9 /* UILabel+Space.h */,
+				4985C0BD1EF37B7400A1C6B9 /* UILabel+Space.m */,
+			);
+			path = UILabel;
+			sourceTree = "<group>";
+		};
 		498BB9E41EE8F9F300E4089D /* NSBundle */ = {
 			isa = PBXGroup;
 			children = (
@@ -1278,6 +1290,7 @@
 		49F38FB01ECAE29E00D83E95 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				4985C0BB1EF37B4800A1C6B9 /* UILabel */,
 				490126391EEA4FF20013A3AB /* NSDate */,
 				498142601EE6429B00873655 /* Others */,
 				498BB9E41EE8F9F300E4089D /* NSBundle */,
@@ -1663,6 +1676,7 @@
 				49F38FA81ECADDE300D83E95 /* YMHRegularExpression.m in Sources */,
 				491E151D1EE7FA9400215151 /* UserFeedbackViewController.swift in Sources */,
 				49F38FE01ECAFBFF00D83E95 /* TSAppInfo.m in Sources */,
+				4985C0BE1EF37B7400A1C6B9 /* UILabel+Space.m in Sources */,
 				498BB9FC1EE8FBB700E4089D /* TSAlterShowView.m in Sources */,
 				498BE11D1ED5950500D7D004 /* CTAssetCheckmark.m in Sources */,
 				49187A7A1EF222FC009DD2C2 /* ClassSearchAndReserveViewController.m in Sources */,
@@ -1920,6 +1934,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 9X97YKR3AP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ThinkSharer/Vendors",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "/Users/zhangdekai/Desktop/ThinkSharer/ThinkSharer/ThinkSharer/Supporting Files/thinkSharer.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/ThinkSharer/Supporting Files/Info.plist";
@@ -1947,6 +1965,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 9X97YKR3AP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ThinkSharer/Vendors",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "/Users/zhangdekai/Desktop/ThinkSharer/ThinkSharer/ThinkSharer/Supporting Files/thinkSharer.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/ThinkSharer/Supporting Files/Info.plist";

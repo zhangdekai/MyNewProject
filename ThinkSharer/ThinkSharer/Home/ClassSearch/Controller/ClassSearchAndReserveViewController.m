@@ -73,12 +73,12 @@ UITableViewDataSource>
     ClassSearchModel *model = [[ClassSearchModel alloc]init];
     model.uplabelString = @"您可以设置相关条件搜索学习需求，以获得能力的提升。".internationalLanguage;
     model.buttonString = @"搜索课程".internationalLanguage;
-    model.buttonColor = [UIColor greenColor];
+    model.buttonColor = [UIColor ymh_colorWithHex:0x99ae75];
     
     ClassSearchModel *model1 = [[ClassSearchModel alloc]init];
     model1.uplabelString = @"您可以按照自己的个人需求制订学习计划，以获得有效的帮助。".internationalLanguage;
     model1.buttonString = @"订制课程".internationalLanguage;
-    model1.buttonColor = [UIColor redColor];
+    model1.buttonColor = [UIColor ymh_colorWithHex:0xdb665c];
     
     _leftDataArray = [NSMutableArray arrayWithObjects:model,model1, nil];
     
@@ -90,7 +90,7 @@ UITableViewDataSource>
     ClassSearchModel *model3 = [[ClassSearchModel alloc]init];
     model3.uplabelString = @"您可以根据自己的专业特长发布技能帮助TA人，获得经济效益。".internationalLanguage;
     model3.buttonString = @"发布课程".internationalLanguage;
-    model3.buttonColor = [UIColor redColor];
+    model3.buttonColor =  [UIColor ymh_colorWithHex:0xdb665c];
 
     _rightDataArray = [NSMutableArray arrayWithObjects:model2,model3, nil];
 
@@ -99,35 +99,40 @@ UITableViewDataSource>
 - (void)initialNavigationBar {
     
     [self setNavigationBarBack];
+    CGFloat titleViewW = [TSPublicTool getRealPX:250];
     
-    UIView *titleView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth - 150, 35)];
-    titleView.backgroundColor = [UIColor mainColorBlue];
+    UIView *titleView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, titleViewW, 30)];
+    titleView.backgroundColor = [UIColor mainColorBlueA];
     titleView.layer.cornerRadius = 5;
     titleView.layer.masksToBounds = YES;
     
-    _navigationBarTextFiled = [[TSCustomTextFiled alloc]initWithFrame:CGRectMake(25, 0, ScreenWidth - 175, 35)];
+    _navigationBarTextFiled = [[TSCustomTextFiled alloc]initWithFrame:
+                               CGRectMake(25, 0, titleView.width - 60, 30)];
     [titleView addSubview:_navigationBarTextFiled];
     _navigationBarTextFiled.MaxNum = 15;
     _navigationBarTextFiled.textColor = [UIColor whiteColor];
-    _navigationBarTextFiled.font = [UIFont systemFontOfSize:15];
+    _navigationBarTextFiled.font = [UIFont systemFontOfSize:16];
     _navigationBarTextFiled.keyboardType = UIKeyboardTypeWebSearch;
     _navigationBarTextFiled.delegate = self;
     _navigationBarTextFiled.text = _keyWord;
     
-    _searchClassButton = [[UIButton alloc]initWithFrame:CGRectMake(25, 0, ScreenWidth - 210, 35)];
+    _searchClassButton = [[UIButton alloc]initWithFrame:CGRectMake(25, 0, titleView.width - 60 , 30)];
     [titleView addSubview:_searchClassButton];
     [_searchClassButton addTarget:self action:@selector(goBackToSearchClassList) forControlEvents:(UIControlEventTouchUpInside)];
     
     _deleteTextButton = [[UIButton alloc]initWithFrame:CGRectMake(titleView.width - 15, 10, 12, 12)];
     [titleView addSubview:_deleteTextButton];
-    [_deleteTextButton setBackgroundImage:[UIImage imageNamed:@"login_x"]
+    [_deleteTextButton setBackgroundImage:[UIImage imageNamed:@"made-delete-text"]
                                  forState:(UIControlStateNormal)];
     [_deleteTextButton addTarget:self action:@selector(deleteText)
                 forControlEvents:(UIControlEventTouchUpInside)];
     
-    
     self.navigationItem.titleView = titleView;
     
+    
+}
+
+- (void)textFiledTouchClick {
     
 }
 
@@ -191,7 +196,7 @@ UITableViewDataSource>
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 207;
+    return 265;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

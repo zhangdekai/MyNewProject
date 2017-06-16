@@ -74,7 +74,9 @@
     [self.view addSubview:self.scrollView];
     
     CGFloat gap = 15;
-    CGFloat buttonW = [TSPublicTool getRealPX:(ScreenWidth - 30 - 100) / 3];
+    CGFloat buttonW = [TSPublicTool getRealPX:90];
+    CGFloat buttonGap = (ScreenWidth - 3 * buttonW - 30) / 2;
+
     CGFloat buttonH = 30;
     CGFloat frameH = 0;
     //讲师性别
@@ -87,7 +89,7 @@
     for (int i = 0; i < 3; i++) {
         UIButton *sexButton = [self commonButton:sexs[i]];
         [_scrollView addSubview:sexButton];
-        sexButton.frame = CGRectMake(gap + i * (buttonW + 50), teachsexLabel.bottom +15, buttonW, buttonH);
+        sexButton.frame = CGRectMake(gap + i * (buttonW + buttonGap), teachsexLabel.bottom +15, buttonW, buttonH);
         sexButton.tag = 100 + i;
         [sexButton addTarget:self action:@selector(sexButtonClick:) forControlEvents:(UIControlEventTouchUpInside)];
         if (i == 2) {
@@ -101,7 +103,7 @@
     //教育方式
     UILabel *teachWayLabel = [self sectionView:@"教育方式"];
     [_scrollView addSubview:teachWayLabel];
-    teachWayLabel.frame = CGRectMake(15, teachsexLabel.bottom + 60, 120, 20);
+    teachWayLabel.frame = CGRectMake(15, frameH + 50, 120, 20);
 
     NSArray *ways = @[@"不限",@"视频录播",@"录音录播",@"视频直播",@"语音直播",@"线下面授"];
     for (int i = 0; i < 6; i++) {
@@ -110,7 +112,7 @@
 
         UIButton *sexButton = [self commonButton:ways[i]];
         [_scrollView addSubview:sexButton];
-        sexButton.frame = CGRectMake(gap + H * (buttonW + 50), teachWayLabel.bottom +15 + V * (buttonH + 15), buttonW, buttonH);
+        sexButton.frame = CGRectMake(gap + H * (buttonW + buttonGap), teachWayLabel.bottom +15 + V * (buttonH + 15), buttonW, buttonH);
         sexButton.tag = 200 + i;
         [sexButton addTarget:self action:@selector(teachWayButtonClick:) forControlEvents:(UIControlEventTouchUpInside)];
         if (i == 5) {
@@ -125,7 +127,7 @@
     //上课时间
     UILabel *timeLabel = [self sectionView:@"上课时间"];
     [_scrollView addSubview:timeLabel];
-    timeLabel.frame = CGRectMake(15, frameH + 30, 120, 20);
+    timeLabel.frame = CGRectMake(15, frameH + 50, 120, 20);
 
     _timeView = [[ClassSearchClassTimeView alloc]init];
     _timeView.frame = CGRectMake(0, timeLabel.bottom + 15, ScreenWidth, 80);
@@ -135,11 +137,11 @@
     //价格范围
     UILabel *priceLabel = [self sectionView:@"价格范围"];
     [_scrollView addSubview:priceLabel];
-    priceLabel.frame = CGRectMake(15, _timeView.bottom + 30, 120, 20);
+    priceLabel.frame = CGRectMake(15, _timeView.bottom + 50, 75, 20);
     
     _priceTextFiled = [self commonTextFiled:@"0"];
     [_scrollView addSubview:_priceTextFiled];
-    _priceTextFiled.frame = CGRectMake(priceLabel.right + 10, priceLabel.top - 5, 50, 30);
+    _priceTextFiled.frame = CGRectMake(priceLabel.right + 10, priceLabel.top - 5, buttonW, 30);
     
     UIView *line = [[UIView alloc]initWithFrame:CGRectMake(_priceTextFiled.right + 10, _priceTextFiled.top + 15, 20, 1)];
     line.backgroundColor = [UIColor seperateThinLineColor];
@@ -147,7 +149,7 @@
     
     _priceTextFiled1 = [self commonTextFiled:@"9999"];
     [_scrollView addSubview:_priceTextFiled1];
-    _priceTextFiled1.frame = CGRectMake(line.right + 10, priceLabel.top - 5, 50, 30);
+    _priceTextFiled1.frame = CGRectMake(line.right + 10, priceLabel.top - 5, buttonW, 30);
     //¥
     UILabel *pricePoint = [self sectionView:@"¥"];
     [_scrollView addSubview:pricePoint];
@@ -157,17 +159,17 @@
     //上课地址是否由您指定
     _placeLabel = [self sectionView:@"上课地址是否由您指定"];
     [_scrollView addSubview:_placeLabel];
-    _placeLabel.frame = CGRectMake(15, priceLabel.bottom + 30, 180, 20);
+    _placeLabel.frame = CGRectMake(15, priceLabel.bottom + 50, 180, 20);
 
 
-    _selectView = [[UISwitch alloc]initWithFrame:CGRectMake(ScreenWidth - 60, _placeLabel.top, 60, 30)];
+    _selectView = [[UISwitch alloc]initWithFrame:CGRectMake(ScreenWidth - 60, _placeLabel.top - 5, 60, 30)];
     [_scrollView addSubview:_selectView];
     
     _selectView.tintColor = [UIColor whiteColor];
     _selectView.onTintColor = [UIColor mainColorBlue];
     [_selectView addTarget:self action:@selector(switchView:) forControlEvents:(UIControlEventTouchUpInside)];
     
-    _placTextView = [[UITextView alloc]initWithFrame:CGRectMake(15, _selectView.bottom + 10, ScreenWidth - 30, 50)];
+    _placTextView = [[UITextView alloc]initWithFrame:CGRectMake(15, _selectView.bottom + 15, ScreenWidth - 30, 75)];
     [_scrollView addSubview:_placTextView];
     _placTextView.delegate = self;
     _placTextView.layer.cornerRadius = 5;
@@ -341,7 +343,7 @@
 - (UILabel *)sectionView:(NSString *)title {
     UILabel *section = [[UILabel alloc]init];
     section.textColor = [UIColor generalTitleFontBlackColor];
-    section.font = [UIFont systemFontOfSize:15];
+    section.font = [UIFont systemFontOfSize:17];
     section.text = title;
     return section;
 }
@@ -369,7 +371,7 @@
     [button setTitle:title forState:(UIControlStateNormal)];
     [button setTitleColor:[UIColor generalTitleFontGrayColor] forState:(UIControlStateNormal)];
     button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
-    button.titleLabel.font = [UIFont systemFontOfSize:15];
+    button.titleLabel.font = [UIFont systemFontOfSize:16];
     
     button.layer.cornerRadius = 5;
     button.layer.masksToBounds = YES;

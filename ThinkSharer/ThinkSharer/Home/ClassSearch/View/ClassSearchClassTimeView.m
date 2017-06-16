@@ -53,7 +53,8 @@
         
         _hourLabel = [self sectionView:@"1小时"];
         [self addSubview:_hourLabel];
-   
+        _hourLabel.textAlignment = NSTextAlignmentCenter;
+        
         _startButton = [self commonButton:@"开始"];
         [self addSubview:_startButton];
         [_startButton addTarget:self action:@selector(buttonClick:) forControlEvents:(UIControlEventTouchUpInside)];
@@ -85,21 +86,26 @@
     CGFloat dateW = [TSPublicTool getRealPX:100];
     CGFloat dateH = 20;
     CGFloat weekW = [TSPublicTool getRealPX:50];
-
+    CGFloat upAndDownGap = 40;
     
     _dataLabel.frame = CGRectMake(gap, 0, dateW, dateH);
-    _dataLabel1.frame = CGRectMake(gap, _dataLabel.bottom + 15, dateW, dateH);
+    _dataLabel1.frame = CGRectMake(gap, _dataLabel.bottom + upAndDownGap, dateW, dateH);
     
     _weekLabel.frame = CGRectMake(_dataLabel.right + 20, 0, weekW, 20);
-    _weekLabel1.frame = CGRectMake(_dataLabel.right + 20, _weekLabel.bottom + 15, weekW, 20);
+    _weekLabel1.frame = CGRectMake(_dataLabel.right + 20, _weekLabel.bottom + upAndDownGap, weekW, 20);
     
-    _timeLabel.frame = CGRectMake(_weekLabel.right + 30, 0, weekW, 20);
-    _timeLabel1.frame = CGRectMake(_weekLabel.right + 30, _timeLabel.bottom + 15, weekW, 20);
     _startButton.frame = CGRectMake(ScreenWidth - 55, 0, 40, 20);
-    _endButton.frame = CGRectMake(ScreenWidth - 55, _startButton.bottom + 15, 40, 20);
+    _endButton.frame = CGRectMake(ScreenWidth - 55, _startButton.bottom + upAndDownGap, 40, 20);
     
-    _hourLabel.frame = CGRectMake(_weekLabel.right, _weekLabel.bottom, 50, 20);
+    
+    _timeLabel.frame = CGRectMake(_startButton.left - 30 - weekW, 0, weekW, 20);
+    _timeLabel1.frame = CGRectMake(_startButton.left - 30 - weekW, _timeLabel.bottom + upAndDownGap, weekW, 20);
 
+    
+    _hourLabel.frame = CGRectMake((ScreenWidth / 2) - 30, _weekLabel.bottom + 10, 60, 20);
+
+    self.frame = CGRectMake(0, 0, ScreenWidth, _dataLabel1.bottom);
+    
 }
 
 - (void)setStartTime:(NSArray *)timeArray {
@@ -128,6 +134,9 @@
     section.textColor = [UIColor generalTitleFontGrayColor];
     section.font = [UIFont systemFontOfSize:15];
     section.text = title;
+    section.numberOfLines = 1;
+    [section sizeToFit];
+    
     return section;
 }
 

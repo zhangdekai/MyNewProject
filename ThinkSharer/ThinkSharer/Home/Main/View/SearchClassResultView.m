@@ -31,7 +31,10 @@
         _backHUD.backgroundColor = [UIColor blackColor];
         _backHUD.alpha = 0.3;
         [self addSubview:_backHUD];
-        
+        _backHUD.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                       initWithTarget:self action:@selector(tapAction:)];
+        [_backHUD addGestureRecognizer:tap];
     }
     return self;
 }
@@ -45,9 +48,12 @@
     [backView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(0);
         make.centerY.mas_equalTo(0);
-        make.size.mas_equalTo(CGSizeMake(ScreenWidth - 40, ScreenWidth));
+        make.size.mas_equalTo(CGSizeMake(ScreenWidth - 40, 350));
         
     }];
+    backView.layer.cornerRadius = 5;
+    backView.layer.masksToBounds = YES;
+    
     
     UIImageView *closeImage = [[UIImageView alloc]init];
     [backView addSubview:closeImage];
@@ -59,7 +65,7 @@
     }];
     
     closeImage.userInteractionEnabled = YES;
-    closeImage.image = [UIImage imageNamed:@"testHeader"];
+    closeImage.image = [UIImage imageNamed:@"login_x"];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction:)];
     [closeImage addGestureRecognizer:tap];
     
@@ -76,7 +82,8 @@
     lightImage.userInteractionEnabled = YES;
     lightImage.image = [UIImage imageNamed:@"testHeader"];
     
-    UILabel *midelLabel = [[UILabel alloc]init];
+    UILabel *midelLabel = [UILabel labelWithSpace:8 wordFont:17 labelWidth:backView.width - 50
+                                            string:titleString];
     [backView addSubview:midelLabel];
     
     [midelLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -85,11 +92,11 @@
         make.left.mas_equalTo(25);
         make.size.mas_equalTo(CGSizeMake(backView.width - 50 , 80));
     }];
-    midelLabel.text = titleString;
-    midelLabel.textColor = [UIColor blackColor];
-    midelLabel.font = [UIFont systemFontOfSize:18];
-    midelLabel.numberOfLines = 0;
-    [midelLabel sizeToFit];
+//    midelLabel.text = titleString;
+//    midelLabel.textColor = [UIColor blackColor];
+//    midelLabel.font = [UIFont systemFontOfSize:18];
+//    midelLabel.numberOfLines = 0;
+//    [midelLabel sizeToFit];
     
     UIButton *button = [[UIButton alloc]init];
     [backView addSubview:button];
@@ -103,9 +110,9 @@
     
     [button mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(0);
-        make.bottom.equalTo(backView.mas_bottom).offset(-20);
+        make.bottom.equalTo(backView.mas_bottom).offset(-30);
         make.left.mas_equalTo(25);
-        make.size.mas_equalTo(CGSizeMake(backView.width - 50 , 30));
+        make.size.mas_equalTo(CGSizeMake(150 , 44));
     }];
     
     [button addTarget:self action:@selector(butotnClick) forControlEvents:(UIControlEventTouchUpInside)];
@@ -116,6 +123,7 @@
     if (self.searchResult) {
         self.searchResult();
     }
+    [self hiddenAlter];
 }
 - (void)showInView {
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
@@ -131,14 +139,12 @@
 
 - (void)tapAction:(UITapGestureRecognizer*)tap {
     [self hiddenAlter];
-    [_startImageView removeFromSuperview];
-    //    [self addSecondAlter];
-    //    self.actionBlock();
+
 }
 
 - (void)tapAction1:(UITapGestureRecognizer*)tap {
     [self hiddenAlter];
-    //    self.actionBlock();
+
 }
 
 
